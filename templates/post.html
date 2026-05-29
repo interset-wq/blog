@@ -82,28 +82,47 @@
     <!-- Giscus评论区 -->
     <section class="comments-section" id="comments">
         <h2>评论</h2>
-        <div class="giscus-comments">
-            <script src="https://giscus.app/client.js"
-                    data-repo="{{ config.GITHUB_OWNER }}/{{ config.GITHUB_REPO }}"
-                    data-repo-id="{{ config.GISCUS_REPO_ID }}"
-                    data-category="{{ config.GISCUS_CATEGORY }}"
-                    data-category-id="{{ config.GISCUS_CATEGORY_ID }}"
-                    data-mapping="pathname"
-                    data-strict="0"
-                    data-reactions-enabled="1"
-                    data-emit-metadata="0"
-                    data-input-position="bottom"
-                    data-theme="preferred_color_scheme"
-                    data-lang="zh-CN"
-                    crossorigin="anonymous"
-                    async>
-            </script>
+        <div class="giscus-comments" id="giscus-container">
             <noscript>
                 <p>请启用JavaScript以查看评论。</p>
                 <p>评论通过 <a href="https://giscus.app/" target="_blank" rel="noopener noreferrer">Giscus</a> 提供。</p>
             </noscript>
         </div>
     </section>
+    
+    <script>
+        // 初始化Giscus评论系统
+        function initGiscus() {
+            const container = document.getElementById('giscus-container');
+            if (!container) return;
+            
+            // 获取当前主题
+            const currentTheme = localStorage.getItem('blog-theme') || 
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            
+            // 创建Giscus脚本
+            const script = document.createElement('script');
+            script.src = 'https://giscus.app/client.js';
+            script.setAttribute('data-repo', '{{ config.GITHUB_OWNER }}/{{ config.GITHUB_REPO }}');
+            script.setAttribute('data-repo-id', '{{ config.GISCUS_REPO_ID }}');
+            script.setAttribute('data-category', '{{ config.GISCUS_CATEGORY }}');
+            script.setAttribute('data-category-id', '{{ config.GISCUS_CATEGORY_ID }}');
+            script.setAttribute('data-mapping', 'pathname');
+            script.setAttribute('data-strict', '0');
+            script.setAttribute('data-reactions-enabled', '1');
+            script.setAttribute('data-emit-metadata', '0');
+            script.setAttribute('data-input-position', 'bottom');
+            script.setAttribute('data-theme', currentTheme);
+            script.setAttribute('data-lang', 'zh-CN');
+            script.setAttribute('crossorigin', 'anonymous');
+            script.async = true;
+            
+            container.appendChild(script);
+        }
+        
+        // 页面加载完成后初始化Giscus
+        document.addEventListener('DOMContentLoaded', initGiscus);
+    </script>
 </article>
 
 <script>

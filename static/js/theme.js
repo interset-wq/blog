@@ -161,6 +161,32 @@ const ThemeManager = {
         });
         
         document.dispatchEvent(event);
+        
+        // 更新Giscus主题
+        this.updateGiscusTheme(themeName);
+    },
+    
+    /**
+     * 更新Giscus评论系统主题
+     * @param {string} themeName - 主题名称
+     */
+    updateGiscusTheme(themeName) {
+        // Giscus主题映射
+        const giscusThemeMap = {
+            'light': 'light',
+            'dark': 'dark'
+        };
+        
+        const giscusTheme = giscusThemeMap[themeName] || 'light';
+        
+        // 向Giscus iframe发送主题消息
+        const giscusFrame = document.querySelector('iframe.giscus-frame');
+        if (giscusFrame) {
+            giscusFrame.contentWindow.postMessage(
+                { giscus: { setConfig: { theme: giscusTheme } } },
+                'https://giscus.app'
+            );
+        }
     },
     
     /**
