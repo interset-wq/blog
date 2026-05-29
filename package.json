@@ -1,0 +1,24 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "一个基于GitHub Issues的静态博客系统，通过GitHub Actions自动将Issues渲染为静态网站，部署到GitHub Pages。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/interset-wq/blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/interset-wq/blog/issues"
+  },
+  "homepage": "https://github.com/interset-wq/blog#readme",
+  "dependencies": {
+    "puppeteer": "^25.1.0"
+  }
+}

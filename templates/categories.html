@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}分类 - {{ config.BLOG_TITLE }}{% endblock %}
+
+{% block content %}
+<div class="categories-page">
+    <div class="page-header">
+        <h1 class="page-title">文章分类</h1>
+        <p class="page-description">共 {{ categories|length }} 个分类</p>
+    </div>
+    
+    <div class="categories-grid">
+        {% for category, category_articles in categories.items() %}
+        <div class="category-card">
+            <div class="category-header">
+                <h2 class="category-title">
+                    <a href="/categories/{{ category|lower|replace(' ', '-') }}.html">{{ category }}</a>
+                </h2>
+                <span class="category-count">{{ category_articles|length }} 篇文章</span>
+            </div>
+            <div class="category-articles">
+                {% for article in category_articles[:3] %}
+                <div class="category-article">
+                    <h3 class="article-title">
+                        <a href="{{ article.url }}">{{ article.title }}</a>
+                    </h3>
+                    <span class="article-date">{{ article.created_at|format_date }}</span>
+                </div>
+                {% endfor %}
+                {% if category_articles|length > 3 %}
+                <div class="category-more">
+                    <a href="/categories/{{ category|lower|replace(' ', '-') }}.html">查看全部 {{ category_articles|length }} 篇文章 →</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

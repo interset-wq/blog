@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}友链 - {{ config.BLOG_TITLE }}{% endblock %}
+
+{% block content %}
+<div class="links-page">
+    <div class="page-header">
+        <h1 class="page-title">友情链接</h1>
+        <p class="page-description">推荐的网站和博客</p>
+    </div>
+    
+    <div class="links-content">
+        <div class="links-section">
+            <h2>推荐博客</h2>
+            <div class="links-grid">
+                {% for link in blog_links %}
+                <div class="link-card">
+                    <div class="link-avatar">
+                        <img src="{{ link.avatar }}" alt="{{ link.name }}" loading="lazy">
+                    </div>
+                    <div class="link-info">
+                        <h3 class="link-name">
+                            <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.name }}</a>
+                        </h3>
+                        <p class="link-description">{{ link.description }}</p>
+                        <div class="link-meta">
+                            <span class="link-url">{{ link.url }}</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <div class="links-section">
+            <h2>技术资源</h2>
+            <div class="links-grid">
+                {% for link in tech_links %}
+                <div class="link-card">
+                    <div class="link-icon">
+                        <span>{{ link.icon }}</span>
+                    </div>
+                    <div class="link-info">
+                        <h3 class="link-name">
+                            <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.name }}</a>
+                        </h3>
+                        <p class="link-description">{{ link.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <div class="links-section">
+            <h2>申请友链</h2>
+            <div class="links-apply">
+                <p>如果你想申请友链，请通过以下方式联系我：</p>
+                <div class="apply-methods">
+                    <div class="apply-item">
+                        <h3>通过GitHub Issue</h3>
+                        <p>在仓库中创建Issue，标题为 "申请友链"</p>
+                        <a href="https://github.com/{{ config.GITHUB_OWNER }}/{{ config.GITHUB_REPO }}/issues/new?template=blog_post.md" 
+                           target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                            创建Issue
+                        </a>
+                    </div>
+                    
+                    <div class="apply-item">
+                        <h3>通过评论</h3>
+                        <p>在任意文章下方评论，留下你的博客信息</p>
+                    </div>
+                </div>
+                
+                <div class="apply-requirements">
+                    <h3>友链要求</h3>
+                    <ul>
+                        <li>网站内容健康，无违规内容</li>
+                        <li>网站可以正常访问</li>
+                        <li>最好有原创内容</li>
+                        <li>互相链接（你链我，我链你）</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

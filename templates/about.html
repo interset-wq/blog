@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block title %}关于 - {{ config.BLOG_TITLE }}{% endblock %}
+
+{% block content %}
+<div class="about-page">
+    <div class="page-header">
+        <h1 class="page-title">关于</h1>
+        <p class="page-description">了解这个博客和作者</p>
+    </div>
+    
+    <div class="about-content">
+        <div class="about-section">
+            <h2>关于博客</h2>
+            <p>{{ config.BLOG_DESCRIPTION }}</p>
+            <p>这是一个基于GitHub Issues的静态博客系统，通过GitHub Actions自动将Issues渲染为静态网站，部署到GitHub Pages。</p>
+            
+            <div class="about-features">
+                <div class="feature-item">
+                    <h3>🚀 完全自动化</h3>
+                    <p>Issue创建/编辑时自动触发构建和部署，无需手动操作。</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3>📝 GFM支持</h3>
+                    <p>完整的GitHub Flavored Markdown支持，任务列表、表格、代码高亮等。</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3>🎨 原生前端</h3>
+                    <p>不使用任何CDN资源，完全自定义，响应式设计。</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3>💬 评论系统</h3>
+                    <p>集成Giscus评论系统，基于GitHub Discussions。</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="about-section">
+            <h2>技术栈</h2>
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <span class="tech-icon">🐍</span>
+                    <div class="tech-info">
+                        <h3>Python</h3>
+                        <p>后端渲染器，处理Markdown和模板</p>
+                    </div>
+                </div>
+                
+                <div class="tech-item">
+                    <span class="tech-icon">📦</span>
+                    <div class="tech-info">
+                        <h3>PyGitHub</h3>
+                        <p>GitHub官方Python库，获取Issues数据</p>
+                    </div>
+                </div>
+                
+                <div class="tech-item">
+                    <span class="tech-icon">🎨</span>
+                    <div class="tech-info">
+                        <h3>Jinja2</h3>
+                        <p>模板引擎，生成HTML页面</p>
+                    </div>
+                </div>
+                
+                <div class="tech-item">
+                    <span class="tech-icon">⚡</span>
+                    <div class="tech-info">
+                        <h3>GitHub Actions</h3>
+                        <p>自动化构建和部署</p>
+                    </div>
+                </div>
+                
+                <div class="tech-item">
+                    <span class="tech-icon">🌐</span>
+                    <div class="tech-info">
+                        <h3>GitHub Pages</h3>
+                        <p>静态网站托管</p>
+                    </div>
+                </div>
+                
+                <div class="tech-item">
+                    <span class="tech-icon">💬</span>
+                    <div class="tech-info">
+                        <h3>Giscus</h3>
+                        <p>基于GitHub Discussions的评论系统</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="about-section">
+            <h2>如何使用</h2>
+            <div class="usage-steps">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>创建Issue</h3>
+                        <p>在GitHub仓库中创建新Issue</p>
+                    </div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>添加标签</h3>
+                        <p>为Issue添加 <code>blog</code> 标签</p>
+                    </div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>编写内容</h3>
+                        <p>使用Markdown编写文章内容</p>
+                    </div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>自动发布</h3>
+                        <p>提交后自动构建并部署到GitHub Pages</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="about-section">
+            <h2>联系方式</h2>
+            <p>如果你有任何问题或建议，可以通过以下方式联系我：</p>
+            <div class="contact-links">
+                <a href="https://github.com/{{ config.GITHUB_OWNER }}" target="_blank" rel="noopener noreferrer" class="contact-item">
+                    <span class="contact-icon">🐙</span>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://github.com/{{ config.GITHUB_OWNER }}/{{ config.GITHUB_REPO }}/issues" target="_blank" rel="noopener noreferrer" class="contact-item">
+                    <span class="contact-icon">🐛</span>
+                    <span>提交Issue</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

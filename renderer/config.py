@@ -69,10 +69,10 @@ SEARCH_ENABLED = True
 SEARCH_INDEX_FILE = "search-index.json"
 
 # Giscus评论系统配置
-# 需要在 https://giscus.app/ 获取配置
-GISCUS_REPO_ID = os.getenv("GISCUS_REPO_ID", "")  # 仓库ID
+# 已在 https://giscus.app/ 获取配置
+GISCUS_REPO_ID = os.getenv("GISCUS_REPO_ID", "R_kgDOSrMqxg")  # 仓库ID
 GISCUS_CATEGORY = os.getenv("GISCUS_CATEGORY", "Announcements")  # 讨论分类
-GISCUS_CATEGORY_ID = os.getenv("GISCUS_CATEGORY_ID", "")  # 分类ID
+GISCUS_CATEGORY_ID = os.getenv("GISCUS_CATEGORY_ID", "DIC_kwDOSrMqxs4C-E96")  # 分类ID
 
 # 日志配置
 LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
