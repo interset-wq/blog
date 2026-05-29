@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="{{ config.BLOG_LANGUAGE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ config.BLOG_DESCRIPTION }}">
+    <title>{% block title %}{{ config.BLOG_TITLE }}{% endblock %}</title>
+    
+    <!-- 主CSS样式 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <!-- 代码高亮CSS -->
+    <style>
+        {{ pygments_css|safe }}
+    </style>
+    
+    {% block extra_css %}{% endblock %}
+    
+    <!-- 主题切换脚本 -->
+    <script>
+        // 检查本地存储中的主题设置
+        const savedTheme = localStorage.getItem('blog-theme') || '{{ config.DEFAULT_THEME }}';
+        document.documentElement.className = `theme-${savedTheme}`;
+    </script>
+</head>
+<body class="theme-{{ config.DEFAULT_THEME }}">
+    <!-- 头部 -->
+    {% include 'includes/header.html' %}
+    
+    <!-- 主内容区 -->
+    <main class="main-content">
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+    
+    <!-- 底部 -->
+    {% include 'includes/footer.html' %}
+    
+    <!-- 主JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    
+    <!-- 主题切换脚本 -->
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+    
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

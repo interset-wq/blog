@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block title %}{{ config.BLOG_TITLE }} - 首页{% endblock %}
+
+{% block content %}
+<div class="home-page">
+    <!-- 页面标题 -->
+    <div class="page-header">
+        <h1 class="page-title">最新文章</h1>
+        <p class="page-description">共 {{ total_count }} 篇文章</p>
+    </div>
+    
+    <!-- 文章列表 -->
+    <div class="articles-list">
+        {% if articles %}
+            {% for article in articles %}
+            <article class="article-card">
+                <div class="article-header">
+                    <h2 class="article-title">
+                        <a href="{{ article.url }}">{{ article.title }}</a>
+                    </h2>
+                    <div class="article-meta">
+                        <span class="article-date">
+                            <time datetime="{{ article.created_at }}">{{ article.formatted_date }}</time>
+                        </span>
+                        <span class="article-reading-time">{{ article.reading_time }}</span>
+                        <span class="article-comments">
+                            <a href="{{ article.html_url }}#comments" target="_blank" rel="noopener noreferrer">
+                                {{ article.comments }} 评论
+                            </a>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="article-excerpt">
+                    <p>{{ article.excerpt }}</p>
+                </div>
+                
+                <div class="article-footer">
+                    <div class="article-tags">
+                        {% for tag in article.labels %}
+                        <a href="/tags/{{ tag|lower|replace(' ', '-') }}.html" class="tag">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+                    
+                    <div class="article-actions">
+                        <a href="{{ article.url }}" class="read-more">阅读全文 →</a>
+                        <a href="{{ article.html_url }}" target="_blank" rel="noopener noreferrer" class="view-on-github">
+                            在GitHub上查看
+                        </a>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+            
+            <!-- 分页导航 -->
+            {% if total_pages > 1 %}
+            <nav class="pagination" aria-label="分页导航">
+                <div class="pagination-info">
+                    <span class="pagination-total">
+                        第 {{ page }} 页，共 {{ total_pages }} 页
+                    </span>
+                </div>
+                
+                <ul class="pagination-list">
+                    <!-- 上一页 -->
+                    {% if page > 1 %}
+                    <li class="pagination-item">
+                        <a href="{% if page == 2 %}/{% else %}/page/{{ page - 1 }}.html{% endif %}" 
+                           class="pagination-link pagination-prev" aria-label="上一页">
+                            <svg viewBox="0 0 24 24" width="16" height="16">
+                                <path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                            </svg>
+                            <span>上一页</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    
+                    <!-- 页码 -->
+                    {% set start_page = [1, page - 2]|max %}
+                    {% set end_page = [total_pages, page + 2]|min %}
+                    
+                    {% if start_page > 1 %}
+                    <li class="pagination-item">
+                        <a href="/" class="pagination-link">1</a>
+                    </li>
+                    {% if start_page > 2 %}
+                    <li class="pagination-item pagination-ellipsis">
+                        <span>...</span>
+                    </li>
+                    {% endif %}
+                    {% endif %}
+                    
+                    {% for p in range(start_page, end_page + 1) %}
+                    <li class="pagination-item">
+                        {% if p == page %}
+                        <span class="pagination-link pagination-current" aria-current="page">{{ p }}</span>
+                        {% else %}
+                        <a href="{% if p == 1 %}/{% else %}/page/{{ p }}.html{% endif %}" 
+                           class="pagination-link">{{ p }}</a>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                    
+                    {% if end_page < total_pages %}
+                    {% if end_page < total_pages - 1 %}
+                    <li class="pagination-item pagination-ellipsis">
+                        <span>...</span>
+                    </li>
+                    {% endif %}
+                    <li class="pagination-item">
+                        <a href="/page/{{ total_pages }}.html" class="pagination-link">{{ total_pages }}</a>
+                    </li>
+                    {% endif %}
+                    
+                    <!-- 下一页 -->
+                    {% if page < total_pages %}
+                    <li class="pagination-item">
+                        <a href="/page/{{ page + 1 }}.html" 
+                           class="pagination-link pagination-next" aria-label="下一页">
+                            <span>下一页</span>
+                            <svg viewBox="0 0 24 24" width="16" height="16">
+                                <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            {% endif %}
+            
+        {% else %}
+            <!-- 没有文章时的提示 -->
+            <div class="no-articles">
+                <div class="no-articles-icon">📝</div>
+                <h2>暂无文章</h2>
+                <p>还没有发布任何博客文章。</p>
+                <p>要发布文章，请在GitHub仓库中创建Issue并添加 <code>{{ config.ARTICLE_LABEL }}</code> 标签。</p>
+                <a href="https://github.com/{{ config.GITHUB_OWNER }}/{{ config.GITHUB_REPO }}/issues/new?template=blog_post.md" 
+                   class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                    发布第一篇文章
+                </a>
+            </div>
+        {% endif %}
+    </div>
+    
+    <!-- 侧边栏（可选） -->
+    <aside class="sidebar">
+        <!-- 标签云 -->
+        <div class="sidebar-section">
+            <h3 class="sidebar-title">标签</h3>
+            <div class="tag-cloud">
+                <!-- 这里需要从渲染器传递标签数据 -->
+            </div>
+        </div>
+        
+        <!-- 关于 -->
+        <div class="sidebar-section">
+            <h3 class="sidebar-title">关于</h3>
+            <p>这是一个基于GitHub Issues的博客系统。文章通过GitHub Issue创建，自动构建并部署到GitHub Pages。</p>
+        </div>
+    </aside>
+</div>
+{% endblock %}

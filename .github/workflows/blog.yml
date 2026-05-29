@@ -1,0 +1,59 @@
+name: Build and Deploy Blog
+
+on:
+  issues:
+    types: [opened, edited, deleted, labeled, unlabeled, reopened]
+  workflow_dispatch:
+    inputs:
+      force_rebuild:
+        description: 'Force rebuild all pages'
+        required: false
+        default: 'false'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: read
+      pages: write
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+    
+    - name: Install uv
+      run: pip install uv
+    
+    - name: Install dependencies
+      run: |
+        cd renderer
+        uv pip install -r requirements.txt
+    
+    - name: Run renderer
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_OWNER: ${{ github.repository_owner }}
+        GITHUB_REPO: ${{ github.event.repository.name }}
+        FORCE_REBUILD: ${{ github.event.inputs.force_rebuild || 'false' }}
+      run: |
+        cd renderer
+        python render.py
+    
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./output
+        publish_branch: gh-pages
+        force_orphan: true
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
+        commit_message: 'Deploy blog from ${{ github.sha }}'

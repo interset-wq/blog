@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} - {{ config.BLOG_TITLE }}{% endblock %}
+
+{% block content %}
+<article class="post-page">
+    <!-- 文章头部 -->
+    <header class="post-header">
+        <div class="post-meta">
+            <time datetime="{{ article.created_at }}">{{ article.formatted_date }}</time>
+            <span class="post-reading-time">{{ article.reading_time }}阅读</span>
+            <span class="post-comments">
+                <a href="{{ article.html_url }}#comments" target="_blank" rel="noopener noreferrer">
+                    {{ article.comments }} 评论
+                </a>
+            </span>
+        </div>
+        
+        <h1 class="post-title">{{ article.title }}</h1>
+        
+        <div class="post-tags">
+            {% for tag in article.labels %}
+            <a href="/tags/{{ tag|lower|replace(' ', '-') }}.html" class="tag">{{ tag }}</a>
+            {% endfor %}
+        </div>
+        
+        <div class="post-author">
+            <img src="{{ article.user.avatar_url }}" alt="{{ article.user.login }}" class="author-avatar">
+            <div class="author-info">
+                <span class="author-name">{{ article.user.login }}</span>
+                <a href="{{ article.user.html_url }}" target="_blank" rel="noopener noreferrer" class="author-profile">
+                    查看GitHub主页
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- 文章内容 -->
+    <div class="post-content">
+        {{ content_html|safe }}
+    </div>
+    
+    <!-- 文章底部 -->
+    <footer class="post-footer">
+        <!-- 文章操作 -->
+        <div class="post-actions">
+            <a href="{{ article.html_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                在GitHub上查看
+            </a>
+            <a href="{{ article.html_url }}/edit" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                编辑文章
+            </a>
+            <a href="{{ article.html_url }}#new_comment_field" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                添加评论
+            </a>
+        </div>
+        
+        <!-- 分享 -->
+        <div class="post-share">
+            <h3>分享文章</h3>
+            <div class="share-buttons">
+                <a href="https://twitter.com/intent/tweet?text={{ article.title }}&url={{ config.BLOG_URL }}posts/{{ article.number }}.html" 
+                   target="_blank" rel="noopener noreferrer" class="share-twitter">
+                    Twitter
+                </a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ config.BLOG_URL }}posts/{{ article.number }}.html&title={{ article.title }}" 
+                   target="_blank" rel="noopener noreferrer" class="share-linkedin">
+                    LinkedIn
+                </a>
+                <button class="share-copy" onclick="copyToClipboard('{{ config.BLOG_URL }}posts/{{ article.number }}.html')">
+                    复制链接
+                </button>
+            </div>
+        </div>
+        
+        <!-- 导航 -->
+        <nav class="post-navigation">
+            <a href="/" class="nav-back">← 返回首页</a>
+        </nav>
+    </footer>
+    
+    <!-- Giscus评论区 -->
+    <section class="comments-section" id="comments">
+        <h2>评论</h2>
+        <div class="giscus-comments">
+            <script src="https://giscus.app/client.js"
+                    data-repo="{{ config.GITHUB_OWNER }}/{{ config.GITHUB_REPO }}"
+                    data-repo-id="{{ config.GISCUS_REPO_ID }}"
+                    data-category="{{ config.GISCUS_CATEGORY }}"
+                    data-category-id="{{ config.GISCUS_CATEGORY_ID }}"
+                    data-mapping="pathname"
+                    data-strict="0"
+                    data-reactions-enabled="1"
+                    data-emit-metadata="0"
+                    data-input-position="bottom"
+                    data-theme="preferred_color_scheme"
+                    data-lang="zh-CN"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+            <noscript>
+                <p>请启用JavaScript以查看评论。</p>
+                <p>评论通过 <a href="https://giscus.app/" target="_blank" rel="noopener noreferrer">Giscus</a> 提供。</p>
+            </noscript>
+        </div>
+    </section>
+</article>
+
+<script>
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        alert('链接已复制到剪贴板！');
+    }).catch(err => {
+        console.error('复制失败: ', err);
+    });
+}
+</script>
+{% endblock %}

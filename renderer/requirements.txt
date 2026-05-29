@@ -1,0 +1,35 @@
+# GitHub Issues博客系统依赖列表
+# 使用uv安装：uv pip install -r requirements.txt
+
+# GitHub API官方库
+PyGitHub==2.1.1
+
+# 模板引擎
+Jinja2==3.1.2
+
+# HTTP请求（PyGitHub的依赖，但显式列出）
+requests==2.31.0
+
+# 环境变量管理
+python-dotenv==1.0.0
+
+# Markdown解析
+Markdown==3.5.1
+
+# GFM扩展支持
+pymdown-extensions==10.3
+
+# 代码高亮
+Pygments==2.17.2
+
+# RSS feed生成
+feedgen==0.9.0
+
+# GitHub Pages部署工具
+ghp-import==2.1.0
+
+# 文件操作
+pathlib==1.0.1
+
+# 类型检查（可选）
+typing-extensions==4.8.0

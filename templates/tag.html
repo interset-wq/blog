@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% block title %}标签: {{ tag_name }} - {{ config.BLOG_TITLE }}{% endblock %}
+
+{% block content %}
+<div class="tag-page">
+    <!-- 页面头部 -->
+    <header class="page-header">
+        <h1 class="page-title">标签: {{ tag_name }}</h1>
+        <p class="page-description">共 {{ articles|length }} 篇文章</p>
+        <a href="/tags/" class="back-link">← 返回标签列表</a>
+    </header>
+    
+    <!-- 文章列表 -->
+    <div class="articles-list">
+        {% if articles %}
+            {% for article in articles %}
+            <article class="article-card">
+                <div class="article-header">
+                    <h2 class="article-title">
+                        <a href="{{ article.url }}">{{ article.title }}</a>
+                    </h2>
+                    <div class="article-meta">
+                        <span class="article-date">
+                            <time datetime="{{ article.created_at }}">{{ article.formatted_date }}</time>
+                        </span>
+                        <span class="article-reading-time">{{ article.reading_time }}</span>
+                        <span class="article-comments">
+                            <a href="{{ article.html_url }}#comments" target="_blank" rel="noopener noreferrer">
+                                {{ article.comments }} 评论
+                            </a>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="article-excerpt">
+                    <p>{{ article.excerpt }}</p>
+                </div>
+                
+                <div class="article-footer">
+                    <div class="article-tags">
+                        {% for tag in article.labels %}
+                        <a href="/tags/{{ tag|lower|replace(' ', '-') }}.html" class="tag {% if tag == tag_name %}tag-current{% endif %}">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+                    
+                    <div class="article-actions">
+                        <a href="{{ article.url }}" class="read-more">阅读全文 →</a>
+                        <a href="{{ article.html_url }}" target="_blank" rel="noopener noreferrer" class="view-on-github">
+                            在GitHub上查看
+                        </a>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+            
+            <!-- 分页导航 -->
+            {% if total_pages > 1 %}
+            <nav class="pagination" aria-label="分页导航">
+                <div class="pagination-info">
+                    <span class="pagination-total">
+                        第 {{ page }} 页，共 {{ total_pages }} 页
+                    </span>
+                </div>
+                
+                <ul class="pagination-list">
+                    <!-- 上一页 -->
+                    {% if page > 1 %}
+                    <li class="pagination-item">
+                        <a href="/tags/{{ tag_name|lower|replace(' ', '-') }}{% if page > 2 %}/page/{{ page - 1 }}{% endif %}.html" 
+                           class="pagination-link pagination-prev" aria-label="上一页">
+                            <svg viewBox="0 0 24 24" width="16" height="16">
+                                <path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                            </svg>
+                            <span>上一页</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    
+                    <!-- 页码 -->
+                    {% set start_page = [1, page - 2]|max %}
+                    {% set end_page = [total_pages, page + 2]|min %}
+                    
+                    {% for p in range(start_page, end_page + 1) %}
+                    <li class="pagination-item">
+                        {% if p == page %}
+                        <span class="pagination-link pagination-current" aria-current="page">{{ p }}</span>
+                        {% else %}
+                        <a href="/tags/{{ tag_name|lower|replace(' ', '-') }}{% if p > 1 %}/page/{{ p }}{% endif %}.html" 
+                           class="pagination-link">{{ p }}</a>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                    
+                    <!-- 下一页 -->
+                    {% if page < total_pages %}
+                    <li class="pagination-item">
+                        <a href="/tags/{{ tag_name|lower|replace(' ', '-') }}/page/{{ page + 1 }}.html" 
+                           class="pagination-link pagination-next" aria-label="下一页">
+                            <span>下一页</span>
+                            <svg viewBox="0 0 24 24" width="16" height="16">
+                                <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            {% endif %}
+            
+        {% else %}
+            <!-- 没有文章时的提示 -->
+            <div class="no-articles">
+                <div class="no-articles-icon">🏷️</div>
+                <h2>暂无文章</h2>
+                <p>该标签下暂无文章。</p>
+                <a href="/" class="btn btn-outline">返回首页</a>
+            </div>
+        {% endif %}
+    </div>
+    
+    <!-- 侧边栏 -->
+    <aside class="sidebar">
+        <!-- 标签信息 -->
+        <div class="sidebar-section">
+            <h3 class="sidebar-title">标签信息</h3>
+            <div class="tag-info">
+                <p><strong>标签名称:</strong> {{ tag_name }}</p>
+                <p><strong>文章数量:</strong> {{ articles|length }}</p>
+            </div>
+        </div>
+        
+        <!-- 相关标签 -->
+        <div class="sidebar-section">
+            <h3 class="sidebar-title">相关标签</h3>
+            <div class="related-tags">
+                <!-- 这里需要从渲染器传递相关标签数据 -->
+                <p>查看所有标签</p>
+            </div>
+        </div>
+    </aside>
+</div>
+{% endblock %}

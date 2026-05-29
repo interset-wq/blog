@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>{{ config.BLOG_TITLE }}</title>
+        <link>{{ config.BLOG_URL }}</link>
+        <description>{{ config.BLOG_DESCRIPTION }}</description>
+        <language>{{ config.BLOG_LANGUAGE }}</language>
+        <lastBuildDate>{{ now().strftime('%a, %d %b %Y %H:%M:%S +0000') }}</lastBuildDate>
+        <atom:link href="{{ config.BLOG_URL }}{{ config.RSS_FILE }}" rel="self" type="application/rss+xml"/>
+        
+        {% for article in articles[:20] %}
+        <item>
+            <title>{{ article.title }}</title>
+            <link>{{ config.BLOG_URL }}posts/{{ article.number }}.html</link>
+            <guid isPermaLink="true">{{ config.BLOG_URL }}posts/{{ article.number }}.html</guid>
+            <pubDate>{{ article.created_at|datetimeformat('%a, %d %b %Y %H:%M:%S +0000') }}</pubDate>
+            <description><![CDATA[{{ article.excerpt }}]]></description>
+            {% for tag in article.labels %}
+            <category>{{ tag }}</category>
+            {% endfor %}
+            <author>{{ article.user.login }}</author>
+        </item>
+        {% endfor %}
+    </channel>
+</rss>

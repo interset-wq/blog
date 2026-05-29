@@ -1,0 +1,72 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <!-- 版权信息 -->
+            <div class="footer-copyright">
+                <p>&copy; {{ now().year }} {{ config.BLOG_TITLE }}. 保留所有权利。</p>
+                <p class="footer-description">基于GitHub Issues构建的博客系统</p>
+            </div>
+            
+            <!-- 链接区域 -->
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/tags/">标签</a></li>
+                        {% if config.RSS_ENABLED %}
+                        <li><a href="/{{ config.RSS_FILE }}">RSS订阅</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>相关链接</h4>
+                    <ul>
+                        <li>
+                            <a href="https://github.com/{{ config.GITHUB_OWNER }}/{{ config.GITHUB_REPO }}" 
+                               target="_blank" rel="noopener noreferrer">
+                                GitHub仓库
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/{{ config.GITHUB_OWNER }}/{{ config.GITHUB_REPO }}/issues" 
+                               target="_blank" rel="noopener noreferrer">
+                                提交Issue
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/{{ config.GITHUB_OWNER }}/{{ config.GITHUB_REPO }}/issues/new?template=blog_post.md" 
+                               target="_blank" rel="noopener noreferrer">
+                                发布新文章
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>技术栈</h4>
+                    <ul>
+                        <li>Python + PyGitHub</li>
+                        <li>Jinja2模板</li>
+                        <li>GitHub Actions</li>
+                        <li>GitHub Pages</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 版本信息 -->
+            <div class="footer-version">
+                <p>版本: 1.0.0</p>
+                <p class="footer-note">自动构建于 {{ now().strftime('%Y-%m-%d %H:%M') }}</p>
+            </div>
+        </div>
+        
+        <!-- 回到顶部按钮 -->
+        <button id="back-to-top" class="back-to-top" aria-label="回到顶部">
+            <svg viewBox="0 0 24 24" width="24" height="24">
+                <path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+            </svg>
+        </button>
+    </div>
+</footer>
