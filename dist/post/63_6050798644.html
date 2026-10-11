@@ -21,12 +21,12 @@
     })();
   </script>
   <meta name="description" content="My notes on everything.">
-<meta property="og:title" content="DAY 1 背景介绍">
+<meta property="og:title" content="PWSH简介">
 <meta property="og:description" content="My notes on everything.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://interset-wq.github.io/blog/post/63_6050798644.html">
 <meta property="og:image" content="https://interset-wq.github.io/blog/assets/avatar.png">
-<title>DAY 1 背景介绍</title>
+<title>PWSH简介</title>
   <link href="https://interset-wq.github.io/blog/assets/starry-night.css" rel="stylesheet">
   
 <style>
@@ -46,7 +46,7 @@
   </style>
 </style></head>
 <body>
-  <header class="in-site-header" id="header">  <h1 class="in-page-title">DAY 1 背景介绍</h1>
+  <header class="in-site-header" id="header">  <h1 class="in-page-title">PWSH简介</h1>
 <nav class="in-site-nav" aria-label="Post navigation">    <a class="in-nav-btn" href="https://interset-wq.github.io/blog" title="首页" aria-label="首页"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z" fill-rule="evenodd"></path></svg></a>
 
   <button class="in-nav-btn" id="in-theme-toggle" type="button" title="切换主题" aria-label="切换主题">
@@ -75,7 +75,7 @@
           <span class="in-meta-series-pos">1 / 10</span>
         </summary>
         <ol>
-          <li><a href="https://interset-wq.github.io/blog/post/63_6050798644.html">DAY 1 背景介绍</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/63_6050798644.html">PWSH简介</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050799004.html">DAY 2 初识PowerShell</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050799327.html">DAY 3 使用帮助系统</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050799741.html">DAY 4 运行命令</a></li>
@@ -91,36 +91,35 @@
     <nav class="in-toc" id="in-toc" data-toc-title="目录" data-toc-top="回到顶部" aria-label="目录"></nav>
     <div class="in-progress" id="in-progress"></div>
     <div class="in-post-body markdown-body"><p>用户图形化界面（GUI）是Windows的最大特点</p>
-<p>名词解释：</p>
 <ul>
 <li>64位操作系统 x64</li>
 <li>32位操作系统 x86</li>
 <li>图形化powershell集成脚本环境，即ISE</li>
 </ul>
-<p>反引号`之后不要随意添加空格等空白字符</p>
-<h2>检查powershell版本</h2>
-<div class="highlight highlight-source-powershell"><pre class="notranslate">PS C:\Users\<span class="pl-c1">86183</span><span class="pl-k">&gt;</span> <span class="pl-c1">$PSVersionTable</span>
+<h2>查看powershell版本</h2>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">PowerShell <span class="pl-c1">7.6</span>.<span class="pl-c1">6</span>
+PS C:\Users\d111k<span class="pl-k">&gt;</span> <span class="pl-c1">$PSVersionTable</span>
 
 Name                           Value
 <span class="pl-k">----</span>                           <span class="pl-k">-----</span>
-PSVersion                      <span class="pl-c1">5.1</span>.<span class="pl-c1">26100.4202</span>
-PSEdition                      Desktop
-PSCompatibleVersions           {<span class="pl-c1">1.0</span><span class="pl-k">,</span> <span class="pl-c1">2.0</span><span class="pl-k">,</span> <span class="pl-c1">3.0</span><span class="pl-k">,</span> <span class="pl-c1">4.0</span>...}
-BuildVersion                   <span class="pl-c1">10.0</span>.<span class="pl-c1">26100.4202</span>
-CLRVersion                     <span class="pl-c1">4.0</span>.<span class="pl-c1">30319.42000</span>
-WSManStackVersion              <span class="pl-c1">3.0</span>
-PSRemotingProtocolVersion      <span class="pl-c1">2.3</span>
-SerializationVersion           <span class="pl-c1">1.1</span>.<span class="pl-c1">0.1</span></pre></div>
+PSVersion                      <span class="pl-c1">7.6</span>.<span class="pl-c1">6</span>
+PSEdition                      Core
+GitCommitId                    <span class="pl-c1">7.6</span>.<span class="pl-c1">6</span>
+OS                             Microsoft Windows <span class="pl-c1">10.0</span>.<span class="pl-c1">26200</span>
+Platform                       Win32NT
+PSCompatibleVersions           {<span class="pl-c1">1.0</span><span class="pl-k">,</span> <span class="pl-c1">2.0</span><span class="pl-k">,</span> <span class="pl-c1">3.0</span><span class="pl-k">,</span> <span class="pl-c1">4.0</span>…}
+PSRemotingProtocolVersion      <span class="pl-c1">2.4</span>
+SerializationVersion           <span class="pl-c1">1.1</span>.<span class="pl-c1">0.1</span>
+WSManStackVersion              <span class="pl-c1">3.0</span></pre></div>
 <h2>PowerShell的两个组件</h2>
 <ul>
-<li>基于文本的标准控制台powershell.exe，即终端命令行</li>
-<li>集成了命令行环境的图形化界面powershell_ise.exe，即ISE</li>
-</ul>
-<hr></div>
+<li>终端命令行 powershell.exe</li>
+<li>带有UI的集成脚本环境Integrated Scripting Environment(ISE) powershell_ise.exe</li>
+</ul></div>
     <details class="in-series-list" open aria-label="Series">
       <summary>PowerShell 学习笔记</summary>
       <ol>
-        <li><a href="https://interset-wq.github.io/blog/post/63_6050798644.html">DAY 1 背景介绍</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/63_6050798644.html">PWSH简介</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050799004.html">DAY 2 初识PowerShell</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050799327.html">DAY 3 使用帮助系统</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050799741.html">DAY 4 运行命令</a></li>
@@ -175,7 +174,7 @@ SerializationVersion           <span class="pl-c1">1.1</span>.<span class="pl-c1
   <span id="run-days"></span>
   <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
 </div>
-<div class="in-footer-built">构建部署于 2026-10-11 22:20:04</div>
+<div class="in-footer-built">构建部署于 2026-10-11 22:25:07</div>
 <script>
   (function () {
     document.getElementById('copyright-year').textContent = new Date().getFullYear();
