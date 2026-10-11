@@ -1,0 +1,183 @@
+# 友链数据（可选，缺失或为空 = 不渲染友链页、导航不显示图标）
+# 每条字段：name（必填）、url（必填）、avatar（可选直链）、description（可选）
+# avatar 用各平台自己的 favicon/logo（官方域名直链，不依赖第三方服务）
+
+[[links]]
+name = "VS Code"
+url = "https://code.visualstudio.com/docs"
+avatar = "https://code.visualstudio.com/favicon.ico"
+description = "微软官方代码编辑器文档"
+
+[[links]]
+name = "Vue"
+url = "https://vuejs.org"
+avatar = "https://vuejs.org/logo.svg"
+description = "渐进式 JavaScript 框架"
+
+[[links]]
+name = "React"
+url = "https://react.dev"
+avatar = "https://react.dev/favicon.ico"
+description = "用于构建用户界面的 JavaScript 库"
+
+[[links]]
+name = "Vite"
+url = "https://vite.dev"
+avatar = "https://vite.dev/logo.svg"
+description = "下一代前端构建工具"
+
+[[links]]
+name = "Next.js"
+url = "https://nextjs.org"
+avatar = "https://nextjs.org/favicon.ico"
+description = "React 全栈框架"
+
+[[links]]
+name = "Nuxt"
+url = "https://nuxt.com"
+avatar = "https://nuxt.com/favicon.ico"
+description = "Vue 全栈框架"
+
+[[links]]
+name = "Svelte"
+url = "https://svelte.dev"
+avatar = "https://svelte.dev/favicon.ico"
+description = "编译时前端框架"
+
+[[links]]
+name = "Angular"
+url = "https://angular.dev"
+avatar = "https://angular.dev/favicon.ico"
+description = "谷歌前端框架"
+
+[[links]]
+name = "TypeScript"
+url = "https://www.typescriptlang.org"
+avatar = "https://www.typescriptlang.org/favicon.ico"
+description = "JavaScript 超集"
+
+[[links]]
+name = "Node.js"
+url = "https://nodejs.org"
+avatar = "https://nodejs.org/favicon.ico"
+description = "JavaScript 运行时"
+
+[[links]]
+name = "Tailwind CSS"
+url = "https://tailwindcss.com"
+avatar = "https://tailwindcss.com/favicon.ico"
+description = "原子化 CSS 框架"
+
+[[links]]
+name = "Rust"
+url = "https://www.rust-lang.org"
+avatar = "https://www.rust-lang.org/favicon.ico"
+description = "系统编程语言"
+
+[[links]]
+name = "Go"
+url = "https://go.dev"
+avatar = "https://go.dev/favicon.ico"
+description = "谷歌开源编程语言"
+
+[[links]]
+name = "Python"
+url = "https://www.python.org"
+avatar = "https://www.python.org/favicon.ico"
+description = "通用编程语言"
+
+[[links]]
+name = "Django"
+url = "https://www.djangoproject.com"
+avatar = "https://www.djangoproject.com/favicon.ico"
+description = "Python Web 框架"
+
+[[links]]
+name = "Flask"
+url = "https://flask.palletsprojects.com"
+avatar = "https://flask.palletsprojects.com/favicon.ico"
+description = "轻量 Python Web 框架"
+
+[[links]]
+name = "FastAPI"
+url = "https://fastapi.tiangolo.com"
+avatar = "https://fastapi.tiangolo.com/favicon.ico"
+description = "现代 Python API 框架"
+
+[[links]]
+name = "Flutter"
+url = "https://flutter.dev"
+avatar = "https://flutter.dev/favicon.ico"
+description = "谷歌跨端 UI 框架"
+
+[[links]]
+name = "Kotlin"
+url = "https://kotlinlang.org"
+avatar = "https://kotlinlang.org/favicon.ico"
+description = "JetBrains 编程语言"
+
+[[links]]
+name = "Swift"
+url = "https://www.swift.org"
+avatar = "https://www.swift.org/favicon.ico"
+description = "苹果编程语言"
+
+[[links]]
+name = "Docker"
+url = "https://www.docker.com"
+avatar = "https://www.docker.com/favicon.ico"
+description = "容器化平台"
+
+[[links]]
+name = "Kubernetes"
+url = "https://kubernetes.io"
+avatar = "https://kubernetes.io/favicon.ico"
+description = "容器编排系统"
+
+[[links]]
+name = "PostgreSQL"
+url = "https://www.postgresql.org"
+avatar = "https://www.postgresql.org/favicon.ico"
+description = "开源关系数据库"
+
+[[links]]
+name = "Redis"
+url = "https://redis.io"
+avatar = "https://redis.io/favicon.ico"
+description = "内存数据库"
+
+[[links]]
+name = "MongoDB"
+url = "https://www.mongodb.com"
+avatar = "https://www.mongodb.com/favicon.ico"
+description = "文档数据库"
+
+[[links]]
+name = "MDN Web Docs"
+url = "https://developer.mozilla.org"
+avatar = "https://developer.mozilla.org/favicon.ico"
+description = "Web 技术权威文档"
+
+[[links]]
+name = "freeCodeCamp"
+url = "https://www.freecodecamp.org"
+avatar = "https://www.freecodecamp.org/favicon.ico"
+description = "免费编程学习平台"
+
+[[links]]
+name = "Expo"
+url = "https://expo.dev"
+avatar = "https://expo.dev/favicon.ico"
+description = "React Native 开发平台"
+
+[[links]]
+name = "Stack Overflow"
+url = "https://stackoverflow.com"
+avatar = "https://stackoverflow.com/favicon.ico"
+description = "程序员问答社区"
+
+[[links]]
+name = "GitHub Docs"
+url = "https://docs.github.com"
+avatar = "https://docs.github.com/favicon.ico"
+description = "GitHub 官方文档"
