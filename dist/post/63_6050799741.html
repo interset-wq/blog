@@ -21,12 +21,12 @@
     })();
   </script>
   <meta name="description" content="My notes on everything.">
-<meta property="og:title" content="DAY 4 运行命令">
+<meta property="og:title" content="命令和Cmdlet">
 <meta property="og:description" content="My notes on everything.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://interset-wq.github.io/blog/post/63_6050799741.html">
 <meta property="og:image" content="https://interset-wq.github.io/blog/assets/avatar.png">
-<title>DAY 4 运行命令</title>
+<title>命令和Cmdlet</title>
   <link href="https://interset-wq.github.io/blog/assets/starry-night.css" rel="stylesheet">
   
 <style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}
@@ -46,7 +46,7 @@
   </style>
 </style></head>
 <body>
-  <header class="in-site-header" id="header">  <h1 class="in-page-title">DAY 4 运行命令</h1>
+  <header class="in-site-header" id="header">  <h1 class="in-page-title">命令和Cmdlet</h1>
 <nav class="in-site-nav" aria-label="Post navigation">    <a class="in-nav-btn" href="https://interset-wq.github.io/blog" title="首页" aria-label="首页"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z" fill-rule="evenodd"></path></svg></a>
 
   <button class="in-nav-btn" id="in-theme-toggle" type="button" title="切换主题" aria-label="切换主题">
@@ -78,7 +78,7 @@
           <li><a href="https://interset-wq.github.io/blog/post/63_6050798644.html">PWSH简介</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050799004.html">PWSH中的Tab补全</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050799327.html">使用帮助文档</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/63_6050799741.html">DAY 4 运行命令</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/63_6050799741.html">命令和Cmdlet</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050800073.html">DAY 5 使用提供程序</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050801304.html">管道：连接命令</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050801673.html">扩展命令</a></li>
@@ -90,70 +90,104 @@
     </div>
     <nav class="in-toc" id="in-toc" data-toc-title="目录" data-toc-top="回到顶部" aria-label="目录"></nav>
     <div class="in-progress" id="in-progress"></div>
-    <div class="in-post-body markdown-body"><h2>剖析一个命令</h2>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-EventLog</span> <span class="pl-k">-</span>LogName Security <span class="pl-k">-</span>ComputerName WIN8<span class="pl-k">,</span>Server1 <span class="pl-k">-</span>Verbose</pre></div>
-<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>这个命令在新版powershell中的写法已经发生了改变，与这种写法有较大差异</p>
+    <div class="in-post-body markdown-body"><p>C:\Users\d111k\Desktop\hello</p>
+<pre class="notranslate"><code class="notranslate">.
+├── package-lock.json
+├── package.json
+└── routes
+    ├── admin.js
+    └── user.js
+</code></pre>
+<h2>剖析一个命令</h2>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">PS C:\Users\d111k\Desktop\hello<span class="pl-k">&gt;</span> <span class="pl-c1">Get-ChildItem</span> <span class="pl-k">-</span>Path C:\Users\d111k\Desktop\hello <span class="pl-k">-</span>Recurse <span class="pl-k">-</span>Verbose
+
+    目录:C:\Users\d111k\Desktop\hello
+
+Mode                 LastWriteTime         Length Name
+<span class="pl-k">----</span>                 <span class="pl-k">-------------</span>         <span class="pl-k">------</span> <span class="pl-k">----</span>
+d<span class="pl-k">----</span>          <span class="pl-c1">2026</span><span class="pl-k">/</span><span class="pl-c1">10</span><span class="pl-k">/</span><span class="pl-c1">11</span>    <span class="pl-c1">22</span>:<span class="pl-c1">58</span>                routes
+<span class="pl-k">-</span>a<span class="pl-k">---</span>          <span class="pl-c1">2026</span><span class="pl-k">/</span><span class="pl-c1">10</span><span class="pl-k">/</span><span class="pl-c1">11</span>    <span class="pl-c1">22</span>:<span class="pl-c1">00</span>          <span class="pl-c1">29966</span> package<span class="pl-k">-</span>lock.json
+<span class="pl-k">-</span>a<span class="pl-k">---</span>          <span class="pl-c1">2026</span><span class="pl-k">/</span><span class="pl-c1">10</span><span class="pl-k">/</span><span class="pl-c1">11</span>    <span class="pl-c1">22</span>:<span class="pl-c1">00</span>            <span class="pl-c1">272</span> package.json
+
+    目录:C:\Users\d111k\Desktop\hello\routes
+
+Mode                 LastWriteTime         Length Name
+<span class="pl-k">----</span>                 <span class="pl-k">-------------</span>         <span class="pl-k">------</span> <span class="pl-k">----</span>
+<span class="pl-k">-</span>a<span class="pl-k">---</span>          <span class="pl-c1">2026</span><span class="pl-k">/</span><span class="pl-c1">10</span><span class="pl-k">/</span><span class="pl-c1">11</span>    <span class="pl-c1">22</span>:<span class="pl-c1">57</span>              <span class="pl-c1">0</span> admin.js
+<span class="pl-k">-</span>a<span class="pl-k">---</span>          <span class="pl-c1">2026</span><span class="pl-k">/</span><span class="pl-c1">10</span><span class="pl-k">/</span><span class="pl-c1">11</span>    <span class="pl-c1">22</span>:<span class="pl-c1">57</span>              <span class="pl-c1">0</span> user.js</pre></div>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p><code class="notranslate">Get-ChildItem</code>，别名<code class="notranslate">ls</code> <code class="notranslate">dir</code>，作用是列出目录下的文件与子文件夹</p>
 </div>
 <p>分析这个命令：</p>
 <ul>
-<li><code class="notranslate">Get-EventLog</code> 是cmdlet，powershell cmdlet总是以 <strong>动词+名词</strong> 形式命令</li>
-<li><code class="notranslate">-LogName Security</code> 是参数1，参数名是 <code class="notranslate">-LogName</code>，赋值为 <code class="notranslate">Security</code>，如果赋值的字符串中有空格需要使用引号包裹</li>
-<li><code class="notranslate">-ComputerName WIN8,Server1</code> 是参数2，参数名是 <code class="notranslate">ComputerName</code>，以分隔列表的方式给它赋了2个值，<code class="notranslate">WIN8</code> 和 <code class="notranslate">Server1</code></li>
-<li><code class="notranslate">-Verbose</code> 是开关参数，无需赋值，只需要指定参数即可</li>
+<li><code class="notranslate">Get-ChildItem</code> 是cmdlet。PowerShell 的 cmdlet 统一遵循 <strong>动词+名词</strong> 的命名格式。</li>
+<li><code class="notranslate">-Path C:\Users\d111k\Desktop\hello</code>：参数1。参数名 <code class="notranslate">-Path</code>，参数值为项目目录路径 <code class="notranslate">C:\Users\d111k\Desktop\hello</code>。
+<blockquote>
+<p>如果路径字符串包含空格，必须使用双引号包裹，例如 <code class="notranslate">"C:\Program Files\demo"</code>。</p>
+</blockquote>
+</li>
+<li><code class="notranslate">-Recurse</code>：开关参数，不需要赋值。加上该参数代表<strong>递归遍历子目录</strong>，会把 <code class="notranslate">routes</code> 文件夹里面的文件一并列出。</li>
+<li><code class="notranslate">-Verbose</code>：开关参数，不需要赋值。开启详细日志，命令执行时会输出详细过程信息。</li>
 </ul>
 <div class="markdown-alert markdown-alert-important"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p>
 <ul>
-<li>cmdlet与参数1之间必须要有空格分隔</li>
-<li>参数名总是以 <code class="notranslate">-</code> 开头</li>
-<li>参数名之间需要使用空格分隔，多个参数值之间也必须有空格</li>
-<li><code class="notranslate">-</code> 与参数名之间没有空格</li>
-<li>powershell不区分大小写</li>
+<li>cmdlet 和参数之间必须用空格隔开</li>
+<li>参数名固定以 <code class="notranslate">-</code> 开头</li>
+<li>多个参数之间用空格分隔；给一个参数传入多个值时，值之间也要有空格</li>
+<li><code class="notranslate">-</code> 和参数名中间<strong>不能有空格</strong></li>
+<li>PowerShell 不区分大小写，<code class="notranslate">GET-CHILDITEM</code>、<code class="notranslate">get-childitem</code> 执行效果完全相同</li>
 </ul>
 </div>
 <h2>相关术语</h2>
 <ul>
-<li>cmdlet，即command-let，是一个原生的powershell命令行工具，这是powershell专用术语，表示powershell中的命令</li>
-<li>函数，和cmdlet类似，但不以 <code class="notranslate">.NET</code> 语言编写，而是以powershell脚本编写而成</li>
-<li>工作流，是指嵌入powershell的工作流执行系统的一类特殊函数</li>
-<li>应用程序，是任意类型的外部可执行程序，包括 <code class="notranslate">PING</code> <code class="notranslate">Ipconfig</code> 等命令行工具</li>
-<li>命令，是一个通用术语，上面介绍的cmdlet，函数，工作流，应用程序都可以称为命令</li>
+<li><strong>cmdlet（command-let）</strong>：PowerShell 原生内置命令，是PowerShell独有的概念，由.NET编写。</li>
+<li><strong>函数</strong>：功能和cmdlet类似，但使用PowerShell脚本语言编写，不是.NET编译程序。</li>
+<li><strong>工作流</strong>：PowerShell中一类特殊函数，用于长时间运行的分布式任务，新版本PowerShell已经很少使用。</li>
+<li><strong>应用程序</strong>：外部独立可执行程序，不属于PowerShell cmdlet。例如查看目录树用到的 <code class="notranslate">tree.exe</code>，还有常见 <code class="notranslate">ping</code>、<code class="notranslate">ipconfig</code></li>
+<li><strong>命令</strong>：通用统称。cmdlet、函数、工作流、外部应用程序，都可以叫做命令。</li>
 </ul>
 <h2>命名规范</h2>
-<p>以 <code class="notranslate">动词-名词单数</code> 的格式命名，使用的动词需要在 <code class="notranslate">Get-Verb</code> 返回的列表中，以保证命名的规范性，名词随意</p>
-<h2>命令的别名（命令的昵称）</h2>
-<p>别名一般是命令的缩写形式，有些命令实在是太长了，因此别名可以解决命令太长容易输入错误的问题。别名仅仅是命令的一个昵称，无法包含任何预定义的参数</p>
-<p>通过 <code class="notranslate">Get-Alias -Definition 命令名</code> 可以查看命令的别名</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-Alias</span> <span class="pl-k">-</span>Definition <span class="pl-c1">Get-Service</span>
+<p>PowerShell cmdlet 强制推荐使用 <strong>动词-名词单数</strong> 的格式命名。</p>
+<p>动词必须从 <code class="notranslate">Get-Verb</code> 命令返回的官方动词列表中选择，保证全生态命名统一；名词可以根据业务自定义。</p>
+<p>示例：<code class="notranslate">Get-ChildItem</code></p>
+<ul>
+<li><code class="notranslate">Get</code>：官方动词，含义：获取、检索</li>
+<li><code class="notranslate">ChildItem</code>：名词，含义：子项（文件/文件夹）</li>
+</ul>
+<h2>命令的别名</h2>
+<p>别名就是cmdlet的简短昵称，用来解决长命令输入繁琐、容易输错的问题。</p>
+<blockquote>
+<p>别名仅仅是命令名称的缩写，<strong>本身不能附带任何预定义参数</strong>。</p>
+</blockquote>
+<p>查看一条cmdlet拥有哪些别名，使用命令：</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">PS C:\Users\d111k\Desktop\hello<span class="pl-k">&gt;</span> <span class="pl-c1">Get-Alias</span> <span class="pl-k">-</span>Definition <span class="pl-c1">Get-ChildItem</span>
 
-CommandType     Name
-<span class="pl-k">-----------</span>     <span class="pl-k">----</span>
-Alias           gsv <span class="pl-k">-</span><span class="pl-k">&gt;</span> <span class="pl-c1">Get-Service</span></pre></div>
+CommandType     Name                                               Version    Source
+<span class="pl-k">-----------</span>     <span class="pl-k">----</span>                                               <span class="pl-k">-------</span>    <span class="pl-k">------</span>
+Alias           dir <span class="pl-k">-</span><span class="pl-k">&gt;</span> <span class="pl-c1">Get-ChildItem</span>
+Alias           gci <span class="pl-k">-</span><span class="pl-k">&gt;</span> <span class="pl-c1">Get-ChildItem</span>
+Alias           ls <span class="pl-k">-</span><span class="pl-k">&gt;</span> <span class="pl-c1">Get-ChildItem</span></pre></div>
 <h2>参数的别名</h2>
 <ul>
-<li>
-<p>参数名称可以只输入前几个字母，这时可以使用tab补全</p>
-</li>
-<li>
-<p>参数名别名，例如：查看 <code class="notranslate">Get-EventLog</code> 命令 <code class="notranslate">Computer</code>参数的别名 <code class="notranslate">Cn</code></p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> (<span class="pl-c1">Get-Command</span> <span class="pl-c1">Get-EventLog</span> <span class="pl-k">|</span> Select <span class="pl-k">-</span>ExpandProperty parameters).computername.aliases
-Cn</pre></div>
-</li>
-<li>
-<p>位置参数 通过 <code class="notranslate">Help</code> 返回的帮助文档，我们可以看到某个参数的位置，<code class="notranslate">位置?                        0</code> 这种情况表示是第一个位置参数，位置参数传参时可以省略参数名，位置参数只适合简单的命令，如果命令过于复杂，请不要使用位置参数</p>
-</li>
+<li><strong>参数简写 + Tab补全</strong> 参数名可以只输入前面若干字符，只要能够唯一识别，配合Tab键自动补全。</li>
+<li><strong>参数自带内置别名</strong> 部分参数拥有官方内置别名</li>
+<li><strong>位置参数</strong> 查看命令帮助文档可以看到参数的位置标记，<code class="notranslate">位置? 0</code> 代表第1个位置参数。位置参数传参时，可以<strong>省略参数名</strong>，直接填写参数值。</li>
+<li></li>
 </ul>
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 位置参数写法，省略 -Path</span>
+<span class="pl-c1">Get-ChildItem</span> C:\Users\d111k\Desktop\hello <span class="pl-k">-</span>Recurse</pre></div>
+<blockquote>
+<p>建议：位置参数适合简短简单命令；脚本、复杂命令建议显式写出参数名，可读性更强，方便别人阅读维护。</p>
+</blockquote>
 <h2>快捷传参</h2>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Show-Command</span> <span class="pl-c1">Get-EventLog</span></pre></div>
-<p>运行这个命令之后会弹出一个对话框，可以在这个对话框中填写参数运行命令。使用这种方法输入的命令格式一定是正确的</p>
-<p><a target="_blank" rel="noopener noreferrer" href="./img/1.jpg"><img src="./img/1.jpg" alt="" style="max-width: 100%;"></a></p>
-<hr></div>
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-c1">Show-Command</span> <span class="pl-c1">Get-ChildItem</span></pre></div>
+<p>执行命令后，会弹出图形化对话框。你可以在界面上可视化填写各个参数，点击运行会自动生成命令，图形界面生成的PowerShell命令语法一定是正确的，适合新手快速构建复杂命令。</p></div>
     <details class="in-series-list" open aria-label="Series">
       <summary>PowerShell 学习笔记</summary>
       <ol>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050798644.html">PWSH简介</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050799004.html">PWSH中的Tab补全</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050799327.html">使用帮助文档</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/63_6050799741.html">DAY 4 运行命令</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/63_6050799741.html">命令和Cmdlet</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050800073.html">DAY 5 使用提供程序</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050801304.html">管道：连接命令</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050801673.html">扩展命令</a></li>
@@ -206,7 +240,7 @@ Cn</pre></div>
   <span id="run-days"></span>
   <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
 </div>
-<div class="in-footer-built">构建部署于 2026-10-11 22:51:05</div>
+<div class="in-footer-built">构建部署于 2026-10-11 23:12:32</div>
 <script>
   (function () {
     document.getElementById('copyright-year').textContent = new Date().getFullYear();
