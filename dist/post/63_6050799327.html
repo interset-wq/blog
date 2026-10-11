@@ -21,15 +21,15 @@
     })();
   </script>
   <meta name="description" content="My notes on everything.">
-<meta property="og:title" content="DAY 3 使用帮助系统">
+<meta property="og:title" content="使用帮助文档">
 <meta property="og:description" content="My notes on everything.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://interset-wq.github.io/blog/post/63_6050799327.html">
 <meta property="og:image" content="https://interset-wq.github.io/blog/assets/avatar.png">
-<title>DAY 3 使用帮助系统</title>
+<title>使用帮助文档</title>
   <link href="https://interset-wq.github.io/blog/assets/starry-night.css" rel="stylesheet">
   
-<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}
+<style>
   <style>
     .in-progress {
       position: fixed;
@@ -46,7 +46,7 @@
   </style>
 </style></head>
 <body>
-  <header class="in-site-header" id="header">  <h1 class="in-page-title">DAY 3 使用帮助系统</h1>
+  <header class="in-site-header" id="header">  <h1 class="in-page-title">使用帮助文档</h1>
 <nav class="in-site-nav" aria-label="Post navigation">    <a class="in-nav-btn" href="https://interset-wq.github.io/blog" title="首页" aria-label="首页"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z" fill-rule="evenodd"></path></svg></a>
 
   <button class="in-nav-btn" id="in-theme-toggle" type="button" title="切换主题" aria-label="切换主题">
@@ -77,7 +77,7 @@
         <ol>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050798644.html">PWSH简介</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050799004.html">PWSH中的Tab补全</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/63_6050799327.html">DAY 3 使用帮助系统</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/63_6050799327.html">使用帮助文档</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050799741.html">DAY 4 运行命令</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050800073.html">DAY 5 使用提供程序</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050801304.html">管道：连接命令</a></li>
@@ -94,142 +94,60 @@
 <p>RTFM(Read The Friendly Manual)帮助文档</p>
 <p>Cmdlet，即powershell独有的概念，绝大多数powershell命令都可以看作是cmdlet</p>
 <h2>通过help查看某条命令的帮助文档</h2>
-<div class="highlight highlight-source-powershell"><pre class="notranslate">PS C:\Users\<span class="pl-c1">86183</span><span class="pl-k">&gt;</span> help <span class="pl-c1">Get-Service</span>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">PS C:\Users\d111k<span class="pl-k">&gt;</span> help <span class="pl-c1">Get-Service</span>
 
 名称
     <span class="pl-c1">Get-Service</span>
 
 语法
-    <span class="pl-c1">Get-Service</span> [[<span class="pl-k">-</span><span class="pl-k">Name</span>] <span class="pl-k">&lt;</span><span class="pl-k">string</span>[]<span class="pl-k">&gt;</span>]  [<span class="pl-k">&lt;</span><span class="pl-k">CommonParameters</span><span class="pl-k">&gt;</span>]
+    <span class="pl-c1">Get-Service</span> [[<span class="pl-k">-</span><span class="pl-k">Name</span>] <span class="pl-k">&lt;</span><span class="pl-k">string</span>[]<span class="pl-k">&gt;</span>] [<span class="pl-k">&lt;</span><span class="pl-k">CommonParameters</span><span class="pl-k">&gt;</span>]
 
-    <span class="pl-c1">Get-Service</span>  [<span class="pl-k">&lt;</span><span class="pl-k">CommonParameters</span><span class="pl-k">&gt;</span>]
+    <span class="pl-c1">Get-Service</span> [<span class="pl-k">&lt;</span><span class="pl-k">CommonParameters</span><span class="pl-k">&gt;</span>]
 
-    <span class="pl-c1">Get-Service</span>  [<span class="pl-k">&lt;</span><span class="pl-k">CommonParameters</span><span class="pl-k">&gt;</span>]
-
-
-别名
-    gsv
-
-
-备注
-    <span class="pl-c1">Get-Help</span> 在此计算机上找不到该 cmdlet 的帮助文件。它仅显示部分帮助。
-        <span class="pl-k">--</span> 若要下载并安装包含此 cmdlet 的模块的帮助文件，请使用 <span class="pl-c1">Update-Help</span>。
-        <span class="pl-k">--</span> 若要联机查看此 cmdlet 的帮助主题，请键入: <span class="pl-s"><span class="pl-pds">"</span>Get-Help Get-Service -Online<span class="pl-pds">"</span></span> 或
-           转到 https:<span class="pl-k">//</span><span class="pl-c1">go.microsoft.com</span><span class="pl-k">/</span>fwlink<span class="pl-k">/</span>?LinkID<span class="pl-k">=</span><span class="pl-c1">113332</span>。</pre></div>
+    <span class="pl-c1">Get-Service</span> [<span class="pl-k">&lt;</span><span class="pl-k">CommonParameters</span><span class="pl-k">&gt;</span>]
+...</pre></div>
 <h2>更新帮助文档</h2>
 <div class="highlight highlight-source-powershell"><pre class="notranslate">PS C:\Users\<span class="pl-c1">86183</span><span class="pl-k">&gt;</span> <span class="pl-c1">Update-Help</span></pre></div>
-<div class="markdown-alert markdown-alert-important"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p><p>在管理员身份下使用。此命令会自动下载最新的powershell官方文档</p>
-</div>
-<p>指定下载帮助文档的url</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate">PS C:\Users\<span class="pl-c1">86183</span><span class="pl-k">&gt;</span> <span class="pl-c1">Update-Help</span> <span class="pl-k">-</span>SourcePath http:<span class="pl-k">//</span><span class="pl-c1">github.com</span><span class="pl-k">/</span>powershell</pre></div>
-<p>从指定的url下载帮助文档</p>
+<p>此命令会联网下载最新的powershell官方文档</p>
 <h2>将帮助文档保存到本地</h2>
 <div class="highlight highlight-source-powershell"><pre class="notranslate">PS C:\Users\<span class="pl-c1">86183</span><span class="pl-k">&gt;</span> <span class="pl-c1">Save-Help</span> C:\Desktop\new  </pre></div>
-<p>将帮助文档下载到桌面上的new目录中</p>
+<p>将帮助文档下载到桌面上的new目录中，必须确保目标目录存在。</p>
 <h2>获取帮助</h2>
 <p>使用cmdlet命令 <code class="notranslate">Get-Help</code> 可以获取帮助。使用 <code class="notranslate">Help</code> 或 <code class="notranslate">Man</code> 也可以获取帮助，它们二者都是对cmdlet命令封装后的函数。只不过 <code class="notranslate">Get-Help</code> 是一次性显示，<code class="notranslate">Help</code> 和 <code class="notranslate">Man</code> 是分页显示，使用空格键翻页，<code class="notranslate">Man</code> 是 <code class="notranslate">Help</code> 的别名。在控制台中CTRL+C组合键是返回，并不是复制</p>
-<h3>Help分页显示帮助文档</h3>
-<div class="highlight highlight-source-powershell"><pre class="notranslate">PS C:\Users\<span class="pl-c1">86183</span><span class="pl-k">&gt;</span> Help <span class="pl-c1">Get-Content</span>
-
-名称
-    <span class="pl-c1">Get-Content</span>
-
-语法
-    <span class="pl-c1">Get-Content</span> [<span class="pl-k">-</span><span class="pl-k">Path</span>] <span class="pl-k">&lt;</span>string[]<span class="pl-k">&gt;</span>  [<span class="pl-k">&lt;</span><span class="pl-k">CommonParameters</span><span class="pl-k">&gt;</span>]
-
-    <span class="pl-c1">Get-Content</span>  [<span class="pl-k">&lt;</span><span class="pl-k">CommonParameters</span><span class="pl-k">&gt;</span>]
-
-
-别名
-    gc
-    cat
-    type
-
-
-备注
-    <span class="pl-c1">Get-Help</span> 在此计算机上找不到该 cmdlet 的帮助文件。它仅显示部分帮助。
-        <span class="pl-k">--</span> 若要下载并安装包含此 cmdlet 的模块的帮助文件，请使用 <span class="pl-c1">Update-Help</span>。
-        <span class="pl-k">--</span> 若要联机查看此 cmdlet 的帮助主题，请键入: <span class="pl-s"><span class="pl-pds">"</span>Get-Help Get-Content -Online<span class="pl-pds">"</span></span> 或
-           转到 https:<span class="pl-k">//</span><span class="pl-c1">go.microsoft.com</span><span class="pl-k">/</span>fwlink<span class="pl-k">/</span>?LinkID<span class="pl-k">=</span><span class="pl-c1">113310</span>。
-<span class="pl-k">--</span> More  <span class="pl-k">--</span></pre></div>
-<h3>Get-Help一次性显示帮助文档</h3>
-<div class="highlight highlight-source-powershell"><pre class="notranslate">PS C:\Users\<span class="pl-c1">86183</span><span class="pl-k">&gt;</span> <span class="pl-c1">Get-Help</span> <span class="pl-c1">Get-Content</span>
-
-名称
-    <span class="pl-c1">Get-Content</span>
-
-语法
-    <span class="pl-c1">Get-Content</span> [<span class="pl-k">-</span><span class="pl-k">Path</span>] <span class="pl-k">&lt;</span>string[]<span class="pl-k">&gt;</span>  [<span class="pl-k">&lt;</span><span class="pl-k">CommonParameters</span><span class="pl-k">&gt;</span>]
-
-    <span class="pl-c1">Get-Content</span>  [<span class="pl-k">&lt;</span><span class="pl-k">CommonParameters</span><span class="pl-k">&gt;</span>]
-
-
-别名
-    gc
-    cat
-    type
-
-
-备注
-    <span class="pl-c1">Get-Help</span> 在此计算机上找不到该 cmdlet 的帮助文件。它仅显示部分帮助。
-        <span class="pl-k">--</span> 若要下载并安装包含此 cmdlet 的模块的帮助文件，请使用 <span class="pl-c1">Update-Help</span>。
-        <span class="pl-k">--</span> 若要联机查看此 cmdlet 的帮助主题，请键入: <span class="pl-s"><span class="pl-pds">"</span>Get-Help Get-Content -Online<span class="pl-pds">"</span></span> 或
-           转到 https:<span class="pl-k">//</span><span class="pl-c1">go.microsoft.com</span><span class="pl-k">/</span>fwlink<span class="pl-k">/</span>?LinkID<span class="pl-k">=</span><span class="pl-c1">113310</span>。</pre></div>
-<h3>Get-Help使用分页显示模式</h3>
-<div class="highlight highlight-source-powershell"><pre class="notranslate">PS C:\Users\<span class="pl-c1">86183</span><span class="pl-k">&gt;</span> <span class="pl-c1">Get-Help</span> <span class="pl-c1">Get-Content</span> <span class="pl-k">|</span> More
-
-名称
-    <span class="pl-c1">Get-Content</span>
-
-语法
-    <span class="pl-c1">Get-Content</span> [<span class="pl-k">-</span><span class="pl-k">Path</span>] <span class="pl-k">&lt;</span>string[]<span class="pl-k">&gt;</span>  [<span class="pl-k">&lt;</span><span class="pl-k">CommonParameters</span><span class="pl-k">&gt;</span>]
-
-    <span class="pl-c1">Get-Content</span>  [<span class="pl-k">&lt;</span><span class="pl-k">CommonParameters</span><span class="pl-k">&gt;</span>]
-
-
-别名
-    gc
-    cat
-    type
-
-
-备注
-    <span class="pl-c1">Get-Help</span> 在此计算机上找不到该 cmdlet 的帮助文件。它仅显示部分帮助。
-        <span class="pl-k">--</span> 若要下载并安装包含此 cmdlet 的模块的帮助文件，请使用 <span class="pl-c1">Update-Help</span>。
-        <span class="pl-k">--</span> 若要联机查看此 cmdlet 的帮助主题，请键入: <span class="pl-s"><span class="pl-pds">"</span>Get-Help Get-Content -Online<span class="pl-pds">"</span></span> 或
-           转到 https:<span class="pl-k">//</span><span class="pl-c1">go.microsoft.com</span><span class="pl-k">/</span>fwlink<span class="pl-k">/</span>?LinkID<span class="pl-k">=</span><span class="pl-c1">113310</span>。
-<span class="pl-k">--</span> More  <span class="pl-k">--</span></pre></div>
+<ul>
+<li>Help分页显示帮助文档 <code class="notranslate">Help Get-Content</code></li>
+<li>Get-Help一次性显示帮助文档 <code class="notranslate">Get-Help Get-Content</code></li>
+<li>Get-Help也可以使用分页显示模式，例如 <code class="notranslate">Get-Help Get-Content | More</code></li>
+</ul>
 <h2>查找命令</h2>
 <p><code class="notranslate">Get-Help</code> 的 <code class="notranslate">-Name</code> 参数可以用来查找命令，这个参数是一个位置参数，使用时用需要查找的命令替换 Name，支持使用通配符</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate">PS C:\Users\<span class="pl-c1">86183</span><span class="pl-k">&gt;</span> Help <span class="pl-k">*</span>event<span class="pl-k">*</span>
-
+<div class="highlight highlight-source-powershell"><pre class="notranslate">PS C:\Users\d111k<span class="pl-k">&gt;</span> <span class="pl-c1">Get-Help</span> <span class="pl-k">-</span>Name content
+                                                                                                                           ]
+Name                              Category  Module                    Synopsis                                             ]
+<span class="pl-k">----</span>                              <span class="pl-k">--------</span>  <span class="pl-k">------</span>                    <span class="pl-k">--------</span>                                             ]
+<span class="pl-c1">Add-Content</span>                       Cmdlet    Microsoft.PowerShell.Man… …                                                    ]
+<span class="pl-c1">Clear-Content</span>                     Cmdlet    Microsoft.PowerShell.Man… …                                                    ]
+<span class="pl-c1">Get-Content</span>                       Cmdlet    Microsoft.PowerShell.Man… …                                                    ]
+<span class="pl-c1">Set-Content</span>                       Cmdlet    Microsoft.PowerShell.Man… …                                                    ]
+<span class="pl-c1">Get-WindowsImageContent</span>           Cmdlet    Dism                      <span class="pl-c1">Get-WindowsImageContent</span>…                             ]
+<span class="pl-c1">Get-OsConfigurationDocumentConte</span>… Cmdlet    OsConfiguration           <span class="pl-c1">Get-OsConfigurationDocumentContent</span>…                  ]
+                                                                                                                           ]
+PS C:\Users\d111k<span class="pl-k">&gt;</span> Help <span class="pl-k">*</span>content<span class="pl-k">*</span>
+                                                                                                                           ]
 Name                              Category  Module                    Synopsis
 <span class="pl-k">----</span>                              <span class="pl-k">--------</span>  <span class="pl-k">------</span>                    <span class="pl-k">--------</span>
-<span class="pl-c1">Clear-EventLog</span>                    Cmdlet    Microsoft.PowerShell.M..<span class="pl-k">.</span> ...
-<span class="pl-c1">Get-EventLog</span>                      Cmdlet    Microsoft.PowerShell.M..<span class="pl-k">.</span> ...
-<span class="pl-c1">Limit-EventLog</span>                    Cmdlet    Microsoft.PowerShell.M..<span class="pl-k">.</span> ...
-<span class="pl-c1">New-EventLog</span>                      Cmdlet    Microsoft.PowerShell.M..<span class="pl-k">.</span> ...
-<span class="pl-c1">Register-WmiEvent</span>                 Cmdlet    Microsoft.PowerShell.M..<span class="pl-k">.</span> ...
-<span class="pl-c1">Remove-EventLog</span>                   Cmdlet    Microsoft.PowerShell.M..<span class="pl-k">.</span> ...
-<span class="pl-c1">Show-EventLog</span>                     Cmdlet    Microsoft.PowerShell.M..<span class="pl-k">.</span> ...
-<span class="pl-c1">Write-EventLog</span>                    Cmdlet    Microsoft.PowerShell.M..<span class="pl-k">.</span> ...
-<span class="pl-c1">Get-Event</span>                         Cmdlet    Microsoft.PowerShell.U..<span class="pl-k">.</span> ...
-<span class="pl-c1">Get-EventSubscriber</span>               Cmdlet    Microsoft.PowerShell.U..<span class="pl-k">.</span> ...
-<span class="pl-c1">New-Event</span>                         Cmdlet    Microsoft.PowerShell.U..<span class="pl-k">.</span> ...
-<span class="pl-c1">Register-EngineEvent</span>              Cmdlet    Microsoft.PowerShell.U..<span class="pl-k">.</span> ...
-<span class="pl-c1">Register-ObjectEvent</span>              Cmdlet    Microsoft.PowerShell.U..<span class="pl-k">.</span> ...
-<span class="pl-c1">Remove-Event</span>                      Cmdlet    Microsoft.PowerShell.U..<span class="pl-k">.</span> ...
-<span class="pl-c1">Unregister-Event</span>                  Cmdlet    Microsoft.PowerShell.U..<span class="pl-k">.</span> ...
-<span class="pl-c1">Wait-Event</span>                        Cmdlet    Microsoft.PowerShell.U..<span class="pl-k">.</span> ...
-<span class="pl-c1">Register-CimIndicationEvent</span>       Cmdlet    CimCmdlets                <span class="pl-c1">Register-CimIndicationEvent</span>...
-<span class="pl-c1">Get-WinEvent</span>                      Cmdlet    Microsoft.PowerShell.D..<span class="pl-k">.</span> <span class="pl-c1">Get-WinEvent</span>...
-<span class="pl-k">--</span> More  <span class="pl-k">--</span></pre></div>
-<p>查找和事件日志有关的命令。<code class="notranslate">Help</code> 本质上是搜索帮助主题，并不是搜索cmdlet命令，因为每个cmdlet都有一个帮助文件，这就使 <code class="notranslate">Help</code> 可以实现查找命令。</p>
+<span class="pl-c1">Add-Content</span>                       Cmdlet    Microsoft.PowerShell.Man… …
+<span class="pl-c1">Clear-Content</span>                     Cmdlet    Microsoft.PowerShell.Man… …
+<span class="pl-c1">Get-Content</span>                       Cmdlet    Microsoft.PowerShell.Man… …
+<span class="pl-c1">Set-Content</span>                       Cmdlet    Microsoft.PowerShell.Man… …
+<span class="pl-c1">Get-WindowsImageContent</span>           Cmdlet    Dism                      <span class="pl-c1">Get-WindowsImageContent</span>…
+<span class="pl-c1">Get-OsConfigurationDocumentConte</span>… Cmdlet    OsConfiguration           <span class="pl-c1">Get-OsConfigurationDocumentContent</span>…</pre></div>
+<p><code class="notranslate">Help</code> 本质上是搜索帮助主题，并不是搜索cmdlet命令，因为每个cmdlet都有一个帮助文件，这就使 <code class="notranslate">Help</code> 可以实现查找命令。</p>
 <p>可以直接使用 <code class="notranslate">Get-Command</code> 来查找cmdlet命令，它的别名是 <code class="notranslate">Gcm</code>，用法与 <code class="notranslate">Help</code> 类似。</p>
 <ul>
-<li><code class="notranslate">Get-Command -noum *event*</code> 返回一个关于event命令的列表</li>
-<li><code class="notranslate">Get-Command -verb Get</code> 返回一个具有Get的命令列表</li>
-<li><code class="notranslate">Get-Command *log* -type Cmdlet</code> 返回一个所有Cmdlet命令名称包含log的列表</li>
+<li><code class="notranslate">Get-Command -Noun *event*</code> 返回一个关于event命令的列表</li>
+<li><code class="notranslate">Get-Command -Verb Get</code> 返回一个具有Get的命令列表</li>
+<li><code class="notranslate">Get-Command *log* -Type Cmdlet</code> 返回一个所有Cmdlet命令名称包含log的列表</li>
 </ul>
 <h2>帮助详解</h2>
 <div class="highlight highlight-source-powershell"><pre class="notranslate">PS C:\Users\<span class="pl-c1">86183</span><span class="pl-k">&gt;</span> <span class="pl-c1">Get-Help</span> <span class="pl-c1">Get-EventLog</span>
@@ -248,78 +166,19 @@ Name                              Category  Module                    Synopsis
 </ul>
 <h3>查看更详细的帮助文档</h3>
 <p><code class="notranslate">Help</code> 的 <code class="notranslate">-full</code> 选项可以更详细的显示帮助文档</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate">PS C:\Users\<span class="pl-c1">86183</span><span class="pl-k">&gt;</span> Help <span class="pl-c1">Get-Event</span> <span class="pl-k">-</span>full
-
-名称
-    <span class="pl-c1">Get-Event</span>
-
-语法
-    <span class="pl-c1">Get-Event</span> [[<span class="pl-k">-</span><span class="pl-k">SourceIdentifier</span>] <span class="pl-k">&lt;</span><span class="pl-k">string</span><span class="pl-k">&gt;</span>]  [<span class="pl-k">&lt;</span><span class="pl-k">CommonParameters</span><span class="pl-k">&gt;</span>]
-
-    <span class="pl-c1">Get-Event</span> [<span class="pl-k">-</span><span class="pl-k">EventIdentifier</span>] <span class="pl-k">&lt;</span>int<span class="pl-k">&gt;</span>  [<span class="pl-k">&lt;</span><span class="pl-k">CommonParameters</span><span class="pl-k">&gt;</span>]
-
-
-参数
-    <span class="pl-k">-</span>EventIdentifier <span class="pl-k">&lt;</span>int<span class="pl-k">&gt;</span>
-
-        是否必需<span class="pl-k">?</span>                    True
-        位置<span class="pl-k">?</span>                        <span class="pl-c1">0</span>
-        是否接受管道输入<span class="pl-k">?</span>            True (ByPropertyName)
-        参数集名称          ById
-        别名                     Id
-        动态<span class="pl-k">?</span>                    false
-
-    <span class="pl-k">-</span>SourceIdentifier <span class="pl-k">&lt;</span>string<span class="pl-k">&gt;</span>
-
-        是否必需<span class="pl-k">?</span>                    False
-        位置<span class="pl-k">?</span>                        <span class="pl-c1">0</span>
-        是否接受管道输入<span class="pl-k">?</span>            True (ByPropertyName)
-        参数集名称          BySource
-        别名                     无
-        动态<span class="pl-k">?</span>                    false
-
-    <span class="pl-k">&lt;</span>CommonParameters<span class="pl-k">&gt;</span>
-        此 Cmdlet 支持常见参数: Verbose、Debug、
-        ErrorAction、ErrorVariable、WarningAction、WarningVariable、
-        OutBuffer、PipelineVariable 和 OutVariable。有关详细信息，请参阅
-        about_CommonParameters (https:<span class="pl-k">/</span><span class="pl-c1">go.microsoft.com</span><span class="pl-k">/</span>fwlink<span class="pl-k">/</span>?LinkID<span class="pl-k">=</span><span class="pl-c1">113216</span>)。
-
-
-输入
-    System.String
-    System.Int32
-
-
-输出
-    System.Management.Automation.PSEventArgs
-
-
-别名
-    无</pre></div>
-<p>常用输入类型：</p>
-<ul>
-<li><code class="notranslate">string</code> 字符串，如果字符串中有空格等空白字符时，需要使用引号包裹，单引号和双引号都可以，推荐使用单引号
-<ul>
-<li><code class="notranslate">string[]</code> 字符串列表，字符串集合，表示可以传入多个字符串，使用逗号分隔。如果需要传入的值有很多，可以使用文本文档<code class="notranslate">.txt</code>，每行写一个值，然后把这个文档传入对应的参数中。也可以每输入一个参数回车一次，确认传参完毕之后，再次回车</li>
-</ul>
-</li>
-<li><code class="notranslate">Int</code> <code class="notranslate">Int32</code> <code class="notranslate">Int64</code> 整型</li>
-<li><code class="notranslate">DateTime</code> 日期，日期的表示格式受电脑所在的时区的影响</li>
-</ul>
-<p>圆括号 <code class="notranslate">()</code> 的作用与数学运算类似，可以提高命令执行的优先级，被圆括号包裹的命令先执行</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">Help <span class="pl-c1">Get-Event</span> <span class="pl-k">-</span>full</pre></div>
+<p>在PWSH命名中，圆括号 <code class="notranslate">()</code> 的作用与数学运算类似，可以提高命令执行的优先级，被圆括号包裹的命令先执行</p>
 <h3>查看帮助文档用法举例</h3>
-<p>和 <code class="notranslate">-full</code> 参数用法类似，在命令某位添加 <code class="notranslate">-example</code>即可</p>
-<h2>访问 about 主题</h2>
-<p>背景主题又叫关于主题，它们都以 <code class="notranslate">about_</code> 开头</p>
-<h2>在线帮助文档</h2>
-<p>类似于 <code class="notranslate">-full</code> 和 <code class="notranslate">-example</code> 选项，<code class="notranslate">-online</code>选项会自动打开浏览器查看帮助文档</p>
-<hr></div>
+<p>如果本地的pwsh文档没有示例，只会显示普通的帮助</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">Help <span class="pl-c1">Get-Event</span> <span class="pl-k">-</span>examples</pre></div>
+<h3>在线帮助文档</h3>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">Help <span class="pl-c1">Get-Event</span> <span class="pl-k">-</span>online</pre></div></div>
     <details class="in-series-list" open aria-label="Series">
       <summary>PowerShell 学习笔记</summary>
       <ol>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050798644.html">PWSH简介</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050799004.html">PWSH中的Tab补全</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/63_6050799327.html">DAY 3 使用帮助系统</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/63_6050799327.html">使用帮助文档</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050799741.html">DAY 4 运行命令</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050800073.html">DAY 5 使用提供程序</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050801304.html">管道：连接命令</a></li>
@@ -373,7 +232,7 @@ Name                              Category  Module                    Synopsis
   <span id="run-days"></span>
   <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
 </div>
-<div class="in-footer-built">构建部署于 2026-10-11 22:29:55</div>
+<div class="in-footer-built">构建部署于 2026-10-11 22:51:05</div>
 <script>
   (function () {
     document.getElementById('copyright-year').textContent = new Date().getFullYear();
