@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>InterNote</title><link>https://interset-wq.github.io/blog</link><description>My notes on everything.</description><copyright>InterNote</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url></url><title>avatar</title><link>https://interset-wq.github.io/blog</link></image><lastBuildDate>Sat, 10 Oct 2026 06:02:43 +0000</lastBuildDate><managingEditor>InterNote</managingEditor><ttl>60</ttl><webMaster>InterNote</webMaster><item><title>Scrapy 学习笔记</title><link>https://interset-wq.github.io/blog/post/114.html</link><description># scrapy
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>InterNote</title><link>https://interset-wq.github.io/blog</link><description>My notes on everything.</description><copyright>InterNote</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url></url><title>avatar</title><link>https://interset-wq.github.io/blog</link></image><lastBuildDate>Sun, 11 Oct 2026 03:30:53 +0000</lastBuildDate><managingEditor>InterNote</managingEditor><ttl>60</ttl><webMaster>InterNote</webMaster><item><title>Scrapy 学习笔记</title><link>https://interset-wq.github.io/blog/post/114.html</link><description># scrapy
 
 [文档](docs.scrapy.org)
 
@@ -1581,10 +1581,7 @@ subplots()函数可在一个图形（figure）中绘制一或多个绘图（plot
 &#13;
 ## 二 数组ndarray&#13;
 &#13;
-在NumPy中基本数组类被称为`ndarray`, 它代表一个“N维数组”, 类似于python基本数据类型的列表。</description><guid isPermaLink="true">https://interset-wq.github.io/blog/post/42.html</guid><pubDate>Thu, 31 Jul 2025 02:18:38 +0000</pubDate></item><item><title>pandas</title><link>https://interset-wq.github.io/blog/post/43.html</link><description>&lt;!-- ✏️ `本文创建于2025-5-16` --&gt;&#13;
-&#13;
-[:simple-pandas: pandas官方文档](https://pandas.pydata.org/docs/)
-。</description><guid isPermaLink="true">https://interset-wq.github.io/blog/post/43.html</guid><pubDate>Thu, 31 Jul 2025 02:18:38 +0000</pubDate></item><item><title>scipy</title><link>https://interset-wq.github.io/blog/post/44.html</link><description>&lt;!-- ✏️ `本文创建于2025-5-16` --&gt;&#13;
+在NumPy中基本数组类被称为`ndarray`, 它代表一个“N维数组”, 类似于python基本数据类型的列表。</description><guid isPermaLink="true">https://interset-wq.github.io/blog/post/42.html</guid><pubDate>Thu, 31 Jul 2025 02:18:38 +0000</pubDate></item><item><title>scipy</title><link>https://interset-wq.github.io/blog/post/44.html</link><description>&lt;!-- ✏️ `本文创建于2025-5-16` --&gt;&#13;
 &#13;
 [:simple-scipy: scipy官方文档](https://scipy.org/)&#13;
 
