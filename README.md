@@ -6,4 +6,4 @@
 - 字数：96294
 - 构建：2026-10-11 19:50:40
 
-Powered by [Internote](https://github.com/interset-wq/InterNote)
+Powered by [InterNote](https://github.com/interset-wq/InterNote)

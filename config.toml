@@ -1,5 +1,5 @@
 # InterNote 站点配置（键说明见 https://github.com/interset-wq/InterNote 的 config.sample.toml）
-# 修改本文件后需手动运行 Actions -> build Internote -> Run workflow 全局重建一次
+# 修改本文件后需手动运行 Actions -> build InterNote -> Run workflow 全局重建一次
 
 [site]
 title = "InterNote"
