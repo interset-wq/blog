@@ -20,16 +20,20 @@
       document.documentElement.setAttribute('data-color-mode', theme);
     })();
   </script>
-  <meta name="description" content="My notes on everything.">
-<meta property="og:title" content="DAY 9 深入理解管道">
-<meta property="og:description" content="My notes on everything.">
+  <meta name="description" content="# Tailwind CSS
+
+Tailwind 是**实用优先（Utility-First）** 的 CSS 框架。">
+<meta property="og:title" content="Tailwind">
+<meta property="og:description" content="# Tailwind CSS
+
+Tailwind 是**实用优先（Utility-First）** 的 CSS 框架。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://interset-wq.github.io/blog/post/63_6050802470.html">
+<meta property="og:url" content="https://interset-wq.github.io/blog/post/111.html">
 <meta property="og:image" content="https://interset-wq.github.io/blog/assets/avatar.png">
-<title>DAY 9 深入理解管道</title>
+<title>Tailwind</title>
   <link href="https://interset-wq.github.io/blog/assets/starry-night.css" rel="stylesheet">
   
-<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}
   <style>
     .in-progress {
       position: fixed;
@@ -46,7 +50,7 @@
   </style>
 </style></head>
 <body>
-  <header class="in-site-header" id="header">  <h1 class="in-page-title">DAY 9 深入理解管道</h1>
+  <header class="in-site-header" id="header">  <h1 class="in-page-title">Tailwind</h1>
 <nav class="in-site-nav" aria-label="Post navigation">    <a class="in-nav-btn" href="https://interset-wq.github.io/blog" title="首页" aria-label="首页"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z" fill-rule="evenodd"></path></svg></a>
 
   <button class="in-nav-btn" id="in-theme-toggle" type="button" title="切换主题" aria-label="切换主题">
@@ -58,67 +62,268 @@
       <div class="in-post-meta">
         <span class="in-meta-date">
           <svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z" fill-rule="evenodd"></path></svg>
-          <span style="color:#1f883d">2026-10-08</span>
+          <span style="color:#1f883d">2026-10-05</span>
+          <span class="in-meta-updated">(更新 2026-10-12)</span>
         </span>
         <span class="in-meta-labels">
           <svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.752 1.752 0 0 1 1 7.775Zm1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z" fill-rule="evenodd"></path></svg>
-          <a href="https://interset-wq.github.io/blog/tag.html#PowerShell">
-            <span class="in-meta-dot" style="background-color:#012456"></span>PowerShell
+          <a href="https://interset-wq.github.io/blog/tag.html#Frontend">
+            <span class="in-meta-dot" style="background-color:#e34c26"></span>Frontend
           </a>
         </span>
-        <a class="in-post-edit" href="https://github.com/interset-wq/blog/issues/63" target="_blank" rel="noopener" title="在 GitHub 上编辑" aria-label="在 GitHub 上编辑"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354l-1.086-1.086Z" fill-rule="evenodd"></path></svg></a>
+        <a class="in-post-edit" href="https://github.com/interset-wq/blog/issues/111" target="_blank" rel="noopener" title="在 GitHub 上编辑" aria-label="在 GitHub 上编辑"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354l-1.086-1.086Z" fill-rule="evenodd"></path></svg></a>
       </div>
-      <details class="in-meta-series" aria-label="Series">
-        <summary>
-          <svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z" fill-rule="evenodd"></path></svg>
-          <a href="https://interset-wq.github.io/blog/post/63.html">PowerShell 学习笔记</a>
-          <span class="in-meta-series-pos">9 / 10</span>
-        </summary>
-        <ol>
-          <li><a href="https://interset-wq.github.io/blog/post/63_6050798644.html">PWSH简介</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/63_6050799004.html">PWSH中的Tab补全</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/63_6050799327.html">使用帮助文档</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/63_6050799741.html">命令和Cmdlet</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/63_6050800073.html">DAY 5 使用提供程序</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/63_6050801304.html">管道：连接命令</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/63_6050801673.html">扩展命令</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/63_6050802143.html">对象：数据的另一个名称</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/63_6050802470.html">DAY 9 深入理解管道</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/63_6050802825.html">DAY 10 格式化及如何正确使用</a></li>
-        </ol>
-      </details>
     </div>
     <nav class="in-toc" id="in-toc" data-toc-title="目录" data-toc-top="回到顶部" aria-label="目录"></nav>
     <div class="in-progress" id="in-progress"></div>
-    <div class="in-post-body markdown-body"><p>这些命令（比如<code class="notranslate">Get-Process | Sort VM-desc | ConvertTo-HTML | Out-File process.html</code>）的功能非常强大。如果采用其他脚本语言实现相同功能，可能需要编写多行代码，但是利用PowerShell，仅需要单行命令即可。</p>
-<h2>管道：更少的输入，更强大的功能</h2>
-<p>单行的PowerShell命令功能如此强大，主要在于PowerShell管道的工作机制。</p>
-<h2>PowerShell如何传输数据给管道</h2>
-<p>当将两条命令串联在一起时，PowerShell必须搞清楚怎样将第一条命令的输出作为第二条命令的输入。在下面的示例中，我们将第一条命令称为命令A，这条命令会产生某些结果。第二条命令称为命令B，它会接收命令A产生的结果集，然后完成自己的工作。</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> CommandA <span class="pl-k">|</span> CommandB</pre></div>
-<p>你可能希望将这部分计算机名称作为某些命令的传入数据，以便该命令会在这些计算机上被运行，比如下面的例子。</p>
-<p>PS C:&gt; Get-Content .\computers.txt | Get-Service<br>
-当运行Get-Content命令时，它会将文本文件中的计算机名称放入管道中。之后PowerShell再决定如何将该数据传递给Get-Service命令。但PowerShell一次只能使用单个参数接收传入数据。也就是说，PowerShell必须决定由Get-Service的哪个参数接收Get-Content的输出结果。这个决定的过程就称为管道参数绑定（Pipeline parameter binding）。PowerShell使用两种方法将Get-Content的输出结果传入给Get-Service的某个参数。该Shell尝试使用的第一种方法称为ByValue；如果这种方法行不通，它将会尝试ByPropertyName。</p>
-<hr></div>
-    <details class="in-series-list" open aria-label="Series">
-      <summary>PowerShell 学习笔记</summary>
-      <ol>
-        <li><a href="https://interset-wq.github.io/blog/post/63_6050798644.html">PWSH简介</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/63_6050799004.html">PWSH中的Tab补全</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/63_6050799327.html">使用帮助文档</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/63_6050799741.html">命令和Cmdlet</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/63_6050800073.html">DAY 5 使用提供程序</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/63_6050801304.html">管道：连接命令</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/63_6050801673.html">扩展命令</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/63_6050802143.html">对象：数据的另一个名称</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/63_6050802470.html">DAY 9 深入理解管道</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/63_6050802825.html">DAY 10 格式化及如何正确使用</a></li>
-      </ol>
-    </details>
-    <nav class="in-series-pager" aria-label="Series pages">
-      <a class="in-series-prev" href="https://interset-wq.github.io/blog/post/63_6050802143.html">对象：数据的另一个名称</a>
-      <a class="in-series-next" href="https://interset-wq.github.io/blog/post/63_6050802825.html">DAY 10 格式化及如何正确使用</a>
-    </nav>
+    <div class="in-post-body markdown-body"><h1>Tailwind CSS</h1>
+<p>Tailwind 是<strong>实用优先（Utility-First）</strong> 的 CSS 框架。你无需编写自定义 CSS 规则，而是通过在 HTML 中组合小的实用类来构建设计，快速搭建界面且风格统一。</p>
+<h2>一、核心概念</h2>
+<ul>
+<li><strong>实用类（Utilities）</strong>：每个类只做一件事，如 <code class="notranslate">p-4</code>（内边距 1rem）、<code class="notranslate">text-center</code>（居中）、<code class="notranslate">bg-blue-500</code>（背景色）。</li>
+<li><strong>组合构建</strong>：一个元素可堆叠多个实用类，避免为每个组件写 CSS 类名和样式规则。</li>
+<li><strong>按需生成</strong>：Tailwind 只编译你在源码中实际用到的类，产物体积小（配合 <code class="notranslate">content</code> 扫描配置）。</li>
+<li><strong>设计系统</strong>：内置基于 <code class="notranslate">rem</code> 的间距比例、调色板、断点等，保证设计一致性。</li>
+</ul>
+<blockquote>
+<p>与传统「写 CSS 类名 → 单独定义样式」相比，Tailwind 在 HTML 内就地组合，改样式不必在 CSS 文件间来回跳转。</p>
+</blockquote>
+<h2>二、安装与配置</h2>
+<h3>1. CDN 快速体验（学习/原型）</h3>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate"><span class="pl-kos">&lt;</span><span class="pl-ent">script</span> <span class="pl-c1">src</span>="<span class="pl-s">https://cdn.tailwindcss.com</span>"<span class="pl-kos">&gt;</span><span class="pl-kos">&lt;/</span><span class="pl-ent">script</span><span class="pl-kos">&gt;</span></pre></div>
+<h3>2. 项目集成（生产推荐）</h3>
+<p>以 Vite + PostCSS 为例：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ npm install tailwindcss @tailwindcss/postcss postcss</pre></div>
+<p><code class="notranslate">postcss.config.js</code>：</p>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">export</span> <span class="pl-k">default</span> <span class="pl-kos">{</span>
+  <span class="pl-c1">plugins</span>: <span class="pl-kos">{</span>
+    <span class="pl-s">"@tailwindcss/postcss"</span>: <span class="pl-kos">{</span><span class="pl-kos">}</span><span class="pl-kos">,</span>
+  <span class="pl-kos">}</span><span class="pl-kos">,</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span></pre></div>
+<p>CSS 入口（如 <code class="notranslate">index.css</code>）引入：</p>
+<div class="highlight highlight-source-css"><pre class="notranslate"><span class="pl-k">@import</span> <span class="pl-s">"tailwindcss"</span>;</pre></div>
+<h3>3. 配置文件</h3>
+<p>Tailwind 扫描源码中出现的类名，按需生成样式：</p>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-c">// tailwind.config.js</span>
+<span class="pl-k">export</span> <span class="pl-k">default</span> <span class="pl-kos">{</span>
+  <span class="pl-c1">content</span>: <span class="pl-kos">[</span><span class="pl-s">"./index.html"</span><span class="pl-kos">,</span> <span class="pl-s">"./src/**/*.{js,ts,jsx,tsx}"</span><span class="pl-kos">]</span><span class="pl-kos">,</span>
+  <span class="pl-c1">theme</span>: <span class="pl-kos">{</span>
+    <span class="pl-c1">extend</span>: <span class="pl-kos">{</span>
+      <span class="pl-c1">colors</span>: <span class="pl-kos">{</span> <span class="pl-c1">brand</span>: <span class="pl-s">"#3498eb"</span> <span class="pl-kos">}</span><span class="pl-kos">,</span>
+      <span class="pl-c1">spacing</span>: <span class="pl-kos">{</span> <span class="pl-c1">18</span>: <span class="pl-s">"4.5rem"</span> <span class="pl-kos">}</span><span class="pl-kos">,</span>
+    <span class="pl-kos">}</span><span class="pl-kos">,</span>
+  <span class="pl-kos">}</span><span class="pl-kos">,</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span></pre></div>
+<div class="markdown-alert markdown-alert-important"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p><p><code class="notranslate">content</code> 数组必须包含所有用到类名的文件；漏配会导致类不生效（类被「裁剪」掉）。</p>
+</div>
+<h2>三、响应式设计</h2>
+<p>Tailwind 使用断点前缀在不同屏幕尺寸应用样式。默认断点：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>前缀</th>
+<th>最小宽度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">sm:</code></td>
+<td>640px</td>
+</tr>
+<tr>
+<td><code class="notranslate">md:</code></td>
+<td>768px</td>
+</tr>
+<tr>
+<td><code class="notranslate">lg:</code></td>
+<td>1024px</td>
+</tr>
+<tr>
+<td><code class="notranslate">xl:</code></td>
+<td>1280px</td>
+</tr>
+<tr>
+<td><code class="notranslate">2xl:</code></td>
+<td>1536px</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>断点遵循<strong>移动优先</strong>：无前缀的类作用于所有尺寸，加前缀的类在该断点及以上生效。</p>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate"><span class="pl-kos">&lt;</span><span class="pl-ent">div</span> <span class="pl-c1">class</span>="<span class="pl-s">w-full md:w-1/2 lg:flex-row</span>"<span class="pl-kos">&gt;</span>
+  Responsive layout
+<span class="pl-kos">&lt;/</span><span class="pl-ent">div</span><span class="pl-kos">&gt;</span></pre></div>
+<ul>
+<li><code class="notranslate">w-full</code>：默认占满整行</li>
+<li><code class="notranslate">md:w-1/2</code>：≥768px 时占一半宽</li>
+<li><code class="notranslate">lg:flex-row</code>：≥1024px 时改为横向排列</li>
+</ul>
+<h2>四、Flexbox 工具类</h2>
+<p>类如 <code class="notranslate">flex</code>、<code class="notranslate">flex-col</code>、<code class="notranslate">justify-around</code>、<code class="notranslate">items-center</code> 让创建灵活布局变得简单。</p>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate"><span class="pl-kos">&lt;</span><span class="pl-ent">div</span> <span class="pl-c1">class</span>="<span class="pl-s">flex flex-col md:flex-row justify-around items-center</span>"<span class="pl-kos">&gt;</span>
+  <span class="pl-kos">&lt;</span><span class="pl-ent">p</span><span class="pl-kos">&gt;</span>Column on small screens<span class="pl-kos">&lt;/</span><span class="pl-ent">p</span><span class="pl-kos">&gt;</span>
+  <span class="pl-kos">&lt;</span><span class="pl-ent">p</span><span class="pl-kos">&gt;</span>Row on medium and larger screens<span class="pl-kos">&lt;/</span><span class="pl-ent">p</span><span class="pl-kos">&gt;</span>
+<span class="pl-kos">&lt;/</span><span class="pl-ent">div</span><span class="pl-kos">&gt;</span></pre></div>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>类别</th>
+<th>常用类</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>容器</td>
+<td><code class="notranslate">flex</code> / <code class="notranslate">inline-flex</code></td>
+<td>开启弹性布局</td>
+</tr>
+<tr>
+<td>方向</td>
+<td><code class="notranslate">flex-row</code> / <code class="notranslate">flex-col</code></td>
+<td>主轴方向</td>
+</tr>
+<tr>
+<td>对齐</td>
+<td><code class="notranslate">items-center</code> / <code class="notranslate">items-start</code></td>
+<td>交叉轴对齐</td>
+</tr>
+<tr>
+<td>排列</td>
+<td><code class="notranslate">justify-center</code> / <code class="notranslate">justify-between</code> / <code class="notranslate">justify-around</code></td>
+<td>主轴排列</td>
+</tr>
+<tr>
+<td>伸缩</td>
+<td><code class="notranslate">flex-1</code> / <code class="notranslate">flex-grow</code> / <code class="notranslate">shrink-0</code></td>
+<td>占位伸缩</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h2>五、网格工具类</h2>
+<p>Tailwind 内置 CSS Grid 工具类，如 <code class="notranslate">grid</code>、<code class="notranslate">grid-cols-1</code>、<code class="notranslate">md:grid-cols-3</code>。</p>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate"><span class="pl-kos">&lt;</span><span class="pl-ent">div</span> <span class="pl-c1">class</span>="<span class="pl-s">grid grid-cols-1 md:grid-cols-3 gap-8</span>"<span class="pl-kos">&gt;</span>
+  <span class="pl-kos">&lt;</span><span class="pl-ent">div</span> <span class="pl-c1">class</span>="<span class="pl-s">bg-gray-100 p-4</span>"<span class="pl-kos">&gt;</span>Column 1<span class="pl-kos">&lt;/</span><span class="pl-ent">div</span><span class="pl-kos">&gt;</span>
+  <span class="pl-kos">&lt;</span><span class="pl-ent">div</span> <span class="pl-c1">class</span>="<span class="pl-s">bg-gray-100 p-4</span>"<span class="pl-kos">&gt;</span>Column 2<span class="pl-kos">&lt;/</span><span class="pl-ent">div</span><span class="pl-kos">&gt;</span>
+  <span class="pl-kos">&lt;</span><span class="pl-ent">div</span> <span class="pl-c1">class</span>="<span class="pl-s">bg-gray-100 p-4</span>"<span class="pl-kos">&gt;</span>Column 3<span class="pl-kos">&lt;/</span><span class="pl-ent">div</span><span class="pl-kos">&gt;</span>
+<span class="pl-kos">&lt;/</span><span class="pl-ent">div</span><span class="pl-kos">&gt;</span></pre></div>
+<p>常用：<code class="notranslate">grid-cols-{n}</code>（列数）、<code class="notranslate">gap-{n}</code>（间距）、<code class="notranslate">col-span-{n}</code>（跨列）、<code class="notranslate">row-span-{n}</code>（跨行）、<code class="notranslate">place-items-center</code>（整体居中）。</p>
+<h2>六、间距工具类</h2>
+<p>工具类如 <code class="notranslate">mt-8</code>、<code class="notranslate">mx-auto</code>、<code class="notranslate">p-4</code>、<code class="notranslate">gap-4</code> 帮助创建一致间距，无需编写 CSS。</p>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate"><span class="pl-kos">&lt;</span><span class="pl-ent">div</span> <span class="pl-c1">class</span>="<span class="pl-s">mt-8 p-4 bg-indigo-600 text-white</span>"<span class="pl-kos">&gt;</span>
+  Spaced content
+<span class="pl-kos">&lt;/</span><span class="pl-ent">div</span><span class="pl-kos">&gt;</span></pre></div>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>方向前缀</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">m-</code> / <code class="notranslate">p-</code></td>
+<td>四边外边距 / 内边距</td>
+</tr>
+<tr>
+<td><code class="notranslate">mt-</code> <code class="notranslate">mb-</code> <code class="notranslate">ml-</code> <code class="notranslate">mr-</code></td>
+<td>上 / 下 / 左 / 右</td>
+</tr>
+<tr>
+<td><code class="notranslate">mx-</code> / <code class="notranslate">my-</code></td>
+<td>水平 / 垂直</td>
+</tr>
+<tr>
+<td><code class="notranslate">gap-</code></td>
+<td>网格 / 弹性子项间距</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>数字按 <code class="notranslate">rem</code> 比例递增：<code class="notranslate">p-4</code> = 1rem、<code class="notranslate">p-8</code> = 2rem；<code class="notranslate">mx-auto</code> 让块级元素水平居中。</p>
+<h2>七、排版工具类</h2>
+<p>工具类如 <code class="notranslate">uppercase</code>、<code class="notranslate">font-bold</code>、<code class="notranslate">font-semibold</code>、<code class="notranslate">text-4xl</code> 控制文本外观。可设置在断点处调整的字体大小：</p>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate"><span class="pl-kos">&lt;</span><span class="pl-ent">h1</span> <span class="pl-c1">class</span>="<span class="pl-s">text-3xl md:text-5xl font-semibold text-center</span>"<span class="pl-kos">&gt;</span>
+  Responsive Heading
+<span class="pl-kos">&lt;/</span><span class="pl-ent">h1</span><span class="pl-kos">&gt;</span></pre></div>
+<ul>
+<li>字号：<code class="notranslate">text-xs</code> ~ <code class="notranslate">text-9xl</code>，或任意值 <code class="notranslate">text-[20px]</code></li>
+<li>字重：<code class="notranslate">font-thin</code> / <code class="notranslate">font-normal</code> / <code class="notranslate">font-semibold</code> / <code class="notranslate">font-bold</code></li>
+<li>大小写：<code class="notranslate">uppercase</code> / <code class="notranslate">lowercase</code> / <code class="notranslate">capitalize</code></li>
+<li>对齐：<code class="notranslate">text-left</code> / <code class="notranslate">text-center</code> / <code class="notranslate">text-right</code></li>
+<li>行高/字距：<code class="notranslate">leading-{n}</code>、<code class="notranslate">tracking-{n}</code></li>
+</ul>
+<h2>八、颜色与交互状态</h2>
+<p>Tailwind 提供丰富调色板，如 <code class="notranslate">text-red-700</code>、<code class="notranslate">bg-indigo-600</code>、<code class="notranslate">bg-gray-100</code>。颜色编号 50~950（50 最浅、950 最深）。</p>
+<p>状态前缀让交互效果简单实现：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>前缀</th>
+<th>触发时机</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">hover:</code></td>
+<td>鼠标悬停</td>
+</tr>
+<tr>
+<td><code class="notranslate">focus:</code></td>
+<td>获得焦点</td>
+</tr>
+<tr>
+<td><code class="notranslate">active:</code></td>
+<td>被按下</td>
+</tr>
+<tr>
+<td><code class="notranslate">disabled:</code></td>
+<td>禁用状态</td>
+</tr>
+<tr>
+<td><code class="notranslate">group-hover:</code></td>
+<td>父级（group）悬停时</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate"><span class="pl-kos">&lt;</span><span class="pl-ent">a</span> <span class="pl-c1">href</span>="<span class="pl-s">#</span>" <span class="pl-c1">class</span>="<span class="pl-s">bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-md</span>"<span class="pl-kos">&gt;</span>
+  Hover Me
+<span class="pl-kos">&lt;/</span><span class="pl-ent">a</span><span class="pl-kos">&gt;</span></pre></div>
+<h2>九、边框、环和效果</h2>
+<ul>
+<li><strong>边框</strong>：<code class="notranslate">border-2 border-red-300</code> 添加指定厚度和颜色的边框。</li>
+<li><strong>环</strong>：<code class="notranslate">ring-1 ring-gray-300</code> 创建类似轮廓的效果（box-shadow），常用于聚焦或卡片高亮。</li>
+<li><strong>圆角与缩放</strong>：<code class="notranslate">rounded-md</code>、<code class="notranslate">rounded-xl</code>、<code class="notranslate">scale-105</code> 增加细节润色。</li>
+</ul>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate"><span class="pl-kos">&lt;</span><span class="pl-ent">div</span> <span class="pl-c1">class</span>="<span class="pl-s">p-6 rounded-xl ring-2 ring-fuchsia-500 scale-105</span>"<span class="pl-kos">&gt;</span>
+  Highlighted card
+<span class="pl-kos">&lt;/</span><span class="pl-ent">div</span><span class="pl-kos">&gt;</span></pre></div>
+<p>其他效果：<code class="notranslate">shadow-md</code> / <code class="notranslate">shadow-lg</code>（阴影）、<code class="notranslate">transition</code> / <code class="notranslate">duration-300</code>（过渡）、<code class="notranslate">opacity-{n}</code>（透明度）。</p>
+<h2>十、渐变</h2>
+<p>Tailwind 支持渐变工具类，如 <code class="notranslate">bg-gradient-to-r from-fuchsia-500 to-indigo-600</code>：</p>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate"><span class="pl-kos">&lt;</span><span class="pl-ent">div</span> <span class="pl-c1">class</span>="<span class="pl-s">p-4 text-white bg-gradient-to-r from-fuchsia-500 to-indigo-600</span>"<span class="pl-kos">&gt;</span>
+  Gradient background
+<span class="pl-kos">&lt;/</span><span class="pl-ent">div</span><span class="pl-kos">&gt;</span></pre></div>
+<ul>
+<li>方向：<code class="notranslate">bg-gradient-to-r</code>（右）/ <code class="notranslate">-l</code> / <code class="notranslate">-t</code> / <code class="notranslate">-b</code> / <code class="notranslate">-tr</code> / <code class="notranslate">-bl</code>…</li>
+<li>起止色：<code class="notranslate">from-{color}</code>、<code class="notranslate">via-{color}</code>（中间过渡）、<code class="notranslate">to-{color}</code></li>
+</ul>
+<h2>十一、暗黑模式</h2>
+<p>配合 <code class="notranslate">dark</code> 前缀按暗黑模式切换样式（需在 <code class="notranslate">tailwind.config.js</code> 配置 <code class="notranslate">darkMode: "class"</code> 或 <code class="notranslate">"media"</code>）：</p>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate"><span class="pl-kos">&lt;</span><span class="pl-ent">div</span> <span class="pl-c1">class</span>="<span class="pl-s">bg-white dark:bg-slate-900 text-black dark:text-white</span>"<span class="pl-kos">&gt;</span>
+  Content
+<span class="pl-kos">&lt;/</span><span class="pl-ent">div</span><span class="pl-kos">&gt;</span></pre></div>
+<h2>十二、进阶：复用样式</h2>
+<p>避免重复长类名组合，可用 <code class="notranslate">@apply</code> 在 CSS 中封装：</p>
+<div class="highlight highlight-source-css"><pre class="notranslate">.<span class="pl-c1">btn-primary</span> {
+  <span class="pl-k">@apply</span> bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md;
+}</pre></div>
+<h2>核心总结</h2>
+<ol>
+<li>Tailwind 是<strong>实用优先</strong>框架，用类组合构建设计，按需生成、风格统一。</li>
+<li>响应式用 <code class="notranslate">sm/md/lg/xl</code> 前缀，移动优先。</li>
+<li>布局核心：Flexbox（<code class="notranslate">flex</code>、<code class="notranslate">justify-*</code>、<code class="notranslate">items-*</code>）与 Grid（<code class="notranslate">grid-cols-*</code>、<code class="notranslate">gap-*</code>）。</li>
+<li>视觉：间距（<code class="notranslate">m/p</code>）、排版（<code class="notranslate">text-*</code>、<code class="notranslate">font-*</code>）、颜色与状态（<code class="notranslate">hover:</code> 等）、边框/环/圆角/阴影、渐变、暗黑模式。</li>
+<li>生产用 <code class="notranslate">content</code> 扫描 + <code class="notranslate">@apply</code> 复用，避免重复类名。</li>
+</ol></div>
   </article>
 <section class="in-comments-section">
   <template id="in-giscus-template">
@@ -159,7 +364,7 @@
   <span id="run-days"></span>
   <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
 </div>
-<div class="in-footer-built">构建部署于 2026-10-12 08:35:07</div>
+<div class="in-footer-built">构建部署于 2026-10-12 16:49:46</div>
 <script>
   (function () {
     document.getElementById('copyright-year').textContent = new Date().getFullYear();
