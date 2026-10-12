@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://interset-wq.github.io/blog/assets/avatar.png">
 <title>DAY 10 格式化及如何正确使用</title>
   
-<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}
   <style>
     .in-progress {
       position: fixed;
@@ -78,7 +78,7 @@
           <li><a href="https://interset-wq.github.io/blog/post/63_6050799004.html">PWSH中的Tab补全</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050799327.html">使用帮助文档</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050799741.html">命令和Cmdlet</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/63_6050800073.html">DAY 5 使用提供程序</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/63_6050800073.html">pwsh 提供程序（PSProvider）</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050801304.html">管道：连接命令</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050801673.html">扩展命令</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050802143.html">对象：数据的另一个名称</a></li>
@@ -108,7 +108,7 @@ PS C:\Windows\System32\WindowsPowerShell\v1.0&gt; notepad dotnettypes.format.ps1
         <li><a href="https://interset-wq.github.io/blog/post/63_6050799004.html">PWSH中的Tab补全</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050799327.html">使用帮助文档</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050799741.html">命令和Cmdlet</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/63_6050800073.html">DAY 5 使用提供程序</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/63_6050800073.html">pwsh 提供程序（PSProvider）</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050801304.html">管道：连接命令</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050801673.html">扩展命令</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050802143.html">对象：数据的另一个名称</a></li>
@@ -158,7 +158,7 @@ PS C:\Windows\System32\WindowsPowerShell\v1.0&gt; notepad dotnettypes.format.ps1
   <span id="run-days"></span>
   <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
 </div>
-<div class="in-footer-built">构建部署于 2026-10-12 09:37:13</div>
+<div class="in-footer-built">构建部署于 2026-10-12 12:59:58</div>
 <script>
   (function () {
     document.getElementById('copyright-year').textContent = new Date().getFullYear();

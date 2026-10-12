@@ -21,15 +21,15 @@
     })();
   </script>
   <meta name="description" content="My notes on everything.">
-<meta property="og:title" content="DAY 5 使用提供程序">
+<meta property="og:title" content="pwsh 提供程序（PSProvider）">
 <meta property="og:description" content="My notes on everything.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://interset-wq.github.io/blog/post/63_6050800073.html">
 <meta property="og:image" content="https://interset-wq.github.io/blog/assets/avatar.png">
-<title>DAY 5 使用提供程序</title>
+<title>pwsh 提供程序（PSProvider）</title>
   <link href="https://interset-wq.github.io/blog/assets/starry-night.css" rel="stylesheet">
   
-<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}
   <style>
     .in-progress {
       position: fixed;
@@ -46,7 +46,7 @@
   </style>
 </style></head>
 <body>
-  <header class="in-site-header" id="header">  <h1 class="in-page-title">DAY 5 使用提供程序</h1>
+  <header class="in-site-header" id="header">  <h1 class="in-page-title">pwsh 提供程序（PSProvider）</h1>
 <nav class="in-site-nav" aria-label="Post navigation">    <a class="in-nav-btn" href="https://interset-wq.github.io/blog" title="首页" aria-label="首页"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z" fill-rule="evenodd"></path></svg></a>
 
   <button class="in-nav-btn" id="in-theme-toggle" type="button" title="切换主题" aria-label="切换主题">
@@ -79,7 +79,7 @@
           <li><a href="https://interset-wq.github.io/blog/post/63_6050799004.html">PWSH中的Tab补全</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050799327.html">使用帮助文档</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050799741.html">命令和Cmdlet</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/63_6050800073.html">DAY 5 使用提供程序</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/63_6050800073.html">pwsh 提供程序（PSProvider）</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050801304.html">管道：连接命令</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050801673.html">扩展命令</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050802143.html">对象：数据的另一个名称</a></li>
@@ -89,232 +89,249 @@
     </div>
     <nav class="in-toc" id="in-toc" data-toc-title="目录" data-toc-top="回到顶部" aria-label="目录"></nav>
     <div class="in-progress" id="in-progress"></div>
-    <div class="in-post-body markdown-body"><h2>提供程序PSProvider</h2>
-<p>一个PowerShell的提供程序，即PSProvider，本质上是一个适配器。它可以接受某些数据存储。</p>
-<p>查看当前shell中已存在的提供程序：</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-PSProvider</span>
+    <div class="in-post-body markdown-body"><p>pwsh 的核心设计思想之一：<strong>用同一套命令，去访问不同类型的数据存储</strong>。实现这个能力的组件就叫 <strong>PSProvider（提供程序）</strong>。</p>
+<h2>一、什么是 PSProvider（提供程序）</h2>
+<p>PSProvider 本质上是一个<strong>数据适配器</strong>。它把各种底层异构数据（文件系统、注册表、环境变量、证书等）统一包装成 pwsh 中一致的「层次化项（Item）」模型。</p>
+<blockquote>
+<p>简单理解：提供程序负责把各式各样的数据，伪装成类似「文件和文件夹」的结构，让你不必学习多套独立命令，用同一组 Item 系列 cmdlet 就能操作它们。</p>
+</blockquote>
+<p>不同提供程序对应不同数据源：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>提供程序</th>
+<th>数据源</th>
+<th>适用平台</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FileSystem</td>
+<td>本地文件、文件夹</td>
+<td>跨平台</td>
+</tr>
+<tr>
+<td>Registry</td>
+<td>Windows 注册表（HKCU、HKLM）</td>
+<td>仅 Windows 环境</td>
+</tr>
+<tr>
+<td>Env</td>
+<td>系统环境变量</td>
+<td>跨平台</td>
+</tr>
+<tr>
+<td>Alias</td>
+<td>pwsh 命令别名</td>
+<td>跨平台</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>pwsh 变量</td>
+<td>跨平台</td>
+</tr>
+<tr>
+<td>Certificate</td>
+<td>Windows 证书存储</td>
+<td>仅 Windows 环境</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>提供程序的能力标记（Capabilities）</h3>
+<p>执行 <code class="notranslate">Get-PSProvider</code> 可以查看当前 shell 已加载的所有提供程序，输出里的 <code class="notranslate">Capabilities</code> 表示它支持的特性：</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">PowerShell <span class="pl-c1">7.6</span>.<span class="pl-c1">6</span>
+PS C:\Users\d111k<span class="pl-k">&gt;</span> <span class="pl-c1">Get-PSProvider</span>
 
-Name                 Capabilities   Drives
-<span class="pl-k">----</span>                 <span class="pl-k">------------</span>   <span class="pl-k">------</span>
-Registry             ShouldProce..<span class="pl-k">.</span> {HKLM<span class="pl-k">,</span> HKCU}
-Alias                ShouldProcess  {Alias}
-Environment          ShouldProcess  {Env}
-FileSystem           Filter<span class="pl-k">,</span> Sho..<span class="pl-k">.</span> {C<span class="pl-k">,</span> D<span class="pl-k">,</span> E<span class="pl-k">,</span> F}
-<span class="pl-k">Function</span>             <span class="pl-en">ShouldProcess</span>  {Function}
-Variable             ShouldProcess  {Variable}</pre></div>
+Name                 Capabilities                                                                   Drives
+<span class="pl-k">----</span>                 <span class="pl-k">------------</span>                                                                   <span class="pl-k">------</span>
+Registry             ShouldProcess                                                                  {HKLM<span class="pl-k">,</span> HKCU}
+Alias                ShouldProcess                                                                  {Alias}
+Environment          ShouldProcess                                                                  {Env}
+FileSystem           Filter<span class="pl-k">,</span> ShouldProcess<span class="pl-k">,</span> Credentials                                             {C<span class="pl-k">,</span> D<span class="pl-k">,</span> E<span class="pl-k">,</span> Temp…}
+<span class="pl-k">Function</span>             <span class="pl-en">ShouldProcess</span>                                                                  {Function}
+Variable             ShouldProcess                                                                  {Variable}</pre></div>
+<p>常见的能力标记：</p>
 <ul>
-<li><code class="notranslate">ShouldProcess</code> 这部分提供程序支持 <code class="notranslate">-WhatIf</code> 参数和 <code class="notranslate">-Confirm</code> 参数，保证我们在正式执行这部分脚本之前可以对他们进行测试</li>
-<li><code class="notranslate">Filter</code> 在cmdlet中操作提供程序的数据时，支持 <code class="notranslate">-Filter</code> 参数</li>
-<li><code class="notranslate">Credentials</code> 提供程序支持 <code class="notranslate">-Credentials</code> 参数，用于指定访问数据存储的凭据</li>
-<li><code class="notranslate">Transactions</code> 提供程序支持事务</li>
+<li><strong>ShouldProcess</strong>：支持 <code class="notranslate">-WhatIf</code>、<code class="notranslate">-Confirm</code> 参数，可以<strong>预演脚本</strong>，不会直接修改真实数据，适合高危操作。</li>
+<li><strong>Filter</strong>：操作时支持 <code class="notranslate">-Filter</code> 参数，高效筛选数据。</li>
+<li><strong>Credentials</strong>：支持 <code class="notranslate">-Credential</code> 参数，可以用其他账号身份访问数据源。</li>
+<li><strong>Transactions</strong>：支持事务，可批量操作并支持回滚。</li>
 </ul>
-<p>也可以通过某个提供程序创建一个 <code class="notranslate">PSDrive</code>。<code class="notranslate">PSDriver</code> 可以通过一个特定的提供程序链接到存储某些数据的介质。类似于Windows文件资源管理器。</p>
-<p>查看当前已连接的驱动器：</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-PSDrive</span>
+<h2>二、PSDrive：提供程序映射出来的逻辑驱动器</h2>
+<p><strong>PSDrive（pwsh 驱动器）</strong> 是由 PSProvider 创建的逻辑映射。PSProvider 是底层适配器，PSDrive 是访问这个数据源的入口——它把数据源挂载成一个驱动器，就像资源管理器里的 C 盘、D 盘。</p>
+<div class="markdown-alert markdown-alert-important"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p><p>PSDrive 不一定是真实硬盘：<code class="notranslate">HKCU:</code>、<code class="notranslate">Env:</code>、<code class="notranslate">Alias:</code> 都是 PSDrive，但它们不是磁盘，只是注册表、环境变量等数据的访问入口。</p>
+</div>
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 查看当前所有挂载的 PSDrive</span>
+PS C:\Users\d111k<span class="pl-k">&gt;</span> <span class="pl-c1">Get-PSDrive</span>
 
-Name           Used (GB)     Free (GB) Provider
-<span class="pl-k">----</span>           <span class="pl-k">---------</span>     <span class="pl-k">---------</span> <span class="pl-k">--------</span>
+Name           Used (GB)     Free (GB) Provider      Root                                                                                                          CurrentLocation
+<span class="pl-k">----</span>           <span class="pl-k">---------</span>     <span class="pl-k">---------</span> <span class="pl-k">--------</span>      <span class="pl-k">----</span>                                                                                                          <span class="pl-k">---------------</span>
 Alias                                  Alias
-C                 <span class="pl-c1">138.38</span>         <span class="pl-c1">27.16</span> FileSy...
-Cert                                   Certif...
-D                 <span class="pl-c1">103.07</span>         <span class="pl-c1">96.93</span> FileSy...
-E                  <span class="pl-c1">18.83</span>         <span class="pl-c1">81.17</span> FileSy...
-Env                                    Enviro...
-F                   <span class="pl-c1">8.08</span>          <span class="pl-c1">1.92</span> FileSy...
+C                 <span class="pl-c1">286.00</span>         <span class="pl-c1">36.64</span> FileSystem    C:\                                                                                                               Users\d111k
+Cert                                   Certificate   \
+D                 <span class="pl-c1">121.16</span>        <span class="pl-c1">178.84</span> FileSystem    D:\
+E                  <span class="pl-c1">55.67</span>        <span class="pl-c1">245.33</span> FileSystem    E:\
+Env                                    Environment
 <span class="pl-k">Function</span>                               <span class="pl-en">Function</span>
-HKCU                                   Registry
-HKLM                                   Registry
+G                   0.01          0.00 FileSystem    G:\
+HKCU                                   Registry      HKEY_CURRENT_USER
+HKLM                                   Registry      HKEY_LOCAL_MACHINE
+Temp              286.00         36.64 FileSystem    C:\Users\d111k\AppData\Local\Temp\
 Variable                               Variable
 WSMan                                  WSMan</pre></div>
-<p>大多数情况下，操作 <code class="notranslate">PSDrive</code> 的cmdlet名词部分都会包含 'item'：</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-Command</span> <span class="pl-k">-</span>Noun <span class="pl-k">*</span>item<span class="pl-k">*</span>
-
-CommandType     Name
-<span class="pl-k">-----------</span>     <span class="pl-k">----</span>
-<span class="pl-k">Function</span>        <span class="pl-en">Get-DAEntryPointTableItem</span>
-Function        Get-TestDriveItem
-Function        New-DAEntryPointTableItem
-Function        Remove-DAEntryPointTableItem
-Function        Rename-DAEntryPointTableItem
-Function        Reset-DAEntryPointTableItem
-Function        Set-DAEntryPointTableItem
-Cmdlet          Clear-Item
-Cmdlet          Clear-ItemProperty
-Cmdlet          Copy-Item
-Cmdlet          Copy-ItemProperty
-Cmdlet          Get-ChildItem
-Cmdlet          Get-ControlPanelItem
-Cmdlet          Get-Item
-Cmdlet          Get-ItemProperty
-Cmdlet          Get-ItemPropertyValue
-Cmdlet          Get-WebItemState
-Cmdlet          Invoke-Item
-Cmdlet          Move-Item
-Cmdlet          Move-ItemProperty
-Cmdlet          New-Item
-Cmdlet          New-ItemProperty
-Cmdlet          Remove-Item
-Cmdlet          Remove-ItemProperty
-Cmdlet          Rename-Item
-Cmdlet          Rename-ItemProperty
-Cmdlet          Restart-WebItem
-Cmdlet          Set-Item
-Cmdlet          Set-ItemProperty
-Cmdlet          Show-ControlPanelItem
-Cmdlet          Start-WebItem
-Cmdlet          Stop-WebItem</pre></div>
-<p>我们可以通过以上cmdlet命令或者它们的别名来调用提供程序。</p>
-<h2>FileSystem的结构</h2>
-<p>Windows/MacOS/Linux文件系统主要由3种对象组成：磁盘驱动器，文件和目录（文件夹）</p>
+<p>输出中常见驱动器：</p>
 <ul>
-<li>磁盘驱动器是最上层的对象，包含文件夹和文件</li>
-<li>文件夹是一种容器对象，可以包含文件和其他文件夹</li>
-<li>文件不是一种容器对象，它处于层级的末尾</li>
+<li><code class="notranslate">C、D、E</code>：FileSystem 提供程序映射的物理磁盘</li>
+<li><code class="notranslate">HKCU、HKLM</code>：Registry 提供程序映射的注册表根项（仅 Windows 环境）</li>
+<li><code class="notranslate">Env</code>：Environment 提供程序映射的环境变量</li>
+<li><code class="notranslate">Alias、Variable</code>：分别对应别名、变量的存储</li>
 </ul>
-<p>PSDrive可能不指向某个文件系统，比如PSDrive可以映射到注册表（注册表不属于文件系统）。在powershell中，文件和文件夹都叫做项item，尽管二者本质上是两种不同的项。</p>
-<p>每个项基本上都会存在对应的属性。如：文件项可能有最后写入时间，是否只读等属性，文件夹项可能包含子项。</p>
+<blockquote>
+<p>关系总结：<strong>PSProvider（适配器）→ 创建 → PSDrive（逻辑驱动器入口）→ 承载多层 Item（项）</strong></p>
+</blockquote>
+<h2>三、统一操作模型：Item 系列命令</h2>
+<p>因为 PSProvider 把所有数据统一抽象为「项（Item）」，pwsh 就提供了一套通用 cmdlet——<strong>不管是文件、注册表项，都能用这套命令操作</strong>。</p>
+<p>名词分为三类：</p>
+<ol>
+<li><strong>Item</strong>：单个对象（文件、文件夹、注册表项），统称为「项」</li>
+<li><strong>ItemProperty</strong>：项上面的属性（文件只读标记、注册表键值）</li>
+<li><strong>ChildItem</strong>：一个项下面包含的子项（文件夹里的文件、注册表项下的子键）</li>
+</ol>
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 查看所有名词为 *item* 的命令</span>
+pwsh<span class="pl-k">&gt;</span> <span class="pl-c1">Get-Command</span> <span class="pl-k">-</span>Noun <span class="pl-k">*</span>item<span class="pl-k">*</span></pre></div>
+<p>常用 Item 命令：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>命令</th>
+<th>别名</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">Set-Location</code></td>
+<td><code class="notranslate">cd</code></td>
+<td>切换当前位置（进入目录 / 注册表项）</td>
+</tr>
+<tr>
+<td><code class="notranslate">New-Item</code></td>
+<td><code class="notranslate">mkdir</code></td>
+<td>创建项（文件、文件夹、注册表项）</td>
+</tr>
+<tr>
+<td><code class="notranslate">Get-Item</code></td>
+<td>-</td>
+<td>获取单个项</td>
+</tr>
+<tr>
+<td><code class="notranslate">Get-ChildItem</code></td>
+<td><code class="notranslate">dir</code></td>
+<td>获取一个项下面所有子项</td>
+</tr>
+<tr>
+<td><code class="notranslate">Copy-Item</code></td>
+<td><code class="notranslate">copy</code></td>
+<td>复制项</td>
+</tr>
+<tr>
+<td><code class="notranslate">Move-Item</code></td>
+<td><code class="notranslate">move</code></td>
+<td>移动项</td>
+</tr>
+<tr>
+<td><code class="notranslate">Rename-Item</code></td>
+<td><code class="notranslate">ren</code></td>
+<td>重命名项</td>
+</tr>
+<tr>
+<td><code class="notranslate">Remove-Item</code></td>
+<td><code class="notranslate">del</code></td>
+<td>删除项</td>
+</tr>
+<tr>
+<td><code class="notranslate">Set-ItemProperty</code></td>
+<td>-</td>
+<td>修改项属性</td>
+</tr>
+<tr>
+<td><code class="notranslate">Get-ItemProperty</code></td>
+<td>-</td>
+<td>读取项属性</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>并不是所有提供程序都完整支持全部能力：</p>
 <ul>
-<li><code class="notranslate">Clear</code> <code class="notranslate">Copy</code> <code class="notranslate">Get</code> <code class="notranslate">Move</code> <code class="notranslate">New</code> <code class="notranslate">Remove</code> <code class="notranslate">Rename</code> <code class="notranslate">Set</code>等动词可以应用于文件项或文件夹项以及它们对应的属性</li>
-<li><code class="notranslate">Item</code> 名词对应的是单独对象，如文件或文件夹</li>
-<li><code class="notranslate">ItemProperty</code> 名词对应的是项的属性，如文件的最后写入时间等。</li>
-<li><code class="notranslate">ChildItem</code> 名词对应的是项的子项，如文件夹的文件或子文件夹。</li>
+<li>FileSystem 下的命令不支持事务参数 <code class="notranslate">-UseTransaction</code></li>
+<li>Registry 下的命令不支持 <code class="notranslate">-Filter</code></li>
+<li>Env（环境变量）<strong>不支持项属性</strong>——执行 <code class="notranslate">Get-ItemProperty Env:\PSModulePath</code> 会直接报错（因为它不实现 <code class="notranslate">IPropertyCmdletProvider</code> 接口）</li>
 </ul>
-<p>文件系统驱动器下的cmdlet中的命令都不支持 <code class="notranslate">UseTransaction</code> 参数。注册表驱动器下的cmdlet中的命令都不支持 <code class="notranslate">Filter</code> 参数。<code class="notranslate">Environment</code>这个PSProvider主要用来构造powershell中可用的ENV（类型驱动器，如Env:\PSModulePath），该驱动器主要用于访问Windows中的环境变量，它没有对应的项属性：</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-ItemProperty</span> <span class="pl-k">-</span>Path Env:\PSModulePath
-<span class="pl-c1">Get-ItemProperty</span> : 无法使用接口。此提供程序不支
-持 IPropertyCmdletProvider 接口。
-所在位置 行:<span class="pl-c1">1</span> 字符: <span class="pl-c1">1</span>
-<span class="pl-k">+</span> <span class="pl-c1">Get-ItemProperty</span> <span class="pl-k">-</span>Path Env:\PSModulePath
-<span class="pl-k">+</span> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    <span class="pl-k">+</span> CategoryInfo          : NotImplemented: (
-   :) [<span class="pl-k">Get</span><span class="pl-k">-</span><span class="pl-k">ItemProperty</span>]<span class="pl-k">,</span> PSNotSupportedExcept
-  ion
-    <span class="pl-k">+</span> FullyQualifiedErrorId : NotSupported<span class="pl-k">,</span>Micr
-   osoft.PowerShell.Commands.GetItemPropertyCo
-  mmand</pre></div>
-<h2>文件系统与其他数据存储的类似之处</h2>
-<p>文件系统可以算作其他数据存储的模板。如：注册表与文件系统有相同的分层结构</p>
-<h2>使用文件系统</h2>
-<h3>切换目录Set-Location</h3>
-<p>类似于cmd中的 <code class="notranslate">cd</code> 命令，用于切换当前目录。在powershell中 <code class="notranslate">cd</code> 是 <code class="notranslate">Set-Location</code> 的别名。</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate">PS C:\Users\<span class="pl-c1">86183</span><span class="pl-k">&gt;</span> cd c:\windows
-PS C:\windows<span class="pl-k">&gt;</span> <span class="pl-c1">Set-Location</span> <span class="pl-k">-</span>Path c:\desktop
-PS C:\desktop<span class="pl-k">&gt;</span></pre></div>
-<h3>创建项New-Item</h3>
-<p><code class="notranslate">New-Item</code> 用于创建项。可以创建文件或文件夹。</p>
-<p><code class="notranslate">New-Item [-Path] &lt;string[]&gt; -ItemType Directory</code> 或 <code class="notranslate">New-Item [-Path] &lt;string[]&gt; -Type Directory</code> 创建文件夹，相当于<code class="notranslate">mkdir</code></p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate">PS C:\desktop<span class="pl-k">&gt;</span> <span class="pl-c1">New-Item</span> test <span class="pl-k">-</span>ItemType Directory
-
-
-    目录: C:\desktop
-
-
-Mode                 LastWriteTime        Length
-<span class="pl-k">----</span>                 <span class="pl-k">-------------</span>        <span class="pl-k">------</span>
-d<span class="pl-k">-----</span>         <span class="pl-c1">2025</span><span class="pl-k">/</span><span class="pl-c1">7</span><span class="pl-k">/</span><span class="pl-c1">31</span>      <span class="pl-c1">8</span>:<span class="pl-c1">18</span>
-
-PS C:\desktop<span class="pl-k">&gt;</span> mkdir test2
-
-
-    目录: C:\desktop
-
-
-Mode                 LastWriteTime        Length
-<span class="pl-k">----</span>                 <span class="pl-k">-------------</span>        <span class="pl-k">------</span>
-d<span class="pl-k">-----</span>         <span class="pl-c1">2025</span><span class="pl-k">/</span><span class="pl-c1">7</span><span class="pl-k">/</span><span class="pl-c1">31</span>      <span class="pl-c1">8</span>:<span class="pl-c1">22</span></pre></div>
-<p>不传入 <code class="notranslate">-ItemType</code> 参数时，默认创建文件。</p>
-<h2>使用通配符和字面路径</h2>
-<p>大部分项的cmdlet都包含 <code class="notranslate">-Path</code> 属性，默认情况下，该属性支持使用通配符。如果想禁用通配符，用 <code class="notranslate">-LiteralPath</code> 参数替代 <code class="notranslate">-Path</code> 参数</p>
-<h3>通配符</h3>
+</div>
+<h2>四、路径、通配符与 LiteralPath</h2>
+<p>Item 类命令都有路径参数：</p>
 <ul>
-<li><code class="notranslate">*</code> 0个或多个字符</li>
-<li><code class="notranslate">?</code> 1个字符</li>
+<li><code class="notranslate">-Path</code>：默认参数，<strong>支持通配符</strong></li>
+<li><code class="notranslate">-LiteralPath</code>：字面路径，<strong>不解析通配符</strong>，路径里的 <code class="notranslate">*</code>、<code class="notranslate">?</code> 当作普通文本</li>
 </ul>
-<p>这就是为什么Windows文件名中禁止使用 <code class="notranslate">*</code> 和 <code class="notranslate">?</code> 这两个字符。</p>
-<p>在大部分其他类型的数据存储中，<code class="notranslate">*</code> 和 <code class="notranslate">?</code> 都可以出现在项item的名称中，如注册表</p>
-<h3>列出子项Get-ChildItem</h3>
-<p><code class="notranslate">Get-ChildItem</code> 用于列出子项。可以列出文件或文件夹。<code class="notranslate">Dir</code> 是它的别名。</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate">PS C:\windows<span class="pl-k">&gt;</span> <span class="pl-c1">Get-ChildItem</span> <span class="pl-k">*</span>.exe
+<p>通配符规则：</p>
+<ul>
+<li><code class="notranslate">*</code>：匹配任意 0 个或多个字符</li>
+<li><code class="notranslate">?</code>：匹配任意单个字符</li>
+</ul>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>Windows 文件系统的文件名<strong>不能包含 <code class="notranslate">*</code> 和 <code class="notranslate">?</code></strong>；但注册表等其他提供程序，项名称可以正常使用 <code class="notranslate">*</code>、<code class="notranslate">?</code>。</p>
+</div>
+<h2>五、实战 1：使用 FileSystem 文件系统提供程序</h2>
+<p>文件系统是最容易理解的提供程序，可以作为理解 PSProvider 的模板。</p>
+<p>文件系统里的对象分三层：</p>
+<ol>
+<li><strong>磁盘驱动器</strong>（PSDrive）</li>
+<li><strong>文件夹</strong>（容器项，可以包含子项）</li>
+<li><strong>文件</strong>（非容器项，位于层级末端）</li>
+</ol>
+<h3>1. 切换位置 Set-Location</h3>
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> cd 是 Set-Location 的别名</span>
+pwsh<span class="pl-k">&gt;</span> cd <span class="pl-k">/</span>tmp
+pwsh<span class="pl-k">&gt;</span> <span class="pl-c1">Set-Location</span> <span class="pl-k">-</span>Path <span class="pl-k">/</span>home<span class="pl-k">/</span>user</pre></div>
+<h3>2. 创建项 New-Item</h3>
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 创建文件夹（容器项）</span>
+pwsh<span class="pl-k">&gt;</span> <span class="pl-c1">New-Item</span> testdir <span class="pl-k">-</span>ItemType Directory
+pwsh<span class="pl-k">&gt;</span> mkdir testdir2
 
+<span class="pl-c"><span class="pl-c">#</span> 不指定 -ItemType 时，默认创建文件</span>
+pwsh<span class="pl-k">&gt;</span> <span class="pl-c1">New-Item</span> test.txt</pre></div>
+<h3>3. 列出子项 Get-ChildItem</h3>
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 列出当前目录下所有 exe 程序，dir 是别名</span>
+pwsh<span class="pl-k">&gt;</span> <span class="pl-c1">Get-ChildItem</span> <span class="pl-k">*</span>.exe
+pwsh<span class="pl-k">&gt;</span> dir <span class="pl-k">*</span>.exe</pre></div>
+<h2>六、实战 2：使用 Registry 注册表提供程序【仅 Windows 环境】</h2>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>注册表是 Windows 独有的数据存储，本节示例仅在 Windows 环境下运行 pwsh 时有效；Linux / macOS 上没有注册表提供程序。</p>
+</div>
+<p>注册表和文件系统的结构非常相似，都是分层树形结构：</p>
+<ul>
+<li>注册表项（Key）≈ 文件夹（容器）</li>
+<li>注册表键值（Property）≈ 文件的属性</li>
+</ul>
+<p><code class="notranslate">HKCU:</code> 和 <code class="notranslate">HKLM:</code> 是注册表提供程序自动挂载的 PSDrive，<code class="notranslate">HKCU:</code> 对应 HKEY_CURRENT_USER。</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 切换到 HKCU 驱动器</span>
+pwsh<span class="pl-k">&gt;</span> <span class="pl-c1">Set-Location</span> HKCU:
 
-    目录: C:\windows
+<span class="pl-c"><span class="pl-c">#</span> 逐层进入注册表路径</span>
+pwsh<span class="pl-k">&gt;</span> <span class="pl-c1">Set-Location</span> software\microsoft\Windows
 
+<span class="pl-c"><span class="pl-c">#</span> 查看当前注册表项下所有子项</span>
+pwsh<span class="pl-k">&gt;</span> <span class="pl-c1">Get-ChildItem</span>
 
-Mode                 LastWriteTime         Length Name
-<span class="pl-k">----</span>                 <span class="pl-k">-------------</span>         <span class="pl-k">------</span> <span class="pl-k">----</span>
-<span class="pl-k">-</span>a<span class="pl-k">----</span>         <span class="pl-c1">2025</span><span class="pl-k">/</span><span class="pl-c1">6</span><span class="pl-k">/</span><span class="pl-c1">12</span>      <span class="pl-c1">8</span>:<span class="pl-c1">14</span>         <span class="pl-c1">122880</span> <span class="pl-c1">bfsvc.exe</span>
-<span class="pl-k">-</span>a<span class="pl-k">----</span>         <span class="pl-c1">2025</span><span class="pl-k">/</span><span class="pl-c1">6</span><span class="pl-k">/</span><span class="pl-c1">12</span>      <span class="pl-c1">8</span>:<span class="pl-c1">14</span>        <span class="pl-c1">2943472</span> <span class="pl-c1">explorer.exe</span>
-<span class="pl-k">-</span>a<span class="pl-k">----</span>         <span class="pl-c1">2025</span><span class="pl-k">/</span><span class="pl-c1">6</span><span class="pl-k">/</span><span class="pl-c1">12</span>      <span class="pl-c1">8</span>:<span class="pl-c1">14</span>        <span class="pl-c1">1081344</span> <span class="pl-c1">HelpPane.exe</span>
-<span class="pl-k">-</span>a<span class="pl-k">----</span>         <span class="pl-c1">2025</span><span class="pl-k">/</span><span class="pl-c1">3</span><span class="pl-k">/</span><span class="pl-c1">13</span>     <span class="pl-c1">12</span>:<span class="pl-c1">50</span>          <span class="pl-c1">40960</span> <span class="pl-c1">hh.exe</span>
-<span class="pl-k">-</span>a<span class="pl-k">----</span>         <span class="pl-c1">2025</span><span class="pl-k">/</span><span class="pl-c1">4</span><span class="pl-k">/</span><span class="pl-c1">10</span>     <span class="pl-c1">16</span>:<span class="pl-c1">30</span>         <span class="pl-c1">360448</span> <span class="pl-c1">notepad.exe</span>
-<span class="pl-k">-</span>a<span class="pl-k">----</span>         <span class="pl-c1">2023</span><span class="pl-k">/</span><span class="pl-c1">12</span><span class="pl-k">/</span><span class="pl-c1">7</span>     <span class="pl-c1">22</span>:<span class="pl-c1">20</span>         <span class="pl-c1">765208</span> <span class="pl-c1">py.exe</span>
-<span class="pl-k">-</span>a<span class="pl-k">----</span>         <span class="pl-c1">2023</span><span class="pl-k">/</span><span class="pl-c1">12</span><span class="pl-k">/</span><span class="pl-c1">7</span>     <span class="pl-c1">22</span>:<span class="pl-c1">20</span>         <span class="pl-c1">763672</span> <span class="pl-c1">pyw.exe</span>
-<span class="pl-k">-</span>a<span class="pl-k">----</span>         <span class="pl-c1">2025</span><span class="pl-k">/</span><span class="pl-c1">6</span><span class="pl-k">/</span><span class="pl-c1">12</span>      <span class="pl-c1">8</span>:<span class="pl-c1">14</span>         <span class="pl-c1">622592</span> <span class="pl-c1">regedit.exe</span>
-<span class="pl-k">-</span>a<span class="pl-k">----</span>         <span class="pl-c1">2025</span><span class="pl-k">/</span><span class="pl-c1">2</span><span class="pl-k">/</span><span class="pl-c1">13</span>     <span class="pl-c1">18</span>:<span class="pl-c1">40</span>         <span class="pl-c1">591432</span> <span class="pl-c1">RtkBtManServ.exe</span>
-<span class="pl-k">-</span>a<span class="pl-k">----</span>         <span class="pl-c1">2025</span><span class="pl-k">/</span><span class="pl-c1">6</span><span class="pl-k">/</span><span class="pl-c1">12</span>      <span class="pl-c1">8</span>:<span class="pl-c1">14</span>         <span class="pl-c1">245760</span> <span class="pl-c1">splwow64.exe</span>
-<span class="pl-k">-</span>a<span class="pl-k">----</span>         <span class="pl-c1">2025</span><span class="pl-k">/</span><span class="pl-c1">6</span><span class="pl-k">/</span><span class="pl-c1">12</span>      <span class="pl-c1">8</span>:<span class="pl-c1">15</span>          <span class="pl-c1">12288</span> <span class="pl-c1">winhlp32.exe</span>
-
-
-PS C:\windows<span class="pl-k">&gt;</span> dir <span class="pl-k">*</span>.exe
-
-
-    目录: C:\windows
-
-
-Mode                 LastWriteTime         Length Name
-<span class="pl-k">----</span>                 <span class="pl-k">-------------</span>         <span class="pl-k">------</span> <span class="pl-k">----</span>
-<span class="pl-k">-</span>a<span class="pl-k">----</span>         <span class="pl-c1">2025</span><span class="pl-k">/</span><span class="pl-c1">6</span><span class="pl-k">/</span><span class="pl-c1">12</span>      <span class="pl-c1">8</span>:<span class="pl-c1">14</span>         <span class="pl-c1">122880</span> <span class="pl-c1">bfsvc.exe</span>
-<span class="pl-k">-</span>a<span class="pl-k">----</span>         <span class="pl-c1">2025</span><span class="pl-k">/</span><span class="pl-c1">6</span><span class="pl-k">/</span><span class="pl-c1">12</span>      <span class="pl-c1">8</span>:<span class="pl-c1">14</span>        <span class="pl-c1">2943472</span> <span class="pl-c1">explorer.exe</span>
-<span class="pl-k">-</span>a<span class="pl-k">----</span>         <span class="pl-c1">2025</span><span class="pl-k">/</span><span class="pl-c1">6</span><span class="pl-k">/</span><span class="pl-c1">12</span>      <span class="pl-c1">8</span>:<span class="pl-c1">14</span>        <span class="pl-c1">1081344</span> <span class="pl-c1">HelpPane.exe</span>
-<span class="pl-k">-</span>a<span class="pl-k">----</span>         <span class="pl-c1">2025</span><span class="pl-k">/</span><span class="pl-c1">3</span><span class="pl-k">/</span><span class="pl-c1">13</span>     <span class="pl-c1">12</span>:<span class="pl-c1">50</span>          <span class="pl-c1">40960</span> <span class="pl-c1">hh.exe</span>
-<span class="pl-k">-</span>a<span class="pl-k">----</span>         <span class="pl-c1">2025</span><span class="pl-k">/</span><span class="pl-c1">4</span><span class="pl-k">/</span><span class="pl-c1">10</span>     <span class="pl-c1">16</span>:<span class="pl-c1">30</span>         <span class="pl-c1">360448</span> <span class="pl-c1">notepad.exe</span>
-<span class="pl-k">-</span>a<span class="pl-k">----</span>         <span class="pl-c1">2023</span><span class="pl-k">/</span><span class="pl-c1">12</span><span class="pl-k">/</span><span class="pl-c1">7</span>     <span class="pl-c1">22</span>:<span class="pl-c1">20</span>         <span class="pl-c1">765208</span> <span class="pl-c1">py.exe</span>
-<span class="pl-k">-</span>a<span class="pl-k">----</span>         <span class="pl-c1">2023</span><span class="pl-k">/</span><span class="pl-c1">12</span><span class="pl-k">/</span><span class="pl-c1">7</span>     <span class="pl-c1">22</span>:<span class="pl-c1">20</span>         <span class="pl-c1">763672</span> <span class="pl-c1">pyw.exe</span>
-<span class="pl-k">-</span>a<span class="pl-k">----</span>         <span class="pl-c1">2025</span><span class="pl-k">/</span><span class="pl-c1">6</span><span class="pl-k">/</span><span class="pl-c1">12</span>      <span class="pl-c1">8</span>:<span class="pl-c1">14</span>         <span class="pl-c1">622592</span> <span class="pl-c1">regedit.exe</span>
-<span class="pl-k">-</span>a<span class="pl-k">----</span>         <span class="pl-c1">2025</span><span class="pl-k">/</span><span class="pl-c1">2</span><span class="pl-k">/</span><span class="pl-c1">13</span>     <span class="pl-c1">18</span>:<span class="pl-c1">40</span>         <span class="pl-c1">591432</span> <span class="pl-c1">RtkBtManServ.exe</span>
-<span class="pl-k">-</span>a<span class="pl-k">----</span>         <span class="pl-c1">2025</span><span class="pl-k">/</span><span class="pl-c1">6</span><span class="pl-k">/</span><span class="pl-c1">12</span>      <span class="pl-c1">8</span>:<span class="pl-c1">14</span>         <span class="pl-c1">245760</span> <span class="pl-c1">splwow64.exe</span>
-<span class="pl-k">-</span>a<span class="pl-k">----</span>         <span class="pl-c1">2025</span><span class="pl-k">/</span><span class="pl-c1">6</span><span class="pl-k">/</span><span class="pl-c1">12</span>      <span class="pl-c1">8</span>:<span class="pl-c1">15</span>          <span class="pl-c1">12288</span> <span class="pl-c1">winhlp32.exe</span></pre></div>
-<h2>注册表提供程序</h2>
-<p>切换目录到注册表：</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate">PS C:\desktop<span class="pl-k">&gt;</span> <span class="pl-c1">Set-Location</span> <span class="pl-k">-</span>Path HKCU:
-PS HKCU:\<span class="pl-k">&gt;</span> <span class="pl-c1">Set-Location</span> <span class="pl-k">-</span>Path software
-PS HKCU:\software<span class="pl-k">&gt;</span> <span class="pl-c1">Set-Location</span> <span class="pl-k">-</span>Path microsoft
-PS HKCU:\software\microsoft<span class="pl-k">&gt;</span> <span class="pl-c1">Set-Location</span> <span class="pl-k">-</span>Path .\Windows\
-PS HKCU:\software\microsoft\Windows\<span class="pl-k">&gt;</span> <span class="pl-c1">Get-ChildItem</span>
-
-
-    Hive: HKEY_CURRENT_USER\software\microsoft\Windows
-
-
-Name                           Property
-<span class="pl-k">----</span>                           <span class="pl-k">--------</span>
-AssignedAccessConfiguration
-CurrentVersion
-DWM                            Composition                  : <span class="pl-c1">1</span>
-                               ColorPrevalence              : <span class="pl-c1">0</span>
-                               ColorizationColor            : <span class="pl-c1">3288365268</span>
-                               EnableAeroPeek               : <span class="pl-c1">1</span>
-                               AccentColor                  : <span class="pl-c1">4292114432</span>
-                               ColorizationColorBalance     : <span class="pl-c1">89</span>
-                               ColorizationAfterglow        : <span class="pl-c1">3288365268</span>
-                               ColorizationAfterglowBalance : <span class="pl-c1">10</span>
-                               ColorizationBlurBalance      : <span class="pl-c1">1</span>
-                               EnableWindowColorization     : <span class="pl-c1">1</span>
-                               ColorizationGlassAttribute   : <span class="pl-c1">1</span>
-MiracastDiscovery              NotificationCount   : <span class="pl-c1">6</span>
-                               DisableNotification : <span class="pl-c1">1</span>
-                               LastNotifiedTime    : {<span class="pl-c1">233</span><span class="pl-k">,</span> <span class="pl-c1">7</span><span class="pl-k">,</span> <span class="pl-c1">7</span><span class="pl-k">,</span> <span class="pl-c1">0</span>...}
-RemoteSystemIntegration
-Roaming
-Shell
-TabletPC
-Windows Error Reporting        LastRateLimitedDumpGenerationTime : <span class="pl-c1">133972848573425409</span>
-Winlogon
-
-
-PS HKCU:\software\microsoft\Windows\<span class="pl-k">&gt;</span> <span class="pl-c1">Set-ItemProperty</span> <span class="pl-k">-</span>Path .\DWM\ <span class="pl-k">-</span>PSProperty EnableWindowColorization <span class="pl-k">-</span>Value <span class="pl-c1">0</span></pre></div>
-<p>HKEY_CURRENT_USER目录，在powershell中显示为 <code class="notranslate">HKCU:</code> 驱动器，这个过程将 <code class="notranslate">EnableWindowColorization     : 1</code> 改为了 <code class="notranslate">EnableWindowColorization     : 0</code>。</p>
-<hr></div>
+<span class="pl-c"><span class="pl-c">#</span> 修改 DWM 项下 EnableWindowColorization 属性值为 0</span>
+pwsh<span class="pl-k">&gt;</span> <span class="pl-c1">Set-ItemProperty</span> <span class="pl-k">-</span>Path .\DWM\ <span class="pl-k">-</span>Name EnableWindowColorization <span class="pl-k">-</span>Value <span class="pl-c1">0</span></pre></div>
+<h2>七、核心总结</h2>
+<ol>
+<li><strong>PSProvider（提供程序）</strong>：数据适配器。把异构数据统一抽象为「项」模型，让一套命令操作多种数据源。</li>
+<li><strong>PSDrive</strong>：提供程序挂载出来的逻辑驱动器，是访问数据源的入口，不一定是真实磁盘。</li>
+<li><strong>Item 模型</strong>：Item 是单个对象，ItemProperty 是对象属性，ChildItem 是对象的子对象。</li>
+<li>FileSystem 提供程序最直观，注册表、环境变量等提供程序复用这套模型，但每个提供程序能力不同，部分命令 / 参数不支持。</li>
+<li><code class="notranslate">-Path</code> 支持通配符；<code class="notranslate">-LiteralPath</code> 使用字面路径，不解析通配符。</li>
+</ol></div>
     <details class="in-series-list" open aria-label="Series">
       <summary>PowerShell 学习笔记</summary>
       <ol>
@@ -322,7 +339,7 @@ PS HKCU:\software\microsoft\Windows\<span class="pl-k">&gt;</span> <span class="
         <li><a href="https://interset-wq.github.io/blog/post/63_6050799004.html">PWSH中的Tab补全</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050799327.html">使用帮助文档</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050799741.html">命令和Cmdlet</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/63_6050800073.html">DAY 5 使用提供程序</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/63_6050800073.html">pwsh 提供程序（PSProvider）</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050801304.html">管道：连接命令</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050801673.html">扩展命令</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050802143.html">对象：数据的另一个名称</a></li>
@@ -373,7 +390,7 @@ PS HKCU:\software\microsoft\Windows\<span class="pl-k">&gt;</span> <span class="
   <span id="run-days"></span>
   <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
 </div>
-<div class="in-footer-built">构建部署于 2026-10-12 09:37:13</div>
+<div class="in-footer-built">构建部署于 2026-10-12 12:59:58</div>
 <script>
   (function () {
     document.getElementById('copyright-year').textContent = new Date().getFullYear();
