@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>InterNote</title><link>https://interset-wq.github.io/blog</link><description>My notes on everything.</description><copyright>InterNote</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url></url><title>avatar</title><link>https://interset-wq.github.io/blog</link></image><lastBuildDate>Mon, 12 Oct 2026 11:05:03 +0000</lastBuildDate><managingEditor>InterNote</managingEditor><ttl>60</ttl><webMaster>InterNote</webMaster><item><title>Scrapy 学习笔记</title><link>https://interset-wq.github.io/blog/post/114.html</link><description># scrapy
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>InterNote</title><link>https://interset-wq.github.io/blog</link><description>My notes on everything.</description><copyright>InterNote</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url></url><title>avatar</title><link>https://interset-wq.github.io/blog</link></image><lastBuildDate>Mon, 12 Oct 2026 12:45:31 +0000</lastBuildDate><managingEditor>InterNote</managingEditor><ttl>60</ttl><webMaster>InterNote</webMaster><item><title>Scrapy 学习笔记</title><link>https://interset-wq.github.io/blog/post/114.html</link><description># scrapy
 
 [文档](docs.scrapy.org)
 
@@ -332,7 +332,7 @@ DrissionPage支持的元素定位法&#13;
 - **第六章 样本及抽样分布**&#13;
 - **第七章 参数估计**&#13;
 - **第八章 假设检验**&#13;
-。</description><guid isPermaLink="true">https://interset-wq.github.io/blog/post/75.html</guid><pubDate>Wed, 06 Aug 2025 14:08:41 +0000</pubDate></item><item><title>basic-git-command</title><link>https://interset-wq.github.io/blog/post/25.html</link><description># basic-git-command&#13;
+。</description><guid isPermaLink="true">https://interset-wq.github.io/blog/post/75.html</guid><pubDate>Wed, 06 Aug 2025 14:08:41 +0000</pubDate></item><item><title>Git</title><link>https://interset-wq.github.io/blog/post/25.html</link><description># basic-git-command&#13;
 &#13;
 [Git 官方文档](https://git-scm.com/doc) · [GitHub 文档](https://docs.github.com/zh) · [GitCode 文档](https://docs.gitcode.com/) · [Gitee 文档](https://gitee.com/all-about-git)&#13;
 &#13;
