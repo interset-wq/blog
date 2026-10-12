@@ -21,15 +21,15 @@
     })();
   </script>
   <meta name="description" content="My notes on everything.">
-<meta property="og:title" content="系统服务与日志">
+<meta property="og:title" content="系统服务与日志管理">
 <meta property="og:description" content="My notes on everything.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://interset-wq.github.io/blog/post/49_6050819812.html">
 <meta property="og:image" content="https://interset-wq.github.io/blog/assets/avatar.png">
-<title>系统服务与日志</title>
+<title>系统服务与日志管理</title>
   <link href="https://interset-wq.github.io/blog/assets/starry-night.css" rel="stylesheet">
   
-<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}
   <style>
     .in-progress {
       position: fixed;
@@ -46,7 +46,7 @@
   </style>
 </style></head>
 <body>
-  <header class="in-site-header" id="header">  <h1 class="in-page-title">系统服务与日志</h1>
+  <header class="in-site-header" id="header">  <h1 class="in-page-title">系统服务与日志管理</h1>
 <nav class="in-site-nav" aria-label="Post navigation">    <a class="in-nav-btn" href="https://interset-wq.github.io/blog" title="首页" aria-label="首页"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z" fill-rule="evenodd"></path></svg></a>
 
   <button class="in-nav-btn" id="in-theme-toggle" type="button" title="切换主题" aria-label="切换主题">
@@ -72,7 +72,7 @@
         <summary>
           <svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z" fill-rule="evenodd"></path></svg>
           <a href="https://interset-wq.github.io/blog/post/49.html">Linux 学习笔记</a>
-          <span class="in-meta-series-pos">11 / 18</span>
+          <span class="in-meta-series-pos">11 / 13</span>
         </summary>
         <ol>
           <li><a href="https://interset-wq.github.io/blog/post/49_6050815490.html">Linux 与 WSL 系统简介</a></li>
@@ -84,64 +84,115 @@
           <li><a href="https://interset-wq.github.io/blog/post/49_6050818452.html">Bash 脚本编程</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/49_6050818751.html">进程管理与系统资源监控</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/49_6050819092.html">Linux 网络配置</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050819483.html">网络管理</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050819812.html">系统服务与日志</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050820159.html">Emacs 编辑器</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050821488.html">OpenSSH</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050821853.html">Web 服务器搭建、应用开发与部署</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050822201.html">Linux 应用程序开发技术</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050822701.html">Linux文件操作</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050823242.html">Linux 常用操作</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050823594.html">Linux 用户和权限</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050819483.html">软件包管理</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050819812.html">系统服务与日志管理</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050820159.html">OpenSSH 远程连接</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050821488.html">Linux 常用工程实操</a></li>
         </ol>
       </details>
     </div>
     <nav class="in-toc" id="in-toc" data-toc-title="目录" data-toc-top="回到顶部" aria-label="目录"></nav>
     <div class="in-progress" id="in-progress"></div>
-    <div class="in-post-body markdown-body"><h2>Linux 系统服务</h2>
-<p>Linux系统服务有时也称为守护程序，是在Linux系统启动时自动加载并在Linux系统退出时自动停止的系统任务。常驻在内存中的进程，且可以提供一些系统或网络功能，就是服务（Service）。实现这个服务的程序就是守护程序（Daemon）。</p>
-<p>Linux系统的大多数服务就是通过守护程序实现的。Linux系统中的服务数量非常多，在服务器上，安装Linux系统之后一步重要的工作就是服务优化，也就是关闭不需要的服务，只开启需要的服务。因为服务启动得越多，占用的系统资源就越多，而且被攻击的可能性也就越大。如果要进行服务优化，就需要知道这些服务都有什么作用，常见的守护程序包括系统日志进程sys-logd、Web服务器httpd、邮件服务器sendmail和数据库服务器mysqld等。</p>
-<h2>启动和关闭服务</h2>
-<p>如果依据守护程序的启动与管理方式来区分，基本上可以将守护程序分为可独立启动的服务（StandAlone）和通过一个总管程序（SuperDaemon）来统一管理的服务这两大类。</p>
-<ul>
-<li>StandAlone：此类型的守护程序可以自行启动而不必通过其他机制管理；守护程序启动并加载到内存后就一直占用内存与系统资源。因为一直存在内存中持续提供服务，因此响应速度较快。</li>
-<li>SuperDaemon：这一种启动方式是通过一个统一的守护程序来负责唤起系统，这个特殊的守护程序被称为SuperDaemon。当没有客户端请求时，各项服务都是未启动状态，等到有来自客户端的请求时，SuperDaemon才唤醒相对应的服务。当客户端请求结束后，被唤醒的这个服务也会关闭并释放系统资源。这种机制的好处是：由于SuperDaemon负责唤醒各项服务，因此SuperDaemon可以具有安全控管的机制，就是类似于网络防火墙的功能；由于服务在客户端的连接结束后就关闭，因此不会一直占用系统资源。但缺点就是服务的响应速度较慢。</li>
-</ul>
-<p>独立的服务要想启动，主要有两种方法：</p>
-<h3>使用/etc/init.d/目录中的启动脚本来启动独立的服务</h3>
-<p>所有独立服务的启动脚本都存放在/etc/init.d/目录中，调用这些脚本就可以启动独立的服务了。这种启动方式是推荐启动方式，命令格式如下：</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ /etc/init.d/独立服务名 start<span class="pl-k">|</span>stop<span class="pl-k">|</span>status<span class="pl-k">|</span>restart</pre></div>
-<p>参数：</p>
-<ul>
-<li>start：启动服务。</li>
-<li>stop：停止服务。</li>
-<li>status：查看服务状态。</li>
-<li>restart：重启服务</li>
-</ul>
-<p>以httpd服务为例：</p>
-<p>安装httpd：</p>
-<p>启动httpd服务命令如下：</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ /etc/init.d/httpd start</pre></div>
-<p>查询httpd服务状态，并能够看到httpd服务的PID：<br>
-[root@ localhost~]#/etc/init.d/httpd status<br>
-httpd（pid13313)<br>
-停止httpd服务：<br>
-[root@ localhost -]#/etc/init.d/httpd stop<br>
-重启httpd服务：<br>
-[root@ localhost]#/etc/init.d/httpd restartH</p>
-<p>11.3 查看日志</p>
+    <div class="in-post-body markdown-body"><h2>系统服务</h2>
+<p>系统服务又称<strong>守护程序（Daemon）</strong>，常驻内存提供系统或网络功能。服务启动得越多，占用资源越多、被攻击面越大，安装后应做<strong>服务优化</strong>（关闭不需要的，只开需要的）。</p>
+<p>守护程序分两类：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>类型</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>StandAlone（独立服务）</td>
+<td>常驻内存持续提供服务，响应快，如 <code class="notranslate">httpd</code>、<code class="notranslate">sshd</code></td>
+</tr>
+<tr>
+<td>SuperDaemon（总管服务）</td>
+<td>有请求才由总管唤醒，连接结束即关闭，省资源、可做安全管控，但响应慢</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h2>systemd 与 systemctl</h2>
+<p>现代主流发行版（Ubuntu、RHEL、CentOS 均）用 <strong>systemd</strong> 管理系统服务，<code class="notranslate">systemctl</code> 是控制命令。</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ systemctl start nginx       <span class="pl-c"><span class="pl-c">#</span> 启动</span>
+$ systemctl stop nginx        <span class="pl-c"><span class="pl-c">#</span> 停止</span>
+$ systemctl restart nginx     <span class="pl-c"><span class="pl-c">#</span> 重启</span>
+$ systemctl status nginx      <span class="pl-c"><span class="pl-c">#</span> 查看状态</span>
+$ systemctl <span class="pl-c1">enable</span> nginx      <span class="pl-c"><span class="pl-c">#</span> 开机自启</span>
+$ systemctl disable nginx     <span class="pl-c"><span class="pl-c">#</span> 关闭开机自启</span>
+$ systemctl is-active nginx   <span class="pl-c"><span class="pl-c">#</span> 是否运行（返回 active/inactive）</span>
+$ systemctl list-units --type=service   <span class="pl-c"><span class="pl-c">#</span> 列出所有服务</span></pre></div>
+<blockquote>
+<p>旧版红帽系的 <code class="notranslate">service</code> / <code class="notranslate">chkconfig</code>：<code class="notranslate">service httpd start</code>、<code class="notranslate">chkconfig httpd on</code>。现代系统已统一到 systemctl。</p>
+</blockquote>
+<h2>systemd 单元文件</h2>
+<p>服务定义在 unit 文件中（<code class="notranslate">/etc/systemd/system/</code> 或 <code class="notranslate">/lib/systemd/system/</code>）：</p>
+<div class="highlight highlight-source-ini"><pre class="notranslate"><span class="pl-en">[Unit]</span>
+<span class="pl-k">Description</span>=My App
+<span class="pl-k">After</span>=network.target
+
+<span class="pl-en">[Service]</span>
+<span class="pl-k">ExecStart</span>=/usr/local/bin/myapp
+<span class="pl-k">Restart</span>=always
+<span class="pl-k">User</span>=www-data
+
+<span class="pl-en">[Install]</span>
+<span class="pl-k">WantedBy</span>=multi-user.target</pre></div>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ sudo systemctl daemon-reload      <span class="pl-c"><span class="pl-c">#</span> 修改 unit 后重载</span>
+$ sudo systemctl <span class="pl-c1">enable</span> myapp
+$ sudo systemctl start myapp</pre></div>
+<h2>查看日志</h2>
+<p>绝大多数系统日志由 <strong>rsyslogd</strong> 统一管理，日志文件位于 <code class="notranslate">/var/log/</code>。</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ tail -f /var/log/syslog      <span class="pl-c"><span class="pl-c">#</span> Ubuntu 系统日志</span>
+$ tail -f /var/log/auth.log    <span class="pl-c"><span class="pl-c">#</span> Ubuntu 认证/登录日志</span>
+$ ls /var/log/                 <span class="pl-c"><span class="pl-c">#</span> 查看所有日志</span></pre></div>
+<p>systemd 统一日志服务 <strong>journald</strong>，用 <code class="notranslate">journalctl</code> 查询：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ journalctl -u nginx          <span class="pl-c"><span class="pl-c">#</span> 查看某服务的日志</span>
+$ journalctl -u nginx -f       <span class="pl-c"><span class="pl-c">#</span> 实时跟踪</span>
+$ journalctl --since today     <span class="pl-c"><span class="pl-c">#</span> 今天以来的日志</span>
+$ journalctl -p err            <span class="pl-c"><span class="pl-c">#</span> 只查错误级别</span>
+$ journalctl -b                <span class="pl-c"><span class="pl-c">#</span> 本次启动以来的日志</span></pre></div>
+<h2>rsyslog 配置</h2>
+<p><code class="notranslate">rsyslogd</code> 依赖配置文件 <code class="notranslate">/etc/rsyslog.conf</code> 及 <code class="notranslate">/etc/rsyslog.d/</code>，决定各服务不同级别的日志写到哪里。</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>级别（由高到低）</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>emerg / alert / crit</td>
+<td>严重错误</td>
+</tr>
+<tr>
+<td>err</td>
+<td>错误</td>
+</tr>
+<tr>
+<td>warning</td>
+<td>警告</td>
+</tr>
+<tr>
+<td>info</td>
+<td>一般信息</td>
+</tr>
+<tr>
+<td>debug</td>
+<td>调试信息</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h2>常见服务排查流程</h2>
 <ol>
-<li>系统中绝大多数日志文件由 rsyslogd 服务 来统一管理</li>
-<li>Apache 服务日志有 Apache 软件自己产生并记录，但其日志文件格式和系统默认<br>
-日志的格式是一致的。</li>
-<li>/var/ 用来保存系统动态数据的目录，/var/log/目录 就是系统日志文件的保存位置。<br>
-11.4 管理日志<br>
-rsyslogd 服务依赖其配置文件 /etc/rsyslogd.conf 来确定各个服务不同等级的日志信息<br>
-会被记录的位置</li>
-</ol>
-<hr>
-<hr>
-<h2>60 原文</h2></div>
+<li><code class="notranslate">systemctl status 服务</code> 看状态与最近报错。</li>
+<li><code class="notranslate">journalctl -u 服务 -n 50</code> 看最近 50 条日志。</li>
+<li><code class="notranslate">tail -f /var/log/syslog</code> 实时观察。</li>
+<li>检查端口监听：<code class="notranslate">ss -tulnp | grep 端口</code>。</li>
+</ol></div>
     <details class="in-series-list" open aria-label="Series">
       <summary>Linux 学习笔记</summary>
       <ol>
@@ -154,20 +205,15 @@ rsyslogd 服务依赖其配置文件 /etc/rsyslogd.conf 来确定各个服务不
         <li><a href="https://interset-wq.github.io/blog/post/49_6050818452.html">Bash 脚本编程</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/49_6050818751.html">进程管理与系统资源监控</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/49_6050819092.html">Linux 网络配置</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050819483.html">网络管理</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050819812.html">系统服务与日志</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050820159.html">Emacs 编辑器</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050821488.html">OpenSSH</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050821853.html">Web 服务器搭建、应用开发与部署</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050822201.html">Linux 应用程序开发技术</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050822701.html">Linux文件操作</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050823242.html">Linux 常用操作</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050823594.html">Linux 用户和权限</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050819483.html">软件包管理</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050819812.html">系统服务与日志管理</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050820159.html">OpenSSH 远程连接</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050821488.html">Linux 常用工程实操</a></li>
       </ol>
     </details>
     <nav class="in-series-pager" aria-label="Series pages">
-      <a class="in-series-prev" href="https://interset-wq.github.io/blog/post/49_6050819483.html">网络管理</a>
-      <a class="in-series-next" href="https://interset-wq.github.io/blog/post/49_6050820159.html">Emacs 编辑器</a>
+      <a class="in-series-prev" href="https://interset-wq.github.io/blog/post/49_6050819483.html">软件包管理</a>
+      <a class="in-series-next" href="https://interset-wq.github.io/blog/post/49_6050820159.html">OpenSSH 远程连接</a>
     </nav>
   </article>
 <section class="in-comments-section">
@@ -209,7 +255,7 @@ rsyslogd 服务依赖其配置文件 /etc/rsyslogd.conf 来确定各个服务不
   <span id="run-days"></span>
   <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
 </div>
-<div class="in-footer-built">构建部署于 2026-10-12 20:55:46</div>
+<div class="in-footer-built">构建部署于 2026-10-12 20:56:27</div>
 <script>
   (function () {
     document.getElementById('copyright-year').textContent = new Date().getFullYear();

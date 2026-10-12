@@ -21,15 +21,15 @@
     })();
   </script>
   <meta name="description" content="My notes on everything.">
-<meta property="og:title" content="Emacs 编辑器">
+<meta property="og:title" content="OpenSSH 远程连接">
 <meta property="og:description" content="My notes on everything.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://interset-wq.github.io/blog/post/49_6050820159.html">
 <meta property="og:image" content="https://interset-wq.github.io/blog/assets/avatar.png">
-<title>Emacs 编辑器</title>
+<title>OpenSSH 远程连接</title>
   <link href="https://interset-wq.github.io/blog/assets/starry-night.css" rel="stylesheet">
   
-<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}
   <style>
     .in-progress {
       position: fixed;
@@ -46,7 +46,7 @@
   </style>
 </style></head>
 <body>
-  <header class="in-site-header" id="header">  <h1 class="in-page-title">Emacs 编辑器</h1>
+  <header class="in-site-header" id="header">  <h1 class="in-page-title">OpenSSH 远程连接</h1>
 <nav class="in-site-nav" aria-label="Post navigation">    <a class="in-nav-btn" href="https://interset-wq.github.io/blog" title="首页" aria-label="首页"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z" fill-rule="evenodd"></path></svg></a>
 
   <button class="in-nav-btn" id="in-theme-toggle" type="button" title="切换主题" aria-label="切换主题">
@@ -72,7 +72,7 @@
         <summary>
           <svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z" fill-rule="evenodd"></path></svg>
           <a href="https://interset-wq.github.io/blog/post/49.html">Linux 学习笔记</a>
-          <span class="in-meta-series-pos">12 / 18</span>
+          <span class="in-meta-series-pos">12 / 13</span>
         </summary>
         <ol>
           <li><a href="https://interset-wq.github.io/blog/post/49_6050815490.html">Linux 与 WSL 系统简介</a></li>
@@ -84,146 +84,89 @@
           <li><a href="https://interset-wq.github.io/blog/post/49_6050818452.html">Bash 脚本编程</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/49_6050818751.html">进程管理与系统资源监控</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/49_6050819092.html">Linux 网络配置</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050819483.html">网络管理</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050819812.html">系统服务与日志</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050820159.html">Emacs 编辑器</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050821488.html">OpenSSH</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050821853.html">Web 服务器搭建、应用开发与部署</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050822201.html">Linux 应用程序开发技术</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050822701.html">Linux文件操作</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050823242.html">Linux 常用操作</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050823594.html">Linux 用户和权限</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050819483.html">软件包管理</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050819812.html">系统服务与日志管理</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050820159.html">OpenSSH 远程连接</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050821488.html">Linux 常用工程实操</a></li>
         </ol>
       </details>
     </div>
     <nav class="in-toc" id="in-toc" data-toc-title="目录" data-toc-top="回到顶部" aria-label="目录"></nav>
     <div class="in-progress" id="in-progress"></div>
-    <div class="in-post-body markdown-body"><h2>安装</h2>
-<p>centos</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ yum install emacs</pre></div>
-<h2>Emacs 的操作</h2>
-<h3>Emacs 的启动</h3>
-<p>emacs使用图形化界面编辑文件，并不使用类似于vim的命令行界面</p>
-<p>打开emacs</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ emacs</pre></div>
-<p>通过emacs打开文件，文件不存在时，创建新文件：</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ emacs hello.txt</pre></div>
-<p>模式行是emacs界面倒数第二行。模式行显示状态信息。包括以下几个字段：</p>
-<p><code class="notranslate">-:--- buf pos L# (Pattern)</code></p>
+    <div class="in-post-body markdown-body"><h2>SSH 与 OpenSSH</h2>
+<p><strong>SSH</strong>（Secure Shell，安全外壳协议）是 IETF 制定的、建立在应用层基础上的安全网络协议，专为<strong>远程登录会话</strong>和其它网络服务提供安全性，采用**非对称加密技术（RSA）**加密所有传输数据。</p>
+<p><strong>OpenSSH</strong> 是 SSH 的免费开源实现，是 Linux 最常用的 SSH 服务器/客户端软件。</p>
+<h2>安装与启动</h2>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> Ubuntu</span>
+$ sudo apt install openssh-server openssh-client
+$ sudo systemctl <span class="pl-c1">enable</span> --now ssh
+
+<span class="pl-c"><span class="pl-c">#</span> CentOS / RHEL</span>
+<span class="pl-c"><span class="pl-c">#</span> sudo dnf install openssh-server openssh-clients</span>
+<span class="pl-c"><span class="pl-c">#</span> sudo systemctl enable --now sshd</span></pre></div>
+<p>防火墙放行 22 端口：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> Ubuntu (ufw)</span>
+$ sudo ufw allow 22/tcp
+<span class="pl-c"><span class="pl-c">#</span> CentOS (firewalld)</span>
+<span class="pl-c"><span class="pl-c">#</span> sudo firewall-cmd --permanent --add-port=22/tcp</span>
+<span class="pl-c"><span class="pl-c">#</span> sudo firewall-cmd --reload</span></pre></div>
+<h2>配置文件</h2>
+<p>主配置文件 <code class="notranslate">/etc/ssh/sshd_config</code>：</p>
+<div class="highlight highlight-source-ini"><pre class="notranslate">Port 22            <span class="pl-c"><span class="pl-c">#</span> 监听端口（默认 22）</span>
+PermitRootLogin prohibit-password   <span class="pl-c"><span class="pl-c">#</span> 禁止 root 密码登录（安全）</span>
+PubkeyAuthentication yes            <span class="pl-c"><span class="pl-c">#</span> 允许密钥登录</span>
+PasswordAuthentication yes          <span class="pl-c"><span class="pl-c">#</span> 允许密码登录（建议改用密钥后关闭）</span></pre></div>
+<p>修改后重启服务：<code class="notranslate">sudo systemctl restart ssh</code>。</p>
+<h2>连接</h2>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ ssh user@host           <span class="pl-c"><span class="pl-c">#</span> 密码登录</span>
+$ ssh -p 2222 user@host   <span class="pl-c"><span class="pl-c">#</span> 指定端口</span>
+$ ssh user@host <span class="pl-s"><span class="pl-pds">'</span>command<span class="pl-pds">'</span></span> <span class="pl-c"><span class="pl-c">#</span> 远程执行单条命令</span></pre></div>
+<h2>密钥登录（免密）</h2>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 本机生成密钥对（非对称 RSA/Ed25519）</span>
+$ ssh-keygen -t ed25519 -C <span class="pl-s"><span class="pl-pds">"</span>your@email.com<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> 把公钥传到服务器（一次性）</span>
+$ ssh-copy-id user@host
+<span class="pl-c"><span class="pl-c">#</span> 验证免密登录</span>
+$ ssh user@host</pre></div>
+<p>原理：公钥存在服务器 <code class="notranslate">~/.ssh/authorized_keys</code>，客户端持私钥签名，服务器用公钥验证，无需密码。</p>
+<h2>文件传输</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">scp file user@host:/path</code></td>
+<td>加密复制文件到远程</td>
+</tr>
+<tr>
+<td><code class="notranslate">scp user@host:/path/file .</code></td>
+<td>从远程下载</td>
+</tr>
+<tr>
+<td><code class="notranslate">scp -r dir user@host:/path</code></td>
+<td>递归复制目录</td>
+</tr>
+<tr>
+<td><code class="notranslate">sftp user@host</code></td>
+<td>安全文件传送协议，交互式传文件</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ scp app.tar.gz user@192.168.1.10:/tmp/
+$ sftp user@host
+sftp<span class="pl-k">&gt;</span> put local.txt
+sftp<span class="pl-k">&gt;</span> get remote.txt
+sftp<span class="pl-k">&gt;</span> <span class="pl-c1">exit</span></pre></div>
+<h2>WSL 远程连接</h2>
 <ul>
-<li>冒号后面的 3 个字符中前 2 个字符表示缓冲区中文本的状态。
-<ul>
-<li><code class="notranslate">--</code>表示缓冲区未被编辑。</li>
-<li><code class="notranslate">**</code> 表示缓冲区文本已经被修改。</li>
-<li><code class="notranslate">%%</code> 表示只读缓冲区中文本未被修改。</li>
-<li><code class="notranslate">%*</code> 表示只读缓冲区中文本已经被修改。</li>
-</ul>
-</li>
-<li>buf 显示窗口缓冲的名字，一般为文件名。</li>
-<li>pos 可指示以下选项：
-<ul>
-<li><code class="notranslate">All</code> 表示显示了整个文件</li>
-<li><code class="notranslate">Top</code> 表示显示了文件的开始部分</li>
-<li><code class="notranslate">Bot</code> 表示显示了文件的末尾部分</li>
-<li><code class="notranslate">NN%</code> 表示在窗口顶部以上的部分显示缓冲区文件的百分比。</li>
-</ul>
-</li>
-<li><code class="notranslate">L#</code> 表示字母 L 后跟当前光标所在行的行号</li>
-<li><code class="notranslate">(Pattern)</code> 表示缓冲区中有效的模式。可用主模式包括：
-<ul>
-<li>Fundamental 模式</li>
-<li>Text 模式</li>
-<li>Lisp 模式</li>
-<li>C 模式</li>
-<li>其他模式</li>
-</ul>
-</li>
-</ul>
-<p>emacs窗口的最后一行是回显行。提示符出现在该区域，用户可以在此输入信息，回显意味着用户输入的信息会在该行显示，但只有当用户输人暂停时，命令才会回显。命令执行完毕后，回显行会显示“done”。在命令执行过程中，若时间较长，会显示“..”的信息。如果命令不能执行，将会在回显行显示错误信息。在命令输人过程中，用户可以按Ctrl+G组合键退出。回显行也可用来读取命令的参数，比如要打开的文件名。当回显行被用作此类输入时，该行被称为小缓冲区。在这种情况下，回显行以提示字符串开头，后跟光标。</p>
-<h3>Emacs 的退出</h3>
-<ul>
-<li>先按 Ctrl+X 组合键，再按 Ctrl+S 键 ： 保存文件并退出 Emacs</li>
-<li>先按 Ctrl+X 组合键，再按 Ctrl+C 键 ： 不保存文件退出 Emacs</li>
-<li>先按 Ctrl+X 组合键，再按 Ctrl+W 键 ： 另存为文件</li>
-</ul>
-<h3>文件与缓冲区操作</h3>
-<p>缓冲区的实质是对打开的文件进行切换、保存和关闭等操作。当用户打开文件时，Emacs自动为其创建一个缓冲区，保存文件的内容，还可以对文件进行编辑。当用户打开下一个文件时，之前的文件仍存在Emacs中，但是只有一个Emacs显示为当前缓冲区。用户可以执行切换命令，切换到需要的缓冲区。一些关于文件和缓冲区的操作命令：</p>
-<ul>
-<li>先按 Ctrl+X 组合键，再按 Ctrl+F 键 ： 搜索并打开文件（此时在回显行直接回车会列出当前目录所有文件，包括隐藏文件）</li>
-<li>先按 Ctrl+X 组合键，再按 Ctrl+V 键 ： 打开另一个文件以替换当前打开的文件</li>
-<li>先按 Ctrl+X 组合键，再按 Ctrl+I 键 ： 在光标所在处插入文件</li>
-<li>按组合键 Alt+X ： 恢复自动保存的文件</li>
-<li>先按 Ctrl+X 组合键，再按 Ctrl+B 键 ： 切换缓冲区</li>
-<li>先按 Ctrl+X 组合键，再按 Ctrl+S 键 ： 保存缓冲区</li>
-<li>按 Ctrl+G 组合键 ： 撤销命令</li>
-</ul>
-<h3>Emacs 的基本操作</h3>
-<h4>光标的移动</h4>
-<p>Ctrl+F 将光标向前移动一个字符<br>
-Ctrl+B 将光标向后移动一个字符<br>
-Ctrl+P 将光标移动到上一行<br>
-Ctrl+N 将光标移动到下一行<br>
-Ctrl+A 将光标移到当前行的行首<br>
-Ctrl+E 将光标移到当前行的行尾<br>
-Ctrl+V 将光标向前移动一屏<br>
-Alt+V 将光标向后移动一屏<br>
-Alt+F 将光标向前移动一个单词<br>
-Alt+B 将光标向后移动一个单词<br>
-Alt+&lt; 将光标移到文本开头<br>
-Alt+&gt; 将光标移到文本末尾</p>
-<h4>删除</h4>
-<p>Backspace 删除光标前的一个字符<br>
-Ctrl+D 删除光标处的字符<br>
-Ctrl+X，再按 U 撤销上次修改<br>
-Alt+D 删除光标后的一个单词<br>
-Ctrl+K 删除从光标到该行行尾的所有字符<br>
-Ctrl+X，再按 Backspace 删除前一句<br>
-Ctrl+W 删除两个位置间的所有文本</p>
-<h4>重排</h4>
-<p>重排是对文本中的内容重新编辑，进行复制、粘贴和删除等一系列操作。选中的一段文字表示区域，区域的起点叫作标记。光标移动到的位置和标记之间就是区域。光标在文本中的位置叫作光标点。</p>
-<p>Ctrl+空格键 在当前点位置设置标记<br>
-Ctrl+X，Ctrl+X 互换光标点和标记的位置，该命令可以用来显示标记的位置如，对于 xample.txt 文件，将光标移动到第 2 行首字母 T 上。Ctrl+空格键，在屏幕底部的回显行会显示信息“Mark set”。将光标移至文件末尾设置点，按组合键 Ctrl+X，Ctrl+X，互换光标点和标记，显示出标记的位置，确保设置了标记。按 Ctrl+W，删除选中的文本。被删除的文本放置在缓冲区内，可以重新插入文本的其他位<br>
-置。将光标放于第 2 行，按 Ctrl+Y 组合键，在光标位置插入被删除的文本</p>
-<h4>搜索和替换</h4>
-<p>Ctrl+S 向前递增搜索<br>
-Ctrl+R 向后递增搜索<br>
-替换命令需要提供两个参数：搜索字符串和替换字符串。每一个参数都以 Enter 键结束。<br>
-命令按键为：先按 Alt+Shift+5 组合键，然后输入要搜索的字符串，再按 Enter 键，Emacs<br>
-会提示输入要替换的字符串，输完按 Enter。</p>
-<p>空格键或 Y 替换当前匹配并进入下一匹配处<br>
-Delete 键或 N 忽略此次匹配并进入到下一匹配处，（逗号）键 显示替换结果<br>
-Enter 键或 Q 直接退出<br>
-.（句号）键 替换当前匹配并退出<br>
-！键 直接替换剩下的所有匹配<br>
-^键 回到前一匹配处</p>
-<h4>大小写字母转换</h4>
-<p>将光标放在单词前<br>
-Alt+U 将整个单词转为大写<br>
-Alt+L 将整个单词转为小写<br>
-Alt+C 将首字母改为大写<br>
-Ctrl+X，Ctrl+U 将指定区域改为大写<br>
-Ctrl+X，Ctrl+L 将指定区域改为小写</p>
-<h4>帮助操作</h4>
-<p>Ctrl+H 调用 Emacs 的帮助</p>
-<h4>窗口操作</h4>
-<p>Ctrl+X，再按 2 将当前窗口水平分割为两个窗口<br>
-Ctrl+X，再按 3 将当前窗口垂直分割为两个窗口<br>
-Ctrl+X，再按&gt; 向右滚动当前窗口<br>
-Ctrl+X，再按&lt; 向左滚动当前窗口<br>
-Ctrl+X，再按 0 删除当前窗口<br>
-Ctrl+X，再按 O 将光标放在其他窗口上<br>
-Ctrl+X，再按 1 删除当前窗口外的所有窗口</p>
-<h4>Emacs 环境下编译并运行 C/C++程序</h4>
-<p>使用emacs的命令行模式</p>
-<pre class="notranslate"><code class="notranslate">$ emacs -nw
-</code></pre>
-<p>先按 Ctrl+X，再 Ctrl+F，打开文件 test.c<br>
-Ctrl+X，Ctrl+S，保存文件<br>
-编译文件，Alt+X，输入“eshell”命令进入缓冲区<br>
-输入“gcc test.c -o test” 命令以编译源文件，并通过“./test”命令运行程序</p>
-<hr>
-<hr>
-<h2>61 原文</h2></div>
+<li>Windows 通过 <code class="notranslate">wsl --install</code> 装 Ubuntu 后，SSH 服务在 WSL 内自启动即可。</li>
+<li>从本机 <code class="notranslate">ssh user@localhost</code> 连接 WSL 内服务。</li>
+<li>WSL2 默认 NAT，外部机器访问需做端口转发（<code class="notranslate">netsh interface portproxy</code>）或镜像网络模式。</li>
+</ul></div>
     <details class="in-series-list" open aria-label="Series">
       <summary>Linux 学习笔记</summary>
       <ol>
@@ -236,20 +179,15 @@ Ctrl+X，Ctrl+S，保存文件<br>
         <li><a href="https://interset-wq.github.io/blog/post/49_6050818452.html">Bash 脚本编程</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/49_6050818751.html">进程管理与系统资源监控</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/49_6050819092.html">Linux 网络配置</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050819483.html">网络管理</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050819812.html">系统服务与日志</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050820159.html">Emacs 编辑器</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050821488.html">OpenSSH</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050821853.html">Web 服务器搭建、应用开发与部署</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050822201.html">Linux 应用程序开发技术</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050822701.html">Linux文件操作</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050823242.html">Linux 常用操作</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050823594.html">Linux 用户和权限</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050819483.html">软件包管理</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050819812.html">系统服务与日志管理</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050820159.html">OpenSSH 远程连接</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050821488.html">Linux 常用工程实操</a></li>
       </ol>
     </details>
     <nav class="in-series-pager" aria-label="Series pages">
-      <a class="in-series-prev" href="https://interset-wq.github.io/blog/post/49_6050819812.html">系统服务与日志</a>
-      <a class="in-series-next" href="https://interset-wq.github.io/blog/post/49_6050821488.html">OpenSSH</a>
+      <a class="in-series-prev" href="https://interset-wq.github.io/blog/post/49_6050819812.html">系统服务与日志管理</a>
+      <a class="in-series-next" href="https://interset-wq.github.io/blog/post/49_6050821488.html">Linux 常用工程实操</a>
     </nav>
   </article>
 <section class="in-comments-section">
@@ -291,7 +229,7 @@ Ctrl+X，Ctrl+S，保存文件<br>
   <span id="run-days"></span>
   <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
 </div>
-<div class="in-footer-built">构建部署于 2026-10-12 20:55:46</div>
+<div class="in-footer-built">构建部署于 2026-10-12 20:56:27</div>
 <script>
   (function () {
     document.getElementById('copyright-year').textContent = new Date().getFullYear();
