@@ -21,15 +21,15 @@
     })();
   </script>
   <meta name="description" content="My notes on everything.">
-<meta property="og:title" content="文件管理">
+<meta property="og:title" content="Bash 基础与数据流">
 <meta property="og:description" content="My notes on everything.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://interset-wq.github.io/blog/post/49_6050817347.html">
 <meta property="og:image" content="https://interset-wq.github.io/blog/assets/avatar.png">
-<title>文件管理</title>
+<title>Bash 基础与数据流</title>
   <link href="https://interset-wq.github.io/blog/assets/starry-night.css" rel="stylesheet">
   
-<style>
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}
   <style>
     .in-progress {
       position: fixed;
@@ -46,7 +46,7 @@
   </style>
 </style></head>
 <body>
-  <header class="in-site-header" id="header">  <h1 class="in-page-title">文件管理</h1>
+  <header class="in-site-header" id="header">  <h1 class="in-page-title">Bash 基础与数据流</h1>
 <nav class="in-site-nav" aria-label="Post navigation">    <a class="in-nav-btn" href="https://interset-wq.github.io/blog" title="首页" aria-label="首页"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z" fill-rule="evenodd"></path></svg></a>
 
   <button class="in-nav-btn" id="in-theme-toggle" type="button" title="切换主题" aria-label="切换主题">
@@ -75,15 +75,15 @@
           <span class="in-meta-series-pos">6 / 18</span>
         </summary>
         <ol>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050815490.html">介绍</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050815957.html">常用Linux命令</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050816440.html">shell 脚本编程基础</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050816753.html">VI编辑器</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050817050.html">用户管理</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050817347.html">文件管理</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050818452.html">进程管理</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050818751.html">存储管理</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050819092.html">设备管理</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050815490.html">Linux 与 WSL 系统简介</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050815957.html">Linux 文件系统与目录操作</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050816440.html">文本查看与处理命令</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050816753.html">Linux 文本编辑器</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050817050.html">用户、组与权限管理</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050817347.html">Bash 基础与数据流</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050818452.html">Bash 脚本编程</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050818751.html">进程管理与系统资源监控</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050819092.html">Linux 网络配置</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/49_6050819483.html">网络管理</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/49_6050819812.html">系统服务与日志</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/49_6050820159.html">Emacs 编辑器</a></li>
@@ -98,326 +98,132 @@
     </div>
     <nav class="in-toc" id="in-toc" data-toc-title="目录" data-toc-top="回到顶部" aria-label="目录"></nav>
     <div class="in-progress" id="in-progress"></div>
-    <div class="in-post-body markdown-body"><h2>54 原文</h2>
-<h2>文件系统</h2>
-<p>Linux文件系统中的文件是数据的集合，文件系统不仅包含着文件中的数据而且包含文件系统的结构，所有Linux用户和程序看到的文件、目录及文件保护信息等都存储在文件系统中。从用户角度看，文件系统是具有层次结构的，由若干目录和子目录组成</p>
+    <div class="in-post-body markdown-body"><h2>Shell 概念</h2>
+<p>Shell 是用户与内核之间的命令解释器。Linux 默认交互 Shell 是 <strong>bash</strong>（Bourne Again Shell）。除交互使用外，也可把命令写成脚本批量执行。</p>
+<h2>环境变量</h2>
+<p>环境变量是操作系统运行时记录的关键信息，Key-Value 结构。</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ env                 <span class="pl-c"><span class="pl-c">#</span> 查看全部环境变量</span>
+$ <span class="pl-c1">echo</span> <span class="pl-smi">$HOME</span>          <span class="pl-c"><span class="pl-c">#</span> 查看单个变量值（$ 取变量值）</span>
+$ <span class="pl-c1">echo</span> <span class="pl-smi">$PATH</span>          <span class="pl-c"><span class="pl-c">#</span> PATH 记录命令搜索路径，用 : 分隔</span>
+$ <span class="pl-k">export</span> MY_VAR=hello <span class="pl-c"><span class="pl-c">#</span> 临时设置并导出环境变量</span>
+$ <span class="pl-c1">echo</span> <span class="pl-smi">${MY_VAR}</span>abc   <span class="pl-c"><span class="pl-c">#</span> 混合时用 {} 标注变量名</span></pre></div>
 <ul>
-<li>文件：文件系统中存储数据的一个命名对象。它是用户眼中最小的逻辑存储单元。</li>
-<li>目录：包含许多文件控制块项目的一类特殊文件。目录支持文件系统的层次结构。文件系统中的每个文件都登记在一个或多个目录中。</li>
-<li>子目录：被包含在另一目录中的目录。包含子目录的目录称为父目录。除了根目录<code class="notranslate">/</code>外，所有目录都是子目录，有父目录存在。目录的主要作用是和文件名共同组成路径，唯一地对应于一个文件。在Linux操作系统中，所有的文件和目录都被组织成从一个根节点“/”开始的倒置的树状结构</li>
+<li>临时变量只对当前 shell 生效；要永久生效写入 <code class="notranslate">~/.bashrc</code>（当前用户）或 <code class="notranslate">/etc/profile</code>（所有用户），再 <code class="notranslate">source ~/.bashrc</code>。</li>
+<li><code class="notranslate">PATH</code>：执行任何命令都按序在这些路径中搜索程序本体，可追加自定义目录 <code class="notranslate">export PATH=$PATH:~/mybin</code>。</li>
 </ul>
-<p><a target="_blank" rel="noopener noreferrer" href="./img/file-system.jpg"><img src="./img/file-system.jpg" alt="" style="max-width: 100%;"></a></p>
-<p>在Linux系统中，一切都是文件，既然是文件，就必须要有文件名。同其他系统相比，Linux系统对文件或目录命名的要求相对比较宽松。在Linux系统中，文件和目录的命名规则如下：</p>
+<h2>变量</h2>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ name=<span class="pl-s"><span class="pl-pds">"</span>world<span class="pl-pds">"</span></span>        <span class="pl-c"><span class="pl-c">#</span> 自定义变量（等号两侧不能有空格）</span>
+$ <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>hello <span class="pl-smi">$name</span><span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span> 输出 hello world</span>
+$ <span class="pl-k">readonly</span> pi=3.14    <span class="pl-c"><span class="pl-c">#</span> 只读变量</span>
+$ <span class="pl-c1">unset</span> name          <span class="pl-c"><span class="pl-c">#</span> 删除变量</span></pre></div>
+<h2>引号</h2>
 <ul>
-<li>除了字符<code class="notranslate">/</code>之外，所有的字符都可以使用，但是要注意，在目录名或文件名中，使用某些特殊字符并不是明智之举。例如，在命名时应避免使用&lt;、&gt;、？、*和非打印字符等。如果一个文件名中包含了特殊字符，例如空格，那么在访问这个文件时就需要使用引号将文件名括起来。</li>
-<li>目录名或文件名的长度不能超过255个字符。</li>
-<li>目录名或文件名是区分大小写的。如DOG、dog、Dog和DOg是互不相同的目录名或文件名，但使用字符大小写来区分不同的文件或目录，也是不明智的。</li>
-<li>与Windows系统不同，文件的扩展名对Linux系统没有特殊的含义，换句话说，Linux系统并不以文件的扩展名来区分文件类型。例如，dog.exe只是一个文件，其扩展名.exe并不代表此文件就一定是可执行文件。</li>
+<li>双引号 <code class="notranslate">"</code>：内部 <code class="notranslate">$</code> 变量、反引号会解析。</li>
+<li>单引号 <code class="notranslate">'</code>：全部原样输出，不解析变量。</li>
+<li>反引号 <code class="notranslate">`</code>：包围的内容作为命令执行。</li>
 </ul>
-<p>如果一个目录或文件名是以<code class="notranslate">.</code>开始，就表示这个目录或文件是一个隐藏目录或文件，即以默认方式查找时，不显示该目录或文件。</p>
-<p>在Linux系统中，硬件设备也是文件，也有各自的文件名称。Linux系统内核中的udev设备管理器会自动对硬件设备的名称进行规范，目的是让用户通过设备文件的名称，就可以大致猜测出设备的属性以及相关信息。udev设备管理器会一直以进程的形式运行，并监听系统内核发出的信号来管理位于/dev目录下的设备文件。</p>
-<p>Linux系统中常见硬件设备的文件名：</p>
-<ul>
-<li>IDE设备 <code class="notranslate">/dev/hd[a-d]</code>，现在的IDE设备已经很少见了，因此一般的硬盘设备会以<code class="notranslate">/dev/sd</code>开头</li>
-<li>SCSI/SATA/U盘 <code class="notranslate">/dev/sd[a-p]</code>，一台主机可以有多块硬盘，因此系统采用a~p代表16块不同的硬盘</li>
-<li>软驱 <code class="notranslate">/dev/fd[0-1]</code></li>
-<li>打印机 <code class="notranslate">/dev/lp[0-15]</code></li>
-<li>光驱 <code class="notranslate">/dev/cdrom</code></li>
-<li>鼠标 <code class="notranslate">/dev/mouse</code></li>
-<li>磁带机 <code class="notranslate">/dev/st0</code>或<code class="notranslate">/dev/ht0</code></li>
-</ul>
-<h3>文件结构和类型</h3>
-<p>文件是Linux系统处理信息的基本单位，所有软件都组织成文件。所有文件都由两部分组成，数据项和文件控制块。在Linux系统中文件控制块被称为索引节点。</p>
-<ul>
-<li>索引节点（又称I节点）：在文件系统结构中索引节点负责记录相应文件的控制信息，包括文件权限、文件大小等。</li>
-<li>数据：文件的实际内容，它可以为空，也可以非常大，并且有自己的结构。</li>
-</ul>
-<p>根据文件数据项是否具有结构，可以将文件分成两大类：无结构文件（即字符流文件）和有结构文件（例如目录文件）。但是在通常情况下，Linux文件类型被划分为普通文件、目录文件、链接文件及设备文件。</p>
-<ul>
-<li>普通文件：它是最常使用的一类文件，其特点是不包含文件系统的结构信息。通常用户所接触到的文件，如图形文件、数据文件、文档文件、声音文件等都属于这种文件。这种类型的文件按其内部结构又可分为文本文件和二进制文件。</li>
-<li>目录文件：目录文件是用于存放文件名及其相关信息的文件。它是内核组织文件系统的基本节点。目录文件可以包含下一级文件目录或普通文件。</li>
-<li>链接文件：链接文件是一种特殊文件，实际上是指向一个真实文件的链接，类似于Windows系统中的快捷方式。链接文件又可细分为硬链接（HardLink）文件和符号链接（SymbolicLink）文件</li>
-<li>设备文件：设备文件是Linux系统中最特殊的文件。正是它的存在使得Linux系统可以十分方便地访问外部设备。Linux系统为外部设备提供一种标准接口，将外部设备视为一种特殊文件。用户可以像访问普通文件一样访问任何外部设备，使Linux系统可以很方便地适应不断发展的外部设备。通常Linux系统将设备文件放在/dev目录下，设备文件使用设备的主设备号和次设备号来指定某外部设备。根据访问数据方式的不同，设备文件又可分为块设备和字符设备。</li>
-</ul>
-<h2>文件与目录操作</h2>
-<h3>文件操作命令</h3>
-<h4>cat命令</h4>
-<p>cat命令可以用来显示文本文件的内容，也可以把几个文件内容附加到另一个文件中，即连接、合并文件，cat的全称是concatenate（连接、连续）。适合查看文件内容较少的文件。</p>
-<p>cat命令的基本格式：<code class="notranslate">$ cat [选项] 文件名</code> 或者 <code class="notranslate">$ cat 文件1 文件2 &gt; 文件3</code></p>
-<p>在这两种格式中，前者用于显示文件的内容，常用选项及各自的含义如下所示；后者用于连接、合并文件。如果文件3不存在，则自动创建文件；已存在，则覆写</p>
-<ul>
-<li><code class="notranslate">-n</code> 对输出的所有行进行编号。</li>
-<li><code class="notranslate">-b</code> 与-n不同，此选项表示只对非空行进行编号。</li>
-<li><code class="notranslate">-s</code> 当遇到连续2行以上的空白行时，就替换为1行的空白行。</li>
-</ul>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ vim hello.txt
-$ cat hello.txt
-hello
-world
-linux
-$ cat -n hello.txt
-     1  hello
-     2  world
-     3  linux</pre></div>
-<p>当cat后面带多个参数时，cat就会依次将参数所表示的文件显示在显示屏上，从而将多个文件连接在一起，如果需要将连接后的文件生成一个新文件，使用<code class="notranslate">&gt;</code>输出重定向符，就可以将连接后的文件保存在一个新文件中</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ vim lang.txt
-$ cat lang.txt
-html
-css
-javascript
-$ cat hello.txt lang.txt
-hello
-world
-linux
-html
-css
-javascript
-$ cat hello.txt lang.txt <span class="pl-k">&gt;</span> text.txt
-$ cat text.txt
-hello
-world
-linux
-html
-css
-javascript</pre></div>
-<h4>more 命令</h4>
-<p>分页显示文本文件内容，适合查看内容较多的文件。</p>
-<p>语法 <code class="notranslate">$ more [选项] 文件名</code></p>
-<p>选项：</p>
-<ul>
-<li><code class="notranslate">-c</code>或<code class="notranslate">-p</code> 不滚屏，先清屏后再显示内容。</li>
-<li><code class="notranslate">-s</code> 当遇到连续两行以上的空白行时，就替换为一行的空白行。</li>
-<li><code class="notranslate">+n</code> 从第n行开始显示文件内容，n代表数字。</li>
-<li><code class="notranslate">-n</code> 一次显示的行数，n代表数字。</li>
-</ul>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ more /etc/passwd
-root<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">0:0:root:/root:/bin/bash
-daemon<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">1:1:daemon:/usr/sbin:/usr/sbin/nologin
-bin<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">2:2:bin:/bin:/usr/sbin/nologin
-sys<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">3:3:sys:/dev:/usr/sbin/nologin
-sync<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">4:65534:sync:/bin:/bin/sync
-games<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">5:60:games:/usr/games:/usr/sbin/nologin
-man<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">6:12:man:/var/cache/man:/usr/sbin/nologin
-lp<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">7:7:lp:/var/spool/lpd:/usr/sbin/nologin
-mail<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">8:8:mail:/var/mail:/usr/sbin/nologin
-news<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">9:9:news:/var/spool/news:/usr/sbin/nologin
-uucp<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
-proxy<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">13:13:proxy:/bin:/usr/sbin/nologin
-www-data<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">33:33:www-data:/var/www:/usr/sbin/nologin
-backup<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">34:34:backup:/var/backups:/usr/sbin/nologin
-list<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">38:38:Mailing List Manager:/var/list:/usr/sbin/nolo
-gin
-irc<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">39:39:ircd:/run/ircd:/usr/sbin/nologin
-_apt<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">42:65534::/nonexistent:/usr/sbin/nologin
-nobody<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">65534:65534:nobody:/nonexistent:/usr/sbin/nologin
-systemd-network<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">998:998:systemd Network Management:/:/us
-r/sbin/nologin
-systemd-timesync<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">996:996:systemd Time Synchronization:/:
-/usr/sbin/nologin
-dhcpcd<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">100:65534:DHCP Client Daemon,,,:/usr/lib/dhcpcd:/
-bin/false
-messagebus<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">101:101::/nonexistent:/usr/sbin/nologin
-syslog<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">102:102::/nonexistent:/usr/sbin/nologin
-systemd-resolve<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">991:991:systemd Resolver:/:/usr/sbin/nol
-ogin
---More--(80%)</pre></div>
-<p>使用空格键翻页。</p>
-<h4>less 命令</h4>
-<p>用法和more相似，兼容more的所有功能。</p>
-<p>语法 <code class="notranslate">$ less [选项] 文件名</code></p>
-<p>q键退出</p>
-<h4>head命令</h4>
-<p>head命令可以显示指定的文件前若干行的内容，其基本格式如下：<code class="notranslate">$ head [选项] 文件名</code></p>
-<p>选项：</p>
-<ul>
-<li><code class="notranslate">-n k</code> 这里的k表示行数，该选项用来显示文件前k行的内容。</li>
-<li><code class="notranslate">-c k</code> 这里的k表示字节数，该选项用来显示文件前k个字节的内容。</li>
-<li><code class="notranslate">-v</code> 显示文件名。</li>
-</ul>
-<p>如不设置显示的具体行数，则默认显示10行的文本数据。</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-k">~</span>$ head /etc/passwd
-root<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">0:0:root:/root:/bin/bash
-daemon<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">1:1:daemon:/usr/sbin:/usr/sbin/nologin
-bin<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">2:2:bin:/bin:/usr/sbin/nologin
-sys<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">3:3:sys:/dev:/usr/sbin/nologin
-sync<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">4:65534:sync:/bin:/bin/sync
-games<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">5:60:games:/usr/games:/usr/sbin/nologin
-man<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">6:12:man:/var/cache/man:/usr/sbin/nologin
-lp<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">7:7:lp:/var/spool/lpd:/usr/sbin/nologin
-mail<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">8:8:mail:/var/mail:/usr/sbin/nologin
-news<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">9:9:news:/var/spool/news:/usr/sbin/nologin</pre></div>
-<p>head命令默认显示文件的开头10行内容。如果想显示指定的行数，则只需使用<code class="notranslate">-n</code>选项即可：</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ head -n 3 /etc/passwd
-root<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">0:0:root:/root:/bin/bash
-daemon<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">1:1:daemon:/usr/sbin:/usr/sbin/nologin
-bin<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">2:2:bin:/bin:/usr/sbin/nologin</pre></div>
-<p>这是显示文件的开头3行内容，也可以直接写<code class="notranslate">-行数</code></p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ head -3 /etc/passwd
-root<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">0:0:root:/root:/bin/bash
-daemon<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">1:1:daemon:/usr/sbin:/usr/sbin/nologin
-bin<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">2:2:bin:/bin:/usr/sbin/nologin</pre></div>
-<h4>tail命令</h4>
-<p>tail命令和head命令正好相反，它用来查看文件末尾的数据，其基本格式如下：<code class="notranslate">$ tail [选项] 文件名</code></p>
-<p>tail命令可以使用“-f”选项来监听文件的新增内容，例如执行命令<code class="notranslate">$ tail -f file</code>，光标不会退出文件，而会一直监听在文件的结尾处。如果向文件中追加一些数据，那么，在原始的正在监听的终端中，会看到追加的信息。如果想终止输出，按Ctrl+C键中断tail命令即可。</p>
-<h4>touch命令</h4>
-<p>touch命令可以用来创建文件（当指定操作文件不存在时，该命令会在当前位置建立一个空文件），此命令更重要的功能是修改文件的时间参数（当文件存在时，会修改此文件的时间<br>
-参数）。</p>
-<p>在Linux系统中，每个文件主要拥有3个时间参数（通过stat命令进行查看），分别是文件的<br>
-访问时间、数据修改时间以及状态修改时间。</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ stat /etc/passwd
-  File: /etc/passwd
-  Size: 1521            Blocks: 8          IO Block: 4096   regular file
-Device: 8,32    Inode: 44737       Links: 1
-Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)
-Access: 2025-08-07 14:50:57.790158641 +0800
-Modify: 2025-08-07 14:50:57.770158646 +0800
-Change: 2025-08-07 14:50:57.770158646 +0800
- Birth: 2025-08-07 14:50:57.770158646 +0800</pre></div>
-<ul>
-<li>访问时间（access time，简称atime）：只要文件的内容被读取，访问时间就会更新。例如，使用cat命令可以查看文件的内容，此时文件的访问时间就会发生改变。</li>
-<li>数据修改时间（modify time，简称mtime）：当文件的内容数据发生改变，此文件的数据修改时间就会相应改变。</li>
-<li>状态修改时间（change time，简称ctime）：当文件的状态发生变化，就会相应改变这个时间。比如说，如果文件的权限或者属性发生改变，此时间就会相应改变。</li>
-</ul>
-<p>touch命令的基本格式：<code class="notranslate">$ touch [选项] 文件名</code></p>
-<p>选项：</p>
-<ul>
-<li>-a：只修改文件的访问时间。</li>
-<li>-c：修改文件的时间参数（3个时间参数都改变），如果文件不存在，则不建立新文件。</li>
-<li>-m：只修改文件的数据修改时间。</li>
-<li>-t：该选项后面可以跟欲修订的时间，而不用目前的时间，时间格式为YYYYMMDDhhmm</li>
-</ul>
-<p>可以看到，touch命令可以只修改文件的访问时间，也可以只修改文件的数据修改时间，但是不能只修改文件的状态修改时间。因为，不论是修改访问时间，还是修改文件的数据修改时间，对文件来讲，状态都会发生改变，即状态修改时间会随之改变（更新为操作当前文件的真正时间）。</p>
-<h4>grep 命令</h4>
-<p>grep，即global regular expressions print，在一个或多个文件中搜索某一特定的字符模式（即正则表达式），此模式可以是单一的字符、字符串、单词或句子。正则表达式是描述一组字符串的一个模式，可以是一些纯文本文字，也可以是用来产生模式的一些特殊字符。正则表达式中包含一些特殊字符，与通配符含义不同。</p>
-<ul>
-<li>c* 将匹配 0 个或多个字符 c（c 为任一字符）</li>
-<li>.： 将匹配任何一个字符，且只能是一个字符。</li>
-<li>[xyz]：匹配方括号中任意一个字符。</li>
-<li>[^xyz]：匹配出方括号中字符外的所有字符。</li>
-<li>^：行首定位符。</li>
-<li>$：行尾定位符。</li>
-</ul>
-<p>grep命令用来在每一个文件中（或特定输出上)搜索特定的模式。当使用grep 时，包含指定字符模式的每一行内容，都会被打印（显示）到显示器上，但是使用grep命令并不改变文件中的内容。</p>
-<p>grep命令的基本格式如下：<code class="notranslate">$ grep [选项] 模式 文件名</code></p>
-<p>这里的模式，要么是字符（串），要么是正则表达式。此命令常用的选项如下：</p>
-<ul>
-<li>-F：将查找模式解释成单纯的字符串。</li>
-<li>-E：将查找模式解释成正则表达式。</li>
-<li>-C：仅列出文件中包含模式的行数。</li>
-<li>-i：忽略模式中的字母大小写。</li>
-<li>-n:在每一行的最前面列出行号。</li>
-<li>-v:列出没有匹配模式的行。</li>
-</ul>
-<p>注意：如果是搜索多个文件，grep命令的搜索结果只显示文件中发现匹配模式的文件名。</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ grep root /etc/passwd
-root<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">0:0:root:/root:/bin/bash</pre></div>
-<h4>sed 命令</h4>
-<p>主要用来自动编辑一个或多个文件，简化对文件的反复操作，编写转换程序等。</p>
-<p>语法 <code class="notranslate">$ sed [选项] 编辑命令 文件名</code></p>
-<p>选项：</p>
-<ul>
-<li>-n：只显示匹配处理的行</li>
-<li>-e：执行多个编辑命令时使用（一般用“；”代替）</li>
-<li>-i：直接在文件中进行修改，而不是输出到显示器。</li>
-<li>-f：从脚本文件中读取内容并执行（文件中的编辑命令每行一个，不用“；”隔开）</li>
-</ul>
-<p>编辑命令：</p>
-<ul>
-<li>p：打印匹配行 print</li>
-<li>d：删除指定行 delete</li>
-<li>a：在匹配行后面追加 append</li>
-<li>i：在匹配行前面插入 insert</li>
-<li>c：整行替换</li>
-<li>r：读取文件的内容</li>
-<li>w：将文本写入文件</li>
-<li>s：字符串替换（匹配正则表达式）substitution</li>
-</ul>
-<p>将/etc/passwd文件的第二行和第三行输出到控制台：</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ sed -n <span class="pl-s"><span class="pl-pds">"</span>2,3p<span class="pl-pds">"</span></span> /etc/passwd
-daemon<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">1:1:daemon:/usr/sbin:/usr/sbin/nologin
-bin<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">2:2:bin:/bin:/usr/sbin/nologin</pre></div>
-<h4>awk 命令</h4>
-<h4>cp 命令</h4>
-<h4>rm 命令</h4>
-<p>永久性删除文件或目录</p>
-<p><code class="notranslate">$ rm [选项] 文件或目录</code></p>
-<ul>
-<li>-f：强制删除 force</li>
-<li>-i：删除前询问</li>
-<li>-r：递归删除，主要用于删除目录，可删除指定目录及包含的所有内容。</li>
-</ul>
-<h4>mv 命令</h4>
-<p>可在不同目录间移动文件或目录，也可对文件和目录进行重命名。</p>
-<p>语法 <code class="notranslate">$ mv [选项] 源文件 目标文件</code></p>
-<ul>
-<li>-f：强制覆盖</li>
-<li>-i：交互移动，若目标文件已经存在，询问用户是否覆盖（默认选项）</li>
-<li>-n：若目标文件已经存在，则不会覆盖移动，而且不询问用户。</li>
-<li>-v：显示文件或目录的移动过程。</li>
-<li>-u：若目标文件已经存在，两者相比，源文件更新，则会对目标文件进行升级。</li>
-</ul>
-<p>如果源文件和目标文件在同一个目录中，此时mv就是重命名</p>
-<h4>sort 命令</h4>
-<p>排序命令。ASCII 码值进行比较，升序输出。</p>
-<ul>
-<li>-r 反向排序。</li>
-</ul>
-<h4>wc 命令</h4>
-<h3>目录操作命令</h3>
-<h4>mkdir 创建目录</h4>
-<h4>rmdir 删除空目录</h4>
-<h4>cd 切换工作目录</h4>
-<h4>pwd 打印当前工作目录</h4>
-<p>print working directory 显示当前所在的目录。</p>
-<h4>ls 显示当前目录下的内容</h4>
-<p>不使用任何选项时，默认只会显示非隐藏文件的名称，并以文件名进行排序。<br>
--a 显示全部的文件，包括隐藏文件。（开头为”.”的文件）</p>
-<h4>ln 链接</h4>
-<h2>访问权限管理</h2>
-<p>可以使用 ls 命令查看文件和目录的权限信息，ls -al</p>
-<h3>权限位</h3>
-<h3>修改权限位的命令</h3>
-<h4>chmod 命令</h4>
-<p>权限与数字对应关系： r -4，w -2，x -1<br>
-使用数字修改文件权限的命令格式：<br>
-chmod 权限值 文件名<br>
-若加选项 -R 表示连同子目录中的所有文件，也都修改为设定的权限。<br>
-文件的基本权限就是 3 种用户身份，所有者 u，所属组 g 和其他人 o 。a 代表全部的身份。<br>
-chmod go+/-/=rwx</p>
-<h4>umask 命令</h4>
-<p>使用 umask 默认权限来给所有新建的文件和目录赋予初始权限。<br>
-直接通过 umask 命令得知默认权限的值！<br>
-默认是 0022，第 1 个数代表的是文件所具有的特殊权限，后 3 位才是要用到的 umask 值，<br>
-转变为字母形式是----w--w-。<br>
-文件和目录的真正初始权限可通过以下计算得到：<br>
-文件（或目录）的初始权限=文件（或目录）的最大默认权限-umask 权限<br>
-Linux 系统中，文件的最大默认权限为 666，即 rw-rw-rw-。<br>
-目录的最大默认权限是 777，即 rwxrwxrwx。<br>
-注：用字母形式做减法！最大默认权限中 和 umask 权限公共的部分，通过减法运算被遮盖<br>
-掉，剩下的最大默认权限，才是最终赋予文件目录的初始权限。如 666-033=644</p>
-<h4>chown 命令</h4>
-<p>用于修改文件（或目录）的所有者。基本格式：<br>
-chown 所有者 文件或目录<br>
--R 表示连同子目录中的所有文件都更改。<br>
-若要同时更改所有者和所属组<br>
-chown 所有者：所属组 文件或目录</p>
-<h4>chgrp 命令</h4>
-<p>用于修改文件（或目录）的所属组。<br>
-chgrp 所属组 文件名（目录名）</p>
-<hr>
-<hr></div>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ var=<span class="pl-s"><span class="pl-pds">"</span>linux<span class="pl-pds">"</span></span>
+$ <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$var</span><span class="pl-pds">"</span></span>     <span class="pl-c"><span class="pl-c">#</span> linux</span>
+$ <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>$var<span class="pl-pds">'</span></span>     <span class="pl-c"><span class="pl-c">#</span> $var</span>
+$ <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">`</span>date<span class="pl-pds">`</span></span>     <span class="pl-c"><span class="pl-c">#</span> 输出 date 命令结果</span></pre></div>
+<h2>通配符</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>通配符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">*</code></td>
+<td>0 或多个任意字符</td>
+</tr>
+<tr>
+<td><code class="notranslate">?</code></td>
+<td>恰好 1 个任意字符</td>
+</tr>
+<tr>
+<td><code class="notranslate">[abc]</code></td>
+<td>匹配括号内任意一个字符</td>
+</tr>
+<tr>
+<td><code class="notranslate">[a-z]</code></td>
+<td>匹配范围内的一个字符</td>
+</tr>
+<tr>
+<td><code class="notranslate">[^abc]</code></td>
+<td>匹配不在括号内的字符</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ ls <span class="pl-k">*</span>.txt          <span class="pl-c"><span class="pl-c">#</span> 所有 .txt 结尾</span>
+$ ls file<span class="pl-k">?</span>.log      <span class="pl-c"><span class="pl-c">#</span> file1.log、filea.log…</span>
+$ rm test<span class="pl-k">*</span>          <span class="pl-c"><span class="pl-c">#</span> 删除所有 test 开头（配合 rm，注意安全）</span></pre></div>
+<h2>标准流与重定向</h2>
+<p>每个命令默认有三个标准流：标准输入（stdin，0）、标准输出（stdout，1）、标准错误（stderr，2）。</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>符号</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">&gt;</code></td>
+<td>stdout 覆写写入文件</td>
+</tr>
+<tr>
+<td><code class="notranslate">&gt;&gt;</code></td>
+<td>stdout 追加写入文件</td>
+</tr>
+<tr>
+<td><code class="notranslate">2&gt;</code></td>
+<td>stderr 覆写写入文件</td>
+</tr>
+<tr>
+<td><code class="notranslate">2&gt;&gt;</code></td>
+<td>stderr 追加写入文件</td>
+</tr>
+<tr>
+<td><code class="notranslate">&amp;&gt;</code></td>
+<td>stdout 和 stderr 一起写入文件</td>
+</tr>
+<tr>
+<td><code class="notranslate">&lt;</code></td>
+<td>从文件读取作为标准输入</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ <span class="pl-c1">echo</span> hello <span class="pl-k">&gt;</span> out.txt        <span class="pl-c"><span class="pl-c">#</span> 写入/覆写 out.txt</span>
+$ <span class="pl-c1">echo</span> append <span class="pl-k">&gt;&gt;</span> out.txt      <span class="pl-c"><span class="pl-c">#</span> 追加</span>
+$ <span class="pl-c1">command</span> <span class="pl-k">2&gt;</span> error.log        <span class="pl-c"><span class="pl-c">#</span> 错误信息写入 error.log</span>
+$ <span class="pl-c1">command</span> <span class="pl-k">&gt;</span> all.log <span class="pl-k">2&gt;&amp;1</span>      <span class="pl-c"><span class="pl-c">#</span> stdout 和 stderr 合并到 all.log</span>
+$ <span class="pl-c1">command</span> <span class="pl-k">&amp;</span><span class="pl-k">&gt;</span> all.log          <span class="pl-c"><span class="pl-c">#</span> 等价写法</span>
+$ <span class="pl-c1">command</span> <span class="pl-k">&lt;</span> input.txt         <span class="pl-c"><span class="pl-c">#</span> 从 input.txt 读入</span></pre></div>
+<h2>管道</h2>
+<p>管道 <code class="notranslate">|</code> 把前一个命令的<strong>标准输出</strong>作为后一个命令的<strong>标准输入</strong>，实现命令串联。凡是能在控制台输出内容的命令都可放管道左侧。</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ ps aux <span class="pl-k">|</span> grep nginx
+$ ls -l <span class="pl-k">|</span> less
+$ cat access.log <span class="pl-k">|</span> grep <span class="pl-s"><span class="pl-pds">"</span>404<span class="pl-pds">"</span></span> <span class="pl-k">|</span> wc -l
+$ dmesg <span class="pl-k">|</span> grep -i error</pre></div>
+<p>常用组合：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ <span class="pl-c1">history</span> <span class="pl-k">|</span> tail -n 20              <span class="pl-c"><span class="pl-c">#</span> 查看最近 20 条历史命令</span>
+$ df -h <span class="pl-k">|</span> awk <span class="pl-s"><span class="pl-pds">'</span>{print $1, $5}<span class="pl-pds">'</span></span>      <span class="pl-c"><span class="pl-c">#</span> 取第 1、5 列</span>
+$ ps aux <span class="pl-k">|</span> sort -k3 -rn <span class="pl-k">|</span> head -5   <span class="pl-c"><span class="pl-c">#</span> 按 CPU 占用排序取前 5</span></pre></div></div>
     <details class="in-series-list" open aria-label="Series">
       <summary>Linux 学习笔记</summary>
       <ol>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050815490.html">介绍</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050815957.html">常用Linux命令</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050816440.html">shell 脚本编程基础</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050816753.html">VI编辑器</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050817050.html">用户管理</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050817347.html">文件管理</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050818452.html">进程管理</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050818751.html">存储管理</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050819092.html">设备管理</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050815490.html">Linux 与 WSL 系统简介</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050815957.html">Linux 文件系统与目录操作</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050816440.html">文本查看与处理命令</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050816753.html">Linux 文本编辑器</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050817050.html">用户、组与权限管理</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050817347.html">Bash 基础与数据流</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050818452.html">Bash 脚本编程</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050818751.html">进程管理与系统资源监控</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050819092.html">Linux 网络配置</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/49_6050819483.html">网络管理</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/49_6050819812.html">系统服务与日志</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/49_6050820159.html">Emacs 编辑器</a></li>
@@ -430,8 +236,8 @@ chgrp 所属组 文件名（目录名）</p>
       </ol>
     </details>
     <nav class="in-series-pager" aria-label="Series pages">
-      <a class="in-series-prev" href="https://interset-wq.github.io/blog/post/49_6050817050.html">用户管理</a>
-      <a class="in-series-next" href="https://interset-wq.github.io/blog/post/49_6050818452.html">进程管理</a>
+      <a class="in-series-prev" href="https://interset-wq.github.io/blog/post/49_6050817050.html">用户、组与权限管理</a>
+      <a class="in-series-next" href="https://interset-wq.github.io/blog/post/49_6050818452.html">Bash 脚本编程</a>
     </nav>
   </article>
 <section class="in-comments-section">
@@ -473,7 +279,7 @@ chgrp 所属组 文件名（目录名）</p>
   <span id="run-days"></span>
   <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
 </div>
-<div class="in-footer-built">构建部署于 2026-10-12 18:41:13</div>
+<div class="in-footer-built">构建部署于 2026-10-12 20:55:46</div>
 <script>
   (function () {
     document.getElementById('copyright-year').textContent = new Date().getFullYear();

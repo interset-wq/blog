@@ -21,15 +21,15 @@
     })();
   </script>
   <meta name="description" content="My notes on everything.">
-<meta property="og:title" content="用户管理">
+<meta property="og:title" content="用户、组与权限管理">
 <meta property="og:description" content="My notes on everything.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://interset-wq.github.io/blog/post/49_6050817050.html">
 <meta property="og:image" content="https://interset-wq.github.io/blog/assets/avatar.png">
-<title>用户管理</title>
+<title>用户、组与权限管理</title>
   <link href="https://interset-wq.github.io/blog/assets/starry-night.css" rel="stylesheet">
   
-<style>
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}
   <style>
     .in-progress {
       position: fixed;
@@ -46,7 +46,7 @@
   </style>
 </style></head>
 <body>
-  <header class="in-site-header" id="header">  <h1 class="in-page-title">用户管理</h1>
+  <header class="in-site-header" id="header">  <h1 class="in-page-title">用户、组与权限管理</h1>
 <nav class="in-site-nav" aria-label="Post navigation">    <a class="in-nav-btn" href="https://interset-wq.github.io/blog" title="首页" aria-label="首页"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z" fill-rule="evenodd"></path></svg></a>
 
   <button class="in-nav-btn" id="in-theme-toggle" type="button" title="切换主题" aria-label="切换主题">
@@ -75,15 +75,15 @@
           <span class="in-meta-series-pos">5 / 18</span>
         </summary>
         <ol>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050815490.html">介绍</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050815957.html">常用Linux命令</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050816440.html">shell 脚本编程基础</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050816753.html">VI编辑器</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050817050.html">用户管理</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050817347.html">文件管理</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050818452.html">进程管理</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050818751.html">存储管理</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050819092.html">设备管理</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050815490.html">Linux 与 WSL 系统简介</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050815957.html">Linux 文件系统与目录操作</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050816440.html">文本查看与处理命令</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050816753.html">Linux 文本编辑器</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050817050.html">用户、组与权限管理</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050817347.html">Bash 基础与数据流</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050818452.html">Bash 脚本编程</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050818751.html">进程管理与系统资源监控</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050819092.html">Linux 网络配置</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/49_6050819483.html">网络管理</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/49_6050819812.html">系统服务与日志</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/49_6050820159.html">Emacs 编辑器</a></li>
@@ -98,395 +98,95 @@
     </div>
     <nav class="in-toc" id="in-toc" data-toc-title="目录" data-toc-top="回到顶部" aria-label="目录"></nav>
     <div class="in-progress" id="in-progress"></div>
-    <div class="in-post-body markdown-body"><h2>53 原文</h2>
-<h2>用户与用户组管理</h2>
-<p>用户和用户组管理，就是添加用户和用户组、更改密码和设定权限等操作。用户和用户组管理对个人计算机来讲意义不大，但服务器上是多用户多任务操作系统，如Linux，换句话说，Linux系统支持多个用户在同一时间内登录，不同用户可以执行不同的任务，并且互不影响。</p>
-<p>例如，某台Linux服务器上有4个用户，分别是root、www、ftp和mysql，在同一时间内，root用户可能在查看系统日志、管理维护系统；www用户可能在修改自已的网页程序；ftp用户可能在<br>
-上传软件到服务器；mysql用户可能在执行自己的SQL查询，每个用户互不干扰，有条不紊地进行着自己的工作。与此同时，每个用户之间不能越权访问，比如www用户不能执行mysql用户的SQL查询操作，ftp用户也不能修改www用户的网页程序。</p>
-<p>因此，必须确保不同用户具有不同的权限，每个用户在权限允许的范围内完成不同的任务。如果要使用Linux系统的资源，就必须向系统申请一个账户，然后通过这个账户进人系统（账户和用户是同一个概念）。通过建立不同属性的用户，可以合理地控制用户使用和访问系统资源，Linux正是通过这种用户权限的划分与管理，实现了多用户多任务的安全运行机制。</p>
-<h3>用户和用户组</h3>
-<p>每个用户都有唯一的用户名和密码。在登录系统时，只有正确输人用户名和密码，才能进人系统和自己的主目录。</p>
-<p>用户组是具有相同特征用户的逻辑集合。简单理解就是，有时需要让多个用户具有相同的用户管理权限，最好的方式是建立一个组，让这个组具有查看、修改此文件的权限，然后将所有需要访问此文件的用户放人这个组中。那么，这个组中所有用户就具有了和组一样的权限，这就是用户组。</p>
-<p>将用户分组是Linux系统对用户进行管理及控制访问权限的一种手段，通过定义用户组，简化了对用户的管理工作。用户和用户组的对应关系有以下4种：</p>
+    <div class="in-post-body markdown-body"><p>Linux 采用多用户权限管理模式，<strong>root 是超级管理员</strong>，拥有最大权限；普通用户在自身家目录内权限不受限，家目录外多为只读/执行。</p>
+<h2>用户与组</h2>
 <ul>
-<li>一对一：一个用户可以在一个组中，是组中的唯一成员。</li>
-<li>一对多：一个用户可以在多个用户组中，此用户具有这些组的共同权限。</li>
-<li>多对一：多个用户可以在一个组中，这些用户具有和组相同的权限。</li>
-<li>多对多：多个用户可以在多个组中，也就是以上3种关系的扩展。</li>
+<li><strong>用户</strong>：每个用户有唯一用户名与密码，登录时校验。</li>
+<li><strong>用户组</strong>：具有相同特征用户的逻辑集合，方便批量授权。用户可加入多个组。</li>
 </ul>
-<h3>用户和用户组管理</h3>
-<p>登录Linux系统时，虽然输入的是自己的用户名和密码，但其实Linux并不认识用户名，它只认识用户名对应的ID（也就是一串数字）。Linux系统将所有用户名与ID的对应关系都存储在<code class="notranslate">/etc/passwd</code>文件中。用户名并无实际作用，仅是为了方便用户记忆而已。同理，Linux也不认识用户组名称，每个用户组的名称也有一个ID与之对应，对应关系存储在/etc/group文件中。</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ cat /etc/passwd
-root<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">0:0:root:/root:/bin/bash
-daemon<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">1:1:daemon:/usr/sbin:/usr/sbin/nologin
-bin<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">2:2:bin:/bin:/usr/sbin/nologin
-sys<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">3:3:sys:/dev:/usr/sbin/nologin
-sync<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">4:65534:sync:/bin:/bin/sync
-games<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">5:60:games:/usr/games:/usr/sbin/nologin
-man<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">6:12:man:/var/cache/man:/usr/sbin/nologin
-lp<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">7:7:lp:/var/spool/lpd:/usr/sbin/nologin
-mail<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">8:8:mail:/var/mail:/usr/sbin/nologin
-news<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">9:9:news:/var/spool/news:/usr/sbin/nologin
-uucp<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
-proxy<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">13:13:proxy:/bin:/usr/sbin/nologin
-www-data<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">33:33:www-data:/var/www:/usr/sbin/nologin
-backup<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">34:34:backup:/var/backups:/usr/sbin/nologin
-list<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
-irc<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">39:39:ircd:/run/ircd:/usr/sbin/nologin
-_apt<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">42:65534::/nonexistent:/usr/sbin/nologin
-nobody<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">65534:65534:nobody:/nonexistent:/usr/sbin/nologin
-systemd-network<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">998:998:systemd Network Management:/:/usr/sbin/nologin
-systemd-timesync<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">996:996:systemd Time Synchronization:/:/usr/sbin/nologin
-dhcpcd<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">100:65534:DHCP Client Daemon,,,:/usr/lib/dhcpcd:/bin/false
-messagebus<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">101:101::/nonexistent:/usr/sbin/nologin
-syslog<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">102:102::/nonexistent:/usr/sbin/nologin
-systemd-resolve<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">991:991:systemd Resolver:/:/usr/sbin/nologin
-uuidd<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">103:103::/run/uuidd:/usr/sbin/nologin
-landscape<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">104:105::/var/lib/landscape:/usr/sbin/nologin
-polkitd<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">990:990:User <span class="pl-k">for</span> polkitd:/:/usr/sbin/nologin
-d111kc<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">1000:1000:,,,:/home/d111kc:/bin/bash
-postfix<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">105:109::/var/spool/postfix:/usr/sbin/nologin
-$ cat /etc/group
-root<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">0:
-daemon<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">1:
-bin<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">2:
-sys<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">3:
-adm<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">4:syslog,d111kc
-tty<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">5:
-disk<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">6:
-lp<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">7:
-mail<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">8:
-news<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">9:
-uucp<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">10:
-man<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">12:
-proxy<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">13:
-kmem<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">15:
-dialout<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">20:d111kc
-fax<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">21:
-voice<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">22:
-cdrom<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">24:d111kc
-floppy<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">25:d111kc
-tape<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">26:
-sudo<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">27:d111kc
-audio<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">29:d111kc
-dip<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">30:d111kc
-www-data<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">33:
-backup<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">34:
-operator<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">37:
-list<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">38:
-irc<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">39:
-src<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">40:
-shadow<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">42:
-utmp<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">43:
-video<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">44:d111kc
-sasl<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">45:
-plugdev<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">46:d111kc
-staff<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">50:
-games<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">60:
-users<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">100:d111kc
-nogroup<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">65534:
-systemd-journal<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">999:
-systemd-network<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">998:
-crontab<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">997:
-systemd-timesync<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">996:
-input<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">995:
-sgx<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">994:
-kvm<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">993:
-render<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">992:
-messagebus<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">101:
-syslog<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">102:
-systemd-resolve<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">991:
-uuidd<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">103:
-_ssh<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">104:
-landscape<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">105:
-polkitd<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">990:
-admin<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">106:
-netdev<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">107:d111kc
-d111kc<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">1000:
-ssl-cert<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">108:
-postfix<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">109:
-postdrop<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">110:
-docker<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">1001:d111kc</pre></div>
-<p>在<code class="notranslate">/etc/passwd</code>文件中，每一行用户记录的各个数据段用 <code class="notranslate">:</code> 分隔，分别定义了用户的各方面属性。第1字段就是用户的用户名，用户名是方便用户记忆的登录系统的唯一身份标识，而系统是以用户ID作为用户登录系统的唯一身份标识。第3字段和第4字段分别记录了用户的两种ID，即用户ID（UserID，简<br>
-称UID）和用户组ID（GroupID，简称GID）。用户名和UID的对应关系记录在/etc/passwd文件中。</p>
-<p>为了合理地控制用户访问系统资源，UID、GID与文件拥有者和拥有群组两种属性相对应。</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ ls -l
-total 12
--rwxr--r-- 1 d111kc d111kc  41 Aug  6 20:55 forloop.sh
--rwxr--r-- 1 d111kc d111kc 196 Aug  6 21:39 login.sh
--rwxr--r-- 1 d111kc d111kc 353 Aug  6 21:12 selectin.sh</pre></div>
-<p>长格式显示了文件控制块的内容，第3字段和第4字段表示文件拥有者和拥有群组，对应于用户的UID和GID。真正在文件控制块（在Linux系统中是inode表，即索引节点表）中存放的是该文件的拥有者ID和群组ID，当显示文件属性时，系统会根据/etc/passwd和/etc/group文件中的内容，分别找到UID和GID对应的用户名和群组名，然后显示出来。</p>
-<h2>用户和用户组管理相关的文件</h2>
-<p>为了管理用户账号和用户组，系统设置了多个文件存放有关的信息。最重要的文件有<code class="notranslate">/etc/passwd</code>文件、<code class="notranslate">/etc/shadow</code>文件、<code class="notranslate">/etc/group</code>文件和<code class="notranslate">/etc/gshadow</code>文件。</p>
-<h3>/etc/passwd</h3>
-<p>Linux系统中的/etc/passwd文件是系统用户配置文件，存储了系统中所有用户的基本信息，并且所有用户都可以对此文件执行读操作。</p>
-<p>/etc/passwd文件中的每行记录对应一个用户。Linux系统中默认的用户很多，这些用户中的绝大多数是系统或服务正常运行所必需的用户，这种用户通常称为系统用户或伪用户。系统用户无法用来登录系统，但也不能删除，因为一旦删除，依赖这些用户运行的服务或程序就不能正常执行，会导致系统问题。在有的系统中，1～499的ID是保留给系统使用的。所以通常500以后的ID是给一般用户使用的。</p>
-<p><code class="notranslate">/etc/passwd</code>文件中的每行用户信息都划分为7个字段（<code class="notranslate">:</code>分隔各个字段），每个字段含义如下：</p>
+<p>Linux 用 <strong>UID</strong>（用户 ID）、<strong>GID</strong>（组 ID）识别身份，用户名只是方便记忆。账号信息存于 <code class="notranslate">/etc/passwd</code>、<code class="notranslate">/etc/shadow</code>（密码）、<code class="notranslate">/etc/group</code>、<code class="notranslate">/etc/gshadow</code>。</p>
+<h2>用户与组管理</h2>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ whoami            <span class="pl-c"><span class="pl-c">#</span> 当前用户名</span>
+$ id                <span class="pl-c"><span class="pl-c">#</span> 当前 UID / GID / 所属组</span>
+<span class="pl-c"><span class="pl-c">#</span> 以下需 root 权限</span>
+<span class="pl-c"><span class="pl-c">#</span> useradd testuser          # 创建用户</span>
+<span class="pl-c"><span class="pl-c">#</span> useradd -m -s /bin/bash testuser   # 创建并建家目录、指定 shell</span>
+<span class="pl-c"><span class="pl-c">#</span> passwd testuser           # 设置/修改密码</span>
+<span class="pl-c"><span class="pl-c">#</span> useradd -g dev -G sudo testuser    # 指定初始组 -g、附加组 -G</span>
+<span class="pl-c"><span class="pl-c">#</span> usermod -aG sudo testuser # 追加附加组（-a 保留原有组）</span>
+<span class="pl-c"><span class="pl-c">#</span> userdel -r testuser       # 删除用户及家目录（-r）</span>
+<span class="pl-c"><span class="pl-c">#</span> groupadd devgroup         # 创建组</span>
+<span class="pl-c"><span class="pl-c">#</span> groupdel devgroup         # 删除组</span></pre></div>
+<p>Ubuntu 中给普通用户 sudo 权限：<code class="notranslate"># usermod -aG sudo testuser</code>。</p>
+<h2>权限位</h2>
+<p><code class="notranslate">ls -l</code> 第一列共 10 个槽位，如 <code class="notranslate">drwxr-xr-x</code>：</p>
 <ul>
-<li>字段1 用户名</li>
-<li>字段2 密码</li>
-<li>字段3 UID（用户ID）</li>
-<li>字段4 GID（组ID）</li>
-<li>字段5 描述性信息</li>
-<li>字段6 家目录</li>
-<li>字段7 默认shell</li>
+<li>第 1 位：文件类型（<code class="notranslate">d</code> 目录、<code class="notranslate">-</code> 普通文件、<code class="notranslate">l</code> 链接、<code class="notranslate">b</code> 块设备、<code class="notranslate">c</code> 字符设备）</li>
+<li>第 2~4 位：所属用户（u）权限 <code class="notranslate">rwx</code></li>
+<li>第 5~7 位：所属组（g）权限</li>
+<li>第 8~10 位：其它用户（o）权限</li>
 </ul>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ cat /etc/passwd
-root<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">0:0:root:/root:/bin/bash
-daemon<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">1:1:daemon:/usr/sbin:/usr/sbin/nologin
-bin<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">2:2:bin:/bin:/usr/sbin/nologin
-sys<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">3:3:sys:/dev:/usr/sbin/nologin
-sync<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">4:65534:sync:/bin:/bin/sync
-games<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">5:60:games:/usr/games:/usr/sbin/nologin
-man<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">6:12:man:/var/cache/man:/usr/sbin/nologin
-lp<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">7:7:lp:/var/spool/lpd:/usr/sbin/nologin
-mail<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">8:8:mail:/var/mail:/usr/sbin/nologin
-news<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">9:9:news:/var/spool/news:/usr/sbin/nologin
-uucp<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
-proxy<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">13:13:proxy:/bin:/usr/sbin/nologin
-www-data<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">33:33:www-data:/var/www:/usr/sbin/nologin
-backup<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">34:34:backup:/var/backups:/usr/sbin/nologin
-list<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
-irc<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">39:39:ircd:/run/ircd:/usr/sbin/nologin
-_apt<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">42:65534::/nonexistent:/usr/sbin/nologin
-nobody<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">65534:65534:nobody:/nonexistent:/usr/sbin/nologin
-systemd-network<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">998:998:systemd Network Management:/:/usr/sbin/nologin
-systemd-timesync<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">996:996:systemd Time Synchronization:/:/usr/sbin/nologin
-dhcpcd<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">100:65534:DHCP Client Daemon,,,:/usr/lib/dhcpcd:/bin/false
-messagebus<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">101:101::/nonexistent:/usr/sbin/nologin
-syslog<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">102:102::/nonexistent:/usr/sbin/nologin
-systemd-resolve<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">991:991:systemd Resolver:/:/usr/sbin/nologin
-uuidd<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">103:103::/run/uuidd:/usr/sbin/nologin
-landscape<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">104:105::/var/lib/landscape:/usr/sbin/nologin
-polkitd<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">990:990:User <span class="pl-k">for</span> polkitd:/:/usr/sbin/nologin
-d111kc<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">1000:1000:,,,:/home/d111kc:/bin/bash
-postfix<img class="emoji" alt=":x:" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8">105:109::/var/spool/postfix:/usr/sbin/nologin</pre></div>
-<p>字段1：用户名。用户名仅是为了方便用户记忆，Linux系统是通过UID来识别用户身份、分配用户权限的。<code class="notranslate">/etc/passwd</code>文件定义了用户名和UID之间的对应关系。</p>
-<p>字段2：密码。系统用密码来验证用户的合法性。在<code class="notranslate">/etc/passwd</code>文件中用“x”表示此用户设有密码，但它不是真正的密码，真正的密码保存在<code class="notranslate">/etc/shadow</code>文件中。</p>
-<p>字段3：UID。UID是一个数值，每个用户都有唯一的UID，Linux系统通过UID来识别不同的用户。实际上，UID取值范围为0～65535。在某些情况下，系统允许存在多个拥有不同用户名但UID相同的用户。</p>
-<p>字段4：GID。这个字段表示用户初始组的组ID。具有相似属性的多个用户被分配到同一个组内，每个组都有组名和ID。Linux中的每个用户可以同时属于多个组。初始组，指用户登录时就拥有这个用户组的相关权限。每个用户的初<br>
-始组只能有一个，通常就是将和此用户的用户名相同的组名作为该用户的初始组。比如说，手工添加用户lamp，在建立用户lamp的同时，就会建立lamp组作为lamp用户的初始组。附加组，指用户可以加人多个其他的用户组，并拥有这些组的权限。每个用户只能有一个初始组，除初始组外，用户再加人其他的用户组，这些用户组就是这个用户的附加组。附加组可以有多个，而且用户可以有这些附加组的权限。例如，lamp用户除属于初始组lamp外，它又加入了users组，那么lamp用户同时属于lamp组和users组，其中lamp是初始组，users是附加组。在/etc/passwd文件的第4个字段中看到的ID是用户的初始组。</p>
-<p>字段5：描述性信息。这个字段并不重要，只是用来记录用户的相关信息，如真实姓名等。</p>
-<p>字段6：主目录。用户登录后有操作权限的访问目录，通常称为用户的主目录。例如，root超级管理员账户的主目录为/root，普通用户的主目录为/home/yourname，即在/home目录下建立和用户名相同的目录作为主目录，如lamp用户的主目录就是/home/lamp目录。用户登录后均有自己独立的工作环境，个人用户的文件都放在各自的主目录下。</p>
-<h3>/etc/shadow</h3>
-<p>/etc/shadow文件用于存储Linux系统中用户的密码信息，又称为“影子文件”。/etc/passwd文件，由于该文件允许所有用户读取，易导致用户密码泄露，因此Linux系统将用户的密码信息从/etc/passwd文件中分离出来，单独放到了/etc/shadow文件中。/etc/shadow文件只有root用户拥有读权限，其他用户没有任何权限，这样就保证了用户密码的安全性。</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> cat /etc/shadow</span>
-root:<span class="pl-smi">$y$j9T$ZrywLYh0e4DLF5n</span>/9Ks3A0<span class="pl-smi">$ClR3vOIXpIho6s8R</span>.qF68WTvqSspvkFmfw6V2UTIcG5:20291:0:99999:7:::
-daemon:<span class="pl-k">*</span>:20094:0:99999:7:::
-bin:<span class="pl-k">*</span>:20094:0:99999:7:::
-sys:<span class="pl-k">*</span>:20094:0:99999:7:::
-sync:<span class="pl-k">*</span>:20094:0:99999:7:::
-games:<span class="pl-k">*</span>:20094:0:99999:7:::
-man:<span class="pl-k">*</span>:20094:0:99999:7:::
-lp:<span class="pl-k">*</span>:20094:0:99999:7:::
-mail:<span class="pl-k">*</span>:20094:0:99999:7:::
-news:<span class="pl-k">*</span>:20094:0:99999:7:::
-uucp:<span class="pl-k">*</span>:20094:0:99999:7:::
-proxy:<span class="pl-k">*</span>:20094:0:99999:7:::
-www-data:<span class="pl-k">*</span>:20094:0:99999:7:::
-backup:<span class="pl-k">*</span>:20094:0:99999:7:::
-list:<span class="pl-k">*</span>:20094:0:99999:7:::
-irc:<span class="pl-k">*</span>:20094:0:99999:7:::
-_apt:<span class="pl-k">*</span>:20094:0:99999:7:::
-nobody:<span class="pl-k">*</span>:20094:0:99999:7:::
-systemd-network:<span class="pl-k">!</span><span class="pl-k">*</span>:20094::::::
-systemd-timesync:<span class="pl-k">!</span><span class="pl-k">*</span>:20094::::::
-dhcpcd:<span class="pl-k">!</span>:20094::::::
-messagebus:<span class="pl-k">!</span>:20094::::::
-syslog:<span class="pl-k">!</span>:20094::::::
-systemd-resolve:<span class="pl-k">!</span><span class="pl-k">*</span>:20094::::::
-uuidd:<span class="pl-k">!</span>:20094::::::
-landscape:<span class="pl-k">!</span>:20094::::::
-polkitd:<span class="pl-k">!</span><span class="pl-k">*</span>:20094::::::
-d111kc:<span class="pl-smi">$y$j9T$ey7cqETMjc2Fgf0OXWWSf</span>.<span class="pl-smi">$YdlWJY</span>/HWXzNZtJb5BGh.JrSdT3aSoD6Ebe1q94GBeD:20299:0:99999:7:::
-postfix:<span class="pl-k">!</span>:20302::::::</pre></div>
-<p>同/etc/passwd文件一样，文件中每行代表一个用户，同样使用<code class="notranslate">:</code>作为分隔符，不同之处在于，每行用户信息被划分为9个字段：</p>
-<ul>
-<li>字段1 用户名</li>
-<li>字段2 加密密码</li>
-<li>字段3 最后一次修改时间</li>
-<li>字段4 最小修改时间间隔</li>
-<li>字段5 密码有效期</li>
-<li>字段6 密码需要变更前的警告天数</li>
-<li>字段7 密码过期后的宽限时间</li>
-<li>字段8 账号失效时间</li>
-<li>字段9 保留字段</li>
-</ul>
-<p>字段1：用户名。该字段与/etc/passwd文件的用户名有相同的含义。</p>
-<p>字段2：加密密码。这里保存的是真正加密的密码。目前Linux的密码采用的是SHA512散列加密算法，原来采用的是MD5或DES加密算法。SHA512散列加密算法的加密等级更高，也更加安全。注意，这串密码产生的乱码不能手动修改，如果手动修改，系统将无法识别密码，导致密码失效。在密码串前加上<code class="notranslate">!</code> <code class="notranslate">*</code> 或<code class="notranslate">x</code>使密码暂时失效。</p>
-<p>字段3：最后一次修改时间。此字段表示最后一次修改密码的时间。显示的是从1970.1.1到上次修改密码的天数，换算时间：</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ date -d <span class="pl-s"><span class="pl-pds">"</span>1970-01-01 20291 days<span class="pl-pds">"</span></span>
-Tue Jul 22 00:00:00 CST 2025</pre></div>
-<p>字段4：最小修改时间间隔。也就是说，该字段规定了从字段3（最后一次修改时间）起，多长时间之内不能修改密码。如果是0，则密码可以随时修改；如果是10，则代表密码修改后10天之内不能再次修改。此字段是针对某些人频繁更改账户密码而设计的。</p>
-<p>字段5：密码有效期。经常变更密码是个好习惯，为了强制用户变更密码，这个字段可以指定距离字段3（最后一次修改时间）多长时间内需要再次变更密码，否则该账户密码会过期。该字段的默认值为99999，约274年，可认为永久生效。如果改为90，则表示密码被修改90<br>
-天之后必须再次修改，否则该密码将过期。管理服务器时，可通过这个字段强制用户定期修改密码。</p>
-<p>字段6：密码需要变更前的警告天数。与字段5相比较，当账户密码有效期快到时，系统会发出警告信息给此账户，提醒用户“再过n天你的密码就要过期了，请尽快重新设置你的密码！”。该字段的默认值是7，也就是说，距离密码到期的第7天开始，该账户在每次登录系统时都会收到“修改密码”的警告信息。</p>
-<p>字段7：密码过期后的宽限时间。简单理解就是，在密码过期后，用户如果还是没有修改密码，则在此字段规定的宽限天数内，用户还是可以登录系统的；如果过了宽限天数，系统将不再让此账户登录，也不会提示账户过期，是完全禁用的。比如，此字段规定的宽限天数是10，则代表密码过期10天后失效；如果是0，则代表密码过期后立即失效；如果是-1，则代表密码永远不会失效。</p>
-<p>字段8：账号失效时间。该字段同字段3一样，使用自1970年1月1日以来的总天数作为账户的失效时间。该字段表示，账号在此字段规定的时间之外，不论密码是否过期，都将无法使用！该字段通常被使用在具有收费服务的系统中。</p>
-<p>字段9：保留字段。这个字段目前没有使用，等待新功能的加人。</p>
-<p>对于普通账户的密码遗失，可以通过root账户解决，它会重新配置好指定账户的密码，而不需要知道原来的密码（利用root的身份使用passwd命令即可）。如果root账号的密码遗失，则需要重新启动系统，进人单用户模式，系统会提供root权限的bash接口，此时可以用passwd命令修改账户密码。</p>
-<h3>/etc/gshadow</h3>
-<p>/etc/passwd文件存储用户基本信息，同时考虑到账户的安全性，将用户的密码信息存放在另一个文件/etc/shadow中。/etc/gshadow文件也是如此，组用户信息存储在/etc/group文件中，而将组用户的密码信息存储在/etc/gshadow文件中。</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> cat /etc/gshadow</span>
-root:<span class="pl-k">*</span>::
-daemon:<span class="pl-k">*</span>::
-bin:<span class="pl-k">*</span>::
-sys:<span class="pl-k">*</span>::
-adm:<span class="pl-k">*</span>::syslog,d111kc
-tty:<span class="pl-k">*</span>::
-disk:<span class="pl-k">*</span>::
-lp:<span class="pl-k">*</span>::
-mail:<span class="pl-k">*</span>::
-news:<span class="pl-k">*</span>::
-uucp:<span class="pl-k">*</span>::
-man:<span class="pl-k">*</span>::
-proxy:<span class="pl-k">*</span>::
-kmem:<span class="pl-k">*</span>::
-dialout:<span class="pl-k">*</span>::d111kc
-fax:<span class="pl-k">*</span>::
-voice:<span class="pl-k">*</span>::
-cdrom:<span class="pl-k">*</span>::d111kc
-floppy:<span class="pl-k">*</span>::d111kc
-tape:<span class="pl-k">*</span>::
-sudo:<span class="pl-k">*</span>::d111kc
-audio:<span class="pl-k">*</span>::d111kc
-dip:<span class="pl-k">*</span>::d111kc
-www-data:<span class="pl-k">*</span>::
-backup:<span class="pl-k">*</span>::
-operator:<span class="pl-k">*</span>::
-list:<span class="pl-k">*</span>::
-irc:<span class="pl-k">*</span>::
-src:<span class="pl-k">*</span>::
-shadow:<span class="pl-k">*</span>::
-utmp:<span class="pl-k">*</span>::
-video:<span class="pl-k">*</span>::d111kc
-sasl:<span class="pl-k">*</span>::
-plugdev:<span class="pl-k">*</span>::d111kc
-staff:<span class="pl-k">*</span>::
-games:<span class="pl-k">*</span>::
-users:<span class="pl-k">*</span>::d111kc
-nogroup:<span class="pl-k">*</span>::
-systemd-journal:<span class="pl-k">!</span><span class="pl-k">*</span>::
-systemd-network:<span class="pl-k">!</span><span class="pl-k">*</span>::
-crontab:<span class="pl-k">!</span><span class="pl-k">*</span>::
-systemd-timesync:<span class="pl-k">!</span><span class="pl-k">*</span>::
-input:<span class="pl-k">!</span><span class="pl-k">*</span>::
-sgx:<span class="pl-k">!</span><span class="pl-k">*</span>::
-kvm:<span class="pl-k">!</span><span class="pl-k">*</span>::
-render:<span class="pl-k">!</span><span class="pl-k">*</span>::
-messagebus:<span class="pl-k">!</span>::
-syslog:<span class="pl-k">!</span>::
-systemd-resolve:<span class="pl-k">!</span><span class="pl-k">*</span>::
-uuidd:<span class="pl-k">!</span>::
-_ssh:<span class="pl-k">!</span>::
-landscape:<span class="pl-k">!</span>::
-polkitd:<span class="pl-k">!</span><span class="pl-k">*</span>::
-admin:<span class="pl-k">!</span>::
-netdev:<span class="pl-k">!</span>::d111kc
-d111kc:<span class="pl-k">!</span>::
-ssl-cert:<span class="pl-k">!</span>::
-postfix:<span class="pl-k">!</span>::
-postdrop:<span class="pl-k">!</span>::
-docker:<span class="pl-k">!</span>::d111kc</pre></div>
-<p>每行代表一个组用户的密码信息，各行信息用<code class="notranslate">:</code>作为分隔符，分为4个字段。</p>
-<ul>
-<li>字段1 组名</li>
-<li>字段2 加密密码</li>
-<li>字段3 组管理员</li>
-<li>字段4 组附加用户列表</li>
-</ul>
-<p>字段1：组名。此字段与/etc/group文件中的组名相对应。</p>
-<p>字段2：加密密码。对大多数用户来说，通常不设置组密码，因此该字段常为空，但有时为“！”，指的是该组没有组密码，也不设组管理员。</p>
-<p>字段3：组管理员。从系统管理员的角度来说，该文件最大的功能就是创建组管理员。</p>
-<p>字段4：组附加用户列表。该字段显示这个用户组中有哪些附加用户，和/etc/group文件中附加组显示内容相同。</p>
-<h2>用户和用户组管理的命令</h2>
-<p>实现用户账号的管理，要完成的工作主要有用户的添加，密码配置，修改用户信息、密码状态，用户组管理等。</p>
-<h3>用户的添加</h3>
-<p>新建用户语法：<code class="notranslate"># useradd [选项] 用户名</code></p>
-<p>选项：</p>
-<ul>
-<li><code class="notranslate">-u</code> 手动指定用户的UID，注意UID的范围（不小于500）。</li>
-<li><code class="notranslate">-d</code> 手动指定用户的主目录；主目录必须写绝对路径</li>
-<li><code class="notranslate">-c</code> 手动指定/etc/passwd文件中各用户信息中字段5的描述性内容，可随意配置。</li>
-<li><code class="notranslate">-g</code> 手动指定用户的初始组。一般以和用户名相同的组作为用户的初始组，在创建用户时会默认建立初始组。一旦手动指定，系统将不会再创建此默认的初始组目录。</li>
-<li><code class="notranslate">-G</code> 指定用户的附加组。将用户加人其他组，一般都使用附加组。</li>
-<li><code class="notranslate">-s</code> 手动指定用户的登录shell，默认为/bin/bash。</li>
-<li><code class="notranslate">-e</code> 指定用户的失效日期，格式为"YYYY-MM-DD”。也就是/etc/shadow文件的字段8。</li>
-<li><code class="notranslate">-o</code> 允许创建的用户UID相同。例如，执行<code class="notranslate">useradd -u 0 -o user1</code>命令建立用户user1，它的UID和root用户的UID相同，都是0</li>
-<li><code class="notranslate">-m</code> 建立用户时强制建立用户的主目录。在建立系统用户时，该选项是默认的。</li>
-<li><code class="notranslate">-r</code> 创建系统用户，也就是UID在1~499、供系统程序使用的用户。由于系统用户主要用于运行系统所需服务的权限配置，因此创建系统用户时默认不会创建主目录。</li>
-</ul>
-<p>在没有特殊要求时，无须使用任何选项即可成功创建用户。</p>
-<p>useradd命令创建用户的过程：首先，系统读取/etc/login.defs和/etc/default/useradd，根据这两个配置文件中定义的规则添加用户，也就是在/etc/passwd、/etc/group、/etc/shadow、/etc/gshadow文件中添加用户数据；然后，接着系统会自动在/etc/default/useradd文件设定的目录下建立用户主目录；最后，复制/etc/skel目录中的所有文件到此主目录中。由此，一个新的用户就创建完成了。</p>
-<h3>密码配置命令</h3>
-<p>使用useradd命令创建新用户时，并没有设定用户密码，passwd可以设定用户密码。passwd命令的基本格式：<code class="notranslate"># passwd [选项] 用户名</code></p>
-<p>选项：</p>
-<ul>
-<li><code class="notranslate">-S</code> 查询用户密码的状态，也就是/etc/shadow文件中此用户密码的内容；仅root用户使用。</li>
-<li><code class="notranslate">-l</code> 暂时锁定用户，该选项会在/etc/shadow文件中指定用户的加密密码串前添加“!”，使密码失效；仅root用户使用。</li>
-<li><code class="notranslate">-u</code> 解锁用户，和-1选项相对应，就是将添加的“！”去掉；仅root用户使用。</li>
-<li><code class="notranslate">--stdin</code> 可以将通过管道符输出的数据作为用户的密码；主要在批量添加用户时使用。</li>
-<li><code class="notranslate">-n</code> 设置该用户修改密码后，多长时间不能再次修改密码，也就是修改/etc/shadow文件中各行密码的字段4。</li>
-<li><code class="notranslate">-x</code> 设置该用户的密码有效期，对应/etc/shadow文件中各行的字段5。</li>
-<li><code class="notranslate">-w</code> 设置用户密码过期前的警告天数，对应/etc/shadow文件中各行密码的字段6。</li>
-<li><code class="notranslate">-i</code> 设置用户密码失效日期，对应/etc/shadow文件中各行密码的字段7。</li>
-</ul>
-<p>例如，使用root账户修改普通用户d111kc的密码，可以使用如下命令：</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> passwd d111kc</span>
-New password:
-Retype new password:
-passwd: password updated successfully</pre></div>
-<p>普通用户只能使用passwd命令修改自己的密码，而不能修改其他用户的密码。与使用root账户修改普通用户的密码不同，普通用户修改自己的密码需要先输人自己的旧密码，只有旧密码输人正确后才能输人新密码。</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ passwd
-Changing password <span class="pl-k">for</span> d111kc.
-Current password:
-New password:
-Retype new password:
-passwd: password updated successfully</pre></div>
-<h3>修改用户信息命令</h3>
-<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> usermod [选项] 用户名</span></pre></div>
-<h3>修改用户密码状态命令</h3>
-<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> change [选项] 用户名</span></pre></div>
-<h3>删除用户命令</h3>
-<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> userdel -r 用户名</span></pre></div>
-<p>只用 root 用户才能用</p>
-<p><code class="notranslate">-r</code> 表示在删除用户的同时删除用户的家目录。</p>
-<h3>查看用户的UID和GID命令</h3>
-<p>id命令可以查询用户的UID、GID和附加组的信息。命令比较简单，格式如下：</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ id 用户名</pre></div>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ id root
-uid=0(root) gid=0(root) groups=0(root)</pre></div>
-<h3>用户间切换命令</h3>
-<pre class="notranslate"><code class="notranslate">$ su [选项] 用户名
-</code></pre>
-<p>选项：</p>
-<ul>
-<li><code class="notranslate">-</code> 当前用户不仅切换为指定用户的身份同时所用的工作环境也切换（包括 PATH 变量、MAIL 变量等），使用<code class="notranslate">-</code>选项可省略用户名，默认切换为 root 用户。</li>
-<li><code class="notranslate">-l</code> 同 <code class="notranslate">-</code> 的使用类似，也就是在切换用户身份的同时，完整切换工作环境，但后面需要添加欲切换的使用者账号。</li>
-<li><code class="notranslate">-p</code> <code class="notranslate">-m</code> 表示切换为指定用户的身份，但不改变当前的工作环境（不使用切换用户的配置文件）。</li>
-<li><code class="notranslate">-c</code> 仅切换用户并执行一次命令，执行后自动切换回来，该选项后通常会带有要执行的命令。</li>
-</ul>
-<h3>用户组管理命令</h3>
-<ul>
-<li>添加用户组 <code class="notranslate"># groupadd [选项] 组名</code></li>
-<li>修改用户组相关信息 <code class="notranslate"># groupmod [选项] 组名</code></li>
-<li>删除用户组 <code class="notranslate"># groupdel 组名</code> 仅适用于删除那些不是任何用户初始组的组</li>
-<li>设置组管理员 <code class="notranslate"># gpasswd [选项] 组名</code></li>
-</ul>
-<hr>
-<hr></div>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>权限</th>
+<th>针对文件</th>
+<th>针对目录</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>r (4)</td>
+<td>查看内容</td>
+<td>列出目录内容</td>
+</tr>
+<tr>
+<td>w (2)</td>
+<td>修改内容</td>
+<td>创建/删除/改名</td>
+</tr>
+<tr>
+<td>x (1)</td>
+<td>作为程序执行</td>
+<td>cd 进入</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h2>修改权限</h2>
+<p>数字法：r=4、w=2、x=1，每位用户用一个 0~7 的数字，如 <code class="notranslate">chmod 751</code> = <code class="notranslate">rwxr-x--x</code>。</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ chmod 755 script.sh          <span class="pl-c"><span class="pl-c">#</span> u=rwx, g=rx, o=rx</span>
+$ chmod u=rwx,g=rx,o=x file    <span class="pl-c"><span class="pl-c">#</span> 符号法</span>
+$ chmod -R 755 testdir/        <span class="pl-c"><span class="pl-c">#</span> -R 递归应用到目录内全部内容</span>
+$ chmod a+x script.sh          <span class="pl-c"><span class="pl-c">#</span> 给所有用户加执行权限</span></pre></div>
+<blockquote>
+<p>只有文件属主或 root 能修改权限。</p>
+</blockquote>
+<h2>修改属主 / 属组</h2>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> chown root file.txt          # 改属主</span>
+<span class="pl-c"><span class="pl-c">#</span> chown root:dev file.txt      # 改属主与属组</span>
+<span class="pl-c"><span class="pl-c">#</span> chown -R root testdir/       # 递归</span>
+<span class="pl-c"><span class="pl-c">#</span> chgrp dev file.txt           # 仅改属组</span></pre></div>
+<h2>umask 与默认权限</h2>
+<p><code class="notranslate">umask</code> 决定新建文件/目录的初始权限。文件默认最大 <code class="notranslate">666</code>、目录默认最大 <code class="notranslate">777</code>，减去 umask 得到实际权限：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ <span class="pl-c1">umask</span>        <span class="pl-c"><span class="pl-c">#</span> 查看，常见 0022</span>
+$ <span class="pl-c1">umask</span> 022    <span class="pl-c"><span class="pl-c">#</span> 设置</span></pre></div>
+<h2>切换用户与 sudo</h2>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ su -              <span class="pl-c"><span class="pl-c">#</span> 切换 root（- 加载完整环境）</span>
+$ su - testuser     <span class="pl-c"><span class="pl-c">#</span> 切换指定用户</span>
+$ <span class="pl-c1">exit</span>              <span class="pl-c"><span class="pl-c">#</span> 退回原用户</span>
+$ sudo apt update   <span class="pl-c"><span class="pl-c">#</span> 普通用户临时以 root 身份执行单条命令</span></pre></div></div>
     <details class="in-series-list" open aria-label="Series">
       <summary>Linux 学习笔记</summary>
       <ol>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050815490.html">介绍</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050815957.html">常用Linux命令</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050816440.html">shell 脚本编程基础</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050816753.html">VI编辑器</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050817050.html">用户管理</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050817347.html">文件管理</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050818452.html">进程管理</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050818751.html">存储管理</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050819092.html">设备管理</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050815490.html">Linux 与 WSL 系统简介</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050815957.html">Linux 文件系统与目录操作</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050816440.html">文本查看与处理命令</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050816753.html">Linux 文本编辑器</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050817050.html">用户、组与权限管理</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050817347.html">Bash 基础与数据流</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050818452.html">Bash 脚本编程</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050818751.html">进程管理与系统资源监控</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050819092.html">Linux 网络配置</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/49_6050819483.html">网络管理</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/49_6050819812.html">系统服务与日志</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/49_6050820159.html">Emacs 编辑器</a></li>
@@ -499,8 +199,8 @@ uid=0(root) gid=0(root) groups=0(root)</pre></div>
       </ol>
     </details>
     <nav class="in-series-pager" aria-label="Series pages">
-      <a class="in-series-prev" href="https://interset-wq.github.io/blog/post/49_6050816753.html">VI编辑器</a>
-      <a class="in-series-next" href="https://interset-wq.github.io/blog/post/49_6050817347.html">文件管理</a>
+      <a class="in-series-prev" href="https://interset-wq.github.io/blog/post/49_6050816753.html">Linux 文本编辑器</a>
+      <a class="in-series-next" href="https://interset-wq.github.io/blog/post/49_6050817347.html">Bash 基础与数据流</a>
     </nav>
   </article>
 <section class="in-comments-section">
@@ -542,7 +242,7 @@ uid=0(root) gid=0(root) groups=0(root)</pre></div>
   <span id="run-days"></span>
   <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
 </div>
-<div class="in-footer-built">构建部署于 2026-10-12 18:41:13</div>
+<div class="in-footer-built">构建部署于 2026-10-12 20:55:46</div>
 <script>
   (function () {
     document.getElementById('copyright-year').textContent = new Date().getFullYear();

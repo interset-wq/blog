@@ -20,15 +20,19 @@
       document.documentElement.setAttribute('data-color-mode', theme);
     })();
   </script>
-  <meta name="description" content="Linux 学习笔记，从基础到进阶共十八章：系统介绍、常用命令、shell 脚本编程、VI/Emacs 编辑器、用户管理、文件管理、进程与存储管理、设备管理，到网络管理、系统服务与日志、OpenSSH、Web 服务器、应用开发、文件操作、常用操作与用户权限。">
+  <meta name="description" content="# Linux 学习笔记
+
+Linux 学习笔记，从基础到进阶：系统介绍、常用命令、shell 脚本编程、VI/Emacs 编辑器、用户管理、文件管理、进程与存储管理、设备管理，到网络管理、系统服务与日志、OpenSSH、Web 服务器、应用开发、文件操作、常用操作与用户权限。">
 <meta property="og:title" content="Linux 学习笔记">
-<meta property="og:description" content="Linux 学习笔记，从基础到进阶共十八章：系统介绍、常用命令、shell 脚本编程、VI/Emacs 编辑器、用户管理、文件管理、进程与存储管理、设备管理，到网络管理、系统服务与日志、OpenSSH、Web 服务器、应用开发、文件操作、常用操作与用户权限。">
+<meta property="og:description" content="# Linux 学习笔记
+
+Linux 学习笔记，从基础到进阶：系统介绍、常用命令、shell 脚本编程、VI/Emacs 编辑器、用户管理、文件管理、进程与存储管理、设备管理，到网络管理、系统服务与日志、OpenSSH、Web 服务器、应用开发、文件操作、常用操作与用户权限。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://interset-wq.github.io/blog/post/49.html">
 <meta property="og:image" content="https://interset-wq.github.io/blog/assets/avatar.png">
 <title>Linux 学习笔记</title>
   
-<style>
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}
   <style>
     .in-progress {
       position: fixed;
@@ -58,7 +62,7 @@
         <span class="in-meta-date">
           <svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z" fill-rule="evenodd"></path></svg>
           <span style="color:#1f883d">2026-10-05</span>
-          <span class="in-meta-updated">(更新 2026-10-08)</span>
+          <span class="in-meta-updated">(更新 2026-10-12)</span>
         </span>
         <span class="in-meta-labels">
           <svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.752 1.752 0 0 1 1 7.775Zm1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z" fill-rule="evenodd"></path></svg>
@@ -74,15 +78,15 @@
           Linux 学习笔记
         </summary>
         <ol>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050815490.html">介绍</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050815957.html">常用Linux命令</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050816440.html">shell 脚本编程基础</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050816753.html">VI编辑器</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050817050.html">用户管理</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050817347.html">文件管理</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050818452.html">进程管理</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050818751.html">存储管理</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050819092.html">设备管理</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050815490.html">Linux 与 WSL 系统简介</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050815957.html">Linux 文件系统与目录操作</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050816440.html">文本查看与处理命令</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050816753.html">Linux 文本编辑器</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050817050.html">用户、组与权限管理</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050817347.html">Bash 基础与数据流</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050818452.html">Bash 脚本编程</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050818751.html">进程管理与系统资源监控</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050819092.html">Linux 网络配置</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/49_6050819483.html">网络管理</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/49_6050819812.html">系统服务与日志</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/49_6050820159.html">Emacs 编辑器</a></li>
@@ -97,22 +101,20 @@
     </div>
     <nav class="in-toc" id="in-toc" data-toc-title="目录" data-toc-top="回到顶部" aria-label="目录"></nav>
     <div class="in-progress" id="in-progress"></div>
-    <div class="in-post-body markdown-body"><p>Linux 学习笔记，从基础到进阶共十八章：系统介绍、常用命令、shell 脚本编程、VI/Emacs 编辑器、用户管理、文件管理、进程与存储管理、设备管理，到网络管理、系统服务与日志、OpenSSH、Web 服务器、应用开发、文件操作、常用操作与用户权限。</p>
-<blockquote>
-<p>原《Linux 学习笔记》上下两篇合并为单一系列，按主题拆分，内容不变。</p>
-</blockquote></div>
+    <div class="in-post-body markdown-body"><h1>Linux 学习笔记</h1>
+<p>Linux 学习笔记，从基础到进阶：系统介绍、常用命令、shell 脚本编程、VI/Emacs 编辑器、用户管理、文件管理、进程与存储管理、设备管理，到网络管理、系统服务与日志、OpenSSH、Web 服务器、应用开发、文件操作、常用操作与用户权限。</p></div>
     <details class="in-series-list" open aria-label="Series">
       <summary>Linux 学习笔记</summary>
       <ol>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050815490.html">介绍</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050815957.html">常用Linux命令</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050816440.html">shell 脚本编程基础</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050816753.html">VI编辑器</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050817050.html">用户管理</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050817347.html">文件管理</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050818452.html">进程管理</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050818751.html">存储管理</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050819092.html">设备管理</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050815490.html">Linux 与 WSL 系统简介</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050815957.html">Linux 文件系统与目录操作</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050816440.html">文本查看与处理命令</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050816753.html">Linux 文本编辑器</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050817050.html">用户、组与权限管理</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050817347.html">Bash 基础与数据流</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050818452.html">Bash 脚本编程</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050818751.html">进程管理与系统资源监控</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050819092.html">Linux 网络配置</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/49_6050819483.html">网络管理</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/49_6050819812.html">系统服务与日志</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/49_6050820159.html">Emacs 编辑器</a></li>
@@ -164,7 +166,7 @@
   <span id="run-days"></span>
   <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
 </div>
-<div class="in-footer-built">构建部署于 2026-10-12 18:41:13</div>
+<div class="in-footer-built">构建部署于 2026-10-12 20:55:46</div>
 <script>
   (function () {
     document.getElementById('copyright-year').textContent = new Date().getFullYear();

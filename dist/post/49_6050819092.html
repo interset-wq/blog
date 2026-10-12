@@ -21,15 +21,15 @@
     })();
   </script>
   <meta name="description" content="My notes on everything.">
-<meta property="og:title" content="设备管理">
+<meta property="og:title" content="Linux 网络配置">
 <meta property="og:description" content="My notes on everything.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://interset-wq.github.io/blog/post/49_6050819092.html">
 <meta property="og:image" content="https://interset-wq.github.io/blog/assets/avatar.png">
-<title>设备管理</title>
+<title>Linux 网络配置</title>
   <link href="https://interset-wq.github.io/blog/assets/starry-night.css" rel="stylesheet">
   
-<style>
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}
   <style>
     .in-progress {
       position: fixed;
@@ -46,7 +46,7 @@
   </style>
 </style></head>
 <body>
-  <header class="in-site-header" id="header">  <h1 class="in-page-title">设备管理</h1>
+  <header class="in-site-header" id="header">  <h1 class="in-page-title">Linux 网络配置</h1>
 <nav class="in-site-nav" aria-label="Post navigation">    <a class="in-nav-btn" href="https://interset-wq.github.io/blog" title="首页" aria-label="首页"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z" fill-rule="evenodd"></path></svg></a>
 
   <button class="in-nav-btn" id="in-theme-toggle" type="button" title="切换主题" aria-label="切换主题">
@@ -75,15 +75,15 @@
           <span class="in-meta-series-pos">9 / 18</span>
         </summary>
         <ol>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050815490.html">介绍</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050815957.html">常用Linux命令</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050816440.html">shell 脚本编程基础</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050816753.html">VI编辑器</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050817050.html">用户管理</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050817347.html">文件管理</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050818452.html">进程管理</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050818751.html">存储管理</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/49_6050819092.html">设备管理</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050815490.html">Linux 与 WSL 系统简介</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050815957.html">Linux 文件系统与目录操作</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050816440.html">文本查看与处理命令</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050816753.html">Linux 文本编辑器</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050817050.html">用户、组与权限管理</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050817347.html">Bash 基础与数据流</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050818452.html">Bash 脚本编程</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050818751.html">进程管理与系统资源监控</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/49_6050819092.html">Linux 网络配置</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/49_6050819483.html">网络管理</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/49_6050819812.html">系统服务与日志</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/49_6050820159.html">Emacs 编辑器</a></li>
@@ -98,150 +98,85 @@
     </div>
     <nav class="in-toc" id="in-toc" data-toc-title="目录" data-toc-top="回到顶部" aria-label="目录"></nav>
     <div class="in-progress" id="in-progress"></div>
-    <div class="in-post-body markdown-body"><h2>57 原文</h2>
-<h2>设备文件</h2>
-<p>Linux 中，用户是通过文件系统与设备连接的。每个设备都是在其驱动程序控制下运行的，驱动程序则与/dev 目录下的特殊文件联系在一起，在选择设备或者操作设备时都以这个文件的名称来代表这一设备。</p>
-<p>Linux 系统采用设备文件 统一管理硬件设备,从而将硬件设备的特性及管理细节对用户隐藏，实现用户程序与设备无关性。从用户的角度来看；对设备的使用和一般文件的使用一样。</p>
-<p>设备的命名规则：在/dev 目录下，每一个驱动器以一个单独的设备文件来表现；设备的文件名一般由两部分组成，第一部分是 主设备号 ，第二部分是 次设备号 。主设备号代表设备的类型，如 hd 表示 IDE 硬盘，sd 表示 SCSI 硬盘，tty 表示终端设备等；次设备号代表同类设备中的序号，如 IDE 硬盘一般可以有 4 个，即/dev/hda、/dev/hdb、/dev/hdc、/dev/hdd，a 代表第一个设备，hda1 中的”1”代表 had 的第一个硬盘主分区，以此类推。</p>
-<p>SCSI 硬盘就是/dev/sda、/dev/sdb 等。fd 是软盘，设备名称是/dev/fd0。Linux 系统中，磁带机的设备名是/dev/st<em>和/dev/nst</em>，其中 nst<em>是指操作完成后不自动回卷磁带，st</em>自动回卷磁带，常用 nst*。主机 SCSI 总线上找到的第一个磁带机是 nst0 或 st0，第二个是 nst1 或st1，依此类推。磁带机的 SCSI 号越小，其设备名也就越靠前。</p>
-<p>一台主机上可以有多块硬盘，系统采用 a~p 来代表 16 块不同的硬盘，硬盘的分区编号规则：主分区或扩展分区的编号从 1 开始，到 4 结束；逻辑分区从编号 5 开始。</p>
-<p>硬盘设备有大量的扇区组成的，第一个扇区最重要，里面保存着主引导记录与分区表信息。主引导记录（信息） 需要占用 446 字节，分区表为 64 字节，结束符占用 2 字节；跟去表中没记录一个分区信息就需要 16 字节，最多只有 4 个分区信息可以写到第一个扇区中，这 4 个分区就是 4 个主分区。</p>
-<p>/dev/null 文件是空设备，等价于一个只写文件，所有写入它的内容都会永远丢失。读取数据返回为空。</p>
-<p>/dev/zero 也是一个伪文件，是一个输入设备。主要用处是创建一个指定长度的初始化空文件。</p>
-<p>/dev/full 是一个特殊的设备文件，在向其写入时总是返回“设备无剩余空间”（错误码为ENPOSPC），读取时则与/dev/zero 相似，放回无限的二进制流。常被用来测试程序在遇到磁盘无剩余空间错误时的行为</p>
-<p>/dev/random[urandom]用作随机数发生器或伪随机数发生器。</p>
-<p>Linux 系统采用 设备文件 统一管理硬件设备。按照是否对应物理实体，设备可以分为两种：物理设备，虚拟设备。</p>
-<h2>常用的设备命令</h2>
-<p>系统启动时会检测主机硬件并加载适当的驱动程序（模块，modules），让硬件正确地启动与运行。内核所检测到的各项硬件设备，会记录在/proc 中</p>
-<h3>查看 CPU 信息的命令</h3>
-<p>lscpu 命令 查看 CPU 和处理单元的信息</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ lscpu
-Architecture:             x86_64
-  CPU op-mode(s):         32-bit, 64-bit
-  Address sizes:          39 bits physical, 48 bits virtual
-  Byte Order:             Little Endian
-CPU(s):                   16
-  On-line CPU(s) list:    0-15
-Vendor ID:                GenuineIntel
-  Model name:             12th Gen Intel(R) Core(TM) i5-1240P
-    CPU family:           6
-    Model:                154
-    Thread(s) per core:   2
-    Core(s) per socket:   8
-    Socket(s):            1
-    Stepping:             3
-    BogoMIPS:             4223.99
-    Flags:                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse s
-                          se2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology tsc_reliable nonst
-                          op_tsc cpuid pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadl
-                          ine_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd i
-                          brs ibpb stibp ibrs_enhanced tpr_shadow vnmi ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 sme
-                          p bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves avx_
-                          vnni umip waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64b fsrm md_clear serialize flush_l
-                          1d arch_capabilities
-Virtualization features:
-  Virtualization:         VT-x
-  Hypervisor vendor:      Microsoft
-  Virtualization type:    full
-Caches (sum of all):
-  L1d:                    384 KiB (8 instances)
-  L1i:                    256 KiB (8 instances)
-  L2:                     10 MiB (8 instances)
-  L3:                     12 MiB (1 instance)
-Vulnerabilities:
-  Gather data sampling:   Not affected
-  Itlb multihit:          Not affected
-  L1tf:                   Not affected
-  Mds:                    Not affected
-  Meltdown:               Not affected
-  Mmio stale data:        Not affected
-  Reg file data sampling: Mitigation<span class="pl-k">;</span> Clear Register File
-  Retbleed:               Mitigation<span class="pl-k">;</span> Enhanced IBRS
-  Spec rstack overflow:   Not affected
-  Spec store bypass:      Mitigation<span class="pl-k">;</span> Speculative Store Bypass disabled via prctl and seccomp
-  Spectre v1:             Mitigation<span class="pl-k">;</span> usercopy/swapgs barriers and __user pointer sanitization
-  Spectre v2:             Mitigation<span class="pl-k">;</span> Enhanced / Automatic IBRS<span class="pl-k">;</span> IBPB conditional<span class="pl-k">;</span> RSB filling<span class="pl-k">;</span> PBRSB-eIBRS SW sequence<span class="pl-k">;</span>
-                           BHI BHI_DIS_S
-  Srbds:                  Not affected
-  Tsx async abort:        Not affected</pre></div>
-<h3>查看内存信息的命令</h3>
-<p>最常用命令 free，查看虚拟内存最常用命令 vmstat</p>
-<h4>free 命令</h4>
-<p>显示系统内存状态，包括空闲的和已用的物流内存，swap 内存，以及被内核使用的缓冲区。</p>
-<p>语法 <code class="notranslate">$ free [选项]</code></p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ free
-               total        used        free      shared  buff/cache   available
-Mem:         7975248      596900     7442636        3248      137100     7378348
-Swap:        2097152           0     2097152</pre></div>
-<p>-k：以 KB 为单位，显示内存的使用情况，默认选项<br>
--b：以字节为单位，显示内存使用情况<br>
--m：以 MB 为单位，显示<br>
--g：以 GB 为单位<br>
--t：在输出的最终结果中，输出内存和 swap 分区的总量<br>
--o：不显示系统缓冲区这一列<br>
--s：间隔秒数：根据指定的间隔时间，持续显示内存使用情况</p>
-<p>Swap 指的是交换分区，也就是虚拟内存。</p>
-<h4>vmstat 命令</h4>
-<p>Virtual Meomory Statistics 虚拟内存统计。Linux 内存管理主要通过“调页（Paging）”和” 交换（Swapping）”来完成内存调度。页面写入磁盘的过程称作 Page-Out，页面从磁盘重新回到内存的过程被称作 Page-In。</p>
-<p>当内核需要一个页面，但发现此页面不在物理内存中（因为被 Page-Out）时，就发生页面错误（Page Fault）。若 pageout 频繁发生，内核管理分页的时间超过运行程序的时间时，系统性能会急剧下降。这时系统已经运行非常慢或进入暂停状态，这种状态亦被称作颠簸 Thrashing</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ vmstat
-procs -----------memory---------- ---swap-- -----io---- -system-- -------cpu-------
- r  b   swpd   free   buff  cache   si   so    bi    bo   <span class="pl-k">in</span>   cs us sy id wa st gu
- 1  0      0 7442724   1308 136264    0    0   481   133   57    0  0  0 100  0  0  0</pre></div>
-<h3>查看块设备的命令</h3>
-<h4>dmesg 命令</h4>
-<p>可以查看 Linux 系统启动信息的命令<br>
-常用于查看系统的硬件信息。除此之外，开机信息也可以通过/var/log/目录中的 dmesg 文件查看。</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ dmesg <span class="pl-k">|</span> grep CPU
-[    0.025044] smpboot: Allowing 16 CPUs, 0 hotplug CPUs
-[    0.029566] setup_percpu: NR_CPUS:256 nr_cpumask_bits:256 nr_cpu_ids:16 nr_node_ids:1
-[    0.071783] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=16, Nodes=1
-[    0.089216] rcu:     RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=16.
-[    0.104760] smpboot: CPU0: 12th Gen Intel(R) Core(TM) i5-1240P (family: 0x6, model: 0x9a, stepping: 0x3)
-[    0.104760] Performance Events: unsupported p6 CPU model 154 no PMU driver, software events only.
-[    0.104760] smp: Bringing up secondary CPUs ...
-[    0.104760] .... node  <span class="pl-c"><span class="pl-c">#</span>0, CPUs:        #1  #2  #3  #4  #5  #6  #7  #8  #9 #10 #11 #12 #13 #14 #15</span>
-[    0.104760] smp: Brought up 1 node, 16 CPUs
-$ dmesg <span class="pl-k">|</span> grep eth0
-[    1.794310] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready</pre></div>
-<h4>lsblk 命令</h4>
-<p>列出系统中的所有可用块设备信息，还能显示他们之间的依赖关系，但不会列出 RAM 盘的信息。块设备如，硬盘、闪存盘、CD-ROM 等。</p>
-<p>块设备指设备将数据按可寻址的块为单位进行输入/输出，一次 I/O 操作固定大小的数据块，通过缓冲区来读写块设备，允许随机访问。这种方式适用于发送大量的信息，常见的块设备有硬盘、磁盘、光盘驱动器等。</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">$ lsblk
-NAME
-    MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
-sda   8:0    0 388.4M  1 disk
-sdb   8:16   0     2G  0 disk [SWAP]
-sdc   8:32   0     1T  0 disk /mnt/wslg/distro
-                              /</pre></div>
-<h3>磁盘配额的命令</h3>
+    <div class="in-post-body markdown-body"><h2>基本网络参数</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IP 地址</td>
+<td>标识网卡接口，由网络号 + 主机号组成</td>
+</tr>
+<tr>
+<td>子网掩码</td>
+<td>确定网络部分的位数</td>
+</tr>
+<tr>
+<td>网关</td>
+<td>跨区域/跨网段通信</td>
+</tr>
+<tr>
+<td>DNS</td>
+<td>域名与 IP 互相映射</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h2>查看网络</h2>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ ip a            <span class="pl-c"><span class="pl-c">#</span> 查看网卡与 IP（现代推荐）</span>
+$ ip route        <span class="pl-c"><span class="pl-c">#</span> 查看路由/默认网关</span>
+$ ifconfig        <span class="pl-c"><span class="pl-c">#</span> 传统命令（需 net-tools 包）</span>
+$ ss -tulnp       <span class="pl-c"><span class="pl-c">#</span> 查看监听端口（推荐，替代 netstat）</span>
+$ netstat -anp    <span class="pl-c"><span class="pl-c">#</span> 查看端口占用（需 net-tools）</span>
+$ hostname        <span class="pl-c"><span class="pl-c">#</span> 查看/设置主机名（hostnamectl set-hostname 修改）</span></pre></div>
+<p>网络接口命名：<code class="notranslate">eth0</code> 以太网、<code class="notranslate">lo</code> 回环（127.0.0.1）、<code class="notranslate">wlan0</code> 无线。回环接口 <code class="notranslate">lo</code> 用于本机内进程通信，不接真实网络。</p>
+<h2>DNS 解析</h2>
+<p>解析顺序：先查本机 <code class="notranslate">/etc/hosts</code>（静态），再查 <code class="notranslate">/etc/resolv.conf</code> 中列出的 DNS 服务器（动态）。</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ cat /etc/hosts          <span class="pl-c"><span class="pl-c">#</span> 本地主机名映射</span>
+$ cat /etc/resolv.conf    <span class="pl-c"><span class="pl-c">#</span> DNS 服务器配置</span>
+$ getent hosts example.com   <span class="pl-c"><span class="pl-c">#</span> 查询解析结果</span>
+$ nslookup example.com    <span class="pl-c"><span class="pl-c">#</span> DNS 查询</span></pre></div>
+<h2>测试连通性</h2>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ ping 8.8.8.8            <span class="pl-c"><span class="pl-c">#</span> 测试 IP 连通性</span>
+$ ping -c 4 example.com   <span class="pl-c"><span class="pl-c">#</span> 只测 4 次</span>
+$ traceroute example.com  <span class="pl-c"><span class="pl-c">#</span> 追踪数据包路径</span>
+$ curl -I https://example.com   <span class="pl-c"><span class="pl-c">#</span> 查看 HTTP 响应头</span>
+$ curl https://example.com      <span class="pl-c"><span class="pl-c">#</span> 发送请求/下载</span></pre></div>
+<h2>网络诊断思路</h2>
 <ol>
-<li>quota 命令<br>
-查询磁盘空间的限制，并得知已使用多少空间。<br>
-quota [选项] 用户名<br>
-quota [选项] 群组名</li>
-<li>quotacheck 命令<br>
-扫描文件系统（必须含有挂载参数 usrquota 和 grpquota）并建立磁盘配额记录文件。<br>
-quotacheck [选项] 文件系统</li>
-<li>quotaon 命令<br>
-启动磁盘配额服务。</li>
-<li>quotaoff 命令<br>
-关闭磁盘配额服务。</li>
+<li>本机环回：<code class="notranslate">ping 127.0.0.1</code>（网卡是否正常）</li>
+<li>网关：<code class="notranslate">ping &lt;网关IP&gt;</code>（本网段是否通）</li>
+<li>公网：<code class="notranslate">ping 8.8.8.8</code>（外网是否通）</li>
+<li>DNS：<code class="notranslate">nslookup example.com</code>（域名解析是否正常）</li>
+<li>端口：<code class="notranslate">ss -tulnp | grep 22</code>（服务是否监听）</li>
 </ol>
-<hr>
-<hr></div>
+<h2>DHCP</h2>
+<p>DHCP（动态主机配置协议）为局域网设备自动分配 IP、网关、DNS。DHCP 客户机无固定 IP，接口上下线时动态获取/释放。接口配置中 <code class="notranslate">BOOTPROTO=dhcp</code> 即启用 DHCP（RHEL 系）。Ubuntu 桌面默认由 NetworkManager 管理，常用 <code class="notranslate">nmcli</code>：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ nmcli dev status                <span class="pl-c"><span class="pl-c">#</span> 设备状态</span>
+$ nmcli connection show           <span class="pl-c"><span class="pl-c">#</span> 连接配置</span>
+$ nmcli con up <span class="pl-s"><span class="pl-pds">"</span>Wired<span class="pl-pds">"</span></span>            <span class="pl-c"><span class="pl-c">#</span> 启用连接</span></pre></div>
+<h2>特殊 IP</h2>
+<ul>
+<li><code class="notranslate">127.0.0.1</code>：本机 localhost。</li>
+<li><code class="notranslate">0.0.0.0</code>：表示所有 IP；绑定端口时表示监听所有接口，放行规则中表示允许任意 IP。</li>
+</ul>
+<h2>WSL 网络</h2>
+<p>WSL2 默认 NAT 模式，拥有独立虚拟网卡；<code class="notranslate">wsl --list --verbose</code> 查看；可通过 <code class="notranslate">localhost</code> 从 Windows 直接访问 WSL 内服务。镜像网络模式可让 WSL 与 Windows 共享 IP（<code class="notranslate">.wslconfig</code> 中 <code class="notranslate">networkingMode=mirrored</code>）。</p></div>
     <details class="in-series-list" open aria-label="Series">
       <summary>Linux 学习笔记</summary>
       <ol>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050815490.html">介绍</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050815957.html">常用Linux命令</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050816440.html">shell 脚本编程基础</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050816753.html">VI编辑器</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050817050.html">用户管理</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050817347.html">文件管理</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050818452.html">进程管理</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050818751.html">存储管理</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/49_6050819092.html">设备管理</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050815490.html">Linux 与 WSL 系统简介</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050815957.html">Linux 文件系统与目录操作</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050816440.html">文本查看与处理命令</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050816753.html">Linux 文本编辑器</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050817050.html">用户、组与权限管理</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050817347.html">Bash 基础与数据流</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050818452.html">Bash 脚本编程</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050818751.html">进程管理与系统资源监控</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/49_6050819092.html">Linux 网络配置</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/49_6050819483.html">网络管理</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/49_6050819812.html">系统服务与日志</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/49_6050820159.html">Emacs 编辑器</a></li>
@@ -254,7 +189,7 @@ quotacheck [选项] 文件系统</li>
       </ol>
     </details>
     <nav class="in-series-pager" aria-label="Series pages">
-      <a class="in-series-prev" href="https://interset-wq.github.io/blog/post/49_6050818751.html">存储管理</a>
+      <a class="in-series-prev" href="https://interset-wq.github.io/blog/post/49_6050818751.html">进程管理与系统资源监控</a>
       <a class="in-series-next" href="https://interset-wq.github.io/blog/post/49_6050819483.html">网络管理</a>
     </nav>
   </article>
@@ -297,7 +232,7 @@ quotacheck [选项] 文件系统</li>
   <span id="run-days"></span>
   <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
 </div>
-<div class="in-footer-built">构建部署于 2026-10-12 18:41:13</div>
+<div class="in-footer-built">构建部署于 2026-10-12 20:55:46</div>
 <script>
   (function () {
     document.getElementById('copyright-year').textContent = new Date().getFullYear();
