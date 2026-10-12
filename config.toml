@@ -2,7 +2,7 @@
 # 修改本文件后需手动运行 Actions -> build InterNote -> Run workflow 全局重建一次
 
 [site]
-about = "mixed"
+about = "issue"
 title = "InterNote"
 sub_title = "My notes on everything."
 
