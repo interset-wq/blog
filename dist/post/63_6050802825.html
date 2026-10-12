@@ -21,14 +21,15 @@
     })();
   </script>
   <meta name="description" content="My notes on everything.">
-<meta property="og:title" content="DAY 10 格式化及如何正确使用">
+<meta property="og:title" content="pwsh 输出格式化">
 <meta property="og:description" content="My notes on everything.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://interset-wq.github.io/blog/post/63_6050802825.html">
 <meta property="og:image" content="https://interset-wq.github.io/blog/assets/avatar.png">
-<title>DAY 10 格式化及如何正确使用</title>
+<title>pwsh 输出格式化</title>
+  <link href="https://interset-wq.github.io/blog/assets/starry-night.css" rel="stylesheet">
   
-<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-tip {border-left-color:var(--borderColor-success-emphasis, var(--color-success-emphasis));background-color:var(--color-success-subtle);}.markdown-alert.markdown-alert-tip .markdown-alert-title {color: var(--fgColor-success,var(--color-success-fg));}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-tip {border-left-color:var(--borderColor-success-emphasis, var(--color-success-emphasis));background-color:var(--color-success-subtle);}.markdown-alert.markdown-alert-tip .markdown-alert-title {color: var(--fgColor-success,var(--color-success-fg));}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-tip {border-left-color:var(--borderColor-success-emphasis, var(--color-success-emphasis));background-color:var(--color-success-subtle);}.markdown-alert.markdown-alert-tip .markdown-alert-title {color: var(--fgColor-success,var(--color-success-fg));}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}
   <style>
     .in-progress {
       position: fixed;
@@ -45,7 +46,7 @@
   </style>
 </style></head>
 <body>
-  <header class="in-site-header" id="header">  <h1 class="in-page-title">DAY 10 格式化及如何正确使用</h1>
+  <header class="in-site-header" id="header">  <h1 class="in-page-title">pwsh 输出格式化</h1>
 <nav class="in-site-nav" aria-label="Post navigation">    <a class="in-nav-btn" href="https://interset-wq.github.io/blog" title="首页" aria-label="首页"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z" fill-rule="evenodd"></path></svg></a>
 
   <button class="in-nav-btn" id="in-theme-toggle" type="button" title="切换主题" aria-label="切换主题">
@@ -81,26 +82,77 @@
           <li><a href="https://interset-wq.github.io/blog/post/63_6050800073.html">pwsh 提供程序（PSProvider）</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050801304.html">pwsh 管道原理与参数绑定</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050801673.html">pwsh 模块与命令扩展</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/63_6050802143.html">对象：数据的另一个名称</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/63_6050802825.html">DAY 10 格式化及如何正确使用</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/63_6050802143.html">pwsh 对象基础</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/63_6050802825.html">pwsh 输出格式化</a></li>
         </ol>
       </details>
     </div>
     <nav class="in-toc" id="in-toc" data-toc-title="目录" data-toc-top="回到顶部" aria-label="目录"></nav>
     <div class="in-progress" id="in-progress"></div>
-    <div class="in-post-body markdown-body"><p>PowerShell Cmdlets可以用于生成对象，并且这些对象通常含有比PowerShell默认所显示的属性多。使用“Gm”命令可以获取一个对象的所有属性，使用“Select-Object”自定义想看到的属性。</p>
-<h2>默认格式</h2>
-<p>现在运行一下我们熟悉的命令“Get-Process”，然后注意结果的列头部分。可以看到，报表列头部分的名称与属性名称并不完全相符。每个列头都有固定的宽度、别名等。这些结果来自于某些配置文件。你可<br>
-以在安装PowerShell的路径下找到其中一个名为“.format.pslxml”的文件。其中进程对象的格式化目录在“DotNetTypes.format.pslxml”中。</p>
-<p>下面我们先修改PowerShell的安装目录，并且打开<br>
-“DotNetType.format.pslxml”文件。注意，不要保存对该文件的任何变更。该文件带有数字签名，即使一个简单的回车或者空格，都会影响签名并阻止PowerShell从中获取信息。下面的命令适合于powershell5</p>
-<pre class="notranslate"><code class="notranslate">PS C:\Users\86183&gt; cd $PSHOME
-PS C:\Windows\System32\WindowsPowerShell\v1.0&gt; notepad dotnettypes.format.ps1xml
-</code></pre>
-<p>然后从中找出准确的类型并返回给Get-Process”。</p>
-<pre class="notranslate"><code class="notranslate">&gt; get-process | gm
-</code></pre>
-<hr></div>
+    <div class="in-post-body markdown-body"><h2>一、为什么需要格式化</h2>
+<p>pwsh 的 cmdlet 可以生成对象，而这些对象通常含有比 pwsh 默认显示的多得多的属性。屏幕上看到的表格只是对象的一小部分。</p>
+<p>那么如何查看全部属性、又如何自定义想要看到的列呢？这里有两个关键命令：</p>
+<ul>
+<li><strong><code class="notranslate">Gm</code>（Get-Member）</strong>：查看一个对象的<strong>所有</strong>属性</li>
+<li><strong><code class="notranslate">Select-Object</code></strong>：自定义想看到的属性（列）</li>
+</ul>
+<h2>二、默认格式从哪里来：.format.ps1xml 文件</h2>
+<p>运行熟悉的命令 <code class="notranslate">Get-Process</code>，注意结果的列头部分：列头名称与属性名称并不完全相符，每个列头都有固定的宽度、别名等。这些结果来自某些<strong>配置文件</strong>。</p>
+<p>你可以在 pwsh 安装路径下找到名为 <code class="notranslate">.format.ps1xml</code> 的文件，其中进程对象的格式化目录位于 <code class="notranslate">DotNetTypes.format.ps1xml</code> 中。</p>
+<blockquote>
+<p>[!NOTE] 仅 Windows PowerShell<br>
+下面的示例用记事本打开格式文件，属于 Windows 平台的传统查看方式（<code class="notranslate">$PSHOME</code> 指向 Windows PowerShell 安装目录，命令适用于 Windows PowerShell 5）：</p>
+</blockquote>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">PS C:\Users\d111k<span class="pl-k">&gt;</span> cd <span class="pl-c1">$PSHOME</span>
+PS C:\Windows\System32\WindowsPowerShell\v1.<span class="pl-c1">0</span><span class="pl-k">&gt;</span> notepad dotnettypes.format.ps1xml</pre></div>
+<div class="markdown-alert markdown-alert-warning"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-alert mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Warning</p><p><strong>不要保存</strong>对该文件的任何变更。该文件带有数字签名——即使一个简单的回车或空格，都会影响签名，并阻止 pwsh 从中获取信息。</p>
+</div>
+<h3>找到返回给 Get-Process 的确切类型</h3>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">pwsh<span class="pl-k">&gt;</span> <span class="pl-c1">get-process</span> <span class="pl-k">|</span> gm</pre></div>
+<p>通过 <code class="notranslate">Gm</code> 查看进程对象的类型名，即可定位 <code class="notranslate">.format.ps1xml</code> 中对应的格式化配置，理解 pwsh 为什么以当前样式展示进程信息。</p>
+<h2>三、如何自定义显示格式</h2>
+<p>了解格式化来源后，就可以按需定制输出：</p>
+<h3>1. 选择列：Select-Object</h3>
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 只显示 Name、ID、VM 三列</span>
+<span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> <span class="pl-c1">Select-Object</span> Name<span class="pl-k">,</span> ID<span class="pl-k">,</span> VM</pre></div>
+<h3>2. 切换格式：Format-* 系列</h3>
+<p>pwsh 提供几个格式化 cmdlet 来改变展示形态：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">Format-Table</code></td>
+<td>以表格（列）形式显示，适合少量属性</td>
+</tr>
+<tr>
+<td><code class="notranslate">Format-List</code></td>
+<td>以列表（每属性一行）形式显示，适合查看对象全部属性</td>
+</tr>
+<tr>
+<td><code class="notranslate">Format-Wide</code></td>
+<td>以宽列表（单列多行）形式显示</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 以列表形式展示进程的所有属性，适合查看完整信息</span>
+<span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> <span class="pl-c1">Format-List</span> <span class="pl-k">*</span>
+
+<span class="pl-c"><span class="pl-c">#</span> 指定只列出某几个属性</span>
+<span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> <span class="pl-c1">Format-List</span> Name<span class="pl-k">,</span> ID<span class="pl-k">,</span> CPU</pre></div>
+<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>默认格式由 pwsh 的配置文件决定（表或列表）；当你需要展示大量属性、或属性名较窄不利于表格时，用 <code class="notranslate">Format-List</code> 往往更清晰。</p>
+</div>
+<h2>四、核心总结</h2>
+<ol>
+<li>cmdlet 生成的对象属性远多于默认显示；<code class="notranslate">Gm</code>（Get-Member）查看全部属性，<code class="notranslate">Select-Object</code> 自定义列。</li>
+<li>pwsh 的默认显示样式来自安装目录下的 <code class="notranslate">.format.ps1xml</code> 配置文件（如进程对象对应 <code class="notranslate">DotNetTypes.format.ps1xml</code>）。</li>
+<li>格式化文件带有数字签名，<strong>切勿修改保存</strong>，否则会破坏签名、阻止 pwsh 读取。</li>
+<li>需要定制显示时，用 <code class="notranslate">Select-Object</code> 选列、用 <code class="notranslate">Format-Table</code> / <code class="notranslate">Format-List</code> 切换展示形态。</li>
+</ol></div>
     <details class="in-series-list" open aria-label="Series">
       <summary>PowerShell 学习笔记</summary>
       <ol>
@@ -111,12 +163,12 @@ PS C:\Windows\System32\WindowsPowerShell\v1.0&gt; notepad dotnettypes.format.ps1
         <li><a href="https://interset-wq.github.io/blog/post/63_6050800073.html">pwsh 提供程序（PSProvider）</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050801304.html">pwsh 管道原理与参数绑定</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050801673.html">pwsh 模块与命令扩展</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/63_6050802143.html">对象：数据的另一个名称</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/63_6050802825.html">DAY 10 格式化及如何正确使用</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/63_6050802143.html">pwsh 对象基础</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/63_6050802825.html">pwsh 输出格式化</a></li>
       </ol>
     </details>
     <nav class="in-series-pager" aria-label="Series pages">
-      <a class="in-series-prev" href="https://interset-wq.github.io/blog/post/63_6050802143.html">对象：数据的另一个名称</a>
+      <a class="in-series-prev" href="https://interset-wq.github.io/blog/post/63_6050802143.html">pwsh 对象基础</a>
     </nav>
   </article>
 <section class="in-comments-section">
@@ -158,7 +210,7 @@ PS C:\Windows\System32\WindowsPowerShell\v1.0&gt; notepad dotnettypes.format.ps1
   <span id="run-days"></span>
   <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
 </div>
-<div class="in-footer-built">构建部署于 2026-10-12 13:01:14</div>
+<div class="in-footer-built">构建部署于 2026-10-12 13:02:19</div>
 <script>
   (function () {
     document.getElementById('copyright-year').textContent = new Date().getFullYear();

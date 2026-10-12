@@ -21,15 +21,15 @@
     })();
   </script>
   <meta name="description" content="My notes on everything.">
-<meta property="og:title" content="对象：数据的另一个名称">
+<meta property="og:title" content="pwsh 对象基础">
 <meta property="og:description" content="My notes on everything.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://interset-wq.github.io/blog/post/63_6050802143.html">
 <meta property="og:image" content="https://interset-wq.github.io/blog/assets/avatar.png">
-<title>对象：数据的另一个名称</title>
+<title>pwsh 对象基础</title>
   <link href="https://interset-wq.github.io/blog/assets/starry-night.css" rel="stylesheet">
   
-<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-tip {border-left-color:var(--borderColor-success-emphasis, var(--color-success-emphasis));background-color:var(--color-success-subtle);}.markdown-alert.markdown-alert-tip .markdown-alert-title {color: var(--fgColor-success,var(--color-success-fg));}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-tip {border-left-color:var(--borderColor-success-emphasis, var(--color-success-emphasis));background-color:var(--color-success-subtle);}.markdown-alert.markdown-alert-tip .markdown-alert-title {color: var(--fgColor-success,var(--color-success-fg));}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}
   <style>
     .in-progress {
       position: fixed;
@@ -46,7 +46,7 @@
   </style>
 </style></head>
 <body>
-  <header class="in-site-header" id="header">  <h1 class="in-page-title">对象：数据的另一个名称</h1>
+  <header class="in-site-header" id="header">  <h1 class="in-page-title">pwsh 对象基础</h1>
 <nav class="in-site-nav" aria-label="Post navigation">    <a class="in-nav-btn" href="https://interset-wq.github.io/blog" title="首页" aria-label="首页"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z" fill-rule="evenodd"></path></svg></a>
 
   <button class="in-nav-btn" id="in-theme-toggle" type="button" title="切换主题" aria-label="切换主题">
@@ -82,246 +82,161 @@
           <li><a href="https://interset-wq.github.io/blog/post/63_6050800073.html">pwsh 提供程序（PSProvider）</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050801304.html">pwsh 管道原理与参数绑定</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050801673.html">pwsh 模块与命令扩展</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/63_6050802143.html">对象：数据的另一个名称</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/63_6050802825.html">DAY 10 格式化及如何正确使用</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/63_6050802143.html">pwsh 对象基础</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/63_6050802825.html">pwsh 输出格式化</a></li>
         </ol>
       </details>
     </div>
     <nav class="in-toc" id="in-toc" data-toc-title="目录" data-toc-top="回到顶部" aria-label="目录"></nav>
     <div class="in-progress" id="in-progress"></div>
-    <div class="in-post-body markdown-body"><h2>对象</h2>
-<p>运行PowerShell中的<code class="notranslate">Get-Process</code>。可以看到一个包含多列的表格，但这些信息仅仅是关于进程的冰山一角。进程对象还包括机器名、主窗口句柄、最大工作集大小、退出代码和时间、处理器掩码信息以及其他大量信息。实际上，你可以找出超过60个与进程有关的信息。PowerShell仅仅展示少量的信息，原因非常简单，PowerShell当然可以提供屏幕上所无法容纳的更多的信息。当运行任意命令，比如Get-Process、Get-Service、Get-EventLog或其他命令时，PowerShell会在内存中完全构造用于容纳关于项的所有信息的表格。例如Get-Process，该表格由67列组成，每行对应运行在计算机中的一个进程。每一列包含一部分信息，比如说虚拟内存、CPU利用率、处理器名称、进程ID等。然后，PowerShell会检查你是否指定所需查看的列。如果你未指定想查看的列，Shell会查看由微软提供的配置文件并只显示微软认为你希望查看的列。</p>
-<p>一种查看所有列的方式是使用ConvertTo-HTML命令：</p>
+    <div class="in-post-body markdown-body"><h2>一、对象：屏幕之外还有更多数据</h2>
+<p>运行 <code class="notranslate">Get-Process</code>，你会看到一个多列表格。但这些信息仅仅是关于进程的<strong>冰山一角</strong>。进程对象还包括机器名、主窗口句柄、最大工作集大小、退出代码和时间、处理器掩码等大量信息——实际上可以找出超过 60 个与进程相关的信息。</p>
+<p>pwsh 只展示少量信息，原因很简单：屏幕上放不下更多内容。</p>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>当运行任意命令（<code class="notranslate">Get-Process</code>、<code class="notranslate">Get-Service</code> 等）时，pwsh 会在内存中<strong>完全构造</strong>用于容纳所有项信息的表格。例如 <code class="notranslate">Get-Process</code> 的表格由 67 列组成，每行对应一个运行中的进程，每列包含一部分信息（虚拟内存、CPU 利用率、进程 ID 等）。</p>
+<p>之后 pwsh 检查你是否指定了想查看的列；若未指定，它会查看微软提供的配置文件，只显示微软认为你希望查看的列。</p>
+</div>
+<h3>查看所有列的方式</h3>
+<p>一种方式是用 <code class="notranslate">ConvertTo-Html</code>：</p>
 <div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> <span class="pl-c1">ConvertTo-Html</span> <span class="pl-k">|</span> <span class="pl-c1">Out-File</span> processes.html</pre></div>
-<p>该命令不会过滤列，而是生成包含所有列的HTML文件。这是查看整个表的一种方式。</p>
-<p>除去包含这些信息的列之外，表中每一行都有一些与之对应的方法。这些方法包括操作系统可以以进程为目标进行的操作。比如说，操作系统可以关闭进程、杀死进程、刷新信息，或者等待进程退出等。</p>
-<p>每当运行一个可以产生结果的命令时，输出结果在内存中以表的形式存放。当将输出结果以管道的方式由一个命令传送给另一个命令时，比如说：</p>
-<p><code class="notranslate">&gt; Get-Process | ConvertTo-HTML</code></p>
-<p>整个表通过管道进行传输。该表在传输过程中并不会过滤到只有一小部分列，而是直到所有的命令都运行后才会进行过滤。</p>
-<p>下面是一些术语的变化。PowerShell并不会将这些内存中的表命名为“表”，而是使用下述4个术语。</p>
+<p>该命令不过滤列，而是生成包含<strong>所有列</strong>的 HTML 文件。</p>
+<p>除了列信息，表中每一行还对应一些<strong>方法</strong>——操作系统能以进程为目标执行的操作，例如关闭进程、杀死进程、刷新信息、等待进程退出等。</p>
+<h3>管道传输的是整个表</h3>
+<p>每当命令产生结果，输出在内存中以「表」的形式存放。当输出经管道传给另一条命令时，例如 <code class="notranslate">Get-Process | ConvertTo-HTML</code>，整个表都会通过管道传输——在传输过程中<strong>不会过滤成一小部分列</strong>，直到所有命令运行完后才过滤。</p>
+<h2>二、术语：pwsh 怎么称呼这些「表」</h2>
+<p>pwsh 并不把这些内存中的表命名为「表」，而是使用以下 4 个术语：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>术语</th>
+<th>对应</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>对象（Object）</strong></td>
+<td>表行</td>
+<td>代表单个事物，如单个进程或单个服务</td>
+</tr>
+<tr>
+<td><strong>属性（Property）</strong></td>
+<td>表列</td>
+<td>代表对象的一部分信息，如进程名、进程 ID、服务状态</td>
+</tr>
+<tr>
+<td><strong>方法（Method）</strong></td>
+<td>行为</td>
+<td>与对象关联并让对象完成某些任务，如杀死进程、启动服务</td>
+</tr>
+<tr>
+<td><strong>集合（Collection）</strong></td>
+<td>整张表</td>
+<td>对象的集合</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h2>三、为什么 pwsh 使用对象</h2>
+<p>pwsh 用<strong>对象</strong>代表数据，有两个原因：</p>
+<ol>
+<li><strong>Windows 本身是面向对象的操作系统</strong>，大部分 Windows 软件也是面向对象的。以对象集合的方式组织数据非常自然，因为大多数系统都适用这种结构。</li>
+<li><strong>让事情更简单，更强大、更灵活</strong>。无论窗口调整成什么大小，都能美观地把结果输出到控制台。</li>
+</ol>
+<h3>对象消除了文本操作开销</h3>
+<p>对象的工作机制类似内存中的表，因此你无需告诉 pwsh 信息所在的文本位置，只需输入<strong>列名</strong>。无论输出结果在屏幕或文件中如何组织，pwsh 都知道去哪里获取数据——内存表总是同一个，因此你永远不需要因为移动列而重写命令。这样你能更专注于实现功能，而不是不必要的开销。</p>
+<blockquote>
 <ul>
-<li>对象——这也就是所谓的“表行”。它代表单个事物，比如说单个进程或是单个服务。</li>
-<li>属性——这也就是所谓的“表列”。它代表关于对象的一部分信息，比如说进程名称、进程ID或服务状态。</li>
-<li>方法——这也就是所谓的“行为”。方法与某个对象关联并使得对象完成某些任务，比如说杀死进程或启动服务。</li>
-<li>集合——这是整个对象的集合，我们曾称之为“表”。</li>
+<li>Linux / UNIX 是基于文本的操作系统，文本对它们意义重大。</li>
+<li>Windows 不是基于文本、而是基于 API 的操作系统，重度依赖对象模型。因此 pwsh 以更原生（object-oriented）的方式与 Windows 协作。</li>
 </ul>
-<h2>理解对象</h2>
-<p>powershell使用对象代表数据。</p>
-<p>第一个原因是Windows本身就是一个面向对象的操作系统，大部分在Windows上运行的软件是面向对象的。选择以对象集合的方式组织数据非常容易，因为大多数操作系统适用这种结构的数据。</p>
-<p>另一个使用对象的原因是这样会使事情简单，并给你提供更加强大的功能和更好的灵活性。这使得不来你的窗口调整为什么大小，都能美观的输出结果到控制台。</p>
-<p>PowerShell使用对象消除所有的文本操作开销。由于对象的工作机制类似内存中的表，因此你无须告知PowerShell信息所在的文本位置，而是仅仅需要输入列名。无论在屏幕或文件中如何组织输出结果，PowerShell都知道去哪里获取数据，内存表总是同一个，因此你永远都不需要由于移动列而重写命令。这样的好处是你更多专注于如何实现功能，而不是这类不必要的开销。</p>
-<ul>
-<li>Linux或UNIX都是基于文本的操作系统，因此文本对这些操作系统意义重大。</li>
-<li>Windows并不是基于文本，而是基于API的操作系统，Windows重度依赖对象模型。因此PowerShell以更原生的方式与Windows共同工作。</li>
-</ul>
-<h2>探索对象：Get-Member</h2>
-<p>如果说对象就像内存中一个巨大的表，而PowerShell仅仅在屏幕上展示表的一部分，有些我们需要使用的属性可能并没有显示在屏幕上。</p>
-<p>如果需要了解更多关于对象的内容，使用命令：<code class="notranslate">Get-Member</code>，它的别名是 <code class="notranslate">Gm</code>。可以在任何产生某些输出的命令之后使用Gm。</p>
-<p>例如，运行Get-Process会在屏幕上产生一些输出，可以将这些输出通过管道传送给Gm</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> gm
+</blockquote>
+<h2>四、探索对象：Get-Member</h2>
+<p>对象就像内存中巨大的表，而 pwsh 只展示其中一部分——有些你需要用的属性可能没有显示在屏幕上。</p>
+<p>要了解更多关于对象的内容，使用命令 <code class="notranslate">Get-Member</code>（别名 <code class="notranslate">Gm</code>）。可以在任何产生输出的命令之后使用 Gm：</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">pwsh<span class="pl-k">&gt;</span> <span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> gm</pre></div>
+<p>输出会列出该对象的所有成员（属性、方法、事件、别名属性、脚本属性等）。</p>
+<h3>成员（Member）是什么</h3>
+<p>一个对象的属性、方法以及其他附加到对象的东西，都称为<strong>成员</strong>。这也是 <code class="notranslate">Get-Member</code> 名称的由来——它获取对象成员的列表。pwsh 的惯例是使用单数名词，所以 cmdlet 名称是 <code class="notranslate">Get-Member</code>。</p>
+<h3>管道中的对象全程可访问</h3>
+<p>当一个 cmdlet 产生对象的集合时（如 <code class="notranslate">Get-Process</code>），整个集合直到管道末尾之前都可以访问。在所有命令运行完之前，pwsh 不会把对象的属性过滤掉；直到最后一个命令运行完，才会创建你看到的文本输出。</p>
+<p>在上面的例子中，Gm 可以完整访问进程对象的属性和方法，正是因为这个命令还未被过滤用于显示。Gm 会查看每一个对象，并构建包含对象属性和方法的列表。</p>
+<h2>五、使用对象标签：属性（Property）</h2>
+<p>查看 Gm 输出，你会注意到几种不同的属性：<strong>脚本属性、属性、NoteProperty、别名属性</strong>。</p>
+<p>.NET Framework 中的对象（所有 pwsh 对象的来源）通常只包含「属性」。pwsh 会动态添加其他内容：ScriptProperty、NoteProperty、AliasProperty 等。pwsh 有一个**扩展类型系统（ETS）**负责添加这些属性，使对象具有更好的一致性——比如为原本只有 <code class="notranslate">ProcessName</code> 属性的对象添加 <code class="notranslate">Name</code> 属性（别名属性的作用）；或者暴露对象中隐藏的信息（进程对象用脚本属性完成这项工作）。</p>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>在 pwsh 的世界里，这些属性的行为都会变得一致。但如果这些属性没有出现在官方文档页面中，也不必惊讶：Shell 自动添加的额外属性，通常会让你工作更轻松。</p>
+</div>
+<p><strong>属性总是包含一个值</strong>。例如，进程对象的 ID 属性可能是 <code class="notranslate">1234</code>，Name 属性的值可能是 <code class="notranslate">Notepad</code>。属性用于描述对象的某方面：状态、ID、名称等。</p>
+<div class="markdown-alert markdown-alert-important"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p><p>pwsh 中的属性通常是<strong>只读</strong>的——你无法通过给 Name 属性赋新值来改变服务的名称，但可以通过读取 Name 属性获取服务名称。</p>
+</div>
+<h2>六、对象行为：方法（Method）</h2>
+<p>很多对象支持一个或多个方法，指导对象的行为。例如，进程对象包含一个 <code class="notranslate">Kill</code> 方法，用于终止进程。</p>
+<p>某些方法需要一个或多个输入参数来提供额外的细节信息，这些方法与 cmdlet 可以互相替代。</p>
+<p>例如，终止一个进程有三种办法：</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 办法1：获取对象并传给 Stop-Process cmdlet</span>
+pwsh<span class="pl-k">&gt;</span> <span class="pl-c1">Get-Process</span> <span class="pl-k">-</span>Name Notepad <span class="pl-k">|</span> <span class="pl-c1">Stop-Process</span>
 
-
-   TypeName:System.Diagnostics.Process
-
-Name                       MemberType     Definition
-<span class="pl-k">----</span>                       <span class="pl-k">----------</span>     <span class="pl-k">----------</span>
-Handles                    AliasProperty  Handles <span class="pl-k">=</span> Handlecount
-Name                       AliasProperty  Name <span class="pl-k">=</span> ProcessName
-NPM                        AliasProperty  NPM <span class="pl-k">=</span> NonpagedSystemMemorySize64
-PM                         AliasProperty  PM <span class="pl-k">=</span> PagedMemorySize64
-SI                         AliasProperty  SI <span class="pl-k">=</span> SessionId
-VM                         AliasProperty  VM <span class="pl-k">=</span> VirtualMemorySize64
-WS                         AliasProperty  WS <span class="pl-k">=</span> WorkingSet64
-Disposed                   Event          System.EventHandler Disposed(System.Object<span class="pl-k">,</span> System.EventArgs)
-ErrorDataReceived          Event          System.Diagnostics.DataReceivedEventHandler ErrorDataReceived(System.Objec...
-Exited                     Event          System.EventHandler Exited(System.Object<span class="pl-k">,</span> System.EventArgs)
-OutputDataReceived         Event          System.Diagnostics.DataReceivedEventHandler OutputDataReceived(System.Obje...
-BeginErrorReadLine         Method         void BeginErrorReadLine()
-BeginOutputReadLine        Method         void BeginOutputReadLine()
-CancelErrorRead            Method         void CancelErrorRead()
-CancelOutputRead           Method         void CancelOutputRead()
-Close                      Method         void Close()
-CloseMainWindow            Method         bool CloseMainWindow()
-CreateObjRef               Method         System.Runtime.Remoting.ObjRef CreateObjRef(type requestedType)
-Dispose                    Method         void Dispose()<span class="pl-k">,</span> void IDisposable.Dispose()
-Equals                     Method         bool Equals(System.Object obj)
-GetHashCode                Method         int GetHashCode()
-GetLifetimeService         Method         System.Object GetLifetimeService()
-GetType                    Method         type GetType()
-InitializeLifetimeService  Method         System.Object InitializeLifetimeService()
-Kill                       Method         void Kill()
-Refresh                    Method         void Refresh()
-Start                      Method         bool Start()
-ToString                   Method         string ToString()
-WaitForExit                Method         bool WaitForExit(int milliseconds)<span class="pl-k">,</span> void WaitForExit()
-WaitForInputIdle           Method         bool WaitForInputIdle(int milliseconds)<span class="pl-k">,</span> bool WaitForInputIdle()
-__NounName                 NoteProperty   string __NounName<span class="pl-k">=</span><span class="pl-k">Process</span>
-BasePriority               Property       int BasePriority {get;}
-Container                  Property       System.ComponentModel.IContainer Container {get;}
-EnableRaisingEvents        Property       bool EnableRaisingEvents {get;set;}
-ExitCode                   Property       int ExitCode {get;}
-ExitTime                   Property       datetime ExitTime {get;}
-Handle                     Property       System.IntPtr Handle {get;}
-HandleCount                Property       int HandleCount {get;}
-HasExited                  Property       bool HasExited {get;}
-Id                         Property       int Id {get;}
-MachineName                Property       string MachineName {get;}
-MainModule                 Property       System.Diagnostics.ProcessModule MainModule {get;}
-MainWindowHandle           Property       System.IntPtr MainWindowHandle {get;}
-MainWindowTitle            Property       string MainWindowTitle {get;}
-MaxWorkingSet              Property       System.IntPtr MaxWorkingSet {get;set;}
-MinWorkingSet              Property       System.IntPtr MinWorkingSet {get;set;}
-Modules                    Property       System.Diagnostics.ProcessModuleCollection Modules {get;}
-NonpagedSystemMemorySize   Property       int NonpagedSystemMemorySize {get;}
-NonpagedSystemMemorySize64 Property       long NonpagedSystemMemorySize64 {get;}
-PagedMemorySize            Property       int PagedMemorySize {get;}
-PagedMemorySize64          Property       long PagedMemorySize64 {get;}
-PagedSystemMemorySize      Property       int PagedSystemMemorySize {get;}
-PagedSystemMemorySize64    Property       long PagedSystemMemorySize64 {get;}
-PeakPagedMemorySize        Property       int PeakPagedMemorySize {get;}
-PeakPagedMemorySize64      Property       long PeakPagedMemorySize64 {get;}
-PeakVirtualMemorySize      Property       int PeakVirtualMemorySize {get;}
-PeakVirtualMemorySize64    Property       long PeakVirtualMemorySize64 {get;}
-PeakWorkingSet             Property       int PeakWorkingSet {get;}
-PeakWorkingSet64           Property       long PeakWorkingSet64 {get;}
-PriorityBoostEnabled       Property       bool PriorityBoostEnabled {get;set;}
-PriorityClass              Property       System.Diagnostics.ProcessPriorityClass PriorityClass {get;set;}
-PrivateMemorySize          Property       int PrivateMemorySize {get;}
-PrivateMemorySize64        Property       long PrivateMemorySize64 {get;}
-PrivilegedProcessorTime    Property       timespan PrivilegedProcessorTime {get;}
-ProcessName                Property       string ProcessName {get;}
-ProcessorAffinity          Property       System.IntPtr ProcessorAffinity {get;set;}
-Responding                 Property       bool Responding {get;}
-SafeHandle                 Property       Microsoft.Win32.SafeHandles.SafeProcessHandle SafeHandle {get;}
-SessionId                  Property       int SessionId {get;}
-Site                       Property       System.ComponentModel.ISite Site {get;set;}
-StandardError              Property       System.IO.StreamReader StandardError {get;}
-StandardInput              Property       System.IO.StreamWriter StandardInput {get;}
-StandardOutput             Property       System.IO.StreamReader StandardOutput {get;}
-StartInfo                  Property       System.Diagnostics.ProcessStartInfo StartInfo {get;set;}
-StartTime                  Property       datetime StartTime {get;}
-SynchronizingObject        Property       System.ComponentModel.ISynchronizeInvoke SynchronizingObject {get;set;}
-Threads                    Property       System.Diagnostics.ProcessThreadCollection Threads {get;}
-TotalProcessorTime         Property       timespan TotalProcessorTime {get;}
-UserProcessorTime          Property       timespan UserProcessorTime {get;}
-VirtualMemorySize          Property       int VirtualMemorySize {get;}
-VirtualMemorySize64        Property       long VirtualMemorySize64 {get;}
-WorkingSet                 Property       int WorkingSet {get;}
-WorkingSet64               Property       long WorkingSet64 {get;}
-PSConfiguration            PropertySet    PSConfiguration {Name<span class="pl-k">,</span> Id<span class="pl-k">,</span> PriorityClass<span class="pl-k">,</span> FileVersion}
-PSResources                PropertySet    PSResources {Name<span class="pl-k">,</span> Id<span class="pl-k">,</span> Handlecount<span class="pl-k">,</span> WorkingSet<span class="pl-k">,</span> NonPagedMemorySize<span class="pl-k">,</span> PagedM...
-Company                    ScriptProperty System.Object Company {get<span class="pl-k">=</span><span class="pl-c1">$this<span class="pl-smi">.Mainmodule.FileVersionInfo.CompanyName</span></span>;}
-CPU                        ScriptProperty System.Object CPU {get<span class="pl-k">=</span><span class="pl-c1">$this<span class="pl-smi">.TotalProcessorTime.TotalSeconds</span></span>;}
-Description                ScriptProperty System.Object Description {get<span class="pl-k">=</span><span class="pl-c1">$this<span class="pl-smi">.Mainmodule.FileVersionInfo.FileDescri</span></span>...
-FileVersion                ScriptProperty System.Object FileVersion {get<span class="pl-k">=</span><span class="pl-c1">$this<span class="pl-smi">.Mainmodule.FileVersionInfo.FileVersion</span></span>;}
-Path                       ScriptProperty System.Object Path {get<span class="pl-k">=</span><span class="pl-c1">$this<span class="pl-smi">.Mainmodule.FileName</span></span>;}
-Product                    ScriptProperty System.Object Product {get<span class="pl-k">=</span><span class="pl-c1">$this<span class="pl-smi">.Mainmodule.FileVersionInfo.ProductName</span></span>;}
-ProductVersion             ScriptProperty System.Object ProductVersion {get<span class="pl-k">=</span><span class="pl-c1">$this<span class="pl-smi">.Mainmodule.FileVersionInfo.Product</span></span>...</pre></div>
-<p>当一个Cmdlet产生一个对象的集合时，就像Get-Process命令那样，整个集合直到管道末尾之前都可以被访问。直到最后一个命令运行完之前，PowerShell都不会将对象的89个标签或属性过滤掉。直到最后一个命令运行完，才会创建你所见到的文本输出结果。在上面的例子中，Gm可以完整访问进程对象的属性和方法，这是由于该命令还未被过滤用于显示。Gm会查看每一个对象并构建一个包含对象属性和方法的列表</p>
-<p>一个对象的属性、方法以及其他附加到对象的东西都被称为成员。这也是Get-Member名称的由来：该命令获取对象成员的列表。PowerShell中的惯例是使用单数名词，所以Cmdlet的名称为Get-Member</p>
-<h2>使用对象标签，也就是所谓的“属性”</h2>
-<p>当你查看Gm的输出结果时，你会注意到一些不同种类的属性：脚本属性、属性、NoteProperty、别名属性。</p>
-<p>通常来说，.Net Framework中的对象——也就是所有PowerShell对象的来源——只包含“属性”。owerShell会动态添加其他内容：ScriptProperty、NoteProperty、AliasProperty等。PowerShell有一个扩展类型系统（ETS）负责添加这些后来的属性。它使得对象具有更好的一致性，比如为原生只具有类似ProcessName属性的对象添加Name属性（这也是别名属性的作用）。还有一些情况是暴露对象中隐藏的一些信息（进程对象包含一些脚本属性完成这项工作）。</p>
-<p>当你在PowerShell的世界中，这些属性的行为都会变得一致。但当这些属性并没有在官方文档页面中出现时，也请不要惊讶：Shell会自动添加这些额外的属性，通常会使得你的工作更加轻松。</p>
-<p>属性总是包含一个值。例如，进程对象的ID属性可能是1234，对象的名称属性的值可能是NotePad。属性用于描述关于对象的某些方面：它的状态、它的ID、它的名称等。在PowerShell中，属性通常是只读的，意味着你无法通过给Name属性赋一个新值来改变服务的名称。但你可以通过读取Name属性获取服务的名称。</p>
-<h2>对象行为，也就是所谓的“方法”</h2>
-<p>很多对象都支持一个或多个方法，可以指导对象的行为。进程对象包含一个Kill方法，它会终止进程。</p>
-<p>某些方法需要一个或多个输入参数来为某个行为提供额外的细节信息，这些方法可以和Cmdlets互相替代。</p>
-<p>例如，如果你需要终止一个进程，可以通过3个办法实现。其中一个办法是获取对象并执行Kill方法，另一个办法是使用一系列Cmdlets：</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-Process</span> <span class="pl-k">-</span>Name Notepad <span class="pl-k">|</span> <span class="pl-c1">Stop-Process</span></pre></div>
-<p>还可以使用单个Cmdlet完成这项任务：</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Stop-Process</span> <span class="pl-k">-</span>name Notepad</pre></div>
-<p>除了属性和方法之外，对象还有一个事件。事件是以对象的方式通知你某些事情发生了。一个进程对象，举例来说，可以在进程结束时触发Exited事件。你可以将你自己的命令附加到这些事件上，比如说，当进程结束时发送一封邮件。</p>
-<h2>排序对象</h2>
-<p>大部分PowerShell Cmdlets以确定性的方式产生对象，这意味着每次运行命令时都会以相同的顺序产生对象。例如，服务和进程都按照字母表顺序对名称进行排序。事件日志倾向于按照事件排序。我们可以改变排序方式。</p>
-<p>例如，假设我们希望显示一个进程列表，按照对虚拟内存（Vitrual Memory，VM）的消耗由高到低进行排列。我们将需要基于VM属性对列表进行重新排序。PowerShell提供了一个简单的Cmdlet命令 Sort-Object，就像其名称那样，可以对对象进行排序。</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> <span class="pl-c1">Sort-Object</span> <span class="pl-k">-</span>property VM</pre></div>
-<p>该命令并不是我们最终想要的结果。它虽然以VM进行排序，但是以升序形式，最大值在列表底部。通过阅读Sort-Object，可以发现-descending参数可以反转排序。我们还注意到，-property参数是位置参数，因此无须输入参数名称。我们还告诉过你Sort-Object有一个别<br>
-名，也就是Sort</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> Sort VM –desc
-<span class="pl-cce">``</span>
-
-我们还将<span class="pl-k">-</span>descending简化为<span class="pl-k">-</span>desc，仍然可以得到想要的结果。<span class="pl-k">-</span>property参数接受多个值
-
-为了防止两个进程使用的虚拟内存相同，我们还希望按照进程ID进行排序。下述命令可以实现这一点。
-
-<span class="pl-cce">``</span><span class="pl-k">`</span> powershell
-<span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> Sort VM<span class="pl-k">,</span> ID –desc</pre></div>
-<p>和之前一样，通过以逗号分隔列表的方式将多个值传递给任意支持多个值的参数。</p>
-<h2>选择所需的属性</h2>
-<p>另一个有用的Cmdlet是Select-Object。该Cmdlet从管道接受对象，你可以指定希望显示的属性。这使得你可以访问任意属性，减少返回列表，只返回你感兴趣的列，而默认情况下由PowerShell配置规则控制。这对于将对象输出到HTML的ConvertTo-HTML命令来说非常有用，因为该Cmdlet通常会创建包含所有属性的表。</p>
-<p>比较下面两个命令的结果：</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> <span class="pl-c1">ConvertTo-HTML</span> <span class="pl-k">|</span> <span class="pl-c1">Out-File</span> test1.html 
+<span class="pl-c"><span class="pl-c">#</span> 办法2：用单个 cmdlet 完成</span>
+pwsh<span class="pl-k">&gt;</span> <span class="pl-c1">Stop-Process</span> <span class="pl-k">-</span>name Notepad</pre></div>
+<h3>事件（Event）</h3>
+<p>除了属性和方法，对象还有一个<strong>事件</strong>。事件以对象的方式通知你某些事情发生了。例如，进程对象可以在进程结束时触发 <code class="notranslate">Exited</code> 事件。你可以把自己的命令附加到这些事件上——比如进程结束时发送一封邮件。</p>
+<h2>七、排序对象：Sort-Object</h2>
+<p>大部分 pwsh cmdlet 以确定性的方式产生对象，即每次运行都以相同顺序产生。例如服务和进程按名称字母表排序，事件日志按事件排序。我们可以改变排序方式。</p>
+<p>假设希望按虚拟内存（Virtual Memory，VM）消耗<strong>由高到低</strong>显示进程列表：</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 按 VM 升序排序（最大值在底部，可能不是想要的）</span>
+<span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> <span class="pl-c1">Sort-Object</span> <span class="pl-k">-</span>property VM</pre></div>
+<p>该命令按 VM 排序，但默认是<strong>升序</strong>。<code class="notranslate">Sort-Object</code> 提供 <code class="notranslate">-descending</code> 参数反转排序；<code class="notranslate">-property</code> 是位置参数，可省略参数名；<code class="notranslate">Sort-Object</code> 的别名是 <code class="notranslate">Sort</code>：</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">pwsh<span class="pl-k">&gt;</span> <span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> Sort VM <span class="pl-k">-</span>desc</pre></div>
+<p>这里把 <code class="notranslate">-descending</code> 简化为 <code class="notranslate">-desc</code>，仍能得到想要的结果。<code class="notranslate">-property</code> 参数接受多个值——为了防止两个进程虚拟内存相同，还可按进程 ID 排序：</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> Sort VM<span class="pl-k">,</span> ID <span class="pl-k">-</span>desc</pre></div>
+<p>和之前一样，通过以逗号分隔列表的方式，把多个值传给任意支持多个值的参数。</p>
+<h2>八、选择所需的属性：Select-Object</h2>
+<p>另一个有用的 cmdlet 是 <code class="notranslate">Select-Object</code>。它从管道接受对象，让你指定希望显示的属性。这样你可以访问任意属性、减少返回列表、只返回感兴趣的列，而不受默认配置规则控制。这对输出到 HTML 的 <code class="notranslate">ConvertTo-HTML</code> 尤其有用（该 cmdlet 通常创建包含所有属性的表）。</p>
+<p>比较下面两条命令的结果：</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> <span class="pl-c1">ConvertTo-HTML</span> <span class="pl-k">|</span> <span class="pl-c1">Out-File</span> test1.html
 <span class="pl-k">&gt;</span> <span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> <span class="pl-c1">Select-Object</span> <span class="pl-k">-</span>property Name<span class="pl-k">,</span> ID<span class="pl-k">,</span> VM<span class="pl-k">,</span> PM <span class="pl-k">|</span> <span class="pl-c1">ConvertTo-HTML</span> <span class="pl-k">|</span> <span class="pl-c1">Out-File</span> test2.html</pre></div>
-<p><code class="notranslate">test2.html</code> 这个文件只显示 <code class="notranslate">name</code> <code class="notranslate">id</code> <code class="notranslate">vm</code> <code class="notranslate">pm</code> 这几列。</p>
-<p>Select-Object的别名是Select，-property参是位置参数，这意味着我们可以将上面运行的命令缩短。</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> select Name<span class="pl-k">,</span> Id<span class="pl-k">,</span> vm<span class="pl-k">,</span> pm <span class="pl-k">|</span> <span class="pl-c1">ConvertTo-Html</span> <span class="pl-k">|</span> <span class="pl-c1">Out-File</span> test3.html</pre></div>
-<p>可以修改下述命令进行其他尝试，该命令将结果展现在屏幕上：</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> select Name<span class="pl-k">,</span> id<span class="pl-k">,</span> vm<span class="pl-k">,</span> pm</pre></div>
-<p>Select-Object还拥有-First和-Last参数，这两个参数可只显示列表的前几项或后几项。</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> select <span class="pl-k">-</span>First <span class="pl-c1">10</span>
+<p><code class="notranslate">test2.html</code> 只显示 <code class="notranslate">Name</code>、<code class="notranslate">ID</code>、<code class="notranslate">VM</code>、<code class="notranslate">PM</code> 这几列。</p>
+<p><code class="notranslate">Select-Object</code> 的别名是 <code class="notranslate">Select</code>，<code class="notranslate">-property</code> 是位置参数，可以缩短命令：</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> select Name<span class="pl-k">,</span> Id<span class="pl-k">,</span> vm<span class="pl-k">,</span> pm <span class="pl-k">|</span> <span class="pl-c1">ConvertTo-Html</span> <span class="pl-k">|</span> <span class="pl-c1">Out-File</span> test3.html
 
-Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
-<span class="pl-k">-------</span>  <span class="pl-k">------</span>    <span class="pl-k">-----</span>      <span class="pl-k">-----</span>     <span class="pl-k">------</span>     <span class="pl-k">--</span>  <span class="pl-k">--</span> <span class="pl-k">-----------</span>
-    <span class="pl-c1">460</span>      <span class="pl-c1">32</span>     <span class="pl-c1">9992</span>      <span class="pl-c1">26660</span>       <span class="pl-c1">7.19</span>   <span class="pl-c1">4240</span>   <span class="pl-c1">0</span> AdAppMgrSvc
-    <span class="pl-c1">188</span>      <span class="pl-c1">17</span>    <span class="pl-c1">26548</span>      <span class="pl-c1">12988</span>       <span class="pl-c1">0.97</span>   <span class="pl-c1">4124</span>   <span class="pl-c1">0</span> AdskLicensingService
-    <span class="pl-c1">212</span>      <span class="pl-c1">13</span>     <span class="pl-c1">4104</span>      <span class="pl-c1">16264</span>       <span class="pl-c1">0.80</span>  <span class="pl-c1">10996</span>   <span class="pl-c1">0</span> AggregatorHost
-    <span class="pl-c1">355</span>      <span class="pl-c1">19</span>     <span class="pl-c1">4672</span>      <span class="pl-c1">26784</span>       <span class="pl-c1">0.97</span>   <span class="pl-c1">5104</span>   <span class="pl-c1">0</span> AsusAppService
-    <span class="pl-c1">278</span>      <span class="pl-c1">13</span>     <span class="pl-c1">2796</span>      <span class="pl-c1">13508</span>       <span class="pl-c1">0.23</span>   <span class="pl-c1">4528</span>   <span class="pl-c1">0</span> AsusOptimization
-    <span class="pl-c1">336</span>      <span class="pl-c1">16</span>     <span class="pl-c1">3384</span>      <span class="pl-c1">21096</span>       <span class="pl-c1">0.23</span>   <span class="pl-c1">7624</span>   <span class="pl-c1">1</span> AsusOptimizationStartupTask
-    <span class="pl-c1">226</span>      <span class="pl-c1">18</span>     <span class="pl-c1">3284</span>      <span class="pl-c1">14316</span>       <span class="pl-c1">0.33</span>  <span class="pl-c1">13380</span>   <span class="pl-c1">1</span> AsusOSD
-     <span class="pl-c1">92</span>      <span class="pl-c1">10</span>     <span class="pl-c1">1248</span>       <span class="pl-c1">6396</span>       <span class="pl-c1">0.14</span>   <span class="pl-c1">5096</span>   <span class="pl-c1">0</span> AsusPTPService
-    <span class="pl-c1">686</span>      <span class="pl-c1">19</span>     <span class="pl-c1">5320</span>      <span class="pl-c1">25280</span>       <span class="pl-c1">1.00</span>   <span class="pl-c1">4140</span>   <span class="pl-c1">0</span> AsusSoftwareManager
-    <span class="pl-c1">615</span>      <span class="pl-c1">30</span>    <span class="pl-c1">40344</span>      <span class="pl-c1">49428</span>       <span class="pl-c1">1.03</span>  <span class="pl-c1">18844</span>   <span class="pl-c1">1</span> AsusSoftwareManagerAgent</pre></div>
-<p>将会保留前10个对象。但不能加过滤条件，比如选择特定的进程，只能选择前（或最后）10个。</p>
-<p>Select-Object和Where-Object这两个PowerShell命令容易搞混，Select-Object用于选择所需的属性（或列），还可以选择输出行的任意子集（使用-First和-Last）。Where-object基于筛选条件从管道中移除或过滤对象。</p>
-<h2>在命令结束之前总是对象的形式</h2>
-<p>PowerShell管道在最后一个命令执行之前总是传递对象。在最后一个命令执行时，PowerShell将会查看管道中所包含的对象，并根据不同的配置文件决定哪一个属性被用于构建展示在屏幕上的最终结果。它还会基于一些内部规则和配置文件确定展示是表还是列表。</p>
-<p>在一个命令行中，管道可以包含不同类型的对象。管道之后可以使用换行提交代码的可读性。换行之后命令提示符变为 <code class="notranslate">&gt;&gt;</code></p>
+<span class="pl-c"><span class="pl-c">#</span> 直接在屏幕展示</span>
+<span class="pl-k">&gt;</span> <span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> select Name<span class="pl-k">,</span> id<span class="pl-k">,</span> vm<span class="pl-k">,</span> pm</pre></div>
+<h3>Select-Object 的 First / Last 参数</h3>
+<p><code class="notranslate">Select-Object</code> 还有 <code class="notranslate">-First</code> 和 <code class="notranslate">-Last</code> 参数，只显示列表的前几项或后几项：</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> select <span class="pl-k">-</span>First <span class="pl-c1">10</span></pre></div>
+<p>这会保留前 10 个对象。但<strong>不能加过滤条件</strong>（比如选择特定进程），只能选择前（或最后）10 个。</p>
+<h3>Select-Object 与 Where-Object 的区别</h3>
+<p>这两个命令容易搞混：</p>
+<ul>
+<li><code class="notranslate">Select-Object</code>：选择所需的<strong>属性（列）</strong>，也可以用 <code class="notranslate">-First</code> / <code class="notranslate">-Last</code> 选择输出行的任意子集。</li>
+<li><code class="notranslate">Where-Object</code>：基于筛选条件，从管道中<strong>移除或过滤对象</strong>。</li>
+</ul>
+<h2>九、命令结束之前，管道里始终是对象</h2>
+<p>pwsh 管道在最后一个命令执行之前总是传递对象。在最后一个命令执行时，pwsh 查看管道中的对象，根据配置文件决定哪些属性用于构建显示结果，并基于内部规则和配置文件确定展示为表还是列表。</p>
+<p>在一个命令行中，管道可以包含不同类型的对象。管道之后可以换行提交代码、提高可读性——换行后命令提示符变成 <code class="notranslate">&gt;&gt;</code>：</p>
 <div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-Process</span> <span class="pl-k">|</span>
 <span class="pl-k">&gt;&gt;</span> <span class="pl-c1">Sort-Object</span> vm <span class="pl-k">-</span>Descending <span class="pl-k">|</span>
 <span class="pl-k">&gt;&gt;</span> <span class="pl-c1">Out-File</span> procs.txt</pre></div>
-<p>上面的代码首先运行Get-Process，该命令将进程对象放入管道。下一个命令是Sort-Object，该命令并不会改变管道中的内容，仅仅是改变对象的顺序，直到Sort-Object结束，管道仍然只包含进程。最后一个命令是Out-File。在这里，PowerShell生成输出结果，也就是管道中所包含的内容——进程对象，并根据PowerShell的内部规则将对象格式化，最终结果被存入指定文件。</p>
+<p>上面代码先运行 <code class="notranslate">Get-Process</code>，把进程对象放入管道；接着 <code class="notranslate">Sort-Object</code> 不改变管道内容，只改变对象顺序，管道仍只有进程；最后 <code class="notranslate">Out-File</code> 生成输出——管道中的进程对象，并按内部规则格式化后写入文件。</p>
+<p>再看一个会<strong>改变对象类型</strong>的例子：</p>
 <div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-Process</span> <span class="pl-k">|</span>
 <span class="pl-k">&gt;&gt;</span> <span class="pl-c1">Sort-Object</span> vm <span class="pl-k">-</span>Descending <span class="pl-k">|</span>
 <span class="pl-k">&gt;&gt;</span> <span class="pl-c1">Select-Object</span> Name<span class="pl-k">,</span> Id<span class="pl-k">,</span> vm</pre></div>
-<p>该命令以同样的方式运行。Get-Process将进程对象放入管道。接下来运行Sort-Object，该命令将同样的进程对象放入管道。但Select-Object就有所不同了。进程对象总是拥有相同的成员。Select-Object并不能通过删除你不需要的属性减少属性列表。如果这样的话，结果就不再是进程对象，而是Select-Object创建一个名为PSObject的自定义对象，PowerShell使用这个对象将属性从进程对象中复制出来，结果是自定义对象被放入管道。</p>
-<p>当PowerShell发现光标已经到达命令行结尾时，它必须知道如何对文本输出结果进行排版。这是由于管道中包含的对象不再是进程对象，PowerShell不会再将默认规则和配置应用于进程对象，而是通过查询PSObject的规则和配置，这也是当前管道中包含的配置类型。由于PSObjects用于自定义输出，微软并没有为PSObjects提供任何规则或配置。而是PowerShell将尽最大努力进行猜测并产生表。在理论上，产生的表可以容纳上述3列信息，但表并不像正常的Get-Process输出结果那样有美观的排版，这是由于Shell缺少使得表更美观的额外的配置信息。</p>
-<p>你可以使用Gm查看管道中不同的对象。请记住，你可以在任何产生输出结果的Cmdlet之后使用Gm。</p>
+<p><code class="notranslate">Get-Process</code> 把进程对象放入管道，<code class="notranslate">Sort-Object</code> 仍把同样的进程对象放入管道。但 <code class="notranslate">Select-Object</code> 有所不同：进程对象总是拥有相同成员，<code class="notranslate">Select-Object</code> 并不能通过删除不需要的属性来减少属性列表——如果那样做，结果就不再是进程对象了。实际上 <code class="notranslate">Select-Object</code> 会创建一个名为 <strong>PSObject</strong> 的自定义对象，把属性从进程对象中复制出来，结果是自定义对象被放入管道。</p>
+<p>当 pwsh 到达命令行结尾时，它必须知道如何排版文本输出。因为管道中不再是进程对象，pwsh 不会再把默认规则和配置应用于进程对象，而是查询 PSObject 的规则和配置。由于 PSObject 用于自定义输出，微软没有为它提供任何规则或配置，pwsh 只能尽最大努力猜测并产生表格——理论上能容纳那 3 列，但表格不像正常的 <code class="notranslate">Get-Process</code> 输出那样美观，因为缺少让表格更美观的额外配置信息。</p>
+<h3>用 Gm 验证管道中的对象类型</h3>
+<p>记住，可以在任何产生输出的 cmdlet 之后使用 Gm：</p>
 <div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> Sort VM <span class="pl-k">-</span>descending <span class="pl-k">|</span> gm
-<span class="pl-k">&gt;</span> <span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> sort vm <span class="pl-k">-</span>Descending <span class="pl-k">|</span> select Name<span class="pl-k">,</span> Id<span class="pl-k">,</span> VM <span class="pl-k">|</span> gm
-
-
-   TypeName:Selected.System.Diagnostics.Process
-
-Name        MemberType   Definition
-<span class="pl-k">----</span>        <span class="pl-k">----------</span>   <span class="pl-k">----------</span>
-Equals      Method       bool Equals(System.Object obj)
-GetHashCode Method       int GetHashCode()
-GetType     Method       type GetType()
-ToString    Method       string ToString()
-Id          NoteProperty int Id<span class="pl-k">=</span><span class="pl-c1">14772</span>
-Name        NoteProperty string Name<span class="pl-k">=</span>msedgewebview2
-VM          NoteProperty long VM<span class="pl-k">=</span><span class="pl-c1">3764506271744</span></pre></div>
-<p>PowerShell会展示出管道中对象的类型名称作为Gm输出结果的一部分。在第一个例子中，对象类型为System.Diagnostics.Process，但是在第二个例子中，管道里包含另一种类型的对象。这个新的“经过筛选”的对象仅包含3个指定属性——<br>
-Name、ID和VM，以及另外一些由系统生成的成员。即便Gm产生对象并将对象放入管道，在运行Gm之后，管道也不再包含进程对象或是“经过筛选”的对象，它仅包含由Gm生成的对象类型：Microsoft.PowerShell.Commands.MemberDefinition。你可以通过在管道中对Gm的输出结果再次使用Gm命令证明。</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> gm <span class="pl-k">|</span> gm
-
-
-   TypeName:Microsoft.PowerShell.Commands.MemberDefinition
-
-Name        MemberType Definition
-<span class="pl-k">----</span>        <span class="pl-k">----------</span> <span class="pl-k">----------</span>
-Equals      Method     bool Equals(System.Object obj)
-GetHashCode Method     int GetHashCode()
-GetType     Method     type GetType()
-ToString    Method     string ToString()
-Definition  Property   string Definition {get;}
-MemberType  Property   System.Management.Automation.PSMemberTypes MemberType {get;}
-Name        Property   string Name {get;}
-TypeName    Property   string TypeName {get;}</pre></div>
-<p>首先是Get-Process命令，将进程对象放入管道。然后运行Gm，该命令分析进程对象并生成该对象的MemberDefinition对象。然后将结果再次利用管道传输给Gm，该命令将分析并产生MemberDefinition成员列表作为输出结果。</p>
-<hr></div>
+<span class="pl-k">&gt;</span> <span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> sort vm <span class="pl-k">-</span>Descending <span class="pl-k">|</span> select Name<span class="pl-k">,</span> Id<span class="pl-k">,</span> VM <span class="pl-k">|</span> gm</pre></div>
+<p>第二个例子的输出会显示对象类型名为 <code class="notranslate">Selected.System.Diagnostics.Process</code>，只包含 3 个指定属性（Name、ID、VM）及一些系统生成的成员——这正是 Select-Object 创建的「经过筛选」的自定义对象。</p>
+<p>pwsh 会把管道中对象的类型名称作为 Gm 输出的一部分。即使 Gm 产生对象并将对象放入管道，运行 Gm 之后管道也不再包含进程对象或「经过筛选」的对象，而是只包含 Gm 生成的对象类型 <code class="notranslate">Microsoft.PowerShell.Commands.MemberDefinition</code>。可以通过对 Gm 的输出再次使用 Gm 验证：</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-Process</span> <span class="pl-k">|</span> gm <span class="pl-k">|</span> gm</pre></div>
+<p>流程：<code class="notranslate">Get-Process</code> 把进程对象放入管道 → <code class="notranslate">Gm</code> 分析进程对象并生成 MemberDefinition 对象 → 再次传给 <code class="notranslate">Gm</code> → 分析并产生 MemberDefinition 的成员列表作为输出。</p>
+<h2>十、核心总结</h2>
+<ol>
+<li><strong>对象</strong>是 pwsh 数据的核心形态：运行命令时，pwsh 在内存中构造完整的对象集合，屏幕只显示其中一部分。</li>
+<li>对象由<strong>属性</strong>（描述）、<strong>方法</strong>（行为）、<strong>事件</strong>（通知）构成；pwsh 通过**扩展类型系统（ETS）**动态添加属性。</li>
+<li><code class="notranslate">Get-Member</code>（Gm）用于查看对象的所有成员；<code class="notranslate">Sort-Object</code> 排序；<code class="notranslate">Select-Object</code> 选择属性（<code class="notranslate">-First</code> / <code class="notranslate">-Last</code> 取子集）；<code class="notranslate">Where-Object</code> 过滤对象。</li>
+<li>管道在最后一个命令之前始终传递对象；<code class="notranslate">Select-Object</code> 会产生自定义对象 PSObject，从而改变管道中的对象类型，影响最终排版效果。</li>
+</ol></div>
     <details class="in-series-list" open aria-label="Series">
       <summary>PowerShell 学习笔记</summary>
       <ol>
@@ -332,13 +247,13 @@ TypeName    Property   string TypeName {get;}</pre></div>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050800073.html">pwsh 提供程序（PSProvider）</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050801304.html">pwsh 管道原理与参数绑定</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050801673.html">pwsh 模块与命令扩展</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/63_6050802143.html">对象：数据的另一个名称</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/63_6050802825.html">DAY 10 格式化及如何正确使用</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/63_6050802143.html">pwsh 对象基础</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/63_6050802825.html">pwsh 输出格式化</a></li>
       </ol>
     </details>
     <nav class="in-series-pager" aria-label="Series pages">
       <a class="in-series-prev" href="https://interset-wq.github.io/blog/post/63_6050801673.html">pwsh 模块与命令扩展</a>
-      <a class="in-series-next" href="https://interset-wq.github.io/blog/post/63_6050802825.html">DAY 10 格式化及如何正确使用</a>
+      <a class="in-series-next" href="https://interset-wq.github.io/blog/post/63_6050802825.html">pwsh 输出格式化</a>
     </nav>
   </article>
 <section class="in-comments-section">
@@ -380,7 +295,7 @@ TypeName    Property   string TypeName {get;}</pre></div>
   <span id="run-days"></span>
   <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
 </div>
-<div class="in-footer-built">构建部署于 2026-10-12 13:01:14</div>
+<div class="in-footer-built">构建部署于 2026-10-12 13:02:19</div>
 <script>
   (function () {
     document.getElementById('copyright-year').textContent = new Date().getFullYear();
