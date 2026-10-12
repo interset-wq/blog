@@ -21,15 +21,15 @@
     })();
   </script>
   <meta name="description" content="My notes on everything.">
-<meta property="og:title" content="扩展命令">
+<meta property="og:title" content="pwsh 模块与命令扩展">
 <meta property="og:description" content="My notes on everything.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://interset-wq.github.io/blog/post/63_6050801673.html">
 <meta property="og:image" content="https://interset-wq.github.io/blog/assets/avatar.png">
-<title>扩展命令</title>
+<title>pwsh 模块与命令扩展</title>
   <link href="https://interset-wq.github.io/blog/assets/starry-night.css" rel="stylesheet">
   
-<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-tip {border-left-color:var(--borderColor-success-emphasis, var(--color-success-emphasis));background-color:var(--color-success-subtle);}.markdown-alert.markdown-alert-tip .markdown-alert-title {color: var(--fgColor-success,var(--color-success-fg));}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-tip {border-left-color:var(--borderColor-success-emphasis, var(--color-success-emphasis));background-color:var(--color-success-subtle);}.markdown-alert.markdown-alert-tip .markdown-alert-title {color: var(--fgColor-success,var(--color-success-fg));}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}
   <style>
     .in-progress {
       position: fixed;
@@ -46,7 +46,7 @@
   </style>
 </style></head>
 <body>
-  <header class="in-site-header" id="header">  <h1 class="in-page-title">扩展命令</h1>
+  <header class="in-site-header" id="header">  <h1 class="in-page-title">pwsh 模块与命令扩展</h1>
 <nav class="in-site-nav" aria-label="Post navigation">    <a class="in-nav-btn" href="https://interset-wq.github.io/blog" title="首页" aria-label="首页"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z" fill-rule="evenodd"></path></svg></a>
 
   <button class="in-nav-btn" id="in-theme-toggle" type="button" title="切换主题" aria-label="切换主题">
@@ -81,7 +81,7 @@
           <li><a href="https://interset-wq.github.io/blog/post/63_6050799741.html">命令和Cmdlet</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050800073.html">pwsh 提供程序（PSProvider）</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050801304.html">pwsh 管道原理与参数绑定</a></li>
-          <li><a href="https://interset-wq.github.io/blog/post/63_6050801673.html">扩展命令</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/63_6050801673.html">pwsh 模块与命令扩展</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050802143.html">对象：数据的另一个名称</a></li>
           <li><a href="https://interset-wq.github.io/blog/post/63_6050802825.html">DAY 10 格式化及如何正确使用</a></li>
         </ol>
@@ -89,157 +89,133 @@
     </div>
     <nav class="in-toc" id="in-toc" data-toc-title="目录" data-toc-top="回到顶部" aria-label="目录"></nav>
     <div class="in-progress" id="in-progress"></div>
-    <div class="in-post-body markdown-body"><p>在 Windows 中，微软管理控制台（Microsoft Management Console，简称 MMC）是一个专门用于管理的控制台。它为 Windows 管理员提供了一个统一的、规范的管理接口和操作平台。</p>
-<p>MMC 本身并不执行任何具体的管理操作，而是作为一个框架，允许用户加载不同的管理单元（snap - ins）来进行系统和网络管理。这些管理单元是符合 MMC 编程规范的工具，例如证书管理（certmgr.msc）、索引服务（ciadv.msc）、可移动设备管理（ntmsmgr.msc）、性能（perfmon.msc）、本地安全策略（secpol.msc）、服务（services.msc）等。</p>
-<p>用户可以通过按下 Win + R 组合键，输入 “mmc” 后回车来打开 MMC。也可以在命令行中使用 “mmc path\filename.msc” 等命令来打开特定的控制台文件。</p>
-<h2>扩展：找到并添加插件</h2>
-<p>PowerShell存在两种类型的扩展：模块和管理单元。</p>
-<h3>管理单元</h3>
-<p>一个适合管理单元PowerShell的名字是PSSnapin，用于区别这些来自管理单元的图形MMS。PSSnapins在PowerShell v1版本的时候就已经存在。一个PSSnapin通常包含一个或多个DLL文件，同时包含配置XML文件和帮助文档。PSSnapins必须先安装和注册，然后PowerShell才能识别它的存在。</p>
-<p>PSSnapin的概念逐步被微软移除了，将来可能会越来越少出现。在内部，微软的重点是提供扩展模块。</p>
-<p>获取可用的管理单元列表：</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-PSSnapin</span> <span class="pl-k">-</span>Registered
-
-
-Name        : SqlServerCmdletSnapin100
-PSVersion   : <span class="pl-c1">5.1</span>
-Description : This is a PowerShell snap<span class="pl-k">-</span>in that includes various SQL Server cmdlets.
-
-Name        : SqlServerProviderSnapin100
-PSVersion   : <span class="pl-c1">5.1</span>
-Description : SQL Server Provider</pre></div>
-<p>上面的信息说明我的机器上安装了两个可用的管理单元，但是并没有加载。</p>
-<p>可以通过运行Get-PSSnapin命令查看已加载的列表。该列表包含所有的核心，包含PowerShell中的本机功能的自动加载管理单元：</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-PSSnapin</span>
+    <div class="in-post-body markdown-body"><p>pwsh 内置的命令是有限的。当需要更多功能时，你可以像给操作系统安装管理工具一样，给 pwsh 安装<strong>扩展</strong>。pwsh 存在两种类型的扩展：<strong>模块（Module）</strong> 和<strong>管理单元（PSSnapin）</strong>。</p>
+<h2>一、背景：MMC 管理控制台【仅 Windows 环境】</h2>
+<p>在 Windows 中，微软管理控制台（Microsoft Management Console，简称 <strong>MMC</strong>）是一个专门用于管理的控制台，它为 Windows 管理员提供统一的、规范的管理接口和操作平台。</p>
+<p>MMC 本身并不执行具体的管理操作，而是作为一个<strong>框架</strong>，允许用户加载不同的**管理单元（snap-ins）**来进行系统和网络管理。这些管理单元是符合 MMC 编程规范的工具，例如：</p>
+<ul>
+<li>证书管理 <code class="notranslate">certmgr.msc</code></li>
+<li>索引服务 <code class="notranslate">ciadv.msc</code></li>
+<li>可移动设备管理 <code class="notranslate">ntmsmgr.msc</code></li>
+<li>性能 <code class="notranslate">perfmon.msc</code></li>
+<li>本地安全策略 <code class="notranslate">secpol.msc</code></li>
+<li>服务 <code class="notranslate">services.msc</code></li>
+</ul>
+<p>打开方式：按 <code class="notranslate">Win + R</code> 输入 <code class="notranslate">mmc</code> 回车，或在命令行中用 <code class="notranslate">mmc path\filename.msc</code> 打开特定控制台文件。</p>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>MMC 是 Windows 平台的概念。pwsh 借鉴了这种「扩展」思路，但它本身是跨平台的；其中的「管理单元」扩展方式属于 Windows PowerShell 的历史特性（见下节）。</p>
+</div>
+<h2>二、扩展方式一：管理单元（PSSnapin）【仅 Windows PowerShell】</h2>
+<h3>1. 什么是 PSSnapin</h3>
+<p>管理单元在 Windows PowerShell 中的名字是 <strong>PSSnapin</strong>，用于区别于来自管理单元的图形化 MMC。PSSnapin 在 PowerShell v1 时期就已存在。</p>
+<div class="markdown-alert markdown-alert-warning"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-alert mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Warning</p><p>PSSnapin 是 <strong>Windows PowerShell（5.1 及更早）</strong> 的扩展机制，pwsh 7+ <strong>不支持</strong> PSSnapin。本节仅供阅读了解历史背景，在 pwsh 中请改用模块方式扩展。</p>
+</div>
+<p>一个 PSSnapin 通常包含一个或多个 DLL 文件，以及配置 XML 文件和帮助文档。PSSnapin 必须先<strong>安装并注册</strong>，Windows PowerShell 才能识别它的存在。</p>
+<blockquote>
+<p>PSSnapin 的概念正逐步被微软移除，以后会越来越少出现。微软内部的重点是提供<strong>扩展模块</strong>。</p>
+</blockquote>
+<h3>2. 查看可用的管理单元</h3>
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 查看已注册、但尚未加载的管理单元</span>
+Windows PowerShell<span class="pl-k">&gt;</span> <span class="pl-c1">Get-PSSnapin</span> <span class="pl-k">-</span>Registered</pre></div>
+<p>输出会列出本机已注册的可用管理单元（例如 SQL Server 相关的两个），但这些单元<strong>尚未加载</strong>。</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 查看当前已加载的管理单元（包含 Windows PowerShell 核心）</span>
+PS C:\Users\d111k<span class="pl-k">&gt;</span> <span class="pl-c1">Get-PSSnapin</span>
 
 
 Name        : Microsoft.PowerShell.Core
-PSVersion   : <span class="pl-c1">5.1</span>.<span class="pl-c1">26100.4202</span>
+PSVersion   : <span class="pl-c1">5.1</span>.<span class="pl-c1">26100.9444</span>
 Description : 此 Windows PowerShell 管理单元包含用于管理 Windows PowerShell 组件的 cmdlet。</pre></div>
-<p>通过运行Add-PSSnapin并指定管理单元名称的方式加载某一个管理单元：</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">add-pssnapin</span> sqlserverCmdletsnapin100
-<span class="pl-k">&gt;</span> <span class="pl-c1">Get-PSSnapin</span>
-
-
-Name        : Microsoft.PowerShell.Core
-PSVersion   : <span class="pl-c1">5.1</span>.<span class="pl-c1">26100.4202</span>
-Description : 此 Windows PowerShell 管理单元包含用于管理 Windows PowerShell 组件的 cmdlet。
-
-Name        : sqlservercmdletsnapin100
-PSVersion   : <span class="pl-c1">5.1</span>
-Description : This is a PowerShell snap<span class="pl-k">-</span>in that includes various SQL Server cmdlets.</pre></div>
-<p>PSSnapin可以增加Cmdlets命令、提供PSDrive，或者两者都增加。使用<code class="notranslate">Get-Command</code>（或者别名：<code class="notranslate">Gcm</code>）命令找出已增加的Cmdlets命令：</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> gcm <span class="pl-k">-</span>PSSnapin sqlservercmdletsnapin100
-
-CommandType     Name                                               Version    Source
-<span class="pl-k">-----------</span>     <span class="pl-k">----</span>                                               <span class="pl-k">-------</span>    <span class="pl-k">------</span>
-Cmdlet          <span class="pl-c1">Invoke-PolicyEvaluation</span>                            <span class="pl-c1">10.0</span>.<span class="pl-c1">0.0</span>   sqlservercmdletsnapin100
-Cmdlet          <span class="pl-c1">Invoke-Sqlcmd</span>                                      <span class="pl-c1">10.0</span>.<span class="pl-c1">0.0</span>   sqlservercmdletsnapin100</pre></div>
-<p>再把添加另一个没有加载的管理单元：</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Add-PSSnapin</span> SqlServerProviderSnapin100
-<span class="pl-k">&gt;</span> <span class="pl-c1">Get-PSSnapin</span>
-
-
-Name        : Microsoft.PowerShell.Core
-PSVersion   : <span class="pl-c1">5.1</span>.<span class="pl-c1">26100.4202</span>
-Description : 此 Windows PowerShell 管理单元包含用于管理 Windows PowerShell 组件的 cmdlet。
-
-Name        : sqlservercmdletsnapin100
-PSVersion   : <span class="pl-c1">5.1</span>
-Description : This is a PowerShell snap<span class="pl-k">-</span>in that includes various SQL Server cmdlets.
-
-Name        : SqlServerProviderSnapin100
-PSVersion   : <span class="pl-c1">5.1</span>
-Description : SQL Server Provider
-
-<span class="pl-k">&gt;</span> <span class="pl-c1">Get-PSProvider</span>
-
-Name                 Capabilities                                      Drives
-<span class="pl-k">----</span>                 <span class="pl-k">------------</span>                                      <span class="pl-k">------</span>
-Registry             ShouldProcess<span class="pl-k">,</span> Transactions                       {HKLM<span class="pl-k">,</span> HKCU}
-Alias                ShouldProcess                                     {Alias}
-Environment          ShouldProcess                                     {Env}
-FileSystem           Filter<span class="pl-k">,</span> ShouldProcess<span class="pl-k">,</span> Credentials                {C<span class="pl-k">,</span> D<span class="pl-k">,</span> E<span class="pl-k">,</span> F}
-<span class="pl-k">Function</span>             <span class="pl-en">ShouldProcess</span>                                     {Function}
-Variable             ShouldProcess                                     {Variable}
-SqlServer            Credentials                                       {SQLSERVER}</pre></div>
-<p>在输出中看到了 <code class="notranslate">SqlServer</code> 说明sql server驱动器已被添加到shell中。由SQL Server的PSDrive提供驱动。</p>
-<h2>扩展：找到并添加模块</h2>
-<p>PowerShell提供的第二种扩展方式称为模块。模块被设计<br>
-得更加独立，因此更加容易分发，但是它的工作原理类似于PSSnapins。模块不需要复杂的注册。PowerShell会自动在一个特定的目录下查找模块。PSModulePath这个环境变量定义了PowerShell期望存放模块的路径：</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Get-Content</span> Env:\PSModulePath
-D:\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.<span class="pl-c1">0</span>\Modules</pre></div>
-<p>只要知道一个模块的完整路径，你就可以从任何其他的位置添加模块。PSModulePath并不能在PowerShell中修改，它是操作系统环境变量的一部分。你可以在系统控制面板中对它进行修改，或者通过组策略修改。一些微软或第三方产品可能会修改该变量。</p>
-<p>在PowerShell中，该路径很重要。如果你有位于其他位置的模块，你应该把模块所在的路径加入到PSModulePath这个环境变量中。</p>
-<p>通过PSModulePath环境变量，PowerShell可以自动加载位于计算机上的所有模块。PowerShell会自动发现这些模块。它看起来好像是所有的模块都已被加载了。查看一个模块的帮助，会发现你不需要手动加载它。运行任何的命令，PowerShell都会自动加载该命令相关的模块。PowerShell的Update-Help命令同样使用PSModulePath发现已存在的任何模块，然后针对每个模块搜索需要更新的帮助文档。</p>
-<p>即使在模块还没有显式加载到内存的情况下，PowerShell依然可以自动发现模块从而使得Shell完成命令名称自动补全、显示帮助和运行命令。该特性使得保持PSModulePath环境变量的完整和最新很有必要。</p>
-<p>如果一个模块不在被PSModulePath引用的任何一个目录下，你应该使用Import- Module命令并指定模块的完整路径，如<br>
-C:\MyPrograms\Something\MyModule。如果在开始菜单中有一个特定产品Shell的快捷方式，比如说Share Point Server，而你却不知道该产品安装PowerShell模块的路径，打开快捷方式图标的属性，在快捷方式的目标属性中会包含使用Import-Module命令需要的模块名和路径。模块还可以添加PSDrive提供程序。运行Get-PSProvider命令可以确定有哪些新的提供程序。</p>
-<h2>命令冲突和移除扩展</h2>
-<p>大多数的PowerShell扩展（Exchange Server是一个明显的例外）都在它们命令名的名词部分增加了一个短的前缀，如Get-ADUser和Invoke-SqlCmd。这些前缀看起来有些多余，但是它们可以防止命令名称的冲突。</p>
-<p>例如，假设你加载的两个模块中都包含了Get-User这个Cmdlet命令。这样两个命令名称相同，且被同时加载。你运行Get-User时，PowerShell执行最后一个加载模块的命令。但是另外一个名称相同的命令却无法再被访问。为了明确所需运行的具体命令，你需要使用看起来有点多余的命名规则，它包括管理单元名称和命令名称。如果Get-User来自一个叫作MyCoolPowerShellSnapin的模块单元，你需要使用下面的方式运行。</p>
-<p>MyCoolPowerShellSnapin\Get-User</p>
-<p>这需要输入很多内容，这就是为什么微软建议添加特定产品前缀，如在每个命令的名词中加入AD或者SQL。增加前缀可以防止冲突，并且使命令更容易识别和使用。</p>
-<p>如果你已经对冲突不厌其烦，你可以随时选择删除冲突的扩展名。你需要运行Remove-PSSnapin或Remove-Module，并指定管理模块或模块命令的名称，从而卸载某个扩展</p>
-<h2>玩转一个新的模块</h2>
-<p>我们的目标是清除我们计算机上的DNS名称解析缓存。我们还不知道PowerShell是否能做到这一点，所以我们先要在帮助系统中寻找一些线索。</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate">&gt; Get-Help *dns*                                                                                                                                                                                                               Name                              Category  Module                    Synopsis                                          ----                              --------  ------                    --------                                          dnsn                              Alias                               Disconnect-PSSession                              Set-DnsClient                     Function  DnsClient                 ...                                               Remove-DnsClientNrptRule          Function  DnsClient                 ...                                               Get-DnsClientDohServerAddress     Function  DnsClient                 ...                                               Set-DnsClientNrptGlobal           Function  DnsClient                 ...                                               Set-DnsClientServerAddress        Function  DnsClient                 ...                                               Get-DnsClientServerAddress        Function  DnsClient                 ...                                               Add-DnsClientNrptRule             Function  DnsClient                 ...                                               Clear-DnsClientCache              Function  DnsClient                 ...                                               Get-DnsClient                     Function  DnsClient                 ...                                               Set-DnsClientDohServerAddress     Function  DnsClient                 ...                                               Add-DnsClientDohServerAddress     Function  DnsClient                 ...
-<span class="pl-c1">Set-DnsClientNrptRule</span>             Function  DnsClient                 ...
-<span class="pl-c1">Get-DnsClientNrptGlobal</span>           Function  DnsClient                 ...
-<span class="pl-c1">Get-DnsClientNrptRule</span>             Function  DnsClient                 ...
-<span class="pl-c1">Set-DnsClientGlobalSetting</span>        Function  DnsClient                 ...
-<span class="pl-c1">Remove-DnsClientDohServerAddress</span>  Function  DnsClient                 ...
-<span class="pl-c1">Get-DnsClientCache</span>                Function  DnsClient                 ...
-<span class="pl-c1">Get-DnsClientNrptPolicy</span>           Function  DnsClient                 ...
-<span class="pl-c1">Resolve-DnsName</span>                   Cmdlet    DnsClient                 <span class="pl-c1">Resolve-DnsName</span>...
-<span class="pl-c1">Get-DnsClientGlobalSetting</span>        Function  DnsClient                 ...
-<span class="pl-c1">Register-DnsClient</span>                Function  DnsClient                 ...
-<span class="pl-c1">Get-NetDnsTransitionConfiguration</span> Function  NetworkTransition         ...
-<span class="pl-c1">Reset-NetDnsTransitionConfigur</span>..<span class="pl-k">.</span> Function  NetworkTransition         ...
-<span class="pl-c1">Disable-NetDnsTransitionConfig</span>..<span class="pl-k">.</span> Function  NetworkTransition         ...
-<span class="pl-c1">Get-NetDnsTransitionMonitoring</span>    Function  NetworkTransition         ...
-<span class="pl-c1">Enable-NetDnsTransitionConfigu</span>..<span class="pl-k">.</span> Function  NetworkTransition         ...
-<span class="pl-c1">Set-NetDnsTransitionConfiguration</span> Function  NetworkTransition         ...
-<span class="pl-c1">Add-VpnConnectionTriggerDnsCon</span>..<span class="pl-k">.</span> Function  VpnClient                 ...
-<span class="pl-c1">Set-VpnConnectionTriggerDnsCon</span>..<span class="pl-k">.</span> Function  VpnClient                 ...
-<span class="pl-c1">Remove-VpnConnectionTriggerDns</span>..<span class="pl-k">.</span> Function  VpnClient                 ...</pre></div>
-<p>上面显示的就是我们计算机上所有的DnsClient模块。里面并没有找到与清空DNS缓存有关的命令。为了找出该命令，我们手动加载该模块并列出所有命令。</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Import-Module</span> <span class="pl-k">-</span>name DnsClient
-<span class="pl-k">&gt;</span> <span class="pl-c1">Get-Command</span> <span class="pl-k">-</span>Module DnsClient
+<h3>3. 加载管理单元 Add-PSSnapin</h3>
+<p>通过 <code class="notranslate">Add-PSSnapin</code> 并指定管理单元名称来加载：</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">Windows PowerShell<span class="pl-k">&gt;</span> <span class="pl-c1">add-pssnapin</span> sqlservercmdletsnapin100
+Windows PowerShell<span class="pl-k">&gt;</span> <span class="pl-c1">Get-PSSnapin</span></pre></div>
+<p>加载后，该管理单元的命令就可以使用了。</p>
+<h3>4. PSSnapin 能带来什么</h3>
+<p>PSSnapin 可以增加 cmdlet 命令、提供 PSDrive，或两者都增加。</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 用 Get-Command（别名 gcm）查看该管理单元新增了哪些 cmdlet</span>
+Windows PowerShell<span class="pl-k">&gt;</span> gcm <span class="pl-k">-</span>PSSnapin sqlservercmdletsnapin100</pre></div>
+<p>再看一个既增加 cmdlet 又增加 PSDrive 的例子——加载 SQL Server Provider：</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">Windows PowerShell<span class="pl-k">&gt;</span> <span class="pl-c1">Add-PSSnapin</span> SqlServerProviderSnapin100
+Windows PowerShell<span class="pl-k">&gt;</span> <span class="pl-c1">Get-PSProvider</span></pre></div>
+<p>输出中会出现 <code class="notranslate">SqlServer</code> 提供程序，说明 SQL Server 的 PSDrive（<code class="notranslate">SQLSERVER</code>）已添加到 shell 中。</p>
+<h2>三、扩展方式二：模块（Module）</h2>
+<h3>1. 什么是模块</h3>
+<p>模块是 pwsh 提供的<strong>主要</strong>扩展方式。它被设计得更加独立，因此更容易分发，但工作原理与 PSSnapin 类似。</p>
+<blockquote>
+<p>关键区别：模块<strong>不需要复杂的注册</strong>。pwsh 会自动在一个特定目录下查找模块。</p>
+</blockquote>
+<h3>2. 模块的存放位置：PSModulePath</h3>
+<p><code class="notranslate">PSModulePath</code> 这个环境变量定义了 pwsh 期望存放模块的路径：</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">PS C:\Users\d111k<span class="pl-k">&gt;</span> <span class="pl-c1">Get-Content</span> Env:\PSModulePath
+C:\Users\d111k\Documents\PowerShell\Modules;C:\Program Files\PowerShell\Modules;c:\program files\powershell\<span class="pl-c1">7</span>\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.<span class="pl-c1">0</span>\Modules;C:\Program Files (x86)\Microsoft SQL Server\<span class="pl-c1">120</span>\Tools\PowerShell\Modules\</pre></div>
+<div class="markdown-alert markdown-alert-important"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p><p>PSModulePath 不能在 pwsh 会话里直接修改，它是操作系统环境变量的一部分。可以在系统设置或配置文件中修改。如果你有位于其他位置的模块，应该把模块所在路径加入到 PSModulePath 中。</p>
+</div>
+<h3>3. 模块的自动发现机制</h3>
+<p>通过 PSModulePath，pwsh 可以<strong>自动发现</strong>计算机上的所有模块，看起来就像所有模块都已加载。运行任意命令时，pwsh 会自动加载该命令相关的模块；<code class="notranslate">Update-Help</code> 也会用 PSModulePath 发现已有模块并更新帮助文档。</p>
+<p>即使在模块没有显式加载到内存的情况下，pwsh 依然能自动发现模块，从而完成命令自动补全、显示帮助和运行命令。所以保持 PSModulePath 完整和最新很有必要。</p>
+<h3>4. 手动加载 Import-Module</h3>
+<p>如果一个模块不在 PSModulePath 引用的任何目录下，应该用 <code class="notranslate">Import-Module</code> 并指定模块的完整路径，例如 <code class="notranslate">C:\MyPrograms\Something\MyModule</code>。</p>
+<blockquote>
+<p>如果在开始菜单中有某个产品 Shell 的快捷方式（如 SharePoint Server），打开快捷方式的属性，在「目标」里会包含使用 <code class="notranslate">Import-Module</code> 所需的模块名和路径。</p>
+</blockquote>
+<p>模块同样可以添加 PSDrive 提供程序——运行 <code class="notranslate">Get-PSProvider</code> 可以确认有哪些新的提供程序。</p>
+<h2>四、命令冲突与移除扩展</h2>
+<h3>1. 命名前缀防止冲突</h3>
+<p>大多数扩展都会在命令名的名词部分加一个短前缀，如 <code class="notranslate">Get-ADUser</code>、<code class="notranslate">Invoke-SqlCmd</code>。这些前缀看起来多余，但能防止命令名称冲突。</p>
+<p>例如，假设加载的两个模块都包含 <code class="notranslate">Get-User</code> 这个命令，两个同名命令被同时加载。你运行 <code class="notranslate">Get-User</code> 时，pwsh 执行<strong>最后一个加载模块</strong>的命令，另一个同名命令无法再被访问。</p>
+<p>要明确指定运行哪个，需要使用「模块名\命令名」的完整写法：</p>
+<pre class="notranslate"><code class="notranslate">MyCoolPowerShellSnapin\Get-User
+</code></pre>
+<p>这种方式输入量大，所以微软建议添加特定产品前缀（如 AD、SQL），既能防止冲突，又让命令更容易识别和使用。</p>
+<h3>2. 移除扩展</h3>
+<p>如果你已对冲突不胜其烦，可以随时卸载扩展：</p>
+<ul>
+<li><code class="notranslate">Remove-Module</code>：卸载模块（跨平台）</li>
+<li><code class="notranslate">Remove-PSSnapin</code>：卸载管理单元（仅 Windows PowerShell）</li>
+</ul>
+<h2>五、实战：玩转一个新模块</h2>
+<p>目标：清除本机上的 DNS 名称解析缓存。</p>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>本实战使用 Windows 的 DnsClient 模块，仅在 Windows 环境有效。核心思路（先用帮助系统搜索、再导入模块列命令、最后执行）对任意平台都适用。</p>
+</div>
+<h3>1. 先在帮助系统中寻找线索</h3>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">pwsh<span class="pl-k">&gt;</span> <span class="pl-c1">Get-Help</span> <span class="pl-k">*</span>dns<span class="pl-k">*</span></pre></div>
+<p>输出列出本机所有与 DNS 相关的命令，但没有直接看到「清空 DNS 缓存」的命令。</p>
+<h3>2. 手动加载模块并列出所有命令</h3>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">PS C:\Users\d111k<span class="pl-k">&gt;</span> <span class="pl-c1">Import-Module</span> <span class="pl-k">-</span>name DnsClient
+PS C:\Users\d111k<span class="pl-k">&gt;</span> <span class="pl-c1">Get-Command</span> <span class="pl-k">-</span>Module DnsClient
 
 CommandType     Name                                               Version    Source
 <span class="pl-k">-----------</span>     <span class="pl-k">----</span>                                               <span class="pl-k">-------</span>    <span class="pl-k">------</span>
 <span class="pl-k">Function</span>        <span class="pl-en">Add-DnsClientDohServerAddress</span>                      1.0.0.0    DnsClient
 Function        Add-DnsClientNrptRule                              1.0.0.0    DnsClient
 Function        Clear-DnsClientCache                               1.0.0.0    DnsClient
-Function        Get-DnsClient                                      1.0.0.0    DnsClient
-Function        Get-DnsClientCache                                 1.0.0.0    DnsClient
-Function        Get-DnsClientDohServerAddress                      1.0.0.0    DnsClient
-Function        Get-DnsClientGlobalSetting                         1.0.0.0    DnsClient
-Function        Get-DnsClientNrptGlobal                            1.0.0.0    DnsClient
-Function        Get-DnsClientNrptPolicy                            1.0.0.0    DnsClient
-Function        Get-DnsClientNrptRule                              1.0.0.0    DnsClient
-Function        Get-DnsClientServerAddress                         1.0.0.0    DnsClient
-Function        Register-DnsClient                                 1.0.0.0    DnsClient
-Function        Remove-DnsClientDohServerAddress                   1.0.0.0    DnsClient
-Function        Remove-DnsClientNrptRule                           1.0.0.0    DnsClient
-Function        Set-DnsClient                                      1.0.0.0    DnsClient
-Function        Set-DnsClientDohServerAddress                      1.0.0.0    DnsClient
-Function        Set-DnsClientGlobalSetting                         1.0.0.0    DnsClient
-Function        Set-DnsClientNrptGlobal                            1.0.0.0    DnsClient
-Function        Set-DnsClientNrptRule                              1.0.0.0    DnsClient
-Function        Set-DnsClientServerAddress                         1.0.0.0    DnsClient
-Cmdlet          Resolve-DnsName                                    1.0.0.0    DnsClient</pre></div>
-<p>Clear-DnsClientCache可以清除DNS缓存</p>
-<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-k">&gt;</span> <span class="pl-c1">Clear-DnsClientCache</span>
-<span class="pl-k">&gt;</span> <span class="pl-c1">Clear-DnsClientCache</span> <span class="pl-k">-</span>Verbose
+...</pre></div>
+<p>在 DnsClient 模块的命令列表中，可以找到 <code class="notranslate">Clear-DnsClientCache</code>——它就是清除 DNS 缓存的命令。</p>
+<h3>3. 执行命令</h3>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">pwsh<span class="pl-k">&gt;</span> <span class="pl-c1">Clear-DnsClientCache</span>
+
+<span class="pl-c"><span class="pl-c">#</span> 加 -Verbose 查看执行详情</span>
+PS C:\Users\d111k<span class="pl-k">&gt;</span> <span class="pl-c1">Clear-DnsClientCache</span> <span class="pl-k">-</span>Verbose
 详细信息: The specified name resolution records cached on this machine will be removed.
 Subsequent name resolutions may <span class="pl-k">return</span> up<span class="pl-k">-</span>to<span class="pl-k">-</span>date information.</pre></div>
-<p>所有的命令都有-verbose开关参数，但并不是所有命令都会实现该参数。在该示例中，我们得到一个指示发生了什么事情的信息，这让我们知道这个命令已经成功运行。</p>
-<h2>从Internet获取模块</h2>
-<p>微软引入了一个名称为PowerShellGet的模块，这使得从在线仓库中搜索、下载、安装、升级模块变得容易了。PowerShellGet很像Linux管理员喜爱的包管理器 RPM、YUM、apt-get等。微软甚至还维护一个在线源，称为 <a href="http://powershellgallery.com" rel="nofollow">PowerShell Gallery</a></p>
-<p>运行Register-PSRepository添加一个源的URL。<a href="http://PowerShellGallery.com" rel="nofollow">http://PowerShellGallery.com</a> 通常是默认设置，但也可以添加自用的“gallery”，并利用Register-PSRepository指向该地址。使用Find-Module在源中查找模块。你可以在名称、特定标签等列中使用通配符缩小搜索结果。找到所需的模块后，使用Install-Module下载与安装一个模块。使用Update-Module确保你的模块的副本是最新的，如果不是，下载最新版本并安装。</p>
-<hr></div>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>所有命令都有 <code class="notranslate">-Verbose</code> 开关参数，但并不是所有命令都实现了它。在这个例子中，我们得到一个说明发生了什么的详细信息，从而确认命令成功执行。</p>
+</div>
+<h2>六、从 Internet 获取模块：PowerShellGet</h2>
+<p>微软引入了一个名为 <strong>PowerShellGet</strong> 的模块，使得从在线仓库搜索、下载、安装、升级模块变得容易。PowerShellGet 很像 Linux 管理员喜爱的包管理器（RPM、YUM、apt-get 等）。微软还维护一个在线源，称为 <a href="http://powershellgallery.com" rel="nofollow">PowerShell Gallery</a>。</p>
+<p>常用命令：</p>
+<ul>
+<li><code class="notranslate">Register-PSRepository</code>：添加一个源（repository）的 URL。PowerShell Gallery 通常是默认设置，但也可以添加自用的 gallery，并用该命令指向它。</li>
+<li><code class="notranslate">Find-Module</code>：在源中查找模块，可在名称、标签等列中使用通配符缩小搜索结果。</li>
+<li><code class="notranslate">Install-Module</code>：下载并安装模块。</li>
+<li><code class="notranslate">Update-Module</code>：确保本地模块副本是最新的，否则下载最新版本并安装。</li>
+</ul>
+<h2>七、核心总结</h2>
+<ol>
+<li>pwsh 有两种扩展方式：<strong>模块（Module）和管理单元（PSSnapin）</strong>。</li>
+<li>**管理单元（PSSnapin）**是 Windows PowerShell 的历史机制（需注册再 <code class="notranslate">Add-PSSnapin</code> 加载），pwsh 7+ 不支持，正逐步被模块取代。</li>
+<li>模块通过 <code class="notranslate">PSModulePath</code> 环境变量被自动发现，无需复杂注册；外部模块用 <code class="notranslate">Import-Module</code> 手动加载。</li>
+<li>扩展会带来命令冲突，用「模块前缀 + 名词」命名规则规避；用 <code class="notranslate">Remove-Module</code>（或 Windows PowerShell 的 <code class="notranslate">Remove-PSSnapin</code>）卸载。</li>
+<li>用 PowerShellGet（<code class="notranslate">Find-Module</code>、<code class="notranslate">Install-Module</code>、<code class="notranslate">Update-Module</code>）从在线仓库获取模块。</li>
+</ol></div>
     <details class="in-series-list" open aria-label="Series">
       <summary>PowerShell 学习笔记</summary>
       <ol>
@@ -249,7 +225,7 @@ Subsequent name resolutions may <span class="pl-k">return</span> up<span class="
         <li><a href="https://interset-wq.github.io/blog/post/63_6050799741.html">命令和Cmdlet</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050800073.html">pwsh 提供程序（PSProvider）</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050801304.html">pwsh 管道原理与参数绑定</a></li>
-        <li><a href="https://interset-wq.github.io/blog/post/63_6050801673.html">扩展命令</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/63_6050801673.html">pwsh 模块与命令扩展</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050802143.html">对象：数据的另一个名称</a></li>
         <li><a href="https://interset-wq.github.io/blog/post/63_6050802825.html">DAY 10 格式化及如何正确使用</a></li>
       </ol>
@@ -298,7 +274,7 @@ Subsequent name resolutions may <span class="pl-k">return</span> up<span class="
   <span id="run-days"></span>
   <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
 </div>
-<div class="in-footer-built">构建部署于 2026-10-12 13:00:38</div>
+<div class="in-footer-built">构建部署于 2026-10-12 13:01:14</div>
 <script>
   (function () {
     document.getElementById('copyright-year').textContent = new Date().getFullYear();
