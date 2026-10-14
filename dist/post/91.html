@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-color-mode="light" data-light-theme="light" data-dark-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script>window.icons = {"arrow-down": "M13.03 8.22a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L5.47 9.28a.75.75 0 1 1 1.06-1.06l1.97 1.97V2.75a.75.75 0 0 1 1.5 0v7.44l1.97-1.97a.75.75 0 0 1 1.06 0Z", "arrow-up": "M3.47 7.78a.75.75 0 0 1 0-1.06l3.75-3.75a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 1 1-1.06 1.06L8.75 5.811v7.439a.75.75 0 0 1-1.5 0V5.81L4.53 7.78a.75.75 0 0 1-1.06 0Z", "bars": "M1.75 2.5a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H1.75Zm0 3.75a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H1.75Zm0 3.75a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H1.75Zm0 3.75a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H1.75Z", "book": "M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z", "calendar": "M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z", "check": "M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z", "copy": "M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z", "github": "M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z", "home": "M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z", "moon": "M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z", "pencil": "M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354l-1.086-1.086Z", "post": "M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25ZM3.5 6.25a.75.75 0 0 1 .75-.75h7a.75.75 0 0 1 0 1.5h-7a.75.75 0 0 1-.75-.75Zm.75 2.25h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1 0-1.5Z", "rss": "M2.002 2.725a.75.75 0 0 1 .797-.699C8.79 2.42 13.58 7.21 13.974 13.201a.75.75 0 0 1-1.497.098 10.502 10.502 0 0 0-9.776-9.776.747.747 0 0 1-.7-.798ZM2.84 7.05h-.002a7.002 7.002 0 0 1 6.113 6.111.75.75 0 0 1-1.49.178 5.503 5.503 0 0 0-4.8-4.8.75.75 0 0 1 .179-1.489ZM2 13a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z", "search": "M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z", "sun": "M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z", "sync": "M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z", "tag": "M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.752 1.752 0 0 1 1 7.775Zm1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"};</script>
+<link rel="icon" type="image/png" href="https://interset-wq.github.io/blog/assets/favicon.png">
+  <link rel="stylesheet" href="https://interset-wq.github.io/blog/assets/primer.css">
+  
+  <link rel="stylesheet" href="https://interset-wq.github.io/blog/assets/main.css">
+  <script>
+    // Resolve the stored theme before first paint, otherwise a dark-mode
+    // visitor sees a white flash. theme.js takes over once loaded.
+    (function () {
+      var theme = localStorage.getItem('internote_theme') || 'light';
+      if (theme === 'auto') {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-color-mode', theme);
+    })();
+  </script>
+  <meta name="description" content="
+# 认证、授权与 Web 安全
+
+## 认证（Authentication）与授权（Authorization）
+
+### 认证 vs 授权
+
+| 概念 | 回答的问题 | 时机 |
+| --- | --- | --- |
+| **认证（Authentication）** | '你是谁？'（验证身份） | 必须先于授权 |
+| **授权（Authorization）** | '你被允许做什么？'（确定权限） | 认证之后 |
+
+> 在后台代码中，授权通常通过**检查用户角色或权限的中间件**来执行，然后再授予访问。">
+<meta property="og:title" content="认证、授权与 Web 安全">
+<meta property="og:description" content="
+# 认证、授权与 Web 安全
+
+## 认证（Authentication）与授权（Authorization）
+
+### 认证 vs 授权
+
+| 概念 | 回答的问题 | 时机 |
+| --- | --- | --- |
+| **认证（Authentication）** | '你是谁？'（验证身份） | 必须先于授权 |
+| **授权（Authorization）** | '你被允许做什么？'（确定权限） | 认证之后 |
+
+> 在后台代码中，授权通常通过**检查用户角色或权限的中间件**来执行，然后再授予访问。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://interset-wq.github.io/blog/post/91.html">
+<meta property="og:image" content="https://interset-wq.github.io/blog/assets/avatar.png">
+<title>认证、授权与 Web 安全</title>
+  <link href="https://interset-wq.github.io/blog/assets/starry-night.css" rel="stylesheet">
+  
+<style>
+  <style>
+    .in-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 100%;
+      height: 2px;
+      background: var(--in-color-accent);
+      transform-origin: 0 0;
+      transform: scaleX(0);
+      pointer-events: none;
+    }
+  </style>
+</style></head>
+<body>
+  <header class="in-site-header" id="header">  <h1 class="in-page-title">认证、授权与 Web 安全</h1>
+<nav class="in-site-nav" aria-label="Post navigation">    <a class="in-nav-btn" href="https://interset-wq.github.io/blog" title="首页" aria-label="首页"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z" fill-rule="evenodd"></path></svg></a>
+
+  <button class="in-nav-btn" id="in-theme-toggle" type="button" title="切换主题" aria-label="切换主题">
+  <svg class="octicon" width="16" height="16"><path id="themeSwitch" d="M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z" fill-rule="evenodd"></path></svg>
+</button>
+</nav></header>
+  <main class="in-site-main" id="content">  <article>
+    <div class="in-post-meta-box">
+      <div class="in-post-meta">
+        <span class="in-meta-date">
+          <svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z" fill-rule="evenodd"></path></svg>
+          <span style="color:#1f883d">2026-10-13</span>
+          <span class="in-meta-updated">(更新 2026-10-14)</span>
+        </span>
+        <span class="in-meta-labels">
+          <svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.752 1.752 0 0 1 1 7.775Zm1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z" fill-rule="evenodd"></path></svg>
+          <a href="https://interset-wq.github.io/blog/tag.html#Node">
+            <span class="in-meta-dot" style="background-color:#8a23bc"></span>Node
+          </a>
+        </span>
+        <a class="in-post-edit" href="https://github.com/interset-wq/blog/issues/91" target="_blank" rel="noopener" title="在 GitHub 上编辑" aria-label="在 GitHub 上编辑"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354l-1.086-1.086Z" fill-rule="evenodd"></path></svg></a>
+      </div>
+      <div class="in-meta-refs">
+        <span class="in-meta-refs-title">参考资料</span>
+        <ul>
+          <li><a href="https://www.freecodecamp.org/learn/back-end-development-and-apis-v9/review-back-end-development-and-apis/review-back-end-development-and-apis" target="_blank" rel="noopener">freeCodeCamp — Back-End Development and APIs Review</a></li>
+          <li><a href="https://jwt.io/" target="_blank" rel="noopener">JWT 官方文档</a></li>
+          <li><a href="https://www.passportjs.org/" target="_blank" rel="noopener">Passport.js 官方文档</a></li>
+          <li><a href="https://helmetjs.github.io/" target="_blank" rel="noopener">Helmet 官方文档</a></li>
+          <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy" target="_blank" rel="noopener">MDN — 同源策略</a></li>
+          <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CORS" target="_blank" rel="noopener">MDN — CORS</a></li>
+          <li><a href="https://github.com/motdotla/dotenv" target="_blank" rel="noopener">dotenv 官方文档</a></li>
+        </ul>
+      </div>
+    </div>
+    <nav class="in-toc" id="in-toc" data-toc-title="目录" data-toc-top="回到顶部" aria-label="目录"></nav>
+    <div class="in-progress" id="in-progress"></div>
+    <div class="in-post-body markdown-body"><h1>认证、授权与 Web 安全</h1>
+<h2>认证（Authentication）与授权（Authorization）</h2>
+<h3>认证 vs 授权</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>概念</th>
+<th>回答的问题</th>
+<th>时机</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>认证（Authentication）</strong></td>
+<td>"你是谁？"（验证身份）</td>
+<td>必须先于授权</td>
+</tr>
+<tr>
+<td><strong>授权（Authorization）</strong></td>
+<td>"你被允许做什么？"（确定权限）</td>
+<td>认证之后</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<blockquote>
+<p>在后台代码中，授权通常通过<strong>检查用户角色或权限的中间件</strong>来执行，然后再授予访问。</p>
+</blockquote>
+<h3>认证的三种因素</h3>
+<ol>
+<li><strong>你知道的（Something you know）</strong>：密码、PIN、安全问题答案。</li>
+<li><strong>你拥有的（Something you have）</strong>：接收短信验证码的手机、认证器应用 token。</li>
+<li><strong>你是什么（Something you are）</strong>：指纹、面部识别（生物特征）。</li>
+</ol>
+<h3>授权中的常见角色</h3>
+<ul>
+<li><strong>标准用户（Standard User）</strong>：受限的自助服务。</li>
+<li><strong>编辑（Editor）</strong>：内容管理。</li>
+<li><strong>管理员（Admin）</strong>：完整系统访问。</li>
+</ul>
+<hr>
+<h2>CSRF（跨站请求伪造）</h2>
+<p><strong>CSRF</strong>：恶意网站诱使已认证用户的浏览器向后台服务器发送<strong>非预期请求</strong>，利用浏览器<strong>自动附加 Cookie</strong> 的特性。</p>
+<h3>攻击流程</h3>
+<ol>
+<li>用户登录 <code class="notranslate">trusted-bank.com</code>。</li>
+<li>访问 <code class="notranslate">evil-hacker-site.com</code>。</li>
+<li>恶意网站向银行提交隐藏表单。</li>
+<li>银行服务器看到有效会话 Cookie，执行该请求。</li>
+</ol>
+<h3>防御手段</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>手段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">SameSite=Strict</code></td>
+<td>请求来自第三方网站时，浏览器<strong>绝不发送</strong>该 Cookie</td>
+</tr>
+<tr>
+<td><code class="notranslate">SameSite=Lax</code></td>
+<td>仅在用户<strong>安全导航</strong>到目标站（点击链接）时发送 Cookie；阻止跨站表单提交</td>
+</tr>
+<tr>
+<td><strong>CSRF 令牌</strong></td>
+<td>服务器生成随机不可预测的令牌嵌入表单，客户端每次状态变更请求都必须携带。恶意网站无法从前端读取令牌，伪造请求会校验失败</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>JWT（JSON Web Token）</h2>
+<p><strong>JWT</strong>：登录成功后服务器签发的一种<strong>数字签名令牌</strong>。客户端存储它，并在每次后续请求中携带，实现<strong>无状态认证</strong>（无需服务器端会话存储）。</p>
+<h3>JWT 结构</h3>
+<p>三个用点分隔的 Base64URL 编码部分：</p>
+<ol>
+<li><strong>Header（头部）</strong>：令牌类型（<code class="notranslate">JWT</code>）和签名算法（如 <code class="notranslate">HS256</code>）。</li>
+<li><strong>Payload（载荷）</strong>：关于用户的声明（用户 ID、用户名、角色）。<strong>未加密</strong>，所以<strong>绝不要存储密码或敏感数据</strong>。</li>
+<li><strong>Signature（签名）</strong>：Header + Payload + 服务器密钥的哈希，防止篡改。</li>
+</ol>
+<pre class="notranslate"><code class="notranslate">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3OCIsIm5hbWUiOiJKYW5lIERvZSIsImFkbWluIjp0cnVlLCJpYXQiOjE1MTYyMzkwMjJ9.Lfu39gE9OI8rhPXbmJMorXTtVappkNMw9xq-M4HXttA
+</code></pre>
+<blockquote>
+<p>若用户篡改 Payload，签名将不匹配，服务器以 <code class="notranslate">401 Unauthorized</code> 拒绝请求。</p>
+</blockquote>
+<h3>用 <code class="notranslate">jsonwebtoken</code> 签发与验证</h3>
+<div class="highlight highlight-source-shell"><pre class="notranslate">npm install jsonwebtoken</pre></div>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">jwt</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">"jsonwebtoken"</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-k">const</span> <span class="pl-c1">SECRET</span> <span class="pl-c1">=</span> <span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-c1">env</span><span class="pl-kos">.</span><span class="pl-c1">JWT_SECRET</span> <span class="pl-c1">||</span> <span class="pl-s">"change-me"</span><span class="pl-kos">;</span> <span class="pl-c">// 生产用 .env</span>
+<span class="pl-k">const</span> <span class="pl-s1">payload</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span> <span class="pl-c1">userId</span>: <span class="pl-c1">42</span><span class="pl-kos">,</span> <span class="pl-c1">username</span>: <span class="pl-s">"jane"</span><span class="pl-kos">,</span> <span class="pl-c1">role</span>: <span class="pl-s">"admin"</span> <span class="pl-kos">}</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// 1. 签发：payload + 密钥 + 过期时间</span>
+<span class="pl-k">const</span> <span class="pl-s1">token</span> <span class="pl-c1">=</span> <span class="pl-s1">jwt</span><span class="pl-kos">.</span><span class="pl-en">sign</span><span class="pl-kos">(</span><span class="pl-s1">payload</span><span class="pl-kos">,</span> <span class="pl-c1">SECRET</span><span class="pl-kos">,</span> <span class="pl-kos">{</span> <span class="pl-c1">expiresIn</span>: <span class="pl-s">"1h"</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">token</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// xxx.yyy.zzz（三段 Base64URL）</span>
+
+<span class="pl-c">// 2. 验证：签名不匹配会抛错</span>
+<span class="pl-k">try</span> <span class="pl-kos">{</span>
+  <span class="pl-k">const</span> <span class="pl-s1">decoded</span> <span class="pl-c1">=</span> <span class="pl-s1">jwt</span><span class="pl-kos">.</span><span class="pl-en">verify</span><span class="pl-kos">(</span><span class="pl-s1">token</span><span class="pl-kos">,</span> <span class="pl-c1">SECRET</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">decoded</span><span class="pl-kos">.</span><span class="pl-c1">userId</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// 42</span>
+<span class="pl-kos">}</span> <span class="pl-k">catch</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-s">"无效或过期的 token:"</span><span class="pl-kos">,</span> <span class="pl-s1">err</span><span class="pl-kos">.</span><span class="pl-c1">message</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span>
+
+<span class="pl-c">// 3. 作为 Express 中间件做认证</span>
+<span class="pl-k">function</span> <span class="pl-en">authenticate</span><span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">,</span> <span class="pl-s1">next</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-k">const</span> <span class="pl-s1">header</span> <span class="pl-c1">=</span> <span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">headers</span><span class="pl-kos">.</span><span class="pl-c1">authorization</span><span class="pl-kos">;</span> <span class="pl-c">// "Bearer &lt;token&gt;"</span>
+  <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-c1">!</span><span class="pl-s1">header</span><span class="pl-kos">)</span> <span class="pl-k">return</span> <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">401</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">error</span>: <span class="pl-s">"No token"</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-k">const</span> <span class="pl-s1">token</span> <span class="pl-c1">=</span> <span class="pl-s1">header</span><span class="pl-kos">.</span><span class="pl-en">split</span><span class="pl-kos">(</span><span class="pl-s">" "</span><span class="pl-kos">)</span><span class="pl-kos">[</span><span class="pl-c1">1</span><span class="pl-kos">]</span><span class="pl-kos">;</span>
+  <span class="pl-k">try</span> <span class="pl-kos">{</span>
+    <span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">user</span> <span class="pl-c1">=</span> <span class="pl-s1">jwt</span><span class="pl-kos">.</span><span class="pl-en">verify</span><span class="pl-kos">(</span><span class="pl-s1">token</span><span class="pl-kos">,</span> <span class="pl-c1">SECRET</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-s1">next</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span> <span class="pl-k">catch</span> <span class="pl-kos">{</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">401</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">error</span>: <span class="pl-s">"Invalid token"</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span>
+
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">"/profile"</span><span class="pl-kos">,</span> <span class="pl-s1">authenticate</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">user</span>: <span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">user</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// 只有携带有效 token 才能访问</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
+<hr>
+<h2>Passport.js</h2>
+<p><strong>Passport.js</strong>：Node.js 的认证中间件。标准化认证流程，处理底层细节，让开发者专注于业务逻辑。</p>
+<h3>策略（Strategies）</h3>
+<p>模块化插件，实现特定认证方法。有 500+ 种策略可用：</p>
+<ul>
+<li><code class="notranslate">passport-local</code>：用户名/密码</li>
+<li><code class="notranslate">passport-jwt</code>：JWT</li>
+<li><code class="notranslate">passport-google-oauth20</code>：Google 登录</li>
+<li><code class="notranslate">passport-facebook</code>、<code class="notranslate">passport-github2</code>：Facebook / GitHub</li>
+</ul>
+<h3>完整登录流程</h3>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">passport</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">"passport"</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-v">LocalStrategy</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">"passport-local"</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-c1">Strategy</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">bcrypt</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">"bcrypt"</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// 1. 注册策略：定义如何验证用户名/密码</span>
+<span class="pl-s1">passport</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span>
+  <span class="pl-k">new</span> <span class="pl-v">LocalStrategy</span><span class="pl-kos">(</span><span class="pl-k">async</span> <span class="pl-kos">(</span><span class="pl-s1">username</span><span class="pl-kos">,</span> <span class="pl-s1">password</span><span class="pl-kos">,</span> <span class="pl-s1">done</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-k">try</span> <span class="pl-kos">{</span>
+      <span class="pl-k">const</span> <span class="pl-s1">user</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">db</span><span class="pl-kos">.</span><span class="pl-en">getUser</span><span class="pl-kos">(</span><span class="pl-s1">username</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+      <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-c1">!</span><span class="pl-s1">user</span><span class="pl-kos">)</span> <span class="pl-k">return</span> <span class="pl-s1">done</span><span class="pl-kos">(</span><span class="pl-c1">null</span><span class="pl-kos">,</span> <span class="pl-c1">false</span><span class="pl-kos">,</span> <span class="pl-kos">{</span> <span class="pl-c1">message</span>: <span class="pl-s">"用户不存在"</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+      <span class="pl-k">const</span> <span class="pl-s1">ok</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">bcrypt</span><span class="pl-kos">.</span><span class="pl-en">compare</span><span class="pl-kos">(</span><span class="pl-s1">password</span><span class="pl-kos">,</span> <span class="pl-s1">user</span><span class="pl-kos">.</span><span class="pl-c1">passwordHash</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+      <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-c1">!</span><span class="pl-s1">ok</span><span class="pl-kos">)</span> <span class="pl-k">return</span> <span class="pl-s1">done</span><span class="pl-kos">(</span><span class="pl-c1">null</span><span class="pl-kos">,</span> <span class="pl-c1">false</span><span class="pl-kos">,</span> <span class="pl-kos">{</span> <span class="pl-c1">message</span>: <span class="pl-s">"密码错误"</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+      <span class="pl-k">return</span> <span class="pl-s1">done</span><span class="pl-kos">(</span><span class="pl-c1">null</span><span class="pl-kos">,</span> <span class="pl-s1">user</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// 认证成功</span>
+    <span class="pl-kos">}</span> <span class="pl-k">catch</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+      <span class="pl-k">return</span> <span class="pl-s1">done</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span>
+<span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// 2. 初始化 Passport</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">passport</span><span class="pl-kos">.</span><span class="pl-en">initialize</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">passport</span><span class="pl-kos">.</span><span class="pl-en">session</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// 若用会话 Cookie</span>
+
+<span class="pl-c">// 3. 登录路由（认证成功才进入 handler）</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">post</span><span class="pl-kos">(</span>
+  <span class="pl-s">"/login"</span><span class="pl-kos">,</span>
+  <span class="pl-s1">passport</span><span class="pl-kos">.</span><span class="pl-en">authenticate</span><span class="pl-kos">(</span><span class="pl-s">"local"</span><span class="pl-kos">,</span> <span class="pl-kos">{</span> <span class="pl-c1">failureRedirect</span>: <span class="pl-s">"/login"</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">,</span>
+  <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">redirect</span><span class="pl-kos">(</span><span class="pl-s">`/welcome/<span class="pl-s1"><span class="pl-kos">${</span><span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">user</span><span class="pl-kos">.</span><span class="pl-c1">username</span><span class="pl-kos">}</span></span>`</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// 4. 保护路由</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">"/profile"</span><span class="pl-kos">,</span> <span class="pl-kos">(</span><span class="pl-s1">req</span><span class="pl-kos">,</span> <span class="pl-s1">res</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+  <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-c1">!</span><span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">user</span><span class="pl-kos">)</span> <span class="pl-k">return</span> <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">status</span><span class="pl-kos">(</span><span class="pl-c1">401</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">error</span>: <span class="pl-s">"请先登录"</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">user</span>: <span class="pl-s1">req</span><span class="pl-kos">.</span><span class="pl-c1">user</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
+<blockquote>
+<p>认证成功后，Passport 会在会话 Cookie 中存储一段用户数据，并把认证后的用户对象挂到 <code class="notranslate">req.user</code>。</p>
+</blockquote>
+<hr>
+<h2>安全 vs 隐私</h2>
+<ul>
+<li><strong>安全（Security）</strong>：保护系统和数据免受未授权访问的<strong>技术防御机制</strong>。安全是门上的锁。</li>
+<li><strong>隐私（Privacy）</strong>：关于个人数据如何被收集、使用和分享的<strong>治理</strong>。隐私是窗上的帘。</li>
+</ul>
+<blockquote>
+<p>可以只有安全而没有隐私（被锁定的数据库仍可能售卖你的数据），但不能只有隐私而没有安全（未受保护的数据无法保持私密）。</p>
+</blockquote>
+<hr>
+<h2>同源策略与 CORS</h2>
+<h3>源（Origin）</h3>
+<p>由三个部分定义：<strong>协议</strong>（如 <code class="notranslate">https</code>）+ <strong>域名</strong>（如 <code class="notranslate">example.com</code>）+ <strong>端口</strong>（如 <code class="notranslate">443</code>）。三者全部匹配才属于同一源。</p>
+<h3>同源策略</h3>
+<p>浏览器安全规则：阻止一个源的脚本读取另一个源的数据，防止恶意站点窃取其他已打开标签页中的数据。</p>
+<h3>CORS（跨域资源共享）</h3>
+<p>一种机制，允许服务器通过设置 HTTP 头，为受信任的源放宽同源策略。</p>
+<ul>
+<li><strong>开发环境</strong>：<code class="notranslate">app.use(cors())</code> 允许所有源。</li>
+<li><strong>生产环境</strong>：传入带 <code class="notranslate">origin</code> 白名单的 <code class="notranslate">corsOptions</code> 对象：</li>
+</ul>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">corsOptions</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span>
+  <span class="pl-c1">origin</span>: <span class="pl-kos">[</span><span class="pl-s">"https://mysite.com"</span><span class="pl-kos">,</span> <span class="pl-s">"https://api.mysite.com"</span><span class="pl-kos">]</span><span class="pl-kos">,</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-en">cors</span><span class="pl-kos">(</span><span class="pl-s1">corsOptions</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
+<hr>
+<h2>HTTPS</h2>
+<p><strong>HTTPS</strong>：带 TLS（传输层安全协议）加密的 HTTP。TLS 取代了更旧的 SSL 协议。</p>
+<h3>HTTPS 的三重保证</h3>
+<ol>
+<li><strong>加密（Encryption）</strong>：客户端与服务器间传输的数据对第三方不可读。</li>
+<li><strong>认证（Authentication）</strong>：受信任 CA 颁发的数字证书确认服务器身份。</li>
+<li><strong>数据完整性（Data integrity）</strong>：消息在传输中被改动即可被检测。</li>
+</ol>
+<blockquote>
+<p>现代浏览器 API（地理位置、推送通知、摄像头访问）都要求 HTTPS。</p>
+</blockquote>
+<hr>
+<h2>Helmet.js 与安全中间件</h2>
+<p><strong>Helmet.js</strong>：安全中间件集合，通过自动设置、修改或移除 HTTP 响应头来保护 Express 应用。</p>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">helmet</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">"helmet"</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">cors</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">"cors"</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">morgan</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">"morgan"</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">helmet</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>                       <span class="pl-c">// 安全响应头</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">cors</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">origin</span>: <span class="pl-kos">[</span><span class="pl-s">"https://mysite.com"</span><span class="pl-kos">]</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// 受控跨域</span>
+<span class="pl-s1">app</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-s1">morgan</span><span class="pl-kos">(</span><span class="pl-s">"combined"</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>             <span class="pl-c">// 请求日志</span>
+
+<span class="pl-c">// CSRF 防御要点</span>
+<span class="pl-c">// 1) 会话 Cookie 设置 HttpOnly + SameSite=Strict</span>
+<span class="pl-c">// 2) 状态变更请求携带随机 CSRF token，服务端校验</span></pre></div>
+<h3>Helmet 主要保护能力</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>能力</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>移除 <code class="notranslate">X-Powered-By</code></td>
+<td>防止攻击者得知服务器技术栈</td>
+</tr>
+<tr>
+<td>设置 <code class="notranslate">Content-Security-Policy</code></td>
+<td>限制脚本、图片、样式的加载来源，缓解 XSS 攻击</td>
+</tr>
+<tr>
+<td>设置 <code class="notranslate">X-Frame-Options: SAMEORIGIN</code></td>
+<td>阻止点击劫持（防止你的站点被嵌入外部 iframe）</td>
+</tr>
+<tr>
+<td>设置 <code class="notranslate">Strict-Transport-Security</code></td>
+<td>强制浏览器使用 HTTPS，保护数据不被截获</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>安全问题为何会发生</h2>
+<ul>
+<li><strong>交付压力</strong>：团队为赶工期跳过安全评审，带着漏洞上线。</li>
+<li><strong>复杂系统集成</strong>：第三方库或云服务引入开发团队未编写的漏洞（供应链风险）。</li>
+<li><strong>配置管理不善</strong>：保留默认设置（默认管理员密码、开放端口）导致系统暴露。</li>
+<li><strong>人为错误</strong>：钓鱼攻击利用点击恶意链接的员工骗取凭据。</li>
+<li><strong>组织并购</strong>：合并不同代码库和基础设施，暴露不匹配的安全策略和遗留漏洞。</li>
+</ul>
+<hr>
+<h2>Cookie：存储、安全标志与隐私</h2>
+<h3>Cookie 如何存储</h3>
+<p>服务器发送 <code class="notranslate">Set-Cookie</code> 头 → 浏览器保存到磁盘 → 之后每次请求自动返回给该源。</p>
+<h3>安全标志</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>标志</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">HttpOnly</code></td>
+<td>阻止 JavaScript 读取 Cookie 值，防止基于 XSS 的会话窃取</td>
+</tr>
+<tr>
+<td><code class="notranslate">Secure</code></td>
+<td>仅限 HTTPS 连接传输，防止在公共网络上被截获</td>
+</tr>
+<tr>
+<td><code class="notranslate">SameSite=Strict</code></td>
+<td>阻止浏览器在任何跨站请求中发送该 Cookie，完全阻断 CSRF</td>
+</tr>
+<tr>
+<td><code class="notranslate">SameSite=Lax</code></td>
+<td>允许顶层导航（如点击链接）发送，阻止跨站表单提交和 API 调用</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>Cookie 类型</h3>
+<ul>
+<li><strong>第一方 Cookie</strong>：作用域为当前访问的站点。</li>
+<li><strong>第三方 Cookie</strong>：由广告网络在数千站点间设置，用于追踪行为、构建用户画像。现代浏览器默认拦截。</li>
+</ul>
+<h3>GDPR 合规</h3>
+<p>隐私法律要求 Cookie 同意横幅，赋予用户拒绝非必要追踪 Cookie 的法律权利。</p>
+<hr>
+<h2>常见安全威胁与缓解</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>威胁</th>
+<th>说明</th>
+<th>缓解措施</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>钓鱼（Phishing）</strong></td>
+<td>冒充可信公司的欺诈邮件窃取凭据</td>
+<td>安全意识培训；部署邮件认证协议，阻止恶意邮件到达收件箱</td>
+</tr>
+<tr>
+<td><strong>恶意软件</strong>（病毒、间谍软件、勒索软件）</td>
+<td>勒索软件加密文件并索要赎金</td>
+<td>自动更新；防恶意软件</td>
+</tr>
+<tr>
+<td><strong>撞库（Credential stuffing）</strong></td>
+<td>攻击者在不同网站批量尝试海量已泄露的用户名/密码组合</td>
+<td>主要缓解：<strong>多因素认证（MFA）</strong>，需二次验证（OTP 或认证器）</td>
+</tr>
+<tr>
+<td><strong>DDoS（分布式拒绝服务）</strong></td>
+<td>攻击者用虚假流量淹没服务器使其崩溃</td>
+<td>云端流量过滤服务：Cloudflare、Akamai、AWS Shield</td>
+</tr>
+<tr>
+<td><strong>内部威胁</strong></td>
+<td>恶意或粗心的员工窃取/泄露数据</td>
+<td><strong>最小权限原则</strong>（只授予工作所需权限）；监控系统日志</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>CSP 与 Permissions-Policy</h2>
+<h3>CSP（内容安全策略）</h3>
+<p>HTTP 响应头，为脚本、样式和图片<strong>白名单</strong>允许的源域名。浏览器收到 CSP 头后，会阻止任何来自非白名单域名的资源加载。</p>
+<ul>
+<li><code class="notranslate">script-src</code> 指令指定哪些域名可执行 JavaScript，阻止 XSS 注入攻击。</li>
+</ul>
+<h3>Permissions-Policy</h3>
+<p>HTTP 头，为页面和嵌入的 iframe 启用或禁用浏览器功能和设备硬件。取代了旧的 <code class="notranslate">Feature-Policy</code> 头。</p>
+<ul>
+<li><code class="notranslate">camera=(self)</code>：仅限本页源使用摄像头。</li>
+<li><code class="notranslate">geolocation=()</code>：对所有用户完全禁用定位。</li>
+</ul>
+<blockquote>
+<p>两者结合提供分层保护：CSP 阻止代码注入，Permissions-Policy 阻止未授权的硬件访问。</p>
+</blockquote>
+<hr>
+<h2>用户隐私基本概念</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>概念</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PII（个人身份信息）</strong></td>
+<td>能直接或间接识别个人的数据</td>
+</tr>
+<tr>
+<td>— 直接标识符</td>
+<td>全名、家庭住址、身份证号</td>
+</tr>
+<tr>
+<td>— 间接标识符</td>
+<td>IP 地址、设备序列号、精确位置历史</td>
+</tr>
+<tr>
+<td><strong>保密性</strong></td>
+<td>通过加密和访问控制保护 PII 免遭未授权访问</td>
+</tr>
+<tr>
+<td><strong>数据最小化</strong></td>
+<td>只收集完成特定任务所需的最少量 PII</td>
+</tr>
+<tr>
+<td><strong>目的限制</strong></td>
+<td>为某一原因收集的数据，未经用户新同意不得挪作他用（如卖给广告网络）</td>
+</tr>
+<tr>
+<td><strong>追踪</strong></td>
+<td>使用脚本、设备指纹、浏览器历史日志持续监控用户在线行为</td>
+</tr>
+<tr>
+<td><strong>被遗忘权（数据擦除）</strong></td>
+<td>用户关闭账户后，可依法要求永久删除公司数据库中所有个人记录的法律权利</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2><code class="notranslate">.env</code> 文件与 <code class="notranslate">dotenv</code></h2>
+<h3><code class="notranslate">.env</code> 文件</h3>
+<p>项目根目录的纯文本文件，以键值对存储配置机密（API 密钥、数据库密码、端口号）。<strong>始终加入 <code class="notranslate">.gitignore</code></strong> 以防机密进入版本控制。</p>
+<h3><code class="notranslate">dotenv</code> 包</h3>
+<p>启动时读取 <code class="notranslate">.env</code> 文件，把值注入 <code class="notranslate">process.env</code>：</p>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">"dotenv"</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">config</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-k">const</span> <span class="pl-s1">port</span> <span class="pl-c1">=</span> <span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-c1">env</span><span class="pl-kos">.</span><span class="pl-c1">PORT</span> <span class="pl-c1">||</span> <span class="pl-c1">5000</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">apiKey</span> <span class="pl-c1">=</span> <span class="pl-s1">process</span><span class="pl-kos">.</span><span class="pl-c1">env</span><span class="pl-kos">.</span><span class="pl-c1">API_KEY</span><span class="pl-kos">;</span></pre></div>
+<h3>两大好处</h3>
+<ol>
+<li><strong>安全</strong>：凭据不进入源代码。</li>
+<li><strong>灵活</strong>：同一代码库通过在不同服务器上替换 <code class="notranslate">.env</code> 文件，即可在不同环境（开发、预发布、生产）表现不同。</li>
+</ol>
+<hr>
+<h2>地区隐私法律与合规</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>法律</th>
+<th>管辖范围</th>
+<th>核心要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GDPR</strong></td>
+<td>欧盟内个人</td>
+<td>追踪前需明确<strong>主动同意</strong>（不允许预勾选）；赋予查看和永久删除数据的权利；违规重罚</td>
+</tr>
+<tr>
+<td><strong>CCPA / CPRA</strong></td>
+<td>加州居民</td>
+<td>侧重<strong>退出</strong>（opt-out）而非主动同意；首页需有可见的"Do Not Sell My Personal Information"链接</td>
+</tr>
+<tr>
+<td><strong>COPPA</strong></td>
+<td>美国 13 岁以下儿童</td>
+<td>收集儿童数据前需明确隐私政策 + 可验证的父母同意</td>
+</tr>
+<tr>
+<td><strong>DPA</strong></td>
+<td>英国</td>
+<td>与英国 GDPR 配套，赋予访问和删除数据的权利</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<blockquote>
+<p>其他国家：尼日利亚 NDPA（尼日利亚数据保护法）、印度 DPDP Act（数字个人数据保护法）。</p>
+</blockquote>
+<h3>全球化团队的合规步骤</h3>
+<ol>
+<li>构建<strong>按位置感知</strong>的同意横幅，根据用户地理位置显示相应 Cookie 通知。</li>
+<li>实现自动化的 **DSAR（数据主体访问请求）**系统，依法查找、导出或永久擦除用户数据。</li>
+<li>践行<strong>数据最小化</strong>，用<strong>年龄验证门</strong>防止对未成年人的未授权追踪。</li>
+<li>指定<strong>数据保护官（DPO）</strong>，监督隐私架构并作为与监管机构的主要联系人。</li>
+</ol></div>
+  </article>
+<section class="in-comments-section">
+  <template id="in-giscus-template">
+    <script src="https://giscus.app/client.js"
+      data-repo="interset-wq/blog"
+      data-repo-id="R_kgDOTWqpPQ"
+      data-category="Announcements"
+      data-category-id="DIC_kwDOTWqpPc4DBFW-"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="light"
+      data-lang="zh-CN"
+      crossorigin="anonymous"
+      async></script>
+  </template>
+  <div class="in-comments-container" id="comments"></div>
+</section>  <div id="in-fab" class="in-fab"
+       data-toc-title="目录"
+       data-top-title="回到顶部"
+       data-bottom-title="下一页"></div>
+</main>
+  <footer class="in-site-footer" id="footer"><div class="in-footer-icons" id="footer-icons" data-copied="已复制">
+  <a class="in-nav-btn in-social" href="https://space.bilibili.com/3546586772670802" target="_blank" rel="noopener" title="Bilibili" aria-label="Bilibili"><svg fill="#00A1D6" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Bilibili</title><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373Z"/></svg></a>
+  <a class="in-nav-btn in-social" href="mailto:intersetwq@gmail.com" target="_blank" rel="noopener" title="Email" aria-label="Email"><svg fill="#EA4335" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gmail</title><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg></a>
+  <button class="in-nav-btn in-social" type="button" title="QQ" aria-label="QQ" data-copy="2775055258"><svg fill="#1EBAFC" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>QQ</title><path d="M21.395 15.035a40 40 0 0 0-.803-2.264l-1.079-2.695c.001-.032.014-.562.014-.836C19.526 4.632 17.351 0 12 0S4.474 4.632 4.474 9.241c0 .274.013.804.014.836l-1.08 2.695a39 39 0 0 0-.802 2.264c-1.021 3.283-.69 4.643-.438 4.673.54.065 2.103-2.472 2.103-2.472 0 1.469.756 3.387 2.394 4.771-.612.188-1.363.479-1.845.835-.434.32-.379.646-.301.778.343.578 5.883.369 7.482.189 1.6.18 7.14.389 7.483-.189.078-.132.132-.458-.301-.778-.483-.356-1.233-.646-1.846-.836 1.637-1.384 2.393-3.302 2.393-4.771 0 0 1.563 2.537 2.103 2.472.251-.03.581-1.39-.438-4.673"/></svg></button>
+  <button class="in-nav-btn in-social" type="button" title="WeChat" aria-label="WeChat" data-qrcode="https://interset-wq.github.io/blog/wechat-qr.jpg"><svg fill="#07C160" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>WeChat</title><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/></svg></button>
+  <a class="in-nav-btn in-social" href="https://interset-wq.github.io/blog/rss.xml" target="_blank" rel="noopener" title="RSS" aria-label="RSS"><svg fill="#FFA500" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>RSS</title><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/></svg></a>
+  <a class="in-nav-btn in-social" href="https://github.com/interset-wq/blog" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><svg fill="#181717" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+</div>
+<div class="in-footer-line" id="footer-copyright">
+  Copyright &copy; <span id="copyright-year"></span>
+  <a href="https://interset-wq.github.io/blog">InterNote</a>
+</div>
+<div class="in-footer-powered" id="footer-powered">
+  <span id="run-days"></span>
+  <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
+</div>
+<div class="in-footer-built">构建部署于 2026-10-14 14:12:59</div>
+<script>
+  (function () {
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    var days = Math.floor(
+      (Date.now() - new Date('2026-09-30').getTime()) / 86400000
+    );
+    document.getElementById('run-days').textContent =
+      '网站运行 ' + days + ' 天 • ';
+
+    // [[social]] copy + qrcode actions. Everything is data-driven from the
+    // server-rendered buttons; with no such buttons this is a no-op.
+    var icons = document.getElementById('footer-icons');
+    if (!icons.querySelector('[data-copy], [data-qrcode]')) {
+      return;
+    }
+
+    var toast = document.createElement('div');
+    toast.className = 'in-social-toast';
+    toast.hidden = true;
+    document.body.appendChild(toast);
+    var toastTimer = null;
+    function showToast(text) {
+      toast.textContent = text;
+      toast.hidden = false;
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () { toast.hidden = true; }, 1600);
+    }
+
+    var overlay = document.createElement('div');
+    overlay.className = 'in-social-qr';
+    overlay.hidden = true;
+    var img = document.createElement('img');
+    img.alt = '';
+    overlay.appendChild(img);
+    document.body.appendChild(overlay);
+    function closeOverlay() { overlay.hidden = true; }
+    overlay.addEventListener('click', closeOverlay);
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') { closeOverlay(); }
+    });
+
+    icons.addEventListener('click', function (event) {
+      var button = event.target.closest('[data-copy], [data-qrcode]');
+      if (!button) { return; }
+      if (button.dataset.copy) {
+        navigator.clipboard.writeText(button.dataset.copy).then(function () {
+          showToast(icons.dataset.copied || 'Copied!');
+        });
+      } else if (button.dataset.qrcode) {
+        img.src = button.dataset.qrcode;
+        overlay.hidden = false;
+      }
+    });
+  })();
+</script></footer>
+  <script src="https://interset-wq.github.io/blog/plugins/theme.js"></script>
+  <script id="internote-search" src="https://interset-wq.github.io/blog/plugins/search.js"
+    data-index-url="https://interset-wq.github.io/blog/search-index.json"
+    data-placeholder="搜索"
+    data-no-results="未找到结果"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/giscus.js"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/toc.js"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/fab.js"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/lightbox.js"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/code-copy.js"></script>
+  <script>
+    (function () {
+      'use strict';
+      var bar = document.getElementById('in-progress');
+      var body = document.querySelector('.in-post-body');
+      function update() {
+        var start = body.offsetTop - 80;
+        var end = body.offsetTop + body.offsetHeight - window.innerHeight + 40;
+        var t = (window.scrollY - start) / Math.max(end - start, 1);
+        bar.style.transform = 'scaleX(' + Math.min(Math.max(t, 0), 1) + ')';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
+  
+</body>
+</html>

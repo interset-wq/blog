@@ -1,5 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>InterNote</title><link>https://interset-wq.github.io/blog</link><description>My notes on everything.</description><copyright>InterNote</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url></url><title>avatar</title><link>https://interset-wq.github.io/blog</link></image><lastBuildDate>Wed, 14 Oct 2026 06:12:24 +0000</lastBuildDate><managingEditor>InterNote</managingEditor><ttl>60</ttl><webMaster>InterNote</webMaster><item><title>Node</title><link>https://interset-wq.github.io/blog/post/106.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>InterNote</title><link>https://interset-wq.github.io/blog</link><description>My notes on everything.</description><copyright>InterNote</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url></url><title>avatar</title><link>https://interset-wq.github.io/blog</link></image><lastBuildDate>Wed, 14 Oct 2026 06:13:00 +0000</lastBuildDate><managingEditor>InterNote</managingEditor><ttl>60</ttl><webMaster>InterNote</webMaster><item><title>认证、授权与 Web 安全</title><link>https://interset-wq.github.io/blog/post/91.html</link><description>
+# 认证、授权与 Web 安全
+
+## 认证（Authentication）与授权（Authorization）
+
+### 认证 vs 授权
+
+| 概念 | 回答的问题 | 时机 |
+| --- | --- | --- |
+| **认证（Authentication）** | '你是谁？'（验证身份） | 必须先于授权 |
+| **授权（Authorization）** | '你被允许做什么？'（确定权限） | 认证之后 |
+
+&gt; 在后台代码中，授权通常通过**检查用户角色或权限的中间件**来执行，然后再授予访问。</description><guid isPermaLink="true">https://interset-wq.github.io/blog/post/91.html</guid><pubDate>Mon, 12 Oct 2026 16:00:00 +0000</pubDate></item><item><title>Node</title><link>https://interset-wq.github.io/blog/post/106.html</link><description>
 # Node.js 简介、模块系统与 npm
 
 ## 什么是 Node.js
