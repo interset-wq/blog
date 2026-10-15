@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-color-mode="light" data-light-theme="light" data-dark-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script>window.icons = {"arrow-down": "M13.03 8.22a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L5.47 9.28a.75.75 0 1 1 1.06-1.06l1.97 1.97V2.75a.75.75 0 0 1 1.5 0v7.44l1.97-1.97a.75.75 0 0 1 1.06 0Z", "arrow-up": "M3.47 7.78a.75.75 0 0 1 0-1.06l3.75-3.75a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 1 1-1.06 1.06L8.75 5.811v7.439a.75.75 0 0 1-1.5 0V5.81L4.53 7.78a.75.75 0 0 1-1.06 0Z", "bars": "M1.75 2.5a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H1.75Zm0 3.75a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H1.75Zm0 3.75a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H1.75Zm0 3.75a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H1.75Z", "book": "M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z", "calendar": "M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z", "check": "M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z", "copy": "M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z", "github": "M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z", "home": "M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z", "moon": "M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z", "pencil": "M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354l-1.086-1.086Z", "post": "M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25ZM3.5 6.25a.75.75 0 0 1 .75-.75h7a.75.75 0 0 1 0 1.5h-7a.75.75 0 0 1-.75-.75Zm.75 2.25h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1 0-1.5Z", "rss": "M2.002 2.725a.75.75 0 0 1 .797-.699C8.79 2.42 13.58 7.21 13.974 13.201a.75.75 0 0 1-1.497.098 10.502 10.502 0 0 0-9.776-9.776.747.747 0 0 1-.7-.798ZM2.84 7.05h-.002a7.002 7.002 0 0 1 6.113 6.111.75.75 0 0 1-1.49.178 5.503 5.503 0 0 0-4.8-4.8.75.75 0 0 1 .179-1.489ZM2 13a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z", "search": "M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z", "sun": "M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z", "sync": "M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z", "tag": "M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.752 1.752 0 0 1 1 7.775Zm1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"};</script>
+<link rel="icon" type="image/png" href="https://interset-wq.github.io/blog/assets/favicon.png">
+  <link rel="stylesheet" href="https://interset-wq.github.io/blog/assets/primer.css">
+  
+  <link rel="stylesheet" href="https://interset-wq.github.io/blog/assets/main.css">
+  <script>
+    // Resolve the stored theme before first paint, otherwise a dark-mode
+    // visitor sees a white flash. theme.js takes over once loaded.
+    (function () {
+      var theme = localStorage.getItem('internote_theme') || 'light';
+      if (theme === 'auto') {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-color-mode', theme);
+    })();
+  </script>
+  <meta name="description" content="My notes on everything.">
+<meta property="og:title" content="C 常用库：数值、内存与工具">
+<meta property="og:description" content="My notes on everything.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://interset-wq.github.io/blog/post/82_6187065649.html">
+<meta property="og:image" content="https://interset-wq.github.io/blog/assets/avatar.png">
+<title>C 常用库：数值、内存与工具</title>
+  <link href="https://interset-wq.github.io/blog/assets/starry-night.css" rel="stylesheet">
+  
+<style>
+  <style>
+    .in-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 100%;
+      height: 2px;
+      background: var(--in-color-accent);
+      transform-origin: 0 0;
+      transform: scaleX(0);
+      pointer-events: none;
+    }
+  </style>
+</style></head>
+<body>
+  <header class="in-site-header" id="header">  <h1 class="in-page-title">C 常用库：数值、内存与工具</h1>
+<nav class="in-site-nav" aria-label="Post navigation">    <a class="in-nav-btn" href="https://interset-wq.github.io/blog" title="首页" aria-label="首页"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z" fill-rule="evenodd"></path></svg></a>
+
+  <button class="in-nav-btn" id="in-theme-toggle" type="button" title="切换主题" aria-label="切换主题">
+  <svg class="octicon" width="16" height="16"><path id="themeSwitch" d="M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z" fill-rule="evenodd"></path></svg>
+</button>
+</nav></header>
+  <main class="in-site-main" id="content">  <article>
+    <div class="in-post-meta-box">
+      <div class="in-post-meta">
+        <span class="in-meta-date">
+          <svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z" fill-rule="evenodd"></path></svg>
+          <span style="color:#1f883d">2026-10-15</span>
+        </span>
+        <span class="in-meta-labels">
+          <svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.752 1.752 0 0 1 1 7.775Zm1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z" fill-rule="evenodd"></path></svg>
+          <a href="https://interset-wq.github.io/blog/tag.html#C">
+            <span class="in-meta-dot" style="background-color:#555555"></span>C
+          </a>
+        </span>
+        <a class="in-post-edit" href="https://github.com/interset-wq/blog/issues/82" target="_blank" rel="noopener" title="在 GitHub 上编辑" aria-label="在 GitHub 上编辑"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354l-1.086-1.086Z" fill-rule="evenodd"></path></svg></a>
+      </div>
+      <div class="in-meta-refs">
+        <span class="in-meta-refs-title">参考资料</span>
+        <ul>
+          <li><a href="https://en.cppreference.com/w/c/header" target="_blank" rel="noopener">cppreference — C 语言头文件索引</a></li>
+          <li><a href="https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html#Standard-Library" target="_blank" rel="noopener">GNU C 手册 — 标准库</a></li>
+        </ul>
+      </div>
+      <details class="in-meta-series" aria-label="Series">
+        <summary>
+          <svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z" fill-rule="evenodd"></path></svg>
+          <a href="https://interset-wq.github.io/blog/post/82.html">C 语言基础</a>
+          <span class="in-meta-series-pos">2 / 2</span>
+        </summary>
+        <ol>
+          <li><a href="https://interset-wq.github.io/blog/post/82_6187065277.html">C 常用库：输入输出与字符串</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/82_6187065649.html">C 常用库：数值、内存与工具</a></li>
+        </ol>
+      </details>
+    </div>
+    <nav class="in-toc" id="in-toc" data-toc-title="目录" data-toc-top="回到顶部" aria-label="目录"></nav>
+    <div class="in-progress" id="in-progress"></div>
+    <div class="in-post-body markdown-body"><markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>头文件</th>
+<th>类别</th>
+<th>常用内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">&lt;stdlib.h&gt;</code></td>
+<td>内存与通用</td>
+<td><code class="notranslate">malloc</code> / <code class="notranslate">free</code> / <code class="notranslate">atoi</code> / <code class="notranslate">strtol</code> / <code class="notranslate">qsort</code> / <code class="notranslate">rand</code> / <code class="notranslate">exit</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">&lt;math.h&gt;</code></td>
+<td>数学函数</td>
+<td><code class="notranslate">sqrt</code> / <code class="notranslate">pow</code> / <code class="notranslate">fabs</code> / <code class="notranslate">floor</code> / <code class="notranslate">ceil</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">&lt;limits.h&gt;</code> / <code class="notranslate">&lt;float.h&gt;</code></td>
+<td>数值极限</td>
+<td><code class="notranslate">INT_MAX</code> / <code class="notranslate">INT_MIN</code> / <code class="notranslate">CHAR_BIT</code> / <code class="notranslate">DBL_MAX</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">&lt;stdint.h&gt;</code></td>
+<td>定宽整型</td>
+<td><code class="notranslate">int32_t</code> / <code class="notranslate">uint64_t</code> / <code class="notranslate">intptr_t</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">&lt;time.h&gt;</code></td>
+<td>时间</td>
+<td><code class="notranslate">time</code> / <code class="notranslate">clock</code> / <code class="notranslate">difftime</code> / <code class="notranslate">strftime</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">&lt;assert.h&gt;</code></td>
+<td>断言</td>
+<td><code class="notranslate">assert</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">&lt;errno.h&gt;</code></td>
+<td>错误码</td>
+<td><code class="notranslate">errno</code> / <code class="notranslate">EDOM</code> / <code class="notranslate">ERANGE</code></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h2><code class="notranslate">&lt;stdlib.h&gt;</code> — 内存、转换、排序</h2>
+<p>内存分配、数字转换、排序查找、随机数等通用工具。</p>
+<h3>动态内存：<code class="notranslate">malloc</code> / <code class="notranslate">calloc</code> / <code class="notranslate">realloc</code> / <code class="notranslate">free</code></h3>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span> <span class="pl-s">&lt;stdio.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">&lt;stdlib.h&gt;</span>
+
+<span class="pl-smi">int</span> <span class="pl-en">main</span>(<span class="pl-smi">void</span>) {
+    <span class="pl-c">// malloc：分配 n 个字节（内容未初始化）</span>
+    <span class="pl-smi">int</span> <span class="pl-c1">*</span><span class="pl-s1">arr</span> <span class="pl-c1">=</span> (<span class="pl-smi">int</span> <span class="pl-c1">*</span>)<span class="pl-en">malloc</span>(<span class="pl-c1">5</span> <span class="pl-c1">*</span> <span class="pl-k">sizeof</span>(<span class="pl-smi">int</span>));
+    <span class="pl-k">if</span> (!<span class="pl-s1">arr</span>) <span class="pl-k">return</span> <span class="pl-c1">1</span>;               <span class="pl-c">// 务必检查 NULL</span>
+    <span class="pl-k">for</span> (<span class="pl-smi">int</span> <span class="pl-s1">i</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>; <span class="pl-s1">i</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">5</span>; <span class="pl-s1">i</span><span class="pl-c1">++</span>) <span class="pl-s1">arr</span>[<span class="pl-s1">i</span>] <span class="pl-c1">=</span> <span class="pl-s1">i</span>;
+    <span class="pl-en">free</span>(<span class="pl-s1">arr</span>);                        <span class="pl-c">// 用完释放，避免内存泄漏</span>
+
+    <span class="pl-c">// calloc：分配并全部清零（比 malloc+memset 更方便）</span>
+    <span class="pl-smi">int</span> <span class="pl-c1">*</span><span class="pl-s1">zero</span> <span class="pl-c1">=</span> (<span class="pl-smi">int</span> <span class="pl-c1">*</span>)<span class="pl-en">calloc</span>(<span class="pl-c1">5</span>, <span class="pl-k">sizeof</span>(<span class="pl-smi">int</span>));
+    <span class="pl-en">printf</span>(<span class="pl-s">"%d\n"</span>, <span class="pl-s1">zero</span>[<span class="pl-c1">3</span>]);          <span class="pl-c">// 0（已清零）</span>
+    <span class="pl-en">free</span>(<span class="pl-s1">zero</span>);
+
+    <span class="pl-c">// realloc：扩容（保留原数据）</span>
+    <span class="pl-smi">int</span> <span class="pl-c1">*</span><span class="pl-s1">grow</span> <span class="pl-c1">=</span> (<span class="pl-smi">int</span> <span class="pl-c1">*</span>)<span class="pl-en">malloc</span>(<span class="pl-c1">3</span> <span class="pl-c1">*</span> <span class="pl-k">sizeof</span>(<span class="pl-smi">int</span>));
+    <span class="pl-s1">grow</span>[<span class="pl-c1">0</span>] <span class="pl-c1">=</span> <span class="pl-c1">100</span>;
+    <span class="pl-s1">grow</span> <span class="pl-c1">=</span> (<span class="pl-smi">int</span> <span class="pl-c1">*</span>)<span class="pl-en">realloc</span>(<span class="pl-s1">grow</span>, <span class="pl-c1">6</span> <span class="pl-c1">*</span> <span class="pl-k">sizeof</span>(<span class="pl-smi">int</span>));   <span class="pl-c">// 扩到 6 个</span>
+    <span class="pl-s1">grow</span>[<span class="pl-c1">3</span>] <span class="pl-c1">=</span> <span class="pl-c1">400</span>;
+    <span class="pl-en">printf</span>(<span class="pl-s">"%d %d\n"</span>, <span class="pl-s1">grow</span>[<span class="pl-c1">0</span>], <span class="pl-s1">grow</span>[<span class="pl-c1">3</span>]); <span class="pl-c">// 100 400（原数据保留）</span>
+    <span class="pl-en">free</span>(<span class="pl-s1">grow</span>);
+    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre></div>
+<blockquote>
+<p><strong>区别</strong>：<code class="notranslate">malloc</code> 不初始化（可能是垃圾值），<code class="notranslate">calloc</code> 自动清零；<code class="notranslate">realloc</code> 在保留原内容的前提下扩容。三者失败都返回 <code class="notranslate">NULL</code>。</p>
+</blockquote>
+<h3>字符串 ↔ 数字转换：<code class="notranslate">atoi</code> / <code class="notranslate">strtol</code> / <code class="notranslate">strtod</code> / <code class="notranslate">atof</code></h3>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span> <span class="pl-s">&lt;stdio.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">&lt;stdlib.h&gt;</span>
+
+<span class="pl-smi">int</span> <span class="pl-en">main</span>(<span class="pl-smi">void</span>) {
+    <span class="pl-smi">int</span>    <span class="pl-s1">i</span> <span class="pl-c1">=</span> <span class="pl-en">atoi</span>(<span class="pl-s">"42"</span>);           <span class="pl-c">// 字符串 → int</span>
+    <span class="pl-smi">double</span> <span class="pl-s1">d</span> <span class="pl-c1">=</span> <span class="pl-en">atof</span>(<span class="pl-s">"3.14"</span>);         <span class="pl-c">// 字符串 → double</span>
+    <span class="pl-smi">long</span>   <span class="pl-s1">l</span> <span class="pl-c1">=</span> <span class="pl-en">strtol</span>(<span class="pl-s">"123abc"</span>, <span class="pl-c1">NULL</span>, <span class="pl-c1">10</span>);   <span class="pl-c">// 进制可指定（10=十进制）</span>
+
+    <span class="pl-c">// strtol 的 endptr：记录解析停在哪，便于提取"数字后面的部分"</span>
+    <span class="pl-smi">char</span> <span class="pl-c1">*</span><span class="pl-s1">end</span>;
+    <span class="pl-smi">long</span> <span class="pl-s1">v</span> <span class="pl-c1">=</span> <span class="pl-en">strtol</span>(<span class="pl-s">"42px"</span>, <span class="pl-c1">&amp;</span><span class="pl-s1">end</span>, <span class="pl-c1">10</span>);
+    <span class="pl-en">printf</span>(<span class="pl-s">"num=%ld, rest=%s\n"</span>, <span class="pl-s1">v</span>, <span class="pl-s1">end</span>);   <span class="pl-c">// num=42, rest=px</span>
+
+    <span class="pl-en">printf</span>(<span class="pl-s">"%d %.2f %ld\n"</span>, <span class="pl-s1">i</span>, <span class="pl-s1">d</span>, <span class="pl-s1">l</span>);
+    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre></div>
+<blockquote>
+<p>建议优先用 <code class="notranslate">strtol</code>/<code class="notranslate">strtod</code>（能判断是否转换失败、拿到解析终点）；<code class="notranslate">atoi</code>/<code class="notranslate">atof</code> 简单但不能报错。</p>
+</blockquote>
+<h3>排序与查找：<code class="notranslate">qsort</code> / <code class="notranslate">bsearch</code></h3>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span> <span class="pl-s">&lt;stdio.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">&lt;stdlib.h&gt;</span>
+
+<span class="pl-c">// 比较函数（qsort 的"回调"）</span>
+<span class="pl-smi">int</span> <span class="pl-en">cmp_int</span>(<span class="pl-k">const</span> <span class="pl-smi">void</span> <span class="pl-c1">*</span><span class="pl-s1">a</span>, <span class="pl-k">const</span> <span class="pl-smi">void</span> <span class="pl-c1">*</span><span class="pl-s1">b</span>) {
+    <span class="pl-k">return</span> <span class="pl-c1">*</span>(<span class="pl-smi">int</span> <span class="pl-c1">*</span>)<span class="pl-s1">a</span> <span class="pl-c1">-</span> <span class="pl-c1">*</span>(<span class="pl-smi">int</span> <span class="pl-c1">*</span>)<span class="pl-s1">b</span>;   <span class="pl-c">// 升序</span>
+}
+
+<span class="pl-smi">int</span> <span class="pl-en">main</span>(<span class="pl-smi">void</span>) {
+    <span class="pl-smi">int</span> <span class="pl-s1">arr</span>[] <span class="pl-c1">=</span> {<span class="pl-c1">3</span>, <span class="pl-c1">1</span>, <span class="pl-c1">4</span>, <span class="pl-c1">1</span>, <span class="pl-c1">5</span>, <span class="pl-c1">9</span>, <span class="pl-c1">2</span>};
+    <span class="pl-smi">int</span> <span class="pl-s1">n</span> <span class="pl-c1">=</span> <span class="pl-c1">7</span>;
+
+    <span class="pl-en">qsort</span>(<span class="pl-s1">arr</span>, <span class="pl-s1">n</span>, <span class="pl-k">sizeof</span>(<span class="pl-smi">int</span>), <span class="pl-s1">cmp_int</span>);   <span class="pl-c">// 排序</span>
+    <span class="pl-k">for</span> (<span class="pl-smi">int</span> <span class="pl-s1">i</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>; <span class="pl-s1">i</span> <span class="pl-c1">&lt;</span> <span class="pl-s1">n</span>; <span class="pl-s1">i</span><span class="pl-c1">++</span>) <span class="pl-en">printf</span>(<span class="pl-s">"%d "</span>, <span class="pl-s1">arr</span>[<span class="pl-s1">i</span>]);  <span class="pl-c">// 1 1 2 3 4 5 9</span>
+
+    <span class="pl-c">// bsearch：在已排序数组中查找</span>
+    <span class="pl-smi">int</span> <span class="pl-s1">key</span> <span class="pl-c1">=</span> <span class="pl-c1">4</span>;
+    <span class="pl-smi">int</span> <span class="pl-c1">*</span><span class="pl-s1">found</span> <span class="pl-c1">=</span> (<span class="pl-smi">int</span> <span class="pl-c1">*</span>)<span class="pl-en">bsearch</span>(<span class="pl-c1">&amp;</span><span class="pl-s1">key</span>, <span class="pl-s1">arr</span>, <span class="pl-s1">n</span>, <span class="pl-k">sizeof</span>(<span class="pl-smi">int</span>), <span class="pl-s1">cmp_int</span>);
+    <span class="pl-k">if</span> (<span class="pl-s1">found</span>) <span class="pl-en">printf</span>(<span class="pl-s">"\nfound: %d\n"</span>, <span class="pl-c1">*</span><span class="pl-s1">found</span>);   <span class="pl-c">// found: 4</span>
+    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre></div>
+<h3>其他：<code class="notranslate">exit</code> / <code class="notranslate">abort</code> / <code class="notranslate">abs</code></h3>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span> <span class="pl-s">&lt;stdlib.h&gt;</span>
+
+<span class="pl-c">// exit(code)：正常退出程序，code 返回给操作系统（0 表示成功）</span>
+<span class="pl-k">if</span> (<span class="pl-s1">bad</span>) <span class="pl-en">exit</span>(<span class="pl-c1">1</span>);
+<span class="pl-c">// abort()：异常终止（立即中止）</span>
+<span class="pl-smi">int</span> <span class="pl-s1">v</span> <span class="pl-c1">=</span> <span class="pl-en">abs</span>(<span class="pl-c1">-7</span>);   <span class="pl-c">// 绝对值 → 7</span></pre></div>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">malloc</code> / <code class="notranslate">calloc</code> / <code class="notranslate">realloc</code> / <code class="notranslate">free</code></td>
+<td>动态内存管理（分配/清零/扩容/释放）</td>
+</tr>
+<tr>
+<td><code class="notranslate">atoi</code> / <code class="notranslate">atol</code> / <code class="notranslate">atof</code></td>
+<td>字符串 → int / long / double</td>
+</tr>
+<tr>
+<td><code class="notranslate">strtol</code> / <code class="notranslate">strtod</code></td>
+<td>更稳健的字符串转换（可获取解析终点）</td>
+</tr>
+<tr>
+<td><code class="notranslate">qsort</code> / <code class="notranslate">bsearch</code></td>
+<td>排序 / 二分查找（需自定义比较函数）</td>
+</tr>
+<tr>
+<td><code class="notranslate">rand</code> / <code class="notranslate">srand</code></td>
+<td>伪随机数 / 设置种子</td>
+</tr>
+<tr>
+<td><code class="notranslate">exit</code> / <code class="notranslate">abort</code></td>
+<td>退出程序</td>
+</tr>
+<tr>
+<td><code class="notranslate">abs</code></td>
+<td>整型绝对值</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>随机数（<code class="notranslate">rand</code> / <code class="notranslate">srand</code>）</h3>
+<p>C 的随机数函数在 <code class="notranslate">&lt;stdlib.h&gt;</code> 中：<code class="notranslate">rand()</code> 返回一个 <code class="notranslate">0</code> 到 <code class="notranslate">RAND_MAX</code> 之间的<strong>伪随机整数</strong>，<code class="notranslate">srand()</code> 设置随机种子。</p>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span> <span class="pl-s">&lt;stdio.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">&lt;stdlib.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">&lt;time.h&gt;</span>
+
+<span class="pl-smi">int</span> <span class="pl-en">main</span>(<span class="pl-smi">void</span>) {
+    <span class="pl-en">srand</span>(<span class="pl-en">time</span>(<span class="pl-c1">NULL</span>));              <span class="pl-c">// 用当前时间做种子，每次运行结果不同</span>
+    <span class="pl-smi">int</span> <span class="pl-s1">r</span> <span class="pl-c1">=</span> <span class="pl-en">rand</span>();                 <span class="pl-c">// 0 ~ RAND_MAX</span>
+    <span class="pl-en">printf</span>(<span class="pl-s">"RAND_MAX = %d\n"</span>, <span class="pl-c1">RAND_MAX</span>);   <span class="pl-c">// 通常是 32767 或 2147483647</span>
+    <span class="pl-en">printf</span>(<span class="pl-s">"r = %d\n"</span>, <span class="pl-s1">r</span>);
+    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre></div>
+<blockquote>
+<p>若不调用 <code class="notranslate">srand()</code>，默认种子为 1，每次运行得到的序列<strong>相同</strong>。想每次不同，通常用 <code class="notranslate">srand(time(NULL))</code> 初始化。</p>
+</blockquote>
+<p>生成指定范围：</p>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">int</span> <span class="pl-s1">a</span> <span class="pl-c1">=</span> <span class="pl-en">rand</span>() % <span class="pl-c1">100</span>;          <span class="pl-c">// 0 ~ 99</span>
+<span class="pl-smi">int</span> <span class="pl-s1">b</span> <span class="pl-c1">=</span> <span class="pl-en">rand</span>() % <span class="pl-c1">100</span> <span class="pl-c1">+</span> <span class="pl-c1">1</span>;      <span class="pl-c">// 1 ~ 100</span>
+<span class="pl-smi">double</span> <span class="pl-s1">d</span> <span class="pl-c1">=</span> (<span class="pl-smi">double</span>)<span class="pl-en">rand</span>() / <span class="pl-c1">RAND_MAX</span>;          <span class="pl-c">// 0.0 ~ 1.0</span>
+<span class="pl-smi">double</span> <span class="pl-s1">e</span> <span class="pl-c1">=</span> <span class="pl-c1">5.0</span> <span class="pl-c1">+</span> (<span class="pl-smi">double</span>)<span class="pl-en">rand</span>() / <span class="pl-c1">RAND_MAX</span> <span class="pl-c1">*</span> <span class="pl-c1">10.0</span>; <span class="pl-c">// 5.0 ~ 15.0</span></pre></div>
+<p><strong>常见误区</strong>：<code class="notranslate">rand() % n</code> 在 <code class="notranslate">n</code> 不能整除 <code class="notranslate">RAND_MAX+1</code> 时分布<strong>不完全均匀</strong>（低余数出现概率略高）。对要求不严的入门/练习足够，严格均匀可用下面的方法：</p>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-c">// 均匀的 [0, n) 随机数（拒绝采样，避免取模偏差）</span>
+<span class="pl-smi">int</span> <span class="pl-en">rand_uniform</span>(<span class="pl-smi">int</span> <span class="pl-s1">n</span>) {
+    <span class="pl-smi">int</span> <span class="pl-s1">limit</span> <span class="pl-c1">=</span> <span class="pl-c1">RAND_MAX</span> <span class="pl-c1">-</span> <span class="pl-c1">RAND_MAX</span> % <span class="pl-s1">n</span>;
+    <span class="pl-smi">int</span> <span class="pl-s1">r</span>;
+    <span class="pl-k">do</span> {
+        <span class="pl-s1">r</span> <span class="pl-c1">=</span> <span class="pl-en">rand</span>();
+    } <span class="pl-k">while</span> (<span class="pl-s1">r</span> &gt;= <span class="pl-s1">limit</span>);   <span class="pl-c">// 丢弃末尾不能整除的部分</span>
+    <span class="pl-k">return</span> <span class="pl-s1">r</span> % <span class="pl-s1">n</span>;
+}</pre></div>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">rand()</code></td>
+<td>返回 <code class="notranslate">[0, RAND_MAX]</code> 伪随机整数</td>
+</tr>
+<tr>
+<td><code class="notranslate">srand(seed)</code></td>
+<td>设种子；<code class="notranslate">srand(time(NULL))</code> 每次不同</td>
+</tr>
+<tr>
+<td><code class="notranslate">rand() % n</code></td>
+<td>生成 <code class="notranslate">[0, n)</code>，有轻微不均匀（可接受）</td>
+</tr>
+<tr>
+<td>均匀生成</td>
+<td>用拒绝采样（见上）</td>
+</tr>
+<tr>
+<td>安全性</td>
+<td><code class="notranslate">rand</code> 是伪随机、<strong>不可用于加密</strong>；需要密码学安全随机用系统接口（如 <code class="notranslate">/dev/urandom</code>、<code class="notranslate">getrandom</code>）</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h2><code class="notranslate">&lt;math.h&gt;</code> — 数学函数</h2>
+<p>需在编译时链接数学库：<code class="notranslate">gcc main.c -o main -lm</code>。</p>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span> <span class="pl-s">&lt;stdio.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">&lt;math.h&gt;</span>
+
+<span class="pl-smi">int</span> <span class="pl-en">main</span>(<span class="pl-smi">void</span>) {
+    <span class="pl-c">// 幂与根</span>
+    <span class="pl-smi">double</span> <span class="pl-s1">root</span> <span class="pl-c1">=</span> <span class="pl-en">sqrt</span>(<span class="pl-c1">16.0</span>);      <span class="pl-c">// 4.0</span>
+    <span class="pl-smi">double</span> <span class="pl-s1">cbrt_val</span> <span class="pl-c1">=</span> <span class="pl-en">cbrt</span>(<span class="pl-c1">27.0</span>);  <span class="pl-c">// 3.0</span>
+    <span class="pl-smi">double</span> <span class="pl-s1">pw</span> <span class="pl-c1">=</span> <span class="pl-en">pow</span>(<span class="pl-c1">2</span>, <span class="pl-c1">10</span>);        <span class="pl-c">// 1024.0</span>
+    <span class="pl-smi">double</span> <span class="pl-s1">rem</span> <span class="pl-c1">=</span> <span class="pl-en">fmod</span>(<span class="pl-c1">7.5</span>, <span class="pl-c1">2.0</span>);   <span class="pl-c">// 1.5（浮点取余）</span>
+
+    <span class="pl-c">// 绝对值与取整</span>
+    <span class="pl-smi">double</span> <span class="pl-s1">absv</span> <span class="pl-c1">=</span> <span class="pl-en">fabs</span>(<span class="pl-c1">-3.5</span>);      <span class="pl-c">// 3.5</span>
+    <span class="pl-smi">double</span> <span class="pl-s1">fl</span> <span class="pl-c1">=</span> <span class="pl-en">floor</span>(<span class="pl-c1">3.7</span>);        <span class="pl-c">// 3.0（向下）</span>
+    <span class="pl-smi">double</span> <span class="pl-s1">ce</span> <span class="pl-c1">=</span> <span class="pl-en">ceil</span>(<span class="pl-c1">3.2</span>);         <span class="pl-c">// 4.0（向上）</span>
+    <span class="pl-smi">double</span> <span class="pl-s1">rd</span> <span class="pl-c1">=</span> <span class="pl-en">round</span>(<span class="pl-c1">3.5</span>);        <span class="pl-c">// 4.0（四舍五入）</span>
+    <span class="pl-smi">double</span> <span class="pl-s1">tr</span> <span class="pl-c1">=</span> <span class="pl-en">trunc</span>(<span class="pl-c1">3.7</span>);        <span class="pl-c">// 3.0（截断，直接丢小数）</span>
+
+    <span class="pl-c">// 对数与指数</span>
+    <span class="pl-smi">double</span> <span class="pl-s1">lg</span> <span class="pl-c1">=</span> <span class="pl-en">log</span>(<span class="pl-c1">2.71828</span>);      <span class="pl-c">// ≈1.0（自然对数 ln）</span>
+    <span class="pl-smi">double</span> <span class="pl-s1">lg10</span> <span class="pl-c1">=</span> <span class="pl-en">log10</span>(<span class="pl-c1">100.0</span>);    <span class="pl-c">// 2.0（常用对数）</span>
+    <span class="pl-smi">double</span> <span class="pl-s1">ex</span> <span class="pl-c1">=</span> <span class="pl-en">exp</span>(<span class="pl-c1">1.0</span>);          <span class="pl-c">// 2.71828（e^x）</span>
+
+    <span class="pl-c">// 三角函数（角度需转弧度：rad = deg * M_PI / 180）</span>
+    <span class="pl-smi">double</span> <span class="pl-s1">s</span> <span class="pl-c1">=</span> <span class="pl-en">sin</span>(<span class="pl-c1">3.14159</span> / <span class="pl-c1">2</span>);   <span class="pl-c">// ≈1.0</span>
+    <span class="pl-smi">double</span> <span class="pl-s1">c</span> <span class="pl-c1">=</span> <span class="pl-en">cos</span>(<span class="pl-c1">0</span>);             <span class="pl-c">// 1.0</span>
+    <span class="pl-smi">double</span> <span class="pl-s1">t</span> <span class="pl-c1">=</span> <span class="pl-en">tan</span>(<span class="pl-c1">3.14159</span> / <span class="pl-c1">4</span>);   <span class="pl-c">// ≈1.0</span>
+    <span class="pl-smi">double</span> <span class="pl-s1">a</span> <span class="pl-c1">=</span> <span class="pl-en">atan</span>(<span class="pl-c1">1.0</span>);          <span class="pl-c">// π/4（反正切）</span>
+
+    <span class="pl-en">printf</span>(<span class="pl-s">"%.1f %.1f\n"</span>, <span class="pl-s1">root</span>, <span class="pl-s1">pw</span>);
+    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre></div>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">sqrt</code> / <code class="notranslate">cbrt</code></td>
+<td>平方根 / 立方根</td>
+</tr>
+<tr>
+<td><code class="notranslate">pow</code> / <code class="notranslate">fmod</code></td>
+<td>幂 / 浮点取余</td>
+</tr>
+<tr>
+<td><code class="notranslate">fabs</code></td>
+<td>绝对值</td>
+</tr>
+<tr>
+<td><code class="notranslate">floor</code> / <code class="notranslate">ceil</code> / <code class="notranslate">round</code> / <code class="notranslate">trunc</code></td>
+<td>向下 / 向上 / 四舍五入 / 截断取整</td>
+</tr>
+<tr>
+<td><code class="notranslate">log</code> / <code class="notranslate">log10</code> / <code class="notranslate">exp</code></td>
+<td>自然对数 / 常用对数 / e 的幂</td>
+</tr>
+<tr>
+<td><code class="notranslate">sin</code> / <code class="notranslate">cos</code> / <code class="notranslate">tan</code> / <code class="notranslate">atan</code></td>
+<td>三角函数（输入弧度）</td>
+</tr>
+<tr>
+<td><code class="notranslate">hypot(a, b)</code></td>
+<td>计算 <code class="notranslate">sqrt(a²+b²)</code>（防溢出）</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<blockquote>
+<p><strong>角度转弧度</strong>：<code class="notranslate">rad = deg * M_PI / 180</code>；<code class="notranslate">M_PI</code> 定义在 <code class="notranslate">&lt;math.h&gt;</code>（部分编译器需 <code class="notranslate">#define _USE_MATH_DEFINES</code> 或自行定义 <code class="notranslate">const double PI = 3.14159...</code>）。</p>
+</blockquote>
+<h2><code class="notranslate">&lt;limits.h&gt;</code> 与 <code class="notranslate">&lt;stdint.h&gt;</code> — 数值极限与定宽整型</h2>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span> <span class="pl-s">&lt;stdio.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">&lt;limits.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">&lt;stdint.h&gt;</span>
+
+<span class="pl-smi">int</span> <span class="pl-en">main</span>(<span class="pl-smi">void</span>) {
+    <span class="pl-c">// 各类型极限</span>
+    <span class="pl-en">printf</span>(<span class="pl-s">"%d\n"</span>, <span class="pl-c1">INT_MAX</span>);        <span class="pl-c">// 2147483647</span>
+    <span class="pl-en">printf</span>(<span class="pl-s">"%d\n"</span>, <span class="pl-c1">INT_MIN</span>);        <span class="pl-c">// -2147483648</span>
+    <span class="pl-en">printf</span>(<span class="pl-s">"%d\n"</span>, <span class="pl-c1">CHAR_BIT</span>);       <span class="pl-c">// 8（一个 char 的位数）</span>
+
+    <span class="pl-c">// 定宽整型：保证跨平台位宽一致</span>
+    <span class="pl-smi">int32_t</span> <span class="pl-s1">i32</span> <span class="pl-c1">=</span> <span class="pl-c1">100</span>;              <span class="pl-c">// 固定 4 字节有符号</span>
+    <span class="pl-smi">uint64_t</span> <span class="pl-s1">big</span> <span class="pl-c1">=</span> <span class="pl-c1">10000000000ULL</span>;  <span class="pl-c">// 固定 8 字节无符号</span>
+    <span class="pl-en">printf</span>(<span class="pl-s">"%lld\n"</span>, (<span class="pl-smi">long long</span>)<span class="pl-s1">big</span>);
+
+    <span class="pl-c">// 判断溢出：比较与 INT_MAX</span>
+    <span class="pl-k">if</span> (<span class="pl-s1">i32</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">INT_MAX</span>) <span class="pl-s1">i32</span><span class="pl-c1">++</span>;
+    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre></div>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>内容</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">INT_MAX</code> / <code class="notranslate">INT_MIN</code> / <code class="notranslate">CHAR_BIT</code></td>
+<td>各类型极限 / 位数</td>
+</tr>
+<tr>
+<td><code class="notranslate">SHRT_MAX</code> / <code class="notranslate">LONG_MAX</code> / <code class="notranslate">LLONG_MAX</code></td>
+<td>short / long / long long 的极限</td>
+</tr>
+<tr>
+<td><code class="notranslate">int32_t</code> / <code class="notranslate">uint64_t</code></td>
+<td>定宽整型（跨平台保证位宽）</td>
+</tr>
+<tr>
+<td><code class="notranslate">intptr_t</code> / <code class="notranslate">size_t</code></td>
+<td>指针大小 / 无符号大小类型</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<blockquote>
+<p><strong>为什么需要定宽整型</strong>：<code class="notranslate">int</code> 在不同平台可能是 16/32/64 位，写跨平台代码时用 <code class="notranslate">int32_t</code> 等可保证行为一致。C++ 同样支持这些类型（<code class="notranslate">&lt;cstdint&gt;</code>）。</p>
+</blockquote>
+<hr>
+<h2><code class="notranslate">&lt;time.h&gt;</code> 与 <code class="notranslate">&lt;assert.h&gt;</code></h2>
+<h3>计时与日期</h3>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span> <span class="pl-s">&lt;stdio.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">&lt;time.h&gt;</span>
+
+<span class="pl-smi">int</span> <span class="pl-en">main</span>(<span class="pl-smi">void</span>) {
+    <span class="pl-c">// 计时（秒）：clock 返回 CPU 时间</span>
+    <span class="pl-smi">clock_t</span> <span class="pl-s1">start</span> <span class="pl-c1">=</span> <span class="pl-en">clock</span>();
+    <span class="pl-k">for</span> (<span class="pl-k">volatile</span> <span class="pl-smi">int</span> <span class="pl-s1">i</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>; <span class="pl-s1">i</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">100000000</span>; <span class="pl-s1">i</span><span class="pl-c1">++</span>);
+    <span class="pl-smi">clock_t</span> <span class="pl-s1">end</span> <span class="pl-c1">=</span> <span class="pl-en">clock</span>();
+    <span class="pl-en">printf</span>(<span class="pl-s">"elapsed: %.2f s\n"</span>, (<span class="pl-smi">double</span>)(<span class="pl-s1">end</span> <span class="pl-c1">-</span> <span class="pl-s1">start</span>) / <span class="pl-c1">CLOCKS_PER_SEC</span>);
+
+    <span class="pl-c">// 当前时间戳（自 1970-1-1 起的秒数）</span>
+    <span class="pl-smi">time_t</span> <span class="pl-s1">now</span> <span class="pl-c1">=</span> <span class="pl-en">time</span>(<span class="pl-c1">NULL</span>);
+    <span class="pl-en">printf</span>(<span class="pl-s">"timestamp: %ld\n"</span>, (<span class="pl-smi">long</span>)<span class="pl-s1">now</span>);
+
+    <span class="pl-c">// 时间戳 → 本地时间（结构化）</span>
+    <span class="pl-k">struct</span> <span class="pl-smi">tm</span> <span class="pl-c1">*</span><span class="pl-s1">lt</span> <span class="pl-c1">=</span> <span class="pl-en">localtime</span>(<span class="pl-c1">&amp;</span><span class="pl-s1">now</span>);
+    <span class="pl-en">printf</span>(<span class="pl-s">"year=%d month=%d day=%d\n"</span>,
+           <span class="pl-s1">lt</span><span class="pl-c1">-&gt;</span><span class="pl-c1">tm_year</span> <span class="pl-c1">+</span> <span class="pl-c1">1900</span>, <span class="pl-s1">lt</span><span class="pl-c1">-&gt;</span><span class="pl-c1">tm_mon</span> <span class="pl-c1">+</span> <span class="pl-c1">1</span>, <span class="pl-s1">lt</span><span class="pl-c1">-&gt;</span><span class="pl-c1">tm_mday</span>);
+
+    <span class="pl-c">// 格式化输出日期</span>
+    <span class="pl-smi">char</span> <span class="pl-s1">buf</span>[<span class="pl-c1">64</span>];
+    <span class="pl-en">strftime</span>(<span class="pl-s1">buf</span>, <span class="pl-k">sizeof</span>(<span class="pl-s1">buf</span>), <span class="pl-s">"%Y-%m-%d %H:%M:%S"</span>, <span class="pl-s1">lt</span>);
+    <span class="pl-en">printf</span>(<span class="pl-s">"now: %s\n"</span>, <span class="pl-s1">buf</span>);        <span class="pl-c">// 如 2026-10-15 14:30:00</span>
+
+    <span class="pl-c">// 两个时间戳差值（秒）</span>
+    <span class="pl-smi">time_t</span> <span class="pl-s1">later</span> <span class="pl-c1">=</span> <span class="pl-s1">now</span> <span class="pl-c1">+</span> <span class="pl-c1">3600</span>;       <span class="pl-c">// 一小时后</span>
+    <span class="pl-en">printf</span>(<span class="pl-s">"diff: %.0f s\n"</span>, <span class="pl-en">difftime</span>(<span class="pl-s1">later</span>, <span class="pl-s1">now</span>));   <span class="pl-c">// 3600</span>
+    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre></div>
+<h3><code class="notranslate">assert</code> 断言</h3>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span> <span class="pl-s">&lt;assert.h&gt;</span>
+
+<span class="pl-smi">int</span> <span class="pl-en">main</span>(<span class="pl-smi">void</span>) {
+    <span class="pl-smi">int</span> <span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-c1">5</span>;
+    <span class="pl-en">assert</span>(<span class="pl-s1">x</span> <span class="pl-c1">==</span> <span class="pl-c1">5</span>);      <span class="pl-c">// 条件为真，继续执行</span>
+    <span class="pl-c">// assert(x == 10);  // 条件为假，中止并报告错误位置</span>
+    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre></div>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>内容</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">time(NULL)</code></td>
+<td>当前时间戳（秒）</td>
+</tr>
+<tr>
+<td><code class="notranslate">difftime(a, b)</code></td>
+<td>两时间戳差值（秒）</td>
+</tr>
+<tr>
+<td><code class="notranslate">clock</code> / <code class="notranslate">CLOCKS_PER_SEC</code></td>
+<td>CPU 计时</td>
+</tr>
+<tr>
+<td><code class="notranslate">localtime</code> / <code class="notranslate">mktime</code></td>
+<td>时间戳 ↔ 结构化 <code class="notranslate">struct tm</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">strftime</code></td>
+<td>格式化时间字符串（<code class="notranslate">%Y</code>年 <code class="notranslate">%m</code>月 <code class="notranslate">%d</code>日 <code class="notranslate">%H</code>时等）</td>
+</tr>
+<tr>
+<td><code class="notranslate">assert(expr)</code></td>
+<td>条件为假则报错退出（调试用，可用 <code class="notranslate">-DNDEBUG</code> 关闭）</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>使用速查</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>需求</th>
+<th>包含</th>
+<th>函数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>动态数组 / 数字转换</td>
+<td><code class="notranslate">&lt;stdlib.h&gt;</code></td>
+<td><code class="notranslate">malloc</code> / <code class="notranslate">atoi</code> / <code class="notranslate">strtol</code> / <code class="notranslate">qsort</code></td>
+</tr>
+<tr>
+<td>随机数</td>
+<td><code class="notranslate">&lt;stdlib.h&gt;</code></td>
+<td><code class="notranslate">rand</code> / <code class="notranslate">srand</code></td>
+</tr>
+<tr>
+<td>数学计算</td>
+<td><code class="notranslate">&lt;math.h&gt;</code>（<code class="notranslate">-lm</code>）</td>
+<td><code class="notranslate">sqrt</code> / <code class="notranslate">pow</code> / <code class="notranslate">fabs</code> / <code class="notranslate">floor</code></td>
+</tr>
+<tr>
+<td>数值极限</td>
+<td><code class="notranslate">&lt;limits.h&gt;</code></td>
+<td><code class="notranslate">INT_MAX</code></td>
+</tr>
+<tr>
+<td>定宽整型</td>
+<td><code class="notranslate">&lt;stdint.h&gt;</code></td>
+<td><code class="notranslate">int32_t</code></td>
+</tr>
+<tr>
+<td>时间 / 断言</td>
+<td><code class="notranslate">&lt;time.h&gt;</code> / <code class="notranslate">&lt;assert.h&gt;</code></td>
+<td><code class="notranslate">time</code> / <code class="notranslate">strftime</code> / <code class="notranslate">assert</code></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>这些库在 C++ 里的对应关系</h2>
+<p>C 标准库函数在 C++ 中<strong>依然可用</strong>（对应 C++ 头文件是去掉 <code class="notranslate">.h</code> 加 <code class="notranslate">c</code> 前缀，且都在 <code class="notranslate">std</code> 命名空间），但 C++ 通常有更安全、更简洁的替代：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>C 用法</th>
+<th>C++ 头文件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">printf</code> / <code class="notranslate">scanf</code></td>
+<td><code class="notranslate">&lt;cstdio&gt;</code></td>
+<td>仍可用；但 C++ 更常用 <code class="notranslate">std::cout</code> / <code class="notranslate">std::cin</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">strlen</code> / <code class="notranslate">strcpy</code></td>
+<td><code class="notranslate">&lt;cstring&gt;</code></td>
+<td>仍可用；但 C++ 有 <code class="notranslate">std::string</code>（自动管理，不用管 <code class="notranslate">\0</code>）</td>
+</tr>
+<tr>
+<td><code class="notranslate">malloc</code> / <code class="notranslate">free</code></td>
+<td><code class="notranslate">&lt;cstdlib&gt;</code></td>
+<td>仍可用；但 C++ 用 <code class="notranslate">new</code> / <code class="notranslate">delete</code>（构造/析构）</td>
+</tr>
+<tr>
+<td><code class="notranslate">qsort</code></td>
+<td><code class="notranslate">&lt;cstdlib&gt;</code></td>
+<td>仍可用；但 C++ 更常用 <code class="notranslate">std::sort</code>（更安全、支持泛型）</td>
+</tr>
+<tr>
+<td><code class="notranslate">atoi</code> / <code class="notranslate">strtol</code></td>
+<td><code class="notranslate">&lt;cstdlib&gt;</code></td>
+<td>仍可用；但 C++ 更常用 <code class="notranslate">std::stoi</code> / <code class="notranslate">std::stoll</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">sqrt</code> / <code class="notranslate">pow</code></td>
+<td><code class="notranslate">&lt;cmath&gt;</code></td>
+<td>与 C 完全相同，直接 <code class="notranslate">std::sqrt</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">rand</code></td>
+<td><code class="notranslate">&lt;cstdlib&gt;</code></td>
+<td>仍可用；但 C++11 起推荐 <code class="notranslate">&lt;random&gt;</code> 的 <code class="notranslate">std::mt19937</code></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<div class="highlight highlight-source-c++"><pre class="notranslate"><span class="pl-c"><span class="pl-c">//</span> C++ 风格替代示例</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>string<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>vector<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>algorithm<span class="pl-pds">&gt;</span></span>
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+    std::string s = <span class="pl-s"><span class="pl-pds">"</span>Hello<span class="pl-pds">"</span></span>;           <span class="pl-c"><span class="pl-c">//</span> 替代 char[] + strcpy</span>
+    std::cout &lt;&lt; s.<span class="pl-c1">size</span>() &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span><span class="pl-pds">"</span></span>;     <span class="pl-c"><span class="pl-c">//</span> 替代 strlen</span>
+
+    std::vector&lt;<span class="pl-k">int</span>&gt; v = {<span class="pl-c1">3</span>, <span class="pl-c1">1</span>, <span class="pl-c1">4</span>, <span class="pl-c1">1</span>, <span class="pl-c1">5</span>};
+    <span class="pl-c1">std::sort</span>(v.<span class="pl-c1">begin</span>(), v.<span class="pl-c1">end</span>());     <span class="pl-c"><span class="pl-c">//</span> 替代 qsort，不用写比较函数</span>
+
+    <span class="pl-k">int</span> n = <span class="pl-c1">std::stoi</span>(<span class="pl-s"><span class="pl-pds">"</span>42<span class="pl-pds">"</span></span>);           <span class="pl-c"><span class="pl-c">//</span> 替代 atoi</span>
+    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre></div></div>
+    <details class="in-series-list" open aria-label="Series">
+      <summary>C 语言基础</summary>
+      <ol>
+        <li><a href="https://interset-wq.github.io/blog/post/82_6187065277.html">C 常用库：输入输出与字符串</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/82_6187065649.html">C 常用库：数值、内存与工具</a></li>
+      </ol>
+    </details>
+    <nav class="in-series-pager" aria-label="Series pages">
+      <a class="in-series-prev" href="https://interset-wq.github.io/blog/post/82_6187065277.html">C 常用库：输入输出与字符串</a>
+    </nav>
+  </article>
+<section class="in-comments-section">
+  <template id="in-giscus-template">
+    <script src="https://giscus.app/client.js"
+      data-repo="interset-wq/blog"
+      data-repo-id="R_kgDOTWqpPQ"
+      data-category="Announcements"
+      data-category-id="DIC_kwDOTWqpPc4DBFW-"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="light"
+      data-lang="zh-CN"
+      crossorigin="anonymous"
+      async></script>
+  </template>
+  <div class="in-comments-container" id="comments"></div>
+</section>  <div id="in-fab" class="in-fab"
+       data-toc-title="目录"
+       data-top-title="回到顶部"
+       data-bottom-title="下一页"></div>
+</main>
+  <footer class="in-site-footer" id="footer"><div class="in-footer-icons" id="footer-icons" data-copied="已复制">
+  <a class="in-nav-btn in-social" href="https://space.bilibili.com/3546586772670802" target="_blank" rel="noopener" title="Bilibili" aria-label="Bilibili"><svg fill="#00A1D6" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Bilibili</title><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373Z"/></svg></a>
+  <a class="in-nav-btn in-social" href="mailto:intersetwq@gmail.com" target="_blank" rel="noopener" title="Email" aria-label="Email"><svg fill="#EA4335" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gmail</title><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg></a>
+  <button class="in-nav-btn in-social" type="button" title="QQ" aria-label="QQ" data-copy="2775055258"><svg fill="#1EBAFC" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>QQ</title><path d="M21.395 15.035a40 40 0 0 0-.803-2.264l-1.079-2.695c.001-.032.014-.562.014-.836C19.526 4.632 17.351 0 12 0S4.474 4.632 4.474 9.241c0 .274.013.804.014.836l-1.08 2.695a39 39 0 0 0-.802 2.264c-1.021 3.283-.69 4.643-.438 4.673.54.065 2.103-2.472 2.103-2.472 0 1.469.756 3.387 2.394 4.771-.612.188-1.363.479-1.845.835-.434.32-.379.646-.301.778.343.578 5.883.369 7.482.189 1.6.18 7.14.389 7.483-.189.078-.132.132-.458-.301-.778-.483-.356-1.233-.646-1.846-.836 1.637-1.384 2.393-3.302 2.393-4.771 0 0 1.563 2.537 2.103 2.472.251-.03.581-1.39-.438-4.673"/></svg></button>
+  <button class="in-nav-btn in-social" type="button" title="WeChat" aria-label="WeChat" data-qrcode="https://interset-wq.github.io/blog/wechat-qr.jpg"><svg fill="#07C160" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>WeChat</title><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/></svg></button>
+  <a class="in-nav-btn in-social" href="https://interset-wq.github.io/blog/rss.xml" target="_blank" rel="noopener" title="RSS" aria-label="RSS"><svg fill="#FFA500" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>RSS</title><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/></svg></a>
+  <a class="in-nav-btn in-social" href="https://github.com/interset-wq/blog" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><svg fill="#181717" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+</div>
+<div class="in-footer-line" id="footer-copyright">
+  Copyright &copy; <span id="copyright-year"></span>
+  <a href="https://interset-wq.github.io/blog">InterNote</a>
+</div>
+<div class="in-footer-powered" id="footer-powered">
+  <span id="run-days"></span>
+  <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
+</div>
+<div class="in-footer-built">构建部署于 2026-10-15 15:40:38</div>
+<script>
+  (function () {
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    var days = Math.floor(
+      (Date.now() - new Date('2026-09-30').getTime()) / 86400000
+    );
+    document.getElementById('run-days').textContent =
+      '网站运行 ' + days + ' 天 • ';
+
+    // [[social]] copy + qrcode actions. Everything is data-driven from the
+    // server-rendered buttons; with no such buttons this is a no-op.
+    var icons = document.getElementById('footer-icons');
+    if (!icons.querySelector('[data-copy], [data-qrcode]')) {
+      return;
+    }
+
+    var toast = document.createElement('div');
+    toast.className = 'in-social-toast';
+    toast.hidden = true;
+    document.body.appendChild(toast);
+    var toastTimer = null;
+    function showToast(text) {
+      toast.textContent = text;
+      toast.hidden = false;
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () { toast.hidden = true; }, 1600);
+    }
+
+    var overlay = document.createElement('div');
+    overlay.className = 'in-social-qr';
+    overlay.hidden = true;
+    var img = document.createElement('img');
+    img.alt = '';
+    overlay.appendChild(img);
+    document.body.appendChild(overlay);
+    function closeOverlay() { overlay.hidden = true; }
+    overlay.addEventListener('click', closeOverlay);
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') { closeOverlay(); }
+    });
+
+    icons.addEventListener('click', function (event) {
+      var button = event.target.closest('[data-copy], [data-qrcode]');
+      if (!button) { return; }
+      if (button.dataset.copy) {
+        navigator.clipboard.writeText(button.dataset.copy).then(function () {
+          showToast(icons.dataset.copied || 'Copied!');
+        });
+      } else if (button.dataset.qrcode) {
+        img.src = button.dataset.qrcode;
+        overlay.hidden = false;
+      }
+    });
+  })();
+</script></footer>
+  <script src="https://interset-wq.github.io/blog/plugins/theme.js"></script>
+  <script id="internote-search" src="https://interset-wq.github.io/blog/plugins/search.js"
+    data-index-url="https://interset-wq.github.io/blog/search-index.json"
+    data-placeholder="搜索"
+    data-no-results="未找到结果"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/giscus.js"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/toc.js"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/fab.js"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/lightbox.js"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/code-copy.js"></script>
+  <script>
+    (function () {
+      'use strict';
+      var bar = document.getElementById('in-progress');
+      var body = document.querySelector('.in-post-body');
+      function update() {
+        var start = body.offsetTop - 80;
+        var end = body.offsetTop + body.offsetHeight - window.innerHeight + 40;
+        var t = (window.scrollY - start) / Math.max(end - start, 1);
+        bar.style.transform = 'scaleX(' + Math.min(Math.max(t, 0), 1) + ')';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
+  
+</body>
+</html>
