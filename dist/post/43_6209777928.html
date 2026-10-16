@@ -137,7 +137,8 @@
 <span class="pl-c"># suffixes=('','_prev')：同名列加后缀区分，默认 _x/_y</span></pre></div>
 <p>也可以用 <code class="notranslate">df1.merge(df2, ...)</code> 调用，效果相同。</p>
 <h3>真题实例 1：LEFT JOIN + 空值筛（找没下过单的顾客）</h3>
-<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c"># customers: id, name ；orders: id, customerId</span>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c"># customers: id, name</span>
+<span class="pl-c"># orders: id, customerId</span>
 <span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">df</span> <span class="pl-c1">=</span> <span class="pl-s1">customers</span>.<span class="pl-c1">merge</span>(<span class="pl-s1">orders</span>, <span class="pl-s1">left_on</span><span class="pl-c1">=</span><span class="pl-s">'id'</span>, <span class="pl-s1">right_on</span><span class="pl-c1">=</span><span class="pl-s">'customerId'</span>, <span class="pl-s1">how</span><span class="pl-c1">=</span><span class="pl-s">'left'</span>)
 <span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">df</span> <span class="pl-c1">=</span> <span class="pl-s1">df</span>[<span class="pl-s1">df</span>[<span class="pl-s">'customerId'</span>].<span class="pl-c1">isna</span>()]          <span class="pl-c"># LEFT JOIN 中右表键为空的 = 未匹配</span>
 <span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">df</span> <span class="pl-c1">=</span> <span class="pl-s1">df</span>[[<span class="pl-s">'name'</span>]].<span class="pl-c1">rename</span>(<span class="pl-s1">columns</span><span class="pl-c1">=</span>{<span class="pl-s">'name'</span>: <span class="pl-s">'customer'</span>})
@@ -169,6 +170,60 @@
 <span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">res</span> <span class="pl-c1">=</span> <span class="pl-s1">merged</span>[<span class="pl-s1">merged</span>[<span class="pl-s">'temperature'</span>] <span class="pl-c1">&gt;</span> <span class="pl-s1">merged</span>[<span class="pl-s">'temperature_prev'</span>]][[<span class="pl-s">'id'</span>]]
 <span class="pl-c"># SQL: JOIN Weather w2 ON w.recordDate = w2.recordDate + INTERVAL 1 DAY</span>
 <span class="pl-c">#      WHERE w.temperature &gt; w2.temperature</span></pre></div>
+<h3>真题实例 5：学生和考试（cross join + left join + 补 0）</h3>
+<blockquote>
+<p>表 <code class="notranslate">students(student_id, student_name)</code> × <code class="notranslate">subjects(subject_name)</code> × <code class="notranslate">examinations(student_id, subject_name)</code>：<strong>每个学生 × 每门科目</strong>都要出现，附考试次数（没考过的填 0）。三步：<code class="notranslate">how='cross'</code> 造组合 → <code class="notranslate">how='left'</code> 挂次数 → <code class="notranslate">fillna(0)</code>：</p>
+</blockquote>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">students</span>
+   <span class="pl-s1">student_id</span> <span class="pl-s1">student_name</span>
+<span class="pl-c1">0</span>           <span class="pl-c1">1</span>         <span class="pl-v">Alice</span>
+<span class="pl-c1">1</span>           <span class="pl-c1">2</span>          <span class="pl-v">Bob</span>
+<span class="pl-c1">2</span>          <span class="pl-c1">13</span>          <span class="pl-v">John</span>
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">subjects</span>
+  <span class="pl-s1">subject_name</span>
+<span class="pl-c1">0</span>        <span class="pl-v">Math</span>
+<span class="pl-c1">1</span>   <span class="pl-v">Programming</span>
+<span class="pl-c1">2</span>       <span class="pl-v">Physics</span>
+<span class="pl-c1">&gt;&gt;</span><span class="pl-c1">&gt;</span> <span class="pl-s1">examinations</span>
+   <span class="pl-s1">student_id</span> <span class="pl-s1">subject_name</span>
+<span class="pl-c1">0</span>           <span class="pl-c1">1</span>         <span class="pl-v">Math</span>
+<span class="pl-c1">1</span>           <span class="pl-c1">1</span>       <span class="pl-v">Physics</span>   <span class="pl-c"># 这一对学生考了 2 科</span>
+
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-c"># ① cross join：每个学生 × 每门科目（笛卡尔积）</span>
+<span class="pl-c1">&gt;&gt;</span><span class="pl-c1">&gt;</span> <span class="pl-s1">all_id_subjects</span> <span class="pl-c1">=</span> <span class="pl-s1">pd</span>.<span class="pl-c1">merge</span>(<span class="pl-s1">students</span>, <span class="pl-s1">subjects</span>, <span class="pl-s1">how</span><span class="pl-c1">=</span><span class="pl-s">'cross'</span>)
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">all_id_subjects</span>
+    <span class="pl-s1">student_id</span> <span class="pl-s1">student_name</span>  <span class="pl-s1">subject_name</span>
+<span class="pl-c1">0</span>           <span class="pl-c1">1</span>        <span class="pl-v">Alice</span>          <span class="pl-v">Math</span>
+<span class="pl-c1">1</span>           <span class="pl-c1">1</span>        <span class="pl-v">Alice</span>   <span class="pl-v">Programming</span>
+<span class="pl-c1">2</span>           <span class="pl-c1">1</span>        <span class="pl-v">Alice</span>       <span class="pl-v">Physics</span>
+...         ...         ...           ...
+
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-c"># ② 统计每 (学生,科目) 考试次数</span>
+<span class="pl-c1">&gt;&gt;</span><span class="pl-c1">&gt;</span> <span class="pl-s1">grouped</span> <span class="pl-c1">=</span> <span class="pl-s1">examinations</span>.<span class="pl-c1">groupby</span>([<span class="pl-s">'student_id'</span>,<span class="pl-s">'subject_name'</span>]).<span class="pl-c1">size</span>().<span class="pl-c1">reset_index</span>(<span class="pl-s1">name</span><span class="pl-c1">=</span><span class="pl-s">'attended_exams'</span>)
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">grouped</span>
+   <span class="pl-s1">student_id</span> <span class="pl-s1">subject_name</span>  <span class="pl-s1">attended_exams</span>
+<span class="pl-c1">0</span>           <span class="pl-c1">1</span>         <span class="pl-v">Math</span>               <span class="pl-c1">1</span>
+<span class="pl-c1">1</span>           <span class="pl-c1">1</span>      <span class="pl-v">Physics</span>               <span class="pl-c1">1</span>
+
+<span class="pl-c1">&gt;&gt;</span><span class="pl-c1">&gt;</span> <span class="pl-c"># ③ left join：保留所有组合，缺考填 0</span>
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">res</span> <span class="pl-c1">=</span> <span class="pl-s1">pd</span>.<span class="pl-c1">merge</span>(<span class="pl-s1">all_id_subjects</span>, <span class="pl-s1">grouped</span>, <span class="pl-s1">on</span><span class="pl-c1">=</span>[<span class="pl-s">'student_id'</span>,<span class="pl-s">'subject_name'</span>], <span class="pl-s1">how</span><span class="pl-c1">=</span><span class="pl-s">'left'</span>)
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">res</span>[<span class="pl-s">'attended_exams'</span>] <span class="pl-c1">=</span> <span class="pl-s1">res</span>[<span class="pl-s">'attended_exams'</span>].<span class="pl-c1">fillna</span>(<span class="pl-c1">0</span>).<span class="pl-c1">astype</span>(<span class="pl-s1">int</span>)
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">res</span>.<span class="pl-c1">sort_values</span>([<span class="pl-s">'student_id'</span>,<span class="pl-s">'subject_name'</span>], <span class="pl-s1">inplace</span><span class="pl-c1">=</span><span class="pl-c1">True</span>)
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">res</span>[[<span class="pl-s">'student_id'</span>,<span class="pl-s">'student_name'</span>,<span class="pl-s">'subject_name'</span>,<span class="pl-s">'attended_exams'</span>]]
+    <span class="pl-s1">student_id</span> <span class="pl-s1">student_name</span>  <span class="pl-s1">subject_name</span>  <span class="pl-s1">attended_exams</span>
+<span class="pl-c1">0</span>           <span class="pl-c1">1</span>        <span class="pl-v">Alice</span>          <span class="pl-v">Math</span>               <span class="pl-c1">1</span>
+<span class="pl-c1">1</span>           <span class="pl-c1">1</span>        <span class="pl-v">Alice</span>     <span class="pl-v">Physics</span>               <span class="pl-c1">1</span>
+<span class="pl-c1">2</span>           <span class="pl-c1">1</span>        <span class="pl-v">Alice</span>  <span class="pl-v">Programming</span>               <span class="pl-c1">0</span>
+...         ...         ...           ...             ...</pre></div>
+<blockquote>
+<p><strong>套路要点</strong>：</p>
+<ol>
+<li>要"每个 X × 每个 Y 都出现"→ 用 <code class="notranslate">merge(..., how='cross')</code> 先造笛卡尔积（相当于 SQL 里 <code class="notranslate">FROM students, subjects</code>）。</li>
+<li>统计次数用 <code class="notranslate">groupby().size()</code>（见 07），再 <code class="notranslate">how='left'</code> 挂回，保证组合全保留。</li>
+<li>没考过的左连接后是 <code class="notranslate">NaN</code> → <code class="notranslate">fillna(0)</code> 再转 <code class="notranslate">int</code>（见 04）。</li>
+</ol>
+<p>对应 SQL：<code class="notranslate">SELECT s.student_id, s.student_name, sub.subject_name, COUNT(e.subject_name) AS attended_exams FROM Students s CROSS JOIN Subjects sub LEFT JOIN Examinations e ON s.student_id=e.student_id AND sub.subject_name=e.subject_name GROUP BY s.student_id, s.student_name, sub.subject_name ORDER BY s.student_id, sub.subject_name</code>。</p>
+</blockquote>
 <h3>经典套路：找出"两表信息对不上/缺失"的记录</h3>
 <p>力扣 2892 "Employees With Missing Information" 这类题：用 <code class="notranslate">indicator=True</code> 看每行来自哪张表。</p>
 <div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">merged</span> <span class="pl-c1">=</span> <span class="pl-s1">pd</span>.<span class="pl-c1">merge</span>(<span class="pl-s1">df1</span>, <span class="pl-s1">df2</span>, <span class="pl-s1">how</span><span class="pl-c1">=</span><span class="pl-s">'outer'</span>, <span class="pl-s1">on</span><span class="pl-c1">=</span><span class="pl-s">'id'</span>, <span class="pl-s1">indicator</span><span class="pl-c1">=</span><span class="pl-c1">True</span>)
@@ -285,7 +340,7 @@
   <span id="run-days"></span>
   <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
 </div>
-<div class="in-footer-built">构建部署于 2026-10-16 15:09:23</div>
+<div class="in-footer-built">构建部署于 2026-10-16 17:07:57</div>
 <script>
   (function () {
     document.getElementById('copyright-year').textContent = new Date().getFullYear();

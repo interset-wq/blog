@@ -108,13 +108,13 @@
     <span class="pl-s1">name</span>  <span class="pl-s1">age</span> <span class="pl-s1">city</span>
 <span class="pl-c1">1</span>    <span class="pl-v">Bob</span>   <span class="pl-c1">30</span>  <span class="pl-s1">上海</span>
 <span class="pl-c1">3</span>   <span class="pl-v">Dave</span>   <span class="pl-c1">65</span>  <span class="pl-s1">广州</span>
-<span class="pl-c1">&gt;&gt;</span><span class="pl-c1">&gt;</span> <span class="pl-s1">df</span>[(<span class="pl-s1">df</span>[<span class="pl-s">'age'</span>] <span class="pl-c1">&gt;</span> <span class="pl-c1">25</span>) <span class="pl-c1">&amp;</span> (<span class="pl-s1">df</span>[<span class="pl-s">'city'</span>] <span class="pl-c1">==</span> <span class="pl-s">'北京'</span>)] <span class="pl-c"># 或 df.query('age &gt; 25 and city=="北京"')   # AND ← 用 &amp; 且每个条件要加括号</span>
+<span class="pl-c1">&gt;&gt;</span><span class="pl-c1">&gt;</span> <span class="pl-s1">df</span>[(<span class="pl-s1">df</span>[<span class="pl-s">'age'</span>] <span class="pl-c1">&gt;</span> <span class="pl-c1">25</span>) <span class="pl-c1">&amp;</span> (<span class="pl-s1">df</span>[<span class="pl-s">'city'</span>] <span class="pl-c1">==</span> <span class="pl-s">'北京'</span>)] <span class="pl-c"># 或 df.query('age &gt; 25 and city=="北京"')   # AND 用 &amp; 且每个条件要加括号</span>
 <span class="pl-v">Empty</span> <span class="pl-v">DataFrame</span>  <span class="pl-c"># 没有同时满足的行</span>
-<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">df</span>[(<span class="pl-s1">df</span>[<span class="pl-s">'age'</span>] <span class="pl-c1">&lt;</span> <span class="pl-c1">20</span>) <span class="pl-c1">|</span> (<span class="pl-s1">df</span>[<span class="pl-s">'age'</span>] <span class="pl-c1">&gt;</span> <span class="pl-c1">60</span>)]         <span class="pl-c"># OR  ← 用 |</span>
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">df</span>[(<span class="pl-s1">df</span>[<span class="pl-s">'age'</span>] <span class="pl-c1">&lt;</span> <span class="pl-c1">20</span>) <span class="pl-c1">|</span> (<span class="pl-s1">df</span>[<span class="pl-s">'age'</span>] <span class="pl-c1">&gt;</span> <span class="pl-c1">60</span>)]         <span class="pl-c"># OR  用 |</span>
     <span class="pl-s1">name</span>  <span class="pl-s1">age</span> <span class="pl-s1">city</span>
 <span class="pl-c1">2</span>  <span class="pl-v">Carol</span>   <span class="pl-c1">17</span>  <span class="pl-s1">北京</span>
 <span class="pl-c1">3</span>   <span class="pl-v">Dave</span>   <span class="pl-c1">65</span>  <span class="pl-s1">广州</span>
-<span class="pl-c1">&gt;&gt;</span><span class="pl-c1">&gt;</span> <span class="pl-s1">df</span>[<span class="pl-c1">~</span>(<span class="pl-s1">df</span>[<span class="pl-s">'age'</span>] <span class="pl-c1">&gt;</span> <span class="pl-c1">25</span>)]                           <span class="pl-c"># NOT ← 用 ~</span>
+<span class="pl-c1">&gt;&gt;</span><span class="pl-c1">&gt;</span> <span class="pl-s1">df</span>[<span class="pl-c1">~</span>(<span class="pl-s1">df</span>[<span class="pl-s">'age'</span>] <span class="pl-c1">&gt;</span> <span class="pl-c1">25</span>)]                           <span class="pl-c"># NOT 用 ~</span>
     <span class="pl-s1">name</span>  <span class="pl-s1">age</span> <span class="pl-s1">city</span>
 <span class="pl-c1">0</span>  <span class="pl-v">Alice</span>   <span class="pl-c1">25</span>  <span class="pl-s1">北京</span>
 <span class="pl-c1">2</span>  <span class="pl-v">Carol</span>   <span class="pl-c1">17</span>  <span class="pl-s1">北京</span></pre></div>
@@ -144,6 +144,35 @@
 <span class="pl-c">#      WHERE id NOT IN (SELECT customerId FROM orders)</span></pre></div>
 <blockquote>
 <p>注：此题也可用 <code class="notranslate">merge + how='left'</code> 后筛 <code class="notranslate">isna()</code> 解</p>
+</blockquote>
+<h3>真题实例：销售员（三表 join + NOT IN）</h3>
+<blockquote>
+<p>表 <code class="notranslate">sales_person(sales_id, name)</code> × <code class="notranslate">company(com_id, name)</code> × <code class="notranslate">orders(order_id, sales_id, com_id)</code>：找<strong>没跟 RED 公司合作过</strong>的销售员。先 <code class="notranslate">merge</code> 挂公司名 → 筛 RED → <code class="notranslate">~isin</code> 反查：</p>
+</blockquote>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c"># ① 订单 × 公司：找出每个订单对应公司的名字</span>
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">df</span> <span class="pl-c1">=</span> <span class="pl-s1">pd</span>.<span class="pl-c1">merge</span>(<span class="pl-s1">orders</span>, <span class="pl-s1">company</span>, <span class="pl-s1">on</span><span class="pl-c1">=</span><span class="pl-s">'com_id'</span>)
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">df</span>
+   <span class="pl-s1">order_id</span>  <span class="pl-s1">sales_id</span>  <span class="pl-s1">com_id</span>  <span class="pl-s1">name</span>
+<span class="pl-c1">0</span>         <span class="pl-c1">1</span>         <span class="pl-c1">3</span>       <span class="pl-c1">1</span>   <span class="pl-c1">RED</span>
+<span class="pl-c1">1</span>         <span class="pl-c1">2</span>         <span class="pl-c1">4</span>       <span class="pl-c1">1</span>   <span class="pl-c1">RED</span>
+<span class="pl-c1">2</span>         <span class="pl-c1">3</span>         <span class="pl-c1">1</span>       <span class="pl-c1">1</span>   <span class="pl-c1">RED</span>   <span class="pl-c"># 三笔都是 RED 公司</span>
+
+<span class="pl-c1">&gt;&gt;</span><span class="pl-c1">&gt;</span> <span class="pl-c"># ② 只要 RED 公司相关的订单 → 拿到"跟 RED 合作过的销售员 id"</span>
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">red_orders</span> <span class="pl-c1">=</span> <span class="pl-s1">df</span>[<span class="pl-s1">df</span>[<span class="pl-s">'name'</span>] <span class="pl-c1">==</span> <span class="pl-s">'RED'</span>]
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">invalid_ids</span> <span class="pl-c1">=</span> <span class="pl-s1">red_orders</span>.<span class="pl-c1">sales_id</span>.<span class="pl-c1">unique</span>()
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">invalid_ids</span>
+<span class="pl-en">array</span>([<span class="pl-c1">3</span>, <span class="pl-c1">4</span>, <span class="pl-c1">1</span>])
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-c"># ③ NOT IN 反查：排除这些销售员</span>
+<span class="pl-c1">&gt;&gt;</span><span class="pl-c1">&gt;</span> <span class="pl-s1">valid_sales_person</span> <span class="pl-c1">=</span> <span class="pl-s1">sales_person</span>[<span class="pl-c1">~</span><span class="pl-s1">sales_person</span>[<span class="pl-s">'sales_id'</span>].<span class="pl-c1">isin</span>(<span class="pl-s1">invalid_ids</span>)]
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">valid_sales_person</span>[[<span class="pl-s">'name'</span>]]</pre></div>
+<div class="highlight highlight-source-sql"><pre class="notranslate"><span class="pl-k">SELECT</span> name 
+<span class="pl-k">FROM</span> SalesPerson 
+<span class="pl-k">WHERE</span> sales_id NOT <span class="pl-k">IN</span> (
+    <span class="pl-k">SELECT</span> <span class="pl-c1">o</span>.<span class="pl-c1">sales_id</span> <span class="pl-k">FROM</span> Orders o 
+    <span class="pl-k">JOIN</span> Company c <span class="pl-k">ON</span> <span class="pl-c1">o</span>.<span class="pl-c1">com_id</span><span class="pl-k">=</span><span class="pl-c1">c</span>.<span class="pl-c1">com_id</span> <span class="pl-k">WHERE</span> <span class="pl-c1">c</span>.<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>RED<span class="pl-pds">'</span></span>
+)</pre></div>
+<blockquote>
+<p><strong>套路</strong>：三表问题时先 <code class="notranslate">merge</code> 把需要的关联字段并到一张表（orders+company），再用 <code class="notranslate">unique()</code> 收集"排除名单"（相当于 SQL 子查询），最后 <code class="notranslate">~isin</code> 反查（NOT IN）。<code class="notranslate">unique()</code> 正好去重，避免 <code class="notranslate">isin</code> 列表里有重复 id。</p>
 </blockquote>
 <h2>字符串匹配（LIKE / 正则）</h2>
 <div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">df</span>
@@ -354,7 +383,7 @@
   <span id="run-days"></span>
   <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
 </div>
-<div class="in-footer-built">构建部署于 2026-10-16 15:09:23</div>
+<div class="in-footer-built">构建部署于 2026-10-16 17:07:57</div>
 <script>
   (function () {
     document.getElementById('copyright-year').textContent = new Date().getFullYear();

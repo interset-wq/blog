@@ -148,11 +148,99 @@
 <span class="pl-s1">北京</span>     <span class="pl-c1">290</span>      <span class="pl-c1">3</span>
 <span class="pl-s1">上海</span>     <span class="pl-c1">210</span>      <span class="pl-c1">2</span>
 <span class="pl-c1">&gt;&gt;</span><span class="pl-c1">&gt;</span> <span class="pl-s1">df</span>.<span class="pl-c1">groupby</span>([<span class="pl-s">'event_day'</span>,<span class="pl-s">'emp_id'</span>])[<span class="pl-s">'total_time'</span>].<span class="pl-c1">sum</span>().<span class="pl-c1">reset_index</span>()  <span class="pl-c"># 多列分组聚合</span></pre></div>
+<blockquote>
+<p>🚨 <strong>高频坑：<code class="notranslate">agg</code> 没有 <code class="notranslate">'size'</code>！</strong></p>
+<p><code class="notranslate">groupby(...).agg('size')</code> 一定会报错（<code class="notranslate">ValueError: No objects to concatenate</code>），因为 <strong><code class="notranslate">size</code> 不是 <code class="notranslate">agg</code> 认识的聚合函数</strong>。它属于 <code class="notranslate">GroupBy</code> 对象自己的方法，只能通过 <code class="notranslate">.size()</code> 调用，不能作为字符串塞进 <code class="notranslate">agg</code> 的括号里。</p>
+<p><code class="notranslate">agg</code> 支持的字符串是这些：<code class="notranslate">'sum'</code> <code class="notranslate">'mean'</code> <code class="notranslate">'count'</code> <code class="notranslate">'nunique'</code> <code class="notranslate">'min'</code> <code class="notranslate">'max'</code> <code class="notranslate">'median'</code> <code class="notranslate">'std'</code> <code class="notranslate">'var'</code> <code class="notranslate">'first'</code> <code class="notranslate">'last'</code> ...（没有 <code class="notranslate">'size'</code>）。</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>想做的事</th>
+<th>✅ 正确写法</th>
+<th>❌ 报错写法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每组行数</td>
+<td><code class="notranslate">df.groupby('k').size()</code></td>
+<td><code class="notranslate">df.groupby('k').agg('size')</code></td>
+</tr>
+<tr>
+<td>每组行数（同写法）</td>
+<td><code class="notranslate">df.groupby('k').agg(cnt=('col','count'))</code></td>
+<td><code class="notranslate">df.groupby('k').agg(cnt=('col','size'))</code></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong><code class="notranslate">size</code> vs <code class="notranslate">count</code> 的区别</strong>：</p>
+<ul>
+<li><code class="notranslate">.size()</code>：每组<strong>行数</strong>（含 <code class="notranslate">NaN</code> 的行也计数）。</li>
+<li><code class="notranslate">.agg(('col','count'))</code>：该列<strong>非空值</strong>个数（<code class="notranslate">NaN</code> 不计入）。</li>
+<li>两者在没有缺失值时才相等；有缺失时 <code class="notranslate">size ≥ count</code>。</li>
+</ul>
+</blockquote>
 <h3>真题实例：统计每个老师教的课程数（nunique → COUNT DISTINCT）</h3>
 <div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c"># teacher: teacher_id, subject_id, dept_id</span>
 <span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">df</span> <span class="pl-c1">=</span> <span class="pl-s1">teacher</span>.<span class="pl-c1">groupby</span>([<span class="pl-s">'teacher_id'</span>])[<span class="pl-s">'subject_id'</span>].<span class="pl-c1">nunique</span>().<span class="pl-c1">reset_index</span>()
 <span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">df</span> <span class="pl-c1">=</span> <span class="pl-s1">df</span>.<span class="pl-c1">rename</span>(<span class="pl-s1">columns</span><span class="pl-c1">=</span>{<span class="pl-s">'subject_id'</span>: <span class="pl-s">'cnt'</span>})
 <span class="pl-c"># SQL: SELECT teacher_id, COUNT(DISTINCT subject_id) AS cnt FROM teacher GROUP BY teacher_id</span></pre></div>
+<h3>真题实例：每日领导与合作伙伴（多列分组 + 两个去重计数）★力扣 1693</h3>
+<blockquote>
+<p>表 <code class="notranslate">daily_sales(date_id, make_name, lead_id, partner_id)</code>：求每个 <code class="notranslate">(date_id, make_name)</code> <strong>去重后</strong>的 lead 数、partner 数（多列 COUNT DISTINCT）：</p>
+</blockquote>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">daily_sales</span>
+   <span class="pl-s1">date_id</span>   <span class="pl-s1">make_name</span>  <span class="pl-s1">lead_id</span>  <span class="pl-s1">partner_id</span>
+<span class="pl-c1">0</span>  <span class="pl-c1">2020</span><span class="pl-c1">-</span><span class="pl-c1">12</span><span class="pl-c1">-</span><span class="pl-c1">8</span>     <span class="pl-s1">toyota</span>        <span class="pl-c1">0</span>           <span class="pl-c1">1</span>
+<span class="pl-c1">1</span>  <span class="pl-c1">2020</span><span class="pl-c1">-</span><span class="pl-c1">12</span><span class="pl-c1">-</span><span class="pl-c1">8</span>     <span class="pl-s1">toyota</span>        <span class="pl-c1">1</span>           <span class="pl-c1">0</span>
+<span class="pl-c1">2</span>  <span class="pl-c1">2020</span><span class="pl-c1">-</span><span class="pl-c1">12</span><span class="pl-c1">-</span><span class="pl-c1">8</span>     <span class="pl-s1">toyota</span>        <span class="pl-c1">1</span>           <span class="pl-c1">1</span>   <span class="pl-c"># lead_id 重复</span>
+<span class="pl-c1">3</span>  <span class="pl-c1">2020</span><span class="pl-c1">-</span><span class="pl-c1">12</span><span class="pl-c1">-</span><span class="pl-c1">7</span>     <span class="pl-s1">toyota</span>        <span class="pl-c1">0</span>           <span class="pl-c1">2</span>
+<span class="pl-c1">4</span>  <span class="pl-c1">2020</span><span class="pl-c1">-</span><span class="pl-c1">12</span><span class="pl-c1">-</span><span class="pl-c1">7</span>     <span class="pl-s1">toyota</span>        <span class="pl-c1">0</span>           <span class="pl-c1">1</span>
+<span class="pl-c1">5</span>  <span class="pl-c1">2020</span><span class="pl-c1">-</span><span class="pl-c1">12</span><span class="pl-c1">-</span><span class="pl-c1">8</span>  <span class="pl-s1">ford</span>      ...                  <span class="pl-c"># （示意，略）</span></pre></div>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c"># 推荐：agg 指定每个去重计数列（对应两个 COUNT(DISTINCT ...)）</span>
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">df</span> <span class="pl-c1">=</span> <span class="pl-s1">daily_sales</span>.<span class="pl-c1">groupby</span>([<span class="pl-s">'date_id'</span>,<span class="pl-s">'make_name'</span>]).<span class="pl-c1">agg</span>(
+...     <span class="pl-s1">unique_leads</span>    <span class="pl-c1">=</span> (<span class="pl-s">'lead_id'</span>,   <span class="pl-s">'nunique'</span>),
+...     <span class="pl-s1">unique_partners</span> <span class="pl-c1">=</span> (<span class="pl-s">'partner_id'</span>,<span class="pl-s">'nunique'</span>),
+... ).<span class="pl-c1">reset_index</span>()
+<span class="pl-c"># SQL: SELECT date_id, make_name,</span>
+<span class="pl-c">#            COUNT(DISTINCT lead_id) AS unique_leads,</span>
+<span class="pl-c">#            COUNT(DISTINCT partner_id) AS unique_partners</span>
+<span class="pl-c">#      FROM DailySales GROUP BY date_id, make_name</span>
+
+<span class="pl-c"># 另一种：两列分开 nunique 再 merge 进分组表（不推荐，多写几行）</span>
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">g</span> <span class="pl-c1">=</span> <span class="pl-s1">daily_sales</span>.<span class="pl-c1">groupby</span>([<span class="pl-s">'date_id'</span>,<span class="pl-s">'make_name'</span>]).<span class="pl-c1">sum</span>().<span class="pl-c1">reset_index</span>()   <span class="pl-c"># ✗ 会求和 lead/partner</span>
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">g</span>[<span class="pl-s">'unique_leads'</span>] <span class="pl-c1">=</span> <span class="pl-s1">daily_sales</span>.<span class="pl-c1">groupby</span>([<span class="pl-s">'date_id'</span>,<span class="pl-s">'make_name'</span>])[<span class="pl-s">'lead_id'</span>].<span class="pl-c1">nunique</span>().<span class="pl-c1">reset_index</span>(<span class="pl-s1">name</span><span class="pl-c1">=</span><span class="pl-s">'cnt'</span>)[<span class="pl-s">'cnt'</span>]</pre></div>
+<blockquote>
+<p><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> <strong>易错</strong>：<code class="notranslate">reset_index(name='cnt')</code> 才能给去重结果列改名；写成 <code class="notranslate">reset_index('cnt')</code> 会被当成 level 参数而报 <code class="notranslate">KeyError</code>。也别用 <code class="notranslate">groupby().sum()</code> 去承载去重结果——它把 lead_id/partner_id 加成了无意义的大数。</p>
+</blockquote>
+<h3>真题实例：按日期分组销售产品（自定义 lambda 聚合）★力扣 1484</h3>
+<blockquote>
+<p>表 <code class="notranslate">activities(sell_date, product)</code>：求每个 <code class="notranslate">sell_date</code> 的产品种类数 + 去重按字典序拼接的产品列表。第二个聚合列用自定义 lambda：<code class="notranslate">set</code> 去重 → <code class="notranslate">sorted</code> 排序 → <code class="notranslate">','.join</code> 拼接：</p>
+</blockquote>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">activities</span>
+   <span class="pl-s1">sell_date</span> <span class="pl-s1">product</span>
+<span class="pl-c1">0</span>  <span class="pl-c1">2020</span><span class="pl-c1">-</span><span class="pl-c1">05</span><span class="pl-c1">-</span><span class="pl-c1">30</span>  <span class="pl-s1">头戴式耳机</span>
+<span class="pl-c1">1</span>  <span class="pl-c1">2020</span><span class="pl-c1">-</span><span class="pl-c1">06</span><span class="pl-c1">-</span><span class="pl-c1">01</span>  <span class="pl-s1">自行车</span>
+<span class="pl-c1">2</span>  <span class="pl-c1">2020</span><span class="pl-c1">-</span><span class="pl-c1">06</span><span class="pl-c1">-</span><span class="pl-c1">02</span>   <span class="pl-s1">手机</span>     <span class="pl-c"># 同日重复产品</span>
+<span class="pl-c1">3</span>  <span class="pl-c1">2020</span><span class="pl-c1">-</span><span class="pl-c1">06</span><span class="pl-c1">-</span><span class="pl-c1">02</span>   <span class="pl-s1">手机</span>
+<span class="pl-c1">4</span>  <span class="pl-c1">2020</span><span class="pl-c1">-</span><span class="pl-c1">06</span><span class="pl-c1">-</span><span class="pl-c1">02</span>   <span class="pl-s1">平板</span>
+<span class="pl-c1">5</span>  <span class="pl-c1">2020</span><span class="pl-c1">-</span><span class="pl-c1">06</span><span class="pl-c1">-</span><span class="pl-c1">03</span>   <span class="pl-s1">手机</span>
+<span class="pl-c1">6</span>  <span class="pl-c1">2020</span><span class="pl-c1">-</span><span class="pl-c1">06</span><span class="pl-c1">-</span><span class="pl-c1">03</span>   <span class="pl-s1">手表</span>
+
+<span class="pl-c1">&gt;&gt;</span><span class="pl-c1">&gt;</span> <span class="pl-s1">df</span> <span class="pl-c1">=</span> <span class="pl-s1">activities</span>.<span class="pl-c1">groupby</span>(<span class="pl-s">'sell_date'</span>).<span class="pl-c1">agg</span>(
+...     <span class="pl-s1">num_sold</span> <span class="pl-c1">=</span> (<span class="pl-s">'product'</span>, <span class="pl-s">'nunique'</span>),                      <span class="pl-c"># 产品种类数</span>
+...     <span class="pl-s1">products</span> <span class="pl-c1">=</span> (<span class="pl-s">'product'</span>, <span class="pl-k">lambda</span> <span class="pl-s1">x</span>: <span class="pl-s">','</span>.<span class="pl-c1">join</span>(<span class="pl-en">sorted</span>(<span class="pl-en">set</span>(<span class="pl-s1">x</span>)))),  <span class="pl-c"># 去重+排序+拼接</span>
+... ).<span class="pl-c1">reset_index</span>()
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">df</span>
+   <span class="pl-s1">sell_date</span>  <span class="pl-s1">num_sold</span>         <span class="pl-s1">products</span>
+<span class="pl-c1">0</span> <span class="pl-c1">2020</span><span class="pl-c1">-</span><span class="pl-c1">05</span><span class="pl-c1">-</span><span class="pl-c1">30</span>         <span class="pl-c1">1</span>          <span class="pl-s1">头戴式耳机</span>
+<span class="pl-c1">1</span> <span class="pl-c1">2020</span><span class="pl-c1">-</span><span class="pl-c1">06</span><span class="pl-c1">-</span><span class="pl-c1">01</span>         <span class="pl-c1">1</span>            <span class="pl-s1">自行车</span>
+<span class="pl-c1">2</span> <span class="pl-c1">2020</span><span class="pl-c1">-</span><span class="pl-c1">06</span><span class="pl-c1">-</span><span class="pl-c1">02</span>         <span class="pl-c1">2</span>           <span class="pl-s1">手机</span>,<span class="pl-s1">平板</span>   <span class="pl-c"># 手机去重，字典序拼接</span>
+<span class="pl-c1">3</span> <span class="pl-c1">2020</span><span class="pl-c1">-</span><span class="pl-c1">06</span><span class="pl-c1">-</span><span class="pl-c1">03</span>         <span class="pl-c1">2</span>           <span class="pl-s1">手机</span>,<span class="pl-s1">手表</span></pre></div>
+<blockquote>
+<p><strong>拆解 lambda</strong>：<code class="notranslate">set(x)</code> 去重（去掉同日的重复"手机"）→ <code class="notranslate">sorted(...)</code> 按字典序排序 → <code class="notranslate">','.join(...)</code> 拼成一个字符串。聚合函数可以是任何"收一组值、吐一个标量"的函数——这是 <code class="notranslate">agg</code> 最强大的地方。</p>
+<p>对应 SQL：<code class="notranslate">SELECT sell_date, COUNT(DISTINCT product) AS num_sold, GROUP_CONCAT(DISTINCT product ORDER BY product) AS products FROM Activities GROUP BY sell_date</code>。</p>
+</blockquote>
 <h3>真题实例：按员工按天算总工时（groupby + sum）</h3>
 <div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">employees</span>[<span class="pl-s">'total_time'</span>] <span class="pl-c1">=</span> <span class="pl-s1">employees</span>[<span class="pl-s">'out_time'</span>] <span class="pl-c1">-</span> <span class="pl-s1">employees</span>[<span class="pl-s">'in_time'</span>]
 <span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">df</span> <span class="pl-c1">=</span> <span class="pl-s1">employees</span>.<span class="pl-c1">groupby</span>([<span class="pl-s">'event_day'</span>,<span class="pl-s">'emp_id'</span>])[<span class="pl-s">'total_time'</span>].<span class="pl-c1">sum</span>().<span class="pl-c1">reset_index</span>()
@@ -184,6 +272,71 @@
 <span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">df</span> <span class="pl-c1">=</span> <span class="pl-s1">df</span>[<span class="pl-s1">df</span>[<span class="pl-s">'count'</span>] <span class="pl-c1">&gt;=</span> <span class="pl-c1">5</span>][[<span class="pl-s">'class'</span>]]
 <span class="pl-c"># SQL: SELECT class FROM courses GROUP BY class HAVING COUNT(student) &gt;= 5</span>
 <span class="pl-c">#      （或用子查询再 WHERE）</span></pre></div>
+<h3>真题实例：合作过至少三次的演员和导演（多列分组 + HAVING）★力扣 1050</h3>
+<blockquote>
+<p>表 <code class="notranslate">actor_director(actor_id, director_id, timestamp)</code>：找合作 <strong>≥ 3</strong> 次的 <code class="notranslate">(actor_id, director_id)</code> 对（多列分组 + 计数过滤）：</p>
+</blockquote>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">actor_director</span>
+   <span class="pl-s1">actor_id</span>  <span class="pl-s1">director_id</span>  <span class="pl-s1">timestamp</span>
+<span class="pl-c1">0</span>         <span class="pl-c1">1</span>            <span class="pl-c1">1</span>          <span class="pl-c1">0</span>
+<span class="pl-c1">1</span>         <span class="pl-c1">1</span>            <span class="pl-c1">1</span>          <span class="pl-c1">1</span>
+<span class="pl-c1">2</span>         <span class="pl-c1">1</span>            <span class="pl-c1">1</span>          <span class="pl-c1">2</span>    <span class="pl-c"># 这一对出现 3 次</span>
+<span class="pl-c1">3</span>         <span class="pl-c1">1</span>            <span class="pl-c1">2</span>          <span class="pl-c1">0</span>
+<span class="pl-c1">4</span>         <span class="pl-c1">1</span>            <span class="pl-c1">2</span>          <span class="pl-c1">1</span>    <span class="pl-c"># 这一对出现 2 次</span>
+<span class="pl-c1">5</span>         <span class="pl-c1">2</span>            <span class="pl-c1">1</span>          <span class="pl-c1">0</span>
+
+<span class="pl-c1">&gt;&gt;</span><span class="pl-c1">&gt;</span> <span class="pl-s1">df</span> <span class="pl-c1">=</span> <span class="pl-s1">actor_director</span>.<span class="pl-c1">groupby</span>([<span class="pl-s">'actor_id'</span>,<span class="pl-s">'director_id'</span>]).<span class="pl-c1">size</span>().<span class="pl-c1">reset_index</span>(<span class="pl-s1">name</span><span class="pl-c1">=</span><span class="pl-s">'cnt'</span>)
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">df</span>
+   <span class="pl-s1">actor_id</span>  <span class="pl-s1">director_id</span>  <span class="pl-s1">cnt</span>
+<span class="pl-c1">0</span>         <span class="pl-c1">1</span>            <span class="pl-c1">1</span>    <span class="pl-c1">3</span>
+<span class="pl-c1">1</span>         <span class="pl-c1">1</span>            <span class="pl-c1">2</span>    <span class="pl-c1">2</span>
+<span class="pl-c1">2</span>         <span class="pl-c1">2</span>            <span class="pl-c1">1</span>    <span class="pl-c1">1</span>
+<span class="pl-c1">&gt;&gt;</span><span class="pl-c1">&gt;</span> <span class="pl-s1">df</span> <span class="pl-c1">=</span> <span class="pl-s1">df</span>[<span class="pl-s1">df</span>[<span class="pl-s">'cnt'</span>] <span class="pl-c1">&gt;=</span> <span class="pl-c1">3</span>][[<span class="pl-s">'actor_id'</span>,<span class="pl-s">'director_id'</span>]]   <span class="pl-c"># HAVING COUNT(*) &gt;= 3</span>
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">df</span>
+   <span class="pl-s1">actor_id</span>  <span class="pl-s1">director_id</span>
+<span class="pl-c1">0</span>         <span class="pl-c1">1</span>            <span class="pl-c1">1</span></pre></div>
+<blockquote>
+<p>等价写法：<code class="notranslate">actor_director.groupby(['actor_id','director_id']).filter(lambda g: len(g) &gt;= 3)</code>（思路 2）。但力扣这类题"先 <code class="notranslate">size()</code> 聚合再布尔筛"更常用，因为既拿到计数又避免 <code class="notranslate">filter</code> 逐组开销。</p>
+<p>对应 SQL：<code class="notranslate">SELECT actor_id, director_id FROM ActorDirector GROUP BY actor_id, director_id HAVING COUNT(*) &gt;= 3</code>。</p>
+</blockquote>
+<h3>真题实例：至少有 5 名直接下属的经理（自引用表 + HAVING）★力扣 570</h3>
+<blockquote>
+<p>表 <code class="notranslate">employee(id, name, department, managerId)</code>（<code class="notranslate">managerId</code> 自引用本表 <code class="notranslate">id</code>）：找<strong>直接下属 ≥ 5 人</strong>的经理名字。先按 <code class="notranslate">managerId</code> 计数 → 筛 ≥5 的 id → 回查拿名字：</p>
+</blockquote>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">employee</span>
+   <span class="pl-s1">id</span>   <span class="pl-s1">name</span>  <span class="pl-s1">department</span>  <span class="pl-s1">managerId</span>
+<span class="pl-c1">0</span>  <span class="pl-c1">101</span>   <span class="pl-v">John</span>            <span class="pl-c1">A</span>        <span class="pl-v">NaN</span>   <span class="pl-c"># 顶头经理，managerId 为空</span>
+<span class="pl-c1">1</span>  <span class="pl-c1">102</span>   <span class="pl-v">Dan</span>             <span class="pl-c1">A</span>        <span class="pl-c1">101</span>
+<span class="pl-c1">2</span>  <span class="pl-c1">103</span>   <span class="pl-v">James</span>           <span class="pl-c1">A</span>        <span class="pl-c1">101</span>
+<span class="pl-c1">3</span>  <span class="pl-c1">104</span>   <span class="pl-v">Amy</span>             <span class="pl-c1">A</span>        <span class="pl-c1">101</span>
+<span class="pl-c1">4</span>  <span class="pl-c1">105</span>   <span class="pl-v">Anne</span>            <span class="pl-c1">A</span>        <span class="pl-c1">101</span>
+<span class="pl-c1">5</span>  <span class="pl-c1">106</span>   <span class="pl-v">Ron</span>             <span class="pl-c1">B</span>        <span class="pl-c1">101</span>   <span class="pl-c"># 101 有 4 名下属</span>
+<span class="pl-c1">6</span>  <span class="pl-c1">107</span>   <span class="pl-v">Bob</span>             <span class="pl-c1">B</span>        <span class="pl-c1">102</span>   <span class="pl-c"># 102 有 3 名下属</span>
+<span class="pl-c1">7</span>  <span class="pl-c1">108</span>   <span class="pl-v">Tom</span>             <span class="pl-c1">B</span>        <span class="pl-c1">102</span>
+<span class="pl-c1">8</span>  <span class="pl-c1">109</span>   <span class="pl-v">Jim</span>             <span class="pl-c1">B</span>        <span class="pl-c1">102</span>
+
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-c"># ① 数每个经理的直接下属数（= managerId 出现的次数）</span>
+<span class="pl-c1">&gt;&gt;</span><span class="pl-c1">&gt;</span> <span class="pl-s1">cnt</span> <span class="pl-c1">=</span> <span class="pl-s1">employee</span>.<span class="pl-c1">groupby</span>(<span class="pl-s">'managerId'</span>).<span class="pl-c1">size</span>().<span class="pl-c1">reset_index</span>(<span class="pl-s1">name</span><span class="pl-c1">=</span><span class="pl-s">'cnt'</span>)
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">cnt</span>
+   <span class="pl-s1">managerId</span>  <span class="pl-s1">cnt</span>
+<span class="pl-c1">0</span>        <span class="pl-c1">101</span>    <span class="pl-c1">4</span>
+<span class="pl-c1">1</span>        <span class="pl-c1">102</span>    <span class="pl-c1">3</span>
+
+<span class="pl-c1">&gt;&gt;</span><span class="pl-c1">&gt;</span> <span class="pl-c"># ② 筛出下属 &gt;= 5 的经理 id（HAVING COUNT(*) &gt;= 5）</span>
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">ids</span> <span class="pl-c1">=</span> <span class="pl-s1">cnt</span>[<span class="pl-s1">cnt</span>[<span class="pl-s">'cnt'</span>] <span class="pl-c1">&gt;=</span> <span class="pl-c1">5</span>][<span class="pl-s">'managerId'</span>]     <span class="pl-c"># 本例没有 &gt;=5，示意写法</span>
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">ids</span>
+
+<span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-c"># ③ 回查 employee 拿经理名字（自引用：managerId 即员工的 id）</span>
+<span class="pl-c1">&gt;&gt;</span><span class="pl-c1">&gt;</span> <span class="pl-s1">employee</span>[<span class="pl-s1">employee</span>[<span class="pl-s">'id'</span>].<span class="pl-c1">isin</span>(<span class="pl-s1">ids</span>)][[<span class="pl-s">'name'</span>]]</pre></div>
+<blockquote>
+<p><strong>为什么这道题总有人卡住</strong>：</p>
+<ol>
+<li>计数方向：是数 <strong><code class="notranslate">managerId</code> 出现的次数</strong>（一个经理被多少行当上级引用），不是数 <code class="notranslate">id</code>。</li>
+<li><code class="notranslate">managerId</code> 为 <code class="notranslate">NaN</code>（如 John）会被 <code class="notranslate">groupby</code> 默认剔除（<code class="notranslate">dropna=True</code>），顶头经理不会计入下属名单。</li>
+<li>要用 <code class="notranslate">groupby(...).size()</code> 或 <code class="notranslate">agg(('id','count'))</code>，别用 <code class="notranslate">agg('size')</code>（<code class="notranslate">size</code> 不是聚合函数，会报错）。</li>
+</ol>
+<p>对应 SQL：<code class="notranslate">SELECT e.name FROM Employee e WHERE e.id IN (SELECT m.managerId FROM Employee m GROUP BY m.managerId HAVING COUNT(*) &gt;= 5)</code>。</p>
+</blockquote>
 <h2>分组键回到普通列（reset_index）</h2>
 <p><code class="notranslate">groupby(...)</code> 的分组键默认变成索引。要再 merge / 筛选 / 输出成普通列时，先 <code class="notranslate">reset_index()</code>：</p>
 <div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">df</span>.<span class="pl-c1">groupby</span>(<span class="pl-s">'city'</span>)[<span class="pl-s">'sales'</span>].<span class="pl-c1">sum</span>()
@@ -224,9 +377,6 @@
 <div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">df</span>[<span class="pl-s">'row_num'</span>] <span class="pl-c1">=</span> <span class="pl-s1">df</span>.<span class="pl-c1">groupby</span>(<span class="pl-s">'city'</span>).<span class="pl-c1">cumcount</span>() <span class="pl-c1">+</span> <span class="pl-c1">1</span>      <span class="pl-c"># 分组内行号（ROW_NUMBER）</span>
 <span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">df</span>[<span class="pl-s">'cum_sum'</span>] <span class="pl-c1">=</span> <span class="pl-s1">df</span>.<span class="pl-c1">groupby</span>(<span class="pl-s">'city'</span>)[<span class="pl-s">'sales'</span>].<span class="pl-c1">cumsum</span>()   <span class="pl-c"># 分组内累计（SUM OVER）</span>
 <span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">df</span>[<span class="pl-s">'grp_rank'</span>] <span class="pl-c1">=</span> <span class="pl-s1">df</span>.<span class="pl-c1">groupby</span>(<span class="pl-s">'city'</span>)[<span class="pl-s">'sales'</span>].<span class="pl-c1">rank</span>(<span class="pl-s1">method</span><span class="pl-c1">=</span><span class="pl-s">'dense'</span>, <span class="pl-s1">ascending</span><span class="pl-c1">=</span><span class="pl-c1">False</span>)</pre></div>
-<blockquote>
-<p>更完整的窗口操作（rank / shift / rolling / diff）见 <code class="notranslate">08</code>。</p>
-</blockquote>
 <h2>一页速览</h2>
 <div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">df</span>.<span class="pl-c1">groupby</span>(<span class="pl-s">'k'</span>).<span class="pl-c1">size</span>()                    <span class="pl-c"># GROUP BY COUNT</span>
 <span class="pl-c1">&gt;</span><span class="pl-c1">&gt;&gt;</span> <span class="pl-s1">df</span>.<span class="pl-c1">groupby</span>(<span class="pl-s">'k'</span>)[<span class="pl-s">'v'</span>].<span class="pl-c1">sum</span>()                <span class="pl-c"># GROUP BY SUM</span>
@@ -293,7 +443,7 @@
   <span id="run-days"></span>
   <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
 </div>
-<div class="in-footer-built">构建部署于 2026-10-16 15:09:23</div>
+<div class="in-footer-built">构建部署于 2026-10-16 17:07:57</div>
 <script>
   (function () {
     document.getElementById('copyright-year').textContent = new Date().getFullYear();
