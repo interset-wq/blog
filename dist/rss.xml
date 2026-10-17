@@ -1,11 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>InterNote</title><link>https://interset-wq.github.io/blog</link><description>My notes on everything.</description><copyright>InterNote</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url></url><title>avatar</title><link>https://interset-wq.github.io/blog</link></image><lastBuildDate>Sat, 17 Oct 2026 12:49:32 +0000</lastBuildDate><managingEditor>InterNote</managingEditor><ttl>60</ttl><webMaster>InterNote</webMaster><item><title>DRF 入门与全局配置</title><link>https://interset-wq.github.io/blog/post/86.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>InterNote</title><link>https://interset-wq.github.io/blog</link><description>My notes on everything.</description><copyright>InterNote</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url></url><title>avatar</title><link>https://interset-wq.github.io/blog</link></image><lastBuildDate>Sat, 17 Oct 2026 12:51:41 +0000</lastBuildDate><managingEditor>InterNote</managingEditor><ttl>60</ttl><webMaster>InterNote</webMaster><item><title>DRF 入门与全局配置</title><link>https://interset-wq.github.io/blog/post/86.html</link><description>
 
 # DRF 入门与全局配置
 
 ## DRF 是什么
 
-DRF（Django REST Framework）是 Django 生态中最流行的 REST API 框架。</description><guid isPermaLink="true">https://interset-wq.github.io/blog/post/86.html</guid><pubDate>Fri, 16 Oct 2026 16:00:00 +0000</pubDate></item><item><title>Django 总览与项目搭建</title><link>https://interset-wq.github.io/blog/post/88.html</link><description>
+DRF（Django REST Framework）是 Django 生态中最流行的 REST API 框架。</description><guid isPermaLink="true">https://interset-wq.github.io/blog/post/86.html</guid><pubDate>Fri, 16 Oct 2026 16:00:00 +0000</pubDate></item><item><title>Jinja2 学习笔记</title><link>https://interset-wq.github.io/blog/post/87.html</link><description>
+
+# Jinja2 学习笔记
+
+## Jinja2 是什么，和 DTL 什么关系
+
+Jinja2 是一个**独立于 Web 框架的通用模板引擎**：`{{ }}` 输出变量、`{% %}` 写逻辑、`{# #}` 注释。</description><guid isPermaLink="true">https://interset-wq.github.io/blog/post/87.html</guid><pubDate>Fri, 16 Oct 2026 16:00:00 +0000</pubDate></item><item><title>Django 总览与项目搭建</title><link>https://interset-wq.github.io/blog/post/88.html</link><description>
 
 # Django 
 
