@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-color-mode="light" data-light-theme="light" data-dark-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script>window.icons = {"arrow-down": "M13.03 8.22a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L5.47 9.28a.75.75 0 1 1 1.06-1.06l1.97 1.97V2.75a.75.75 0 0 1 1.5 0v7.44l1.97-1.97a.75.75 0 0 1 1.06 0Z", "arrow-up": "M3.47 7.78a.75.75 0 0 1 0-1.06l3.75-3.75a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 1 1-1.06 1.06L8.75 5.811v7.439a.75.75 0 0 1-1.5 0V5.81L4.53 7.78a.75.75 0 0 1-1.06 0Z", "bars": "M1.75 2.5a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H1.75Zm0 3.75a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H1.75Zm0 3.75a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H1.75Zm0 3.75a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H1.75Z", "book": "M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z", "calendar": "M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z", "check": "M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z", "copy": "M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z", "github": "M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z", "home": "M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z", "moon": "M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z", "pencil": "M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354l-1.086-1.086Z", "post": "M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25ZM3.5 6.25a.75.75 0 0 1 .75-.75h7a.75.75 0 0 1 0 1.5h-7a.75.75 0 0 1-.75-.75Zm.75 2.25h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1 0-1.5Z", "rss": "M2.002 2.725a.75.75 0 0 1 .797-.699C8.79 2.42 13.58 7.21 13.974 13.201a.75.75 0 0 1-1.497.098 10.502 10.502 0 0 0-9.776-9.776.747.747 0 0 1-.7-.798ZM2.84 7.05h-.002a7.002 7.002 0 0 1 6.113 6.111.75.75 0 0 1-1.49.178 5.503 5.503 0 0 0-4.8-4.8.75.75 0 0 1 .179-1.489ZM2 13a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z", "search": "M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z", "sun": "M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z", "sync": "M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z", "tag": "M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.752 1.752 0 0 1 1 7.775Zm1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"};</script>
+<link rel="icon" type="image/png" href="https://interset-wq.github.io/blog/assets/favicon.png">
+  <link rel="stylesheet" href="https://interset-wq.github.io/blog/assets/primer.css">
+  
+  <link rel="stylesheet" href="https://interset-wq.github.io/blog/assets/main.css">
+  <script>
+    // Resolve the stored theme before first paint, otherwise a dark-mode
+    // visitor sees a white flash. theme.js takes over once loaded.
+    (function () {
+      var theme = localStorage.getItem('internote_theme') || 'light';
+      if (theme === 'auto') {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-color-mode', theme);
+    })();
+  </script>
+  <meta name="description" content="My notes on everything.">
+<meta property="og:title" content="用户认证与权限">
+<meta property="og:description" content="My notes on everything.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://interset-wq.github.io/blog/post/88_6234069635.html">
+<meta property="og:image" content="https://interset-wq.github.io/blog/assets/avatar.png">
+<title>用户认证与权限</title>
+  <link href="https://interset-wq.github.io/blog/assets/starry-night.css" rel="stylesheet">
+  
+<style>
+  <style>
+    .in-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 100%;
+      height: 2px;
+      background: var(--in-color-accent);
+      transform-origin: 0 0;
+      transform: scaleX(0);
+      pointer-events: none;
+    }
+  </style>
+</style></head>
+<body>
+  <header class="in-site-header" id="header">  <h1 class="in-page-title">用户认证与权限</h1>
+<nav class="in-site-nav" aria-label="Post navigation">    <a class="in-nav-btn" href="https://interset-wq.github.io/blog" title="首页" aria-label="首页"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z" fill-rule="evenodd"></path></svg></a>
+
+  <button class="in-nav-btn" id="in-theme-toggle" type="button" title="切换主题" aria-label="切换主题">
+  <svg class="octicon" width="16" height="16"><path id="themeSwitch" d="M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z" fill-rule="evenodd"></path></svg>
+</button>
+</nav></header>
+  <main class="in-site-main" id="content">  <article>
+    <div class="in-post-meta-box">
+      <div class="in-post-meta">
+        <span class="in-meta-date">
+          <svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z" fill-rule="evenodd"></path></svg>
+          <span style="color:#1f883d">2026-10-17</span>
+        </span>
+        <span class="in-meta-labels">
+          <svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.752 1.752 0 0 1 1 7.775Zm1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z" fill-rule="evenodd"></path></svg>
+          <a href="https://interset-wq.github.io/blog/tag.html#Python">
+            <span class="in-meta-dot" style="background-color:#3572a5"></span>Python
+          </a>
+        </span>
+<a class="in-meta-repo" href="https://github.com/interset-wq/learning_log" target="_blank" rel="noopener" title="源码" aria-label="源码"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z" fill-rule="evenodd"></path></svg></a>        <a class="in-post-edit" href="https://github.com/interset-wq/blog/issues/88" target="_blank" rel="noopener" title="在 GitHub 上编辑" aria-label="在 GitHub 上编辑"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354l-1.086-1.086Z" fill-rule="evenodd"></path></svg></a>
+      </div>
+      <div class="in-meta-refs">
+        <span class="in-meta-refs-title">参考资料</span>
+        <ul>
+          <li><a href="https://docs.djangoproject.com/en/stable/topics/auth/default/" target="_blank" rel="noopener">认证指南</a></li>
+        </ul>
+      </div>
+      <details class="in-meta-series" aria-label="Series">
+        <summary>
+          <svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z" fill-rule="evenodd"></path></svg>
+          <a href="https://interset-wq.github.io/blog/post/88.html">Django 总览与项目搭建</a>
+          <span class="in-meta-series-pos">6 / 7</span>
+        </summary>
+        <ol>
+          <li><a href="https://interset-wq.github.io/blog/post/88_6234068448.html">数据库模型 Models</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/88_6234068681.html">视图与 URL 路由</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/88_6234068956.html">CBV 入门与通用视图</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/88_6234069183.html">CBV 的魔法与进阶</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/88_6234069407.html">表单 Form 与 ModelForm</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/88_6234069635.html">用户认证与权限</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/88_6234069864.html">管理后台 Admin</a></li>
+        </ol>
+      </details>
+    </div>
+    <nav class="in-toc" id="in-toc" data-toc-title="目录" data-toc-top="回到顶部" aria-label="目录"></nav>
+    <div class="in-progress" id="in-progress"></div>
+    <div class="in-post-body markdown-body"><h2>认证系统架构</h2>
+<p>Django 认证是一组内置应用与中间件协作的产物，默认 <code class="notranslate">startproject</code> 就已装好：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>组件</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">django.contrib.auth</code></td>
+<td>User / Group / Permission 模型、登录登出密码逻辑、视图与表单</td>
+</tr>
+<tr>
+<td><code class="notranslate">django.contrib.contenttypes</code></td>
+<td>权限按"模型"分类的基础（permission 关联 contenttype）</td>
+</tr>
+<tr>
+<td><code class="notranslate">django.contrib.sessions</code></td>
+<td>会话存储（记录"已登录"状态）</td>
+</tr>
+<tr>
+<td><code class="notranslate">SessionMiddleware</code></td>
+<td>从 cookie 读 session</td>
+</tr>
+<tr>
+<td><code class="notranslate">AuthenticationMiddleware</code></td>
+<td>把 session 里的用户挂到 <code class="notranslate">request.user</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">django.contrib.auth.urls</code></td>
+<td>内置一整套认证路由（login/logout/password_*）</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>工作流程：用户 POST 账号密码 → <code class="notranslate">authenticate()</code> 校验 → <code class="notranslate">login()</code> 写 session → 后续请求经 <code class="notranslate">AuthenticationMiddleware</code> 自动把 <code class="notranslate">request.user</code> 填成当前用户（未登录时是 <code class="notranslate">AnonymousUser</code>）。</p>
+<p>三个常用配置项（写在 settings.py）：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>配置</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">LOGIN_URL</code></td>
+<td>未登录访问受保护页时跳转的登录页（默认 <code class="notranslate">/accounts/login/</code>）</td>
+</tr>
+<tr>
+<td><code class="notranslate">LOGIN_REDIRECT_URL</code></td>
+<td>登录成功后默认跳转（默认 <code class="notranslate">/accounts/profile/</code>）</td>
+</tr>
+<tr>
+<td><code class="notranslate">LOGOUT_REDIRECT_URL</code></td>
+<td>登出后跳转（不设置则渲染默认登出页）</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>User 模型</h2>
+<h3>内置 User 字段</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">username</code></td>
+<td>用户名（唯一，必填）</td>
+</tr>
+<tr>
+<td><code class="notranslate">password</code></td>
+<td>哈希后的密码（<strong>绝不存明文</strong>）</td>
+</tr>
+<tr>
+<td><code class="notranslate">email</code></td>
+<td>邮箱</td>
+</tr>
+<tr>
+<td><code class="notranslate">first_name</code> / <code class="notranslate">last_name</code></td>
+<td>名 / 姓</td>
+</tr>
+<tr>
+<td><code class="notranslate">is_staff</code></td>
+<td>是否能登录管理后台</td>
+</tr>
+<tr>
+<td><code class="notranslate">is_active</code></td>
+<td>是否激活（False 等同封号，但保留记录）</td>
+</tr>
+<tr>
+<td><code class="notranslate">is_superuser</code></td>
+<td>是否超级用户（拥有全部权限）</td>
+</tr>
+<tr>
+<td><code class="notranslate">last_login</code></td>
+<td>上次登录时间</td>
+</tr>
+<tr>
+<td><code class="notranslate">date_joined</code></td>
+<td>注册时间</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>创建用户</h3>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">contrib</span>.<span class="pl-s1">auth</span>.<span class="pl-s1">models</span> <span class="pl-k">import</span> <span class="pl-v">User</span>
+
+<span class="pl-v">User</span>.<span class="pl-c1">objects</span>.<span class="pl-c1">create_user</span>(<span class="pl-s">'alice'</span>, <span class="pl-s1">email</span><span class="pl-c1">=</span><span class="pl-s">'alice@example.com'</span>, <span class="pl-s1">password</span><span class="pl-c1">=</span><span class="pl-s">'x12345'</span>)
+<span class="pl-v">User</span>.<span class="pl-c1">objects</span>.<span class="pl-c1">create_superuser</span>(<span class="pl-s">'admin'</span>, <span class="pl-s1">email</span><span class="pl-c1">=</span><span class="pl-s">'admin@x.com'</span>, <span class="pl-s1">password</span><span class="pl-c1">=</span><span class="pl-s">'admin123'</span>)</pre></div>
+<blockquote>
+<p>必须用 <code class="notranslate">create_user()</code> 而不是 <code class="notranslate">User(...)</code>——前者会自动对密码做哈希。</p>
+</blockquote>
+<p>在 shell 里也可以用 <code class="notranslate">python manage.py createsuperuser</code> 命令交互式创建。</p>
+<hr>
+<h2>登录与登出</h2>
+<h3>函数式三步：authenticate / login / logout</h3>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">contrib</span>.<span class="pl-s1">auth</span> <span class="pl-k">import</span> <span class="pl-s1">authenticate</span>, <span class="pl-s1">login</span>, <span class="pl-s1">logout</span>
+
+<span class="pl-k">def</span> <span class="pl-en">my_view</span>(<span class="pl-s1">request</span>):
+    <span class="pl-s1">user</span> <span class="pl-c1">=</span> <span class="pl-en">authenticate</span>(<span class="pl-s1">request</span>, <span class="pl-s1">username</span><span class="pl-c1">=</span><span class="pl-s1">request</span>.<span class="pl-c1">POST</span>[<span class="pl-s">'username'</span>],
+                        <span class="pl-s1">password</span><span class="pl-c1">=</span><span class="pl-s1">request</span>.<span class="pl-c1">POST</span>[<span class="pl-s">'password'</span>])
+    <span class="pl-k">if</span> <span class="pl-s1">user</span> <span class="pl-c1"><span class="pl-c1">is</span> <span class="pl-c1">not</span></span> <span class="pl-c1">None</span>:
+        <span class="pl-en">login</span>(<span class="pl-s1">request</span>, <span class="pl-s1">user</span>)          <span class="pl-c"># 写 session，完成登录</span>
+        <span class="pl-k">return</span> <span class="pl-en">redirect</span>(<span class="pl-s">'home'</span>)
+    <span class="pl-k">else</span>:
+        <span class="pl-k">return</span> <span class="pl-en">render</span>(<span class="pl-s1">request</span>, <span class="pl-s">'login.html'</span>, {<span class="pl-s">'error'</span>: <span class="pl-s">'用户名或密码错误'</span>})
+
+<span class="pl-k">def</span> <span class="pl-en">logout_view</span>(<span class="pl-s1">request</span>):
+    <span class="pl-en">logout</span>(<span class="pl-s1">request</span>)                   <span class="pl-c"># 清空 session 中的认证信息</span>
+    <span class="pl-k">return</span> <span class="pl-en">redirect</span>(<span class="pl-s">'login'</span>)</pre></div>
+<p><code class="notranslate">authenticate()</code> 只校验身份、不改变状态；<code class="notranslate">login()</code> 才把"已登录"写进会话。模板里用 <code class="notranslate">request.user.is_authenticated</code>（布尔）判断当前是否登录。</p>
+<h3>内置登录视图：LoginView / LogoutView</h3>
+<p>Django 提供通用类视图，直接挂路由即可，无需自己写登录视图：</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c"># urls.py</span>
+<span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">contrib</span>.<span class="pl-s1">auth</span>.<span class="pl-s1">views</span> <span class="pl-k">import</span> <span class="pl-v">LoginView</span>, <span class="pl-v">LogoutView</span>
+
+<span class="pl-s1">urlpatterns</span> <span class="pl-c1">=</span> [
+    <span class="pl-en">path</span>(<span class="pl-s">'login/'</span>, <span class="pl-v">LoginView</span>.<span class="pl-c1">as_view</span>(), <span class="pl-s1">name</span><span class="pl-c1">=</span><span class="pl-s">'login'</span>),
+    <span class="pl-en">path</span>(<span class="pl-s">'logout/'</span>, <span class="pl-v">LogoutView</span>.<span class="pl-c1">as_view</span>(), <span class="pl-s1">name</span><span class="pl-c1">=</span><span class="pl-s">'logout'</span>),
+]</pre></div>
+<p><code class="notranslate">LoginView</code> 默认渲染模板 <code class="notranslate">registration/login.html</code>，并把表单传成 <code class="notranslate">{{ form }}</code>；登录成功后跳 <code class="notranslate">LOGIN_REDIRECT_URL</code>。</p>
+<p>更省事的做法是直接 include 内置全套路由：</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-s1">app_name</span> <span class="pl-c1">=</span> <span class="pl-s">'accounts'</span>
+<span class="pl-s1">urlpatterns</span> <span class="pl-c1">=</span> [
+    <span class="pl-c"># Include default auth urls.</span>
+    <span class="pl-en">path</span>(<span class="pl-s">''</span>, <span class="pl-en">include</span>(<span class="pl-s">'django.contrib.auth.urls'</span>)),
+    <span class="pl-c"># Registration page.</span>
+    <span class="pl-en">path</span>(<span class="pl-s">'register/'</span>, <span class="pl-s1">views</span>.<span class="pl-c1">register</span>, <span class="pl-s1">name</span><span class="pl-c1">=</span><span class="pl-s">'register'</span>),
+]</pre></div>
+<p><code class="notranslate">include('django.contrib.auth.urls')</code> 一次提供：<code class="notranslate">login/</code>、<code class="notranslate">logout/</code>、<code class="notranslate">password_change/</code>、<code class="notranslate">password_change/done/</code>、<code class="notranslate">password_reset/</code>、<code class="notranslate">password_reset/done/</code>、<code class="notranslate">reset/&lt;uidb64&gt;/&lt;token&gt;/</code>、<code class="notranslate">reset/done/</code>。</p>
+<h3>登录模板与 <code class="notranslate">next</code> 参数</h3>
+<p><code class="notranslate">@login_required</code> 把未登录用户重定向到登录页时，会把原目标地址作为 <code class="notranslate">?next=/原路径/</code> 附加在 URL 后面。登录成功后应跳回 <code class="notranslate">next</code>，而不是固定首页。</p>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate">{% if next %}
+  {% if user.is_authenticated %}
+  <span class="pl-kos">&lt;</span><span class="pl-ent">p</span><span class="pl-kos">&gt;</span>Your account doesn't have access to this page. To proceed,
+  please login with an account that has access.<span class="pl-kos">&lt;/</span><span class="pl-ent">p</span><span class="pl-kos">&gt;</span>
+  {% else %}
+  <span class="pl-kos">&lt;</span><span class="pl-ent">p</span><span class="pl-kos">&gt;</span>Please login to see this page.<span class="pl-kos">&lt;/</span><span class="pl-ent">p</span><span class="pl-kos">&gt;</span>
+  {% endif %}
+{% endif %}
+
+<span class="pl-kos">&lt;</span><span class="pl-ent">form</span> <span class="pl-c1">method</span>="<span class="pl-s">post</span>" <span class="pl-c1">action</span>="<span class="pl-s">{% url 'login' %}</span>"<span class="pl-kos">&gt;</span>
+{% csrf_token %}
+<span class="pl-kos">&lt;</span><span class="pl-ent">table</span><span class="pl-kos">&gt;</span>
+<span class="pl-kos">&lt;</span><span class="pl-ent">tr</span><span class="pl-kos">&gt;</span>
+  <span class="pl-kos">&lt;</span><span class="pl-ent">td</span><span class="pl-kos">&gt;</span>{{ form.username.label_tag }}<span class="pl-kos">&lt;/</span><span class="pl-ent">td</span><span class="pl-kos">&gt;</span>
+  <span class="pl-kos">&lt;</span><span class="pl-ent">td</span><span class="pl-kos">&gt;</span>{{ form.username }}<span class="pl-kos">&lt;/</span><span class="pl-ent">td</span><span class="pl-kos">&gt;</span>
+<span class="pl-kos">&lt;/</span><span class="pl-ent">tr</span><span class="pl-kos">&gt;</span>
+<span class="pl-kos">&lt;</span><span class="pl-ent">tr</span><span class="pl-kos">&gt;</span>
+  <span class="pl-kos">&lt;</span><span class="pl-ent">td</span><span class="pl-kos">&gt;</span>{{ form.password.label_tag }}<span class="pl-kos">&lt;/</span><span class="pl-ent">td</span><span class="pl-kos">&gt;</span>
+  <span class="pl-kos">&lt;</span><span class="pl-ent">td</span><span class="pl-kos">&gt;</span>{{ form.password }}<span class="pl-kos">&lt;/</span><span class="pl-ent">td</span><span class="pl-kos">&gt;</span>
+<span class="pl-kos">&lt;/</span><span class="pl-ent">tr</span><span class="pl-kos">&gt;</span>
+<span class="pl-kos">&lt;/</span><span class="pl-ent">table</span><span class="pl-kos">&gt;</span>
+
+<span class="pl-kos">&lt;</span><span class="pl-ent">input</span> <span class="pl-c1">type</span>="<span class="pl-s">submit</span>" <span class="pl-c1">value</span>="<span class="pl-s">login</span>"<span class="pl-kos">&gt;</span>
+<span class="pl-kos">&lt;</span><span class="pl-ent">input</span> <span class="pl-c1">type</span>="<span class="pl-s">hidden</span>" <span class="pl-c1">name</span>="<span class="pl-s">next</span>" <span class="pl-c1">value</span>="<span class="pl-s">{{ next }}</span>"<span class="pl-kos">&gt;</span>
+<span class="pl-kos">&lt;/</span><span class="pl-ent">form</span><span class="pl-kos">&gt;</span>
+
+<span class="pl-kos">&lt;</span><span class="pl-ent">p</span><span class="pl-kos">&gt;</span><span class="pl-kos">&lt;</span><span class="pl-ent">a</span> <span class="pl-c1">href</span>="<span class="pl-s">{% url 'password_reset' %}</span>"<span class="pl-kos">&gt;</span>Lost password?<span class="pl-kos">&lt;/</span><span class="pl-ent">a</span><span class="pl-kos">&gt;</span><span class="pl-kos">&lt;/</span><span class="pl-ent">p</span><span class="pl-kos">&gt;</span></pre></div>
+<blockquote>
+<p><strong>登出要用 POST</strong>：Django 2.1+ 的 LogoutView 只接受 POST（GET 会 405），因为登出会销毁服务端会话，属于状态变更，不能被爬虫 / 预加载触发。模板里登出必须写成小表单。</p>
+</blockquote>
+<hr>
+<h2>限制访问：<code class="notranslate">@login_required</code> 与 <code class="notranslate">LoginRequiredMixin</code></h2>
+<h3>函数视图：装饰器</h3>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">contrib</span>.<span class="pl-s1">auth</span>.<span class="pl-s1">decorators</span> <span class="pl-k">import</span> <span class="pl-s1">login_required</span>
+
+<span class="pl-en">@<span class="pl-s1">login_required</span></span>
+<span class="pl-k">def</span> <span class="pl-en">topics</span>(<span class="pl-s1">request</span>):
+    ...</pre></div>
+<p>未登录访问 → 302 重定向到 <code class="notranslate">LOGIN_URL?next=当前路径</code>；登录后自动跳回。</p>
+<h3>类视图：Mixin</h3>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">contrib</span>.<span class="pl-s1">auth</span>.<span class="pl-s1">mixins</span> <span class="pl-k">import</span> <span class="pl-v">LoginRequiredMixin</span>
+<span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">views</span> <span class="pl-k">import</span> <span class="pl-s1">generic</span>
+
+<span class="pl-k">class</span> <span class="pl-v">TopicListView</span>(<span class="pl-v">LoginRequiredMixin</span>, <span class="pl-s1">generic</span>.<span class="pl-c1">ListView</span>):
+    <span class="pl-s1">model</span> <span class="pl-c1">=</span> <span class="pl-v">Topic</span></pre></div>
+<blockquote>
+<p><strong>Mixin 必须写在通用视图左边</strong>（继承顺序：<code class="notranslate">LoginRequiredMixin, generic.ListView</code>）。</p>
+</blockquote>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">contrib</span>.<span class="pl-s1">auth</span>.<span class="pl-s1">mixins</span> <span class="pl-k">import</span> <span class="pl-v">LoginRequiredMixin</span>
+
+<span class="pl-k">class</span> <span class="pl-v">MyTopicsListView</span>(<span class="pl-v">LoginRequiredMixin</span>, <span class="pl-s1">generic</span>.<span class="pl-c1">ListView</span>):
+    <span class="pl-s">"""Generic class-based view listing topics owned by current user."""</span>
+    <span class="pl-s1">model</span> <span class="pl-c1">=</span> <span class="pl-v">Topic</span>
+    <span class="pl-s1">template_name</span> <span class="pl-c1">=</span> <span class="pl-s">'learning_logs/my_topics.html'</span>
+    <span class="pl-s1">paginate_by</span> <span class="pl-c1">=</span> <span class="pl-c1">10</span>
+
+    <span class="pl-k">def</span> <span class="pl-en">get_queryset</span>(<span class="pl-s1">self</span>):
+        <span class="pl-k">return</span> (
+            <span class="pl-v">Topic</span>.<span class="pl-c1">objects</span>.<span class="pl-c1">filter</span>(<span class="pl-s1">owner</span><span class="pl-c1">=</span><span class="pl-s1">self</span>.<span class="pl-c1">request</span>.<span class="pl-c1">user</span>)
+            .<span class="pl-c1">order_by</span>(<span class="pl-s">'-date_added'</span>)
+        )</pre></div>
+<hr>
+<h2>注册：<code class="notranslate">UserCreationForm</code></h2>
+<p>Django 内置注册表单 <code class="notranslate">UserCreationForm</code>（用户名 + 两次密码，自动跑密码强度校验）。经典模式是：GET 出空白表单 → POST 校验 → <code class="notranslate">save()</code> 创建用户 → 立即 <code class="notranslate">login()</code> → 跳转。</p>
+<blockquote>
+<p>示例：Learning Log 的注册视图（accounts/views.py）。</p>
+</blockquote>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">shortcuts</span> <span class="pl-k">import</span> <span class="pl-s1">render</span>, <span class="pl-s1">redirect</span>
+<span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">contrib</span>.<span class="pl-s1">auth</span> <span class="pl-k">import</span> <span class="pl-s1">login</span>
+<span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">contrib</span>.<span class="pl-s1">auth</span>.<span class="pl-s1">forms</span> <span class="pl-k">import</span> <span class="pl-v">UserCreationForm</span>
+
+
+<span class="pl-k">def</span> <span class="pl-en">register</span>(<span class="pl-s1">request</span>):
+    <span class="pl-s">"""Register a new user."""</span>
+    <span class="pl-k">if</span> <span class="pl-s1">request</span>.<span class="pl-c1">method</span> <span class="pl-c1">!=</span> <span class="pl-s">'POST'</span>:
+        <span class="pl-c"># Display blank registration form.</span>
+        <span class="pl-s1">form</span> <span class="pl-c1">=</span> <span class="pl-en">UserCreationForm</span>()
+    <span class="pl-k">else</span>:
+        <span class="pl-c"># Process completed form.</span>
+        <span class="pl-s1">form</span> <span class="pl-c1">=</span> <span class="pl-en">UserCreationForm</span>(<span class="pl-s1">data</span><span class="pl-c1">=</span><span class="pl-s1">request</span>.<span class="pl-c1">POST</span>)
+
+        <span class="pl-k">if</span> <span class="pl-s1">form</span>.<span class="pl-c1">is_valid</span>():
+            <span class="pl-s1">new_user</span> <span class="pl-c1">=</span> <span class="pl-s1">form</span>.<span class="pl-c1">save</span>()
+            <span class="pl-c"># Log the user in and then redirect to home page.</span>
+            <span class="pl-en">login</span>(<span class="pl-s1">request</span>, <span class="pl-s1">new_user</span>)
+            <span class="pl-k">return</span> <span class="pl-en">redirect</span>(<span class="pl-s">'learning_logs:index'</span>)
+
+    <span class="pl-c"># Display a blank or invalid form.</span>
+    <span class="pl-s1">context</span> <span class="pl-c1">=</span> {<span class="pl-s">'form'</span>: <span class="pl-s1">form</span>}
+    <span class="pl-k">return</span> <span class="pl-en">render</span>(<span class="pl-s1">request</span>, <span class="pl-s">'registration/register.html'</span>, <span class="pl-s1">context</span>)</pre></div>
+<p>要点：</p>
+<ul>
+<li><code class="notranslate">form.save()</code> 创建 User，密码自动哈希。</li>
+<li>注册成功后立刻 <code class="notranslate">login(request, new_user)</code>，用户无需再登一次。</li>
+<li>要加邮箱等字段，可继承 <code class="notranslate">UserCreationForm</code> 扩展，或改用自定义用户模型（见“自定义用户模型”）。</li>
+</ul>
+<hr>
+<h2>密码管理</h2>
+<h3>哈希机制</h3>
+<p>Django 用 PBKDF2（默认）把密码哈希后存库，每次哈希带随机 salt。<strong>永远不要</strong>自己读 <code class="notranslate">user.password</code> 字段去比对。正确做法：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>方法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">user.set_password(raw_password)</code></td>
+<td>设置新密码（自动哈希），需 <code class="notranslate">.save()</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">user.check_password(raw_password)</code></td>
+<td>校验明文密码是否正确，返回布尔</td>
+</tr>
+<tr>
+<td><code class="notranslate">django.contrib.auth.hashers.make_password(pw)</code></td>
+<td>仅生成哈希串</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-s1">u</span> <span class="pl-c1">=</span> <span class="pl-v">User</span>.<span class="pl-c1">objects</span>.<span class="pl-c1">get</span>(<span class="pl-s1">username</span><span class="pl-c1">=</span><span class="pl-s">'alice'</span>)
+<span class="pl-s1">u</span>.<span class="pl-c1">set_password</span>(<span class="pl-s">'new-pass-123'</span>)
+<span class="pl-s1">u</span>.<span class="pl-c1">save</span>()
+<span class="pl-s1">u</span>.<span class="pl-c1">check_password</span>(<span class="pl-s">'new-pass-123'</span>)   <span class="pl-c"># True</span></pre></div>
+<h3>改密码：<code class="notranslate">PasswordChangeView</code></h3>
+<p>和登录一样，内置类视图 + 模板三件套（<code class="notranslate">password_change.html</code> / <code class="notranslate">password_change_done.html</code>）即可，无需自己写表单。路由已由 <code class="notranslate">include('django.contrib.auth.urls')</code> 提供。</p>
+<h3>忘记密码：邮件重置四步流程</h3>
+<p>Django 提供完整的"忘记密码"邮件流程，四个视图串成一条链：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>步骤</th>
+<th>视图</th>
+<th>模板</th>
+<th>做什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code class="notranslate">PasswordResetView</code></td>
+<td><code class="notranslate">password_reset_form.html</code></td>
+<td>用户填邮箱</td>
+</tr>
+<tr>
+<td>2</td>
+<td>（发邮件）</td>
+<td><code class="notranslate">password_reset_email.html</code></td>
+<td>生成带 token 的重置链接并发送</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code class="notranslate">PasswordResetConfirmView</code></td>
+<td><code class="notranslate">password_reset_confirm.html</code></td>
+<td>用户点链接后设新密码</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code class="notranslate">PasswordResetCompleteView</code></td>
+<td><code class="notranslate">password_reset_done.html</code> / <code class="notranslate">password_reset_complete.html</code></td>
+<td>提示完成</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>开发阶段把邮件打印到控制台而不真发：</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c"># settings.py</span>
+<span class="pl-c1">EMAIL_BACKEND</span> <span class="pl-c1">=</span> <span class="pl-s">'django.core.mail.backends.console.EmailBackend'</span></pre></div>
+<blockquote>
+<p>示例：重置邮件模板（templates/registration/password_reset_email.html），用 <code class="notranslate">{% url %}</code> 拼出带 uidb64/token 的确认链接。</p>
+</blockquote>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate">Someone asked for password reset for email {{ email }}. Follow the link below:
+{{ protocol}}://{{ domain }}{% url 'password_reset_confirm' uidb64=uid token=token %}</pre></div>
+<hr>
+<h2>权限系统：Permission / Group</h2>
+<p>登录只解决身份，权限解决"能做什么"。</p>
+<h3>权限模型</h3>
+<p>每个模型默认自动生成三条权限：<code class="notranslate">add_&lt;模型&gt;</code>、<code class="notranslate">change_&lt;模型&gt;</code>、<code class="notranslate">delete_&lt;模型&gt;</code>，在 admin 里可直接分配。自定义权限写在模型的 <code class="notranslate">Meta</code> 里：</p>
+<blockquote>
+<p>示例：Learning Log 的 Entry 模型，声明了一条业务权限 <code class="notranslate">can_mark_done</code>。</p>
+</blockquote>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">class</span> <span class="pl-v">Entry</span>(<span class="pl-s1">models</span>.<span class="pl-c1">Model</span>):
+    <span class="pl-c"># ... 字段略 ...</span>
+
+    <span class="pl-k">class</span> <span class="pl-v">Meta</span>:
+        <span class="pl-s1">ordering</span> <span class="pl-c1">=</span> [<span class="pl-s">'-date_added'</span>]
+        <span class="pl-s1">permissions</span> <span class="pl-c1">=</span> ((<span class="pl-s">"can_mark_done"</span>, <span class="pl-s">"Can mark an entry as done"</span>),)</pre></div>
+<p>权限在代码里的全名是 <code class="notranslate">&lt;app_label&gt;.&lt;codename&gt;</code>，例如 <code class="notranslate">learning_logs.can_mark_done</code>、<code class="notranslate">learning_logs.add_entry</code>。</p>
+<h3>视图层强制权限</h3>
+<p><strong>函数视图</strong>用 <code class="notranslate">@permission_required</code> 装饰器：</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">contrib</span>.<span class="pl-s1">auth</span>.<span class="pl-s1">decorators</span> <span class="pl-k">import</span> <span class="pl-s1">login_required</span>, <span class="pl-s1">permission_required</span>
+
+<span class="pl-en">@<span class="pl-s1">login_required</span></span>
+<span class="pl-en">@<span class="pl-en">permission_required</span>(<span class="pl-s">'learning_logs.can_mark_done'</span>, <span class="pl-s1">raise_exception</span><span class="pl-c1">=</span><span class="pl-c1">True</span>)</span>
+<span class="pl-k">def</span> <span class="pl-en">mark_entry_done</span>(<span class="pl-s1">request</span>, <span class="pl-s1">pk</span>):
+    ...</pre></div>
+<p><code class="notranslate">raise_exception=True</code> 时无权限直接 403；不加则先跳登录页。</p>
+<p><strong>类视图</strong>用 <code class="notranslate">PermissionRequiredMixin</code>：</p>
+<blockquote>
+<p>示例：Learning Log 的主题创建视图，类视图要求 <code class="notranslate">learning_logs.add_topic</code> 权限。</p>
+</blockquote>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">contrib</span>.<span class="pl-s1">auth</span>.<span class="pl-s1">mixins</span> <span class="pl-k">import</span> <span class="pl-v">PermissionRequiredMixin</span>
+
+<span class="pl-k">class</span> <span class="pl-v">TopicCreate</span>(<span class="pl-v">PermissionRequiredMixin</span>, <span class="pl-v">CreateView</span>):
+    <span class="pl-s1">model</span> <span class="pl-c1">=</span> <span class="pl-v">Topic</span>
+    <span class="pl-s1">fields</span> <span class="pl-c1">=</span> [<span class="pl-s">'text'</span>]
+    <span class="pl-s1">permission_required</span> <span class="pl-c1">=</span> <span class="pl-s">'learning_logs.add_topic'</span></pre></div>
+<h3>模板层按权限显隐</h3>
+<p><code class="notranslate">{{ perms }}</code> 由 auth context processor 注入，是当前用户权限的字典式对象。模板里按权限决定是否显示入口：</p>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate">{% if perms.learning_logs.can_mark_done %}
+  <span class="pl-kos">&lt;</span><span class="pl-ent">a</span> <span class="pl-c1">href</span>="<span class="pl-s">{% url 'learning_logs:mark_done' entry.id %}</span>"<span class="pl-kos">&gt;</span>Mark done<span class="pl-kos">&lt;/</span><span class="pl-ent">a</span><span class="pl-kos">&gt;</span>
+{% endif %}</pre></div>
+<blockquote>
+<p>最佳实践：<strong>视图层强制 + 模板层隐藏</strong>双保险。模板隐藏只是用户体验，真正挡请求的是视图层。</p>
+</blockquote>
+<h3>代码里判断权限</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>方法</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">user.has_perm('learning_logs.add_topic')</code></td>
+<td>是否有某条权限</td>
+</tr>
+<tr>
+<td><code class="notranslate">user.has_module_perms('learning_logs')</code></td>
+<td>是否对某 app 拥有任意权限</td>
+</tr>
+<tr>
+<td><code class="notranslate">user.is_superuser</code></td>
+<td>超级用户拥有一切</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>Group 分组</h3>
+<p><code class="notranslate">Group</code> 是权限的容器：把"学习管理员"组勾上 <code class="notranslate">can_mark_done</code> 等权限，再把用户加进组，用户自动继承组内所有权限。组在 admin 后台的 Groups 页面管理，避免逐个用户勾选权限。</p>
+<hr>
+<h2>资源归属：用户只能看自己的数据</h2>
+<p>多用户应用的常见需求是"数据归属于创建者"。通用做法三步：</p>
+<ol>
+<li>创建时绑定 <code class="notranslate">owner</code>：
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-s1">form</span> <span class="pl-c1">=</span> <span class="pl-en">TopicForm</span>(<span class="pl-s1">data</span><span class="pl-c1">=</span><span class="pl-s1">request</span>.<span class="pl-c1">POST</span>)
+<span class="pl-k">if</span> <span class="pl-s1">form</span>.<span class="pl-c1">is_valid</span>():
+    <span class="pl-s1">new_topic</span> <span class="pl-c1">=</span> <span class="pl-s1">form</span>.<span class="pl-c1">save</span>(<span class="pl-s1">commit</span><span class="pl-c1">=</span><span class="pl-c1">False</span>)
+    <span class="pl-s1">new_topic</span>.<span class="pl-c1">owner</span> <span class="pl-c1">=</span> <span class="pl-s1">request</span>.<span class="pl-c1">user</span>     <span class="pl-c"># 归属当前登录用户</span>
+    <span class="pl-s1">new_topic</span>.<span class="pl-c1">save</span>()</pre></div>
+</li>
+<li>查询时只取自己的：
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-s1">topics</span> <span class="pl-c1">=</span> <span class="pl-v">Topic</span>.<span class="pl-c1">objects</span>.<span class="pl-c1">filter</span>(<span class="pl-s1">owner</span><span class="pl-c1">=</span><span class="pl-s1">request</span>.<span class="pl-c1">user</span>).<span class="pl-c1">order_by</span>(<span class="pl-s">'date_added'</span>)</pre></div>
+</li>
+<li>访问单条时校验归属，否则 404：
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-s1">topic</span> <span class="pl-c1">=</span> <span class="pl-v">Topic</span>.<span class="pl-c1">objects</span>.<span class="pl-c1">get</span>(<span class="pl-s1">id</span><span class="pl-c1">=</span><span class="pl-s1">topic_id</span>)
+<span class="pl-k">if</span> <span class="pl-s1">topic</span>.<span class="pl-c1">owner</span> <span class="pl-c1">!=</span> <span class="pl-s1">request</span>.<span class="pl-c1">user</span>:
+    <span class="pl-k">raise</span> <span class="pl-v">Http404</span></pre></div>
+</li>
+</ol>
+<p>CBV 里等价做法是重写 <code class="notranslate">get_queryset()</code> 过滤 <code class="notranslate">owner=request.user</code>。这与 Django 权限体系正交——权限是"角色能做什么操作"，归属是"这条数据属于谁"。</p>
+<hr>
+<h2>自定义用户模型</h2>
+<p>内置 User 字段不够用时（比如想加手机号、头像），应<strong>自定义 User 模型</strong>。两条路线：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>路线</th>
+<th>继承</th>
+<th>适用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>推荐：扩展 AbstractUser</td>
+<td><code class="notranslate">AbstractUser</code></td>
+<td>只想加字段，保留默认用户体系</td>
+</tr>
+<tr>
+<td>完全自定义：AbstractBaseUser + PermissionsMixin</td>
+<td><code class="notranslate">AbstractBaseUser</code></td>
+<td>想用邮箱代替用户名登录等深度定制</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c"># accounts/models.py</span>
+<span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">contrib</span>.<span class="pl-s1">auth</span>.<span class="pl-s1">models</span> <span class="pl-k">import</span> <span class="pl-v">AbstractUser</span>
+
+<span class="pl-k">class</span> <span class="pl-v">User</span>(<span class="pl-v">AbstractUser</span>):
+    <span class="pl-s1">bio</span> <span class="pl-c1">=</span> <span class="pl-s1">models</span>.<span class="pl-c1">TextField</span>(<span class="pl-s1">blank</span><span class="pl-c1">=</span><span class="pl-c1">True</span>)</pre></div>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c"># settings.py（必须在第一次 migrate 之前写好）</span>
+<span class="pl-c1">AUTH_USER_MODEL</span> <span class="pl-c1">=</span> <span class="pl-s">'accounts.User'</span></pre></div>
+<blockquote>
+<p><strong>铁律</strong>：<code class="notranslate">AUTH_USER_MODEL</code> 一旦执行过迁移就<strong>几乎不能改</strong>（所有外键都指向了旧表）。新建项目若打算自定义用户，务必在 <code class="notranslate">migrate</code> 之前就配置好。</p>
+</blockquote>
+<hr>
+<h2>认证后端：ModelBackend 简述</h2>
+<p>Django 的认证是<strong>可插拔</strong>的：<code class="notranslate">AUTHENTICATION_BACKENDS</code> 配置一组后端，<code class="notranslate">authenticate()</code> 依次询问每个后端，谁返回 User 就算谁成功。默认后端是 <code class="notranslate">ModelBackend</code>——查 User 表、校验密码哈希。</p>
+<p>常见扩展：LDAP 后端、OAuth 后端（如 django-allauth）、JWT 后端（DRF 场景）。自定义后端只需写一个类，实现 <code class="notranslate">authenticate(request, **credentials)</code> 与 <code class="notranslate">get_user(user_id)</code>，注册到 settings 即可。</p>
+<hr>
+<h2>知识地图</h2>
+<pre class="notranslate"><code class="notranslate">认证（你是谁）
+├── 注册 register（UserCreationForm + login）
+├── 登录 login（authenticate → login；内置 LoginView）
+├── 登出 logout（POST 请求；内置 LogoutView）
+└── 密码管理（set_password / PasswordChangeView / PasswordResetView 四步）
+
+授权（你能做什么）
+├── 权限 Permission（Meta.permissions 定义 codename）
+├── 函数视图 @login_required / @permission_required
+├── 类视图  LoginRequiredMixin / PermissionRequiredMixin
+├── 模板    {{ perms }}、{% if perms.app.codename %}
+└── 分组    Group（批量分配权限）
+
+数据归属（你的数据）
+├── 创建时绑定 owner
+├── 查询时 filter(owner=request.user)
+└── 访问时校验归属
+</code></pre></div>
+    <details class="in-series-list" open aria-label="Series">
+      <summary>Django 总览与项目搭建</summary>
+      <ol>
+        <li><a href="https://interset-wq.github.io/blog/post/88_6234068448.html">数据库模型 Models</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/88_6234068681.html">视图与 URL 路由</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/88_6234068956.html">CBV 入门与通用视图</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/88_6234069183.html">CBV 的魔法与进阶</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/88_6234069407.html">表单 Form 与 ModelForm</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/88_6234069635.html">用户认证与权限</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/88_6234069864.html">管理后台 Admin</a></li>
+      </ol>
+    </details>
+    <nav class="in-series-pager" aria-label="Series pages">
+      <a class="in-series-prev" href="https://interset-wq.github.io/blog/post/88_6234069407.html">表单 Form 与 ModelForm</a>
+      <a class="in-series-next" href="https://interset-wq.github.io/blog/post/88_6234069864.html">管理后台 Admin</a>
+    </nav>
+  </article>
+<section class="in-comments-section">
+  <template id="in-giscus-template">
+    <script src="https://giscus.app/client.js"
+      data-repo="interset-wq/blog"
+      data-repo-id="R_kgDOTWqpPQ"
+      data-category="Announcements"
+      data-category-id="DIC_kwDOTWqpPc4DBFW-"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="light"
+      data-lang="zh-CN"
+      crossorigin="anonymous"
+      async></script>
+  </template>
+  <div class="in-comments-container" id="comments"></div>
+</section>  <div id="in-fab" class="in-fab"
+       data-toc-title="目录"
+       data-top-title="回到顶部"
+       data-bottom-title="下一页"></div>
+</main>
+  <footer class="in-site-footer" id="footer"><div class="in-footer-icons" id="footer-icons" data-copied="已复制">
+  <a class="in-nav-btn in-social" href="https://space.bilibili.com/3546586772670802" target="_blank" rel="noopener" title="Bilibili" aria-label="Bilibili"><svg fill="#00A1D6" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Bilibili</title><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373Z"/></svg></a>
+  <a class="in-nav-btn in-social" href="mailto:intersetwq@gmail.com" target="_blank" rel="noopener" title="Email" aria-label="Email"><svg fill="#EA4335" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gmail</title><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg></a>
+  <button class="in-nav-btn in-social" type="button" title="QQ" aria-label="QQ" data-copy="2775055258"><svg fill="#1EBAFC" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>QQ</title><path d="M21.395 15.035a40 40 0 0 0-.803-2.264l-1.079-2.695c.001-.032.014-.562.014-.836C19.526 4.632 17.351 0 12 0S4.474 4.632 4.474 9.241c0 .274.013.804.014.836l-1.08 2.695a39 39 0 0 0-.802 2.264c-1.021 3.283-.69 4.643-.438 4.673.54.065 2.103-2.472 2.103-2.472 0 1.469.756 3.387 2.394 4.771-.612.188-1.363.479-1.845.835-.434.32-.379.646-.301.778.343.578 5.883.369 7.482.189 1.6.18 7.14.389 7.483-.189.078-.132.132-.458-.301-.778-.483-.356-1.233-.646-1.846-.836 1.637-1.384 2.393-3.302 2.393-4.771 0 0 1.563 2.537 2.103 2.472.251-.03.581-1.39-.438-4.673"/></svg></button>
+  <button class="in-nav-btn in-social" type="button" title="WeChat" aria-label="WeChat" data-qrcode="https://interset-wq.github.io/blog/wechat-qr.jpg"><svg fill="#07C160" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>WeChat</title><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/></svg></button>
+  <a class="in-nav-btn in-social" href="https://interset-wq.github.io/blog/rss.xml" target="_blank" rel="noopener" title="RSS" aria-label="RSS"><svg fill="#FFA500" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>RSS</title><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/></svg></a>
+  <a class="in-nav-btn in-social" href="https://github.com/interset-wq/blog" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><svg fill="#181717" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+</div>
+<div class="in-footer-line" id="footer-copyright">
+  Copyright &copy; <span id="copyright-year"></span>
+  <a href="https://interset-wq.github.io/blog">InterNote</a>
+</div>
+<div class="in-footer-powered" id="footer-powered">
+  <span id="run-days"></span>
+  <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
+</div>
+<div class="in-footer-built">构建部署于 2026-10-17 20:48:32</div>
+<script>
+  (function () {
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    var days = Math.floor(
+      (Date.now() - new Date('2026-09-30').getTime()) / 86400000
+    );
+    document.getElementById('run-days').textContent =
+      '网站运行 ' + days + ' 天 • ';
+
+    // [[social]] copy + qrcode actions. Everything is data-driven from the
+    // server-rendered buttons; with no such buttons this is a no-op.
+    var icons = document.getElementById('footer-icons');
+    if (!icons.querySelector('[data-copy], [data-qrcode]')) {
+      return;
+    }
+
+    var toast = document.createElement('div');
+    toast.className = 'in-social-toast';
+    toast.hidden = true;
+    document.body.appendChild(toast);
+    var toastTimer = null;
+    function showToast(text) {
+      toast.textContent = text;
+      toast.hidden = false;
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () { toast.hidden = true; }, 1600);
+    }
+
+    var overlay = document.createElement('div');
+    overlay.className = 'in-social-qr';
+    overlay.hidden = true;
+    var img = document.createElement('img');
+    img.alt = '';
+    overlay.appendChild(img);
+    document.body.appendChild(overlay);
+    function closeOverlay() { overlay.hidden = true; }
+    overlay.addEventListener('click', closeOverlay);
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') { closeOverlay(); }
+    });
+
+    icons.addEventListener('click', function (event) {
+      var button = event.target.closest('[data-copy], [data-qrcode]');
+      if (!button) { return; }
+      if (button.dataset.copy) {
+        navigator.clipboard.writeText(button.dataset.copy).then(function () {
+          showToast(icons.dataset.copied || 'Copied!');
+        });
+      } else if (button.dataset.qrcode) {
+        img.src = button.dataset.qrcode;
+        overlay.hidden = false;
+      }
+    });
+  })();
+</script></footer>
+  <script src="https://interset-wq.github.io/blog/plugins/theme.js"></script>
+  <script id="internote-search" src="https://interset-wq.github.io/blog/plugins/search.js"
+    data-index-url="https://interset-wq.github.io/blog/search-index.json"
+    data-placeholder="搜索"
+    data-no-results="未找到结果"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/giscus.js"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/toc.js"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/fab.js"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/lightbox.js"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/code-copy.js"></script>
+  <script>
+    (function () {
+      'use strict';
+      var bar = document.getElementById('in-progress');
+      var body = document.querySelector('.in-post-body');
+      function update() {
+        var start = body.offsetTop - 80;
+        var end = body.offsetTop + body.offsetHeight - window.innerHeight + 40;
+        var t = (window.scrollY - start) / Math.max(end - start, 1);
+        bar.style.transform = 'scaleX(' + Math.min(Math.max(t, 0), 1) + ')';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
+  
+</body>
+</html>

@@ -1,5 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>InterNote</title><link>https://interset-wq.github.io/blog</link><description>My notes on everything.</description><copyright>InterNote</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url></url><title>avatar</title><link>https://interset-wq.github.io/blog</link></image><lastBuildDate>Fri, 16 Oct 2026 06:46:01 +0000</lastBuildDate><managingEditor>InterNote</managingEditor><ttl>60</ttl><webMaster>InterNote</webMaster><item><title>认证、授权与 Web 安全</title><link>https://interset-wq.github.io/blog/post/91.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>InterNote</title><link>https://interset-wq.github.io/blog</link><description>My notes on everything.</description><copyright>InterNote</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url></url><title>avatar</title><link>https://interset-wq.github.io/blog</link></image><lastBuildDate>Sat, 17 Oct 2026 12:48:35 +0000</lastBuildDate><managingEditor>InterNote</managingEditor><ttl>60</ttl><webMaster>InterNote</webMaster><item><title>Django 总览与项目搭建</title><link>https://interset-wq.github.io/blog/post/88.html</link><description>
+
+# Django 
+
+| 内置能力 | 作用 |
+|---|---|
+| ORM | 用 Python 类建表、迁移、查询，不写 SQL |
+| 模板 DTL | 与后端逻辑分离的页面渲染语言 |
+| 表单框架 | 自动生成 HTML + 服务端校验 |
+| 认证 | 用户、登录、密码、权限全套 |
+| Admin | 注册模型即得后台增删改查 |
+| 测试工具 | TestCase 驱动测试 |
+
+## MVT 架构详解
+
+Django 遵循 **MVT**（**Model–View–Template**）分层架构。</description><guid isPermaLink="true">https://interset-wq.github.io/blog/post/88.html</guid><pubDate>Fri, 16 Oct 2026 16:00:00 +0000</pubDate></item><item><title>认证、授权与 Web 安全</title><link>https://interset-wq.github.io/blog/post/91.html</link><description>
 # 认证、授权与 Web 安全
 
 ## 认证（Authentication）与授权（Authorization）

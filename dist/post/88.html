@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-color-mode="light" data-light-theme="light" data-dark-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script>window.icons = {"arrow-down": "M13.03 8.22a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L5.47 9.28a.75.75 0 1 1 1.06-1.06l1.97 1.97V2.75a.75.75 0 0 1 1.5 0v7.44l1.97-1.97a.75.75 0 0 1 1.06 0Z", "arrow-up": "M3.47 7.78a.75.75 0 0 1 0-1.06l3.75-3.75a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 1 1-1.06 1.06L8.75 5.811v7.439a.75.75 0 0 1-1.5 0V5.81L4.53 7.78a.75.75 0 0 1-1.06 0Z", "bars": "M1.75 2.5a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H1.75Zm0 3.75a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H1.75Zm0 3.75a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H1.75Zm0 3.75a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H1.75Z", "book": "M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z", "calendar": "M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z", "check": "M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z", "copy": "M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z", "github": "M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z", "home": "M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z", "moon": "M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z", "pencil": "M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354l-1.086-1.086Z", "post": "M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25ZM3.5 6.25a.75.75 0 0 1 .75-.75h7a.75.75 0 0 1 0 1.5h-7a.75.75 0 0 1-.75-.75Zm.75 2.25h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1 0-1.5Z", "rss": "M2.002 2.725a.75.75 0 0 1 .797-.699C8.79 2.42 13.58 7.21 13.974 13.201a.75.75 0 0 1-1.497.098 10.502 10.502 0 0 0-9.776-9.776.747.747 0 0 1-.7-.798ZM2.84 7.05h-.002a7.002 7.002 0 0 1 6.113 6.111.75.75 0 0 1-1.49.178 5.503 5.503 0 0 0-4.8-4.8.75.75 0 0 1 .179-1.489ZM2 13a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z", "search": "M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z", "sun": "M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z", "sync": "M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z", "tag": "M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.752 1.752 0 0 1 1 7.775Zm1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"};</script>
+<link rel="icon" type="image/png" href="https://interset-wq.github.io/blog/assets/favicon.png">
+  <link rel="stylesheet" href="https://interset-wq.github.io/blog/assets/primer.css">
+  
+  <link rel="stylesheet" href="https://interset-wq.github.io/blog/assets/main.css">
+  <script>
+    // Resolve the stored theme before first paint, otherwise a dark-mode
+    // visitor sees a white flash. theme.js takes over once loaded.
+    (function () {
+      var theme = localStorage.getItem('internote_theme') || 'light';
+      if (theme === 'auto') {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-color-mode', theme);
+    })();
+  </script>
+  <meta name="description" content="
+
+# Django 
+
+| 内置能力 | 作用 |
+|---|---|
+| ORM | 用 Python 类建表、迁移、查询，不写 SQL |
+| 模板 DTL | 与后端逻辑分离的页面渲染语言 |
+| 表单框架 | 自动生成 HTML + 服务端校验 |
+| 认证 | 用户、登录、密码、权限全套 |
+| Admin | 注册模型即得后台增删改查 |
+| 测试工具 | TestCase 驱动测试 |
+
+## MVT 架构详解
+
+Django 遵循 **MVT**（**Model–View–Template**）分层架构。">
+<meta property="og:title" content="Django 总览与项目搭建">
+<meta property="og:description" content="
+
+# Django 
+
+| 内置能力 | 作用 |
+|---|---|
+| ORM | 用 Python 类建表、迁移、查询，不写 SQL |
+| 模板 DTL | 与后端逻辑分离的页面渲染语言 |
+| 表单框架 | 自动生成 HTML + 服务端校验 |
+| 认证 | 用户、登录、密码、权限全套 |
+| Admin | 注册模型即得后台增删改查 |
+| 测试工具 | TestCase 驱动测试 |
+
+## MVT 架构详解
+
+Django 遵循 **MVT**（**Model–View–Template**）分层架构。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://interset-wq.github.io/blog/post/88.html">
+<meta property="og:image" content="https://interset-wq.github.io/blog/assets/avatar.png">
+<title>Django 总览与项目搭建</title>
+  <link href="https://interset-wq.github.io/blog/assets/starry-night.css" rel="stylesheet">
+  
+<style>
+  <style>
+    .in-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 100%;
+      height: 2px;
+      background: var(--in-color-accent);
+      transform-origin: 0 0;
+      transform: scaleX(0);
+      pointer-events: none;
+    }
+  </style>
+</style></head>
+<body>
+  <header class="in-site-header" id="header">  <h1 class="in-page-title">Django 总览与项目搭建</h1>
+<nav class="in-site-nav" aria-label="Post navigation">    <a class="in-nav-btn" href="https://interset-wq.github.io/blog" title="首页" aria-label="首页"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z" fill-rule="evenodd"></path></svg></a>
+
+  <button class="in-nav-btn" id="in-theme-toggle" type="button" title="切换主题" aria-label="切换主题">
+  <svg class="octicon" width="16" height="16"><path id="themeSwitch" d="M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z" fill-rule="evenodd"></path></svg>
+</button>
+</nav></header>
+  <main class="in-site-main" id="content">  <article>
+    <div class="in-post-meta-box">
+      <div class="in-post-meta">
+        <span class="in-meta-date">
+          <svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z" fill-rule="evenodd"></path></svg>
+          <span style="color:#1f883d">2026-10-17</span>
+        </span>
+        <span class="in-meta-labels">
+          <svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.752 1.752 0 0 1 1 7.775Zm1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z" fill-rule="evenodd"></path></svg>
+          <a href="https://interset-wq.github.io/blog/tag.html#Python">
+            <span class="in-meta-dot" style="background-color:#3572a5"></span>Python
+          </a>
+        </span>
+<a class="in-meta-repo" href="https://github.com/interset-wq/learning_log" target="_blank" rel="noopener" title="源码" aria-label="源码"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z" fill-rule="evenodd"></path></svg></a>        <a class="in-post-edit" href="https://github.com/interset-wq/blog/issues/88" target="_blank" rel="noopener" title="在 GitHub 上编辑" aria-label="在 GitHub 上编辑"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354l-1.086-1.086Z" fill-rule="evenodd"></path></svg></a>
+      </div>
+      <div class="in-meta-refs">
+        <span class="in-meta-refs-title">参考资料</span>
+        <ul>
+          <li><a href="https://docs.djangoproject.com/en/stable/" target="_blank" rel="noopener">Django 文档</a></li>
+          <li><a href="https://docs.djangoproject.com/en/stable/intro/tutorial01/" target="_blank" rel="noopener">项目搭建教程</a></li>
+        </ul>
+      </div>
+      <details class="in-meta-series" aria-label="Series">
+        <summary>
+          <svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z" fill-rule="evenodd"></path></svg>
+          Django 总览与项目搭建
+        </summary>
+        <ol>
+          <li><a href="https://interset-wq.github.io/blog/post/88_6234068448.html">数据库模型 Models</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/88_6234068681.html">视图与 URL 路由</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/88_6234068956.html">CBV 入门与通用视图</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/88_6234069183.html">CBV 的魔法与进阶</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/88_6234069407.html">表单 Form 与 ModelForm</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/88_6234069635.html">用户认证与权限</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/88_6234069864.html">管理后台 Admin</a></li>
+        </ol>
+      </details>
+    </div>
+    <nav class="in-toc" id="in-toc" data-toc-title="目录" data-toc-top="回到顶部" aria-label="目录"></nav>
+    <div class="in-progress" id="in-progress"></div>
+    <div class="in-post-body markdown-body"><h1>Django</h1>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>内置能力</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ORM</td>
+<td>用 Python 类建表、迁移、查询，不写 SQL</td>
+</tr>
+<tr>
+<td>模板 DTL</td>
+<td>与后端逻辑分离的页面渲染语言</td>
+</tr>
+<tr>
+<td>表单框架</td>
+<td>自动生成 HTML + 服务端校验</td>
+</tr>
+<tr>
+<td>认证</td>
+<td>用户、登录、密码、权限全套</td>
+</tr>
+<tr>
+<td>Admin</td>
+<td>注册模型即得后台增删改查</td>
+</tr>
+<tr>
+<td>测试工具</td>
+<td>TestCase 驱动测试</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h2>MVT 架构详解</h2>
+<p>Django 遵循 <strong>MVT</strong>（<strong>Model–View–Template</strong>）分层架构。它是经典 <strong>MVC</strong>（Model–View–Controller）的一种变体：<strong>Django 的 View 承担了 Controller 的职责</strong>，因此叫 MVT 而不是 MVC。</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>层</th>
+<th>职责</th>
+<th>对应文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M</strong>odel</td>
+<td>数据结构与数据库表</td>
+<td>各 app 的 <code class="notranslate">models.py</code></td>
+</tr>
+<tr>
+<td><strong>V</strong>iew</td>
+<td>业务逻辑：收请求 → 查数据 → 返回响应</td>
+<td>各 app 的 <code class="notranslate">views.py</code></td>
+</tr>
+<tr>
+<td><strong>T</strong>emplate</td>
+<td>HTML 页面 + 模板语言 DTL</td>
+<td>各 app 的 <code class="notranslate">templates/</code></td>
+</tr>
+<tr>
+<td>URLconf</td>
+<td>URL → 视图的映射（路由器）</td>
+<td><code class="notranslate">urls.py</code></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<blockquote>
+<p>一句话：<strong>URL 把请求路由给 View，View 用 Model 读写数据，再把结果交给 Template 渲染成 HTML 返回。</strong></p>
+</blockquote>
+<h3>一次请求的完整生命周期</h3>
+<pre class="notranslate"><code class="notranslate">浏览器发起 GET /books/
+        │
+        ▼
+项目级 urls.py（URLconf）按规则匹配 URL
+        │  找到对应的视图
+        ▼
+View 执行业务逻辑
+        │  用 Model（ORM）查询
+        ▼
+拿到数据对象 / 列表
+        │
+        ▼
+交给 Template 渲染
+        │  把模板占位符替换成真实数据，生成 HTML
+        ▼
+返回 HttpResponse
+        ▼
+浏览器展示页面
+</code></pre>
+<h3>每一层长什么样</h3>
+<p><strong>Model（数据层）</strong> —— 定义"一张表长什么样"：</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c"># app/models.py</span>
+<span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">db</span> <span class="pl-k">import</span> <span class="pl-s1">models</span>
+
+<span class="pl-k">class</span> <span class="pl-v">Book</span>(<span class="pl-s1">models</span>.<span class="pl-c1">Model</span>):
+    <span class="pl-s1">title</span> <span class="pl-c1">=</span> <span class="pl-s1">models</span>.<span class="pl-c1">CharField</span>(<span class="pl-s1">max_length</span><span class="pl-c1">=</span><span class="pl-c1">200</span>)
+    <span class="pl-s1">published</span> <span class="pl-c1">=</span> <span class="pl-s1">models</span>.<span class="pl-c1">DateField</span>(<span class="pl-s1">null</span><span class="pl-c1">=</span><span class="pl-c1">True</span>, <span class="pl-s1">blank</span><span class="pl-c1">=</span><span class="pl-c1">True</span>)
+
+    <span class="pl-k">def</span> <span class="pl-en">__str__</span>(<span class="pl-s1">self</span>):
+        <span class="pl-k">return</span> <span class="pl-s1">self</span>.<span class="pl-c1">title</span></pre></div>
+<p><strong>View（业务层）</strong> —— 接收请求、查数据、返回响应（函数视图 FBV）：</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c"># app/views.py</span>
+<span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">shortcuts</span> <span class="pl-k">import</span> <span class="pl-s1">render</span>
+<span class="pl-k">from</span> .<span class="pl-s1">models</span> <span class="pl-k">import</span> <span class="pl-v">Book</span>
+
+<span class="pl-k">def</span> <span class="pl-en">book_list</span>(<span class="pl-s1">request</span>):
+    <span class="pl-s1">books</span> <span class="pl-c1">=</span> <span class="pl-v">Book</span>.<span class="pl-c1">objects</span>.<span class="pl-c1">all</span>()              <span class="pl-c"># 用 Model 查数据</span>
+    <span class="pl-k">return</span> <span class="pl-en">render</span>(<span class="pl-s1">request</span>, <span class="pl-s">'books.html'</span>, {<span class="pl-s">'books'</span>: <span class="pl-s1">books</span>})   <span class="pl-c"># 交给 Template</span></pre></div>
+<p><strong>URLconf（路由层）</strong> —— 把 URL 映射到视图：</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c"># app/urls.py</span>
+<span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">urls</span> <span class="pl-k">import</span> <span class="pl-s1">path</span>
+<span class="pl-k">from</span> . <span class="pl-k">import</span> <span class="pl-s1">views</span>
+
+<span class="pl-s1">urlpatterns</span> <span class="pl-c1">=</span> [
+    <span class="pl-en">path</span>(<span class="pl-s">'books/'</span>, <span class="pl-s1">views</span>.<span class="pl-c1">book_list</span>, <span class="pl-s1">name</span><span class="pl-c1">=</span><span class="pl-s">'books'</span>),
+]</pre></div>
+<p><strong>Template（表现层）</strong> —— 只负责展示，不写业务逻辑：</p>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate"><span class="pl-c">&lt;!-- app/templates/books.html --&gt;</span>
+{% for book in books %}
+  <span class="pl-kos">&lt;</span><span class="pl-ent">p</span><span class="pl-kos">&gt;</span>{{ book.title }} · {{ book.published|date:'Y-m-d' }}<span class="pl-kos">&lt;/</span><span class="pl-ent">p</span><span class="pl-kos">&gt;</span>
+{% empty %}
+  <span class="pl-kos">&lt;</span><span class="pl-ent">p</span><span class="pl-kos">&gt;</span>No books.<span class="pl-kos">&lt;/</span><span class="pl-ent">p</span><span class="pl-kos">&gt;</span>
+{% endfor %}</pre></div>
+<blockquote>
+<p>分层铁律：<strong>Model 只管数据，View 只管业务，Template 只管展示，URLconf 只管路由</strong>。业务逻辑永远不写进模板。</p>
+</blockquote>
+<h2>初始化一个 Django 项目</h2>
+<h3>完整命令序列</h3>
+<div class="highlight highlight-source-shell"><pre class="notranslate">uv init
+uv add django
+<span class="pl-c"><span class="pl-c">#</span> 初始化django项目</span>
+django-admin startproject mysite <span class="pl-c1">.</span>
+<span class="pl-c"><span class="pl-c">#</span> 创建app，创建之后需要在settings.py中挂载</span>
+python manage.py startapp myapp
+<span class="pl-c"><span class="pl-c">#</span> 为自定义模型生成迁移并建表</span>
+python manage.py makemigrations
+python manage.py migrate
+<span class="pl-c"><span class="pl-c">#</span> 创建管理员</span>
+python manage.py createsuperuser
+python manage.py runserver</pre></div>
+<p>浏览器打开 <a href="http://127.0.0.1:8000/" rel="nofollow">http://127.0.0.1:8000/</a>，一个能跑的 Django 项目就诞生了。</p>
+<p><code class="notranslate">django-admin startproject mysite .</code>** —— 生成项目骨架：</p>
+<pre class="notranslate"><code class="notranslate">mysite/                  # 项目根（manage.py 所在目录）
+├── manage.py            # 命令行入口：runserver、migrate、startapp 等
+└── mysite/              # 项目配置包（settings/urls）
+    ├── __init__.py
+    ├── settings.py      # 全部配置
+    ├── urls.py          # 项目级 URLconf
+    ├── wsgi.py          # WSGI 入口（同步部署）
+    └── asgi.py          # ASGI 入口（异步/WebSocket）
+</code></pre>
+<ul>
+<li><strong>末尾的 <code class="notranslate">.</code></strong> 表示"在当前目录生成"，<code class="notranslate">manage.py</code> 落在当前目录；不加 <code class="notranslate">.</code> 会生成一层 <code class="notranslate">mysite/mysite/</code> 嵌套目录。</li>
+</ul>
+<p><code class="notranslate">python manage.py startapp myapp</code>** —— 创建app：</p>
+<pre class="notranslate"><code class="notranslate">mysite/                  # 项目根（manage.py 所在目录）
+├── manage.py            # 命令行入口：runserver、migrate、startapp 等
+└── mysite/              # 项目配置
+    myapp/               # app
+    ├── __init__.py
+    ├── admin.py     # 注册模型到后台
+    ├── apps.py      # 应用配置
+    ├── models.py    # 数据模型（M 层）
+    ├── tests.py     # 测试
+    ├── views.py     # 视图（V 层）
+    └── migrations/  # 迁移文件目录
+</code></pre>
+<blockquote>
+<p><strong>项目（project）vs 应用（app）</strong>：项目是"站点"（配置 + 路由），应用是"功能模块"（博客、评论、用户…）。一个项目可含多个应用，一个应用也可被多个项目复用。</p>
+</blockquote>
+<p><strong>注册应用</strong> —— 新建的 app 要生效，必须在 <code class="notranslate">settings.py</code> 的 <code class="notranslate">INSTALLED_APPS</code> 里登记：</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c"># mysite/settings.py</span>
+<span class="pl-c1">INSTALLED_APPS</span> <span class="pl-c1">=</span> [
+    <span class="pl-s">'myapp'</span>,                      
+
+    <span class="pl-s">'django.contrib.admin'</span>,       
+    <span class="pl-s">'django.contrib.auth'</span>,
+    <span class="pl-s">'django.contrib.contenttypes'</span>,
+    <span class="pl-s">'django.contrib.sessions'</span>,
+    <span class="pl-s">'django.contrib.messages'</span>,
+    <span class="pl-s">'django.contrib.staticfiles'</span>,
+]</pre></div>
+<h3>迁移详解：makemigrations 与 migrate</h3>
+<p><code class="notranslate">makemigrations</code> 是初始化流程的关键一步：你在 <code class="notranslate">models.py</code> 定义模型后，要把"模型 → 数据库表"落地，需要两条命令配合。</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">python manage.py makemigrations   <span class="pl-c"><span class="pl-c">#</span> 生成迁移文件（不碰数据库）</span>
+python manage.py migrate          <span class="pl-c"><span class="pl-c">#</span> 把迁移应用到数据库（真正建表）</span></pre></div>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>命令</th>
+<th>做什么</th>
+<th>是否动数据库</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">makemigrations</code></td>
+<td>对比模型与迁移记录，<strong>生成迁移文件</strong>（如 <code class="notranslate">myapp/migrations/0001_initial.py</code>）</td>
+<td>否，只生成"改动说明书"</td>
+</tr>
+<tr>
+<td><code class="notranslate">migrate</code></td>
+<td>读取迁移文件，<strong>把变更实际应用到数据库</strong>（建表、加列）</td>
+<td>是</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>典型工作流</strong>（首次建表 / 每次改模型）：</p>
+<pre class="notranslate"><code class="notranslate">在 models.py 定义模型
+        ↓
+python manage.py makemigrations   # 生成 0001_initial.py（记录"表长什么样"）
+        ↓
+python manage.py migrate          # 真正建表 + 写入 django_migrations 记录
+        ↓
+数据库表结构已更新
+</code></pre>
+<blockquote>
+<p>记住区别：<strong>makemigrations 生成迁移文件（说明书），migrate 执行迁移（真正动数据库）</strong>。改模型后漏掉 makemigrations，migrate 不会自动建新表；只跑 makemigrations 不跑 migrate，表也不会真的出现。查看迁移状态用 <code class="notranslate">showmigrations</code>（<code class="notranslate">[X]</code> 已应用 / <code class="notranslate">[ ]</code> 未应用）。</p>
+</blockquote>
+<h2>settings.py 逐项解读</h2>
+<h3>基础项</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>配置</th>
+<th>作用</th>
+<th>要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">BASE_DIR</code></td>
+<td>项目根目录（Path 对象）</td>
+<td>拼路径用 <code class="notranslate">BASE_DIR / 'db.sqlite3'</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">SECRET_KEY</code></td>
+<td>签名密钥（session、CSRF 等）</td>
+<td><strong>生产环境必须保密、用环境变量注入</strong></td>
+</tr>
+<tr>
+<td><code class="notranslate">DEBUG</code></td>
+<td>调试模式</td>
+<td>生产必须 <code class="notranslate">False</code>，否则泄露堆栈</td>
+</tr>
+<tr>
+<td><code class="notranslate">ALLOWED_HOSTS</code></td>
+<td>允许访问的主机名列表</td>
+<td>生产必须填写域名，否则 400</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>INSTALLED_APPS</h3>
+<p>用于挂载<code class="notranslate">python manage.py startapp</code>创建的app和第三方app（第三方库）<br>
+三类应用按顺序排：</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c1">INSTALLED_APPS</span> <span class="pl-c1">=</span> [
+    <span class="pl-c"># 自建应用</span>
+    <span class="pl-s">'myapp'</span>,
+    <span class="pl-c"># 第三方应用</span>
+    <span class="pl-s">'rest_framework'</span>,
+    <span class="pl-c"># Django 内置应用</span>
+    <span class="pl-s">'django.contrib.admin'</span>,
+    <span class="pl-s">'django.contrib.auth'</span>,
+    <span class="pl-s">'django.contrib.contenttypes'</span>,
+    <span class="pl-s">'django.contrib.sessions'</span>,
+    <span class="pl-s">'django.contrib.messages'</span>,
+    <span class="pl-s">'django.contrib.staticfiles'</span>,
+]</pre></div>
+<blockquote>
+<p><code class="notranslate">django.contrib.admin</code>（后台）、<code class="notranslate">auth</code>（认证）、<code class="notranslate">sessions</code>（会话）、<code class="notranslate">messages</code>（消息）等内置应用与 MIDDLEWARE 中的对应中间件成对出现，删掉会破坏对应功能。</p>
+</blockquote>
+<h3>中间件：MIDDLEWARE</h3>
+<p>请求→响应之间按顺序经过的钩子。默认七件套的作用：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>中间件</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">SecurityMiddleware</code></td>
+<td>安全头、HTTPS 重定向、HSTS 等</td>
+</tr>
+<tr>
+<td><code class="notranslate">SessionMiddleware</code></td>
+<td>管理会话（cookie → session 数据）</td>
+</tr>
+<tr>
+<td><code class="notranslate">CommonMiddleware</code></td>
+<td>URL 末尾斜杠补全等</td>
+</tr>
+<tr>
+<td><code class="notranslate">CsrfViewMiddleware</code></td>
+<td>CSRF 防护（模板必须有 <code class="notranslate">{% csrf_token %}</code>）</td>
+</tr>
+<tr>
+<td><code class="notranslate">AuthenticationMiddleware</code></td>
+<td>给 <code class="notranslate">request.user</code> 注入当前用户</td>
+</tr>
+<tr>
+<td><code class="notranslate">MessageMiddleware</code></td>
+<td>一次性消息（messages framework）</td>
+</tr>
+<tr>
+<td><code class="notranslate">XFrameOptionsMiddleware</code></td>
+<td>点击劫持防护（X-Frame-Options）</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>顺序有讲究：Session 在 Auth 之前、Auth 在 Messages 之前，不要随意调换。</p>
+<h3>路由与模板</h3>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c1">ROOT_URLCONF</span> <span class="pl-c1">=</span> <span class="pl-s">'mysite.urls'</span>   <span class="pl-c"># 项目级 URLconf 入口</span>
+
+<span class="pl-c1">TEMPLATES</span> <span class="pl-c1">=</span> [
+    {
+        <span class="pl-s">'BACKEND'</span>: <span class="pl-s">'django.template.backends.django.DjangoTemplates'</span>,
+        <span class="pl-s">'DIRS'</span>: [],                       <span class="pl-c"># 额外模板目录（如项目级 templates/）</span>
+        <span class="pl-s">'APP_DIRS'</span>: <span class="pl-c1">True</span>,                 <span class="pl-c"># 是否在每个 app 的 templates/ 下查找</span>
+        <span class="pl-s">'OPTIONS'</span>: {
+            <span class="pl-s">'context_processors'</span>: [       <span class="pl-c"># 注入到所有模板的全局变量</span>
+                <span class="pl-s">'django.template.context_processors.debug'</span>,
+                <span class="pl-s">'django.template.context_processors.request'</span>,
+                <span class="pl-s">'django.contrib.auth.context_processors.auth'</span>,        <span class="pl-c"># {{ user }}、{{ perms }}</span>
+                <span class="pl-s">'django.contrib.messages.context_processors.messages'</span>, <span class="pl-c"># {{ messages }}</span>
+            ],
+        },
+    },
+]</pre></div>
+<blockquote>
+<p><code class="notranslate">auth</code> context processor 提供模板里的 <code class="notranslate">{{ user }}</code> 与 <code class="notranslate">{{ perms }}</code>；<code class="notranslate">request</code> 处理器提供 <code class="notranslate">{{ request }}</code>（分页、当前路径等都要靠它）。</p>
+</blockquote>
+<h3>数据库：DATABASES</h3>
+<p>SQLite（开发零配置）：</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c1">DATABASES</span> <span class="pl-c1">=</span> {
+    <span class="pl-s">'default'</span>: {
+        <span class="pl-s">'ENGINE'</span>: <span class="pl-s">'django.db.backends.sqlite3'</span>,
+        <span class="pl-s">'NAME'</span>: <span class="pl-c1">BASE_DIR</span> <span class="pl-c1">/</span> <span class="pl-s">'db.sqlite3'</span>,
+    }
+}</pre></div>
+<p>PostgreSQL（生产常用）：</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c1">DATABASES</span> <span class="pl-c1">=</span> {
+    <span class="pl-s">'default'</span>: {
+        <span class="pl-s">'ENGINE'</span>: <span class="pl-s">'django.db.backends.postgresql'</span>,
+        <span class="pl-s">'NAME'</span>: <span class="pl-s">'mydb'</span>,
+        <span class="pl-s">'USER'</span>: <span class="pl-s">'myuser'</span>,
+        <span class="pl-s">'PASSWORD'</span>: <span class="pl-s">'mypassword'</span>,
+        <span class="pl-s">'HOST'</span>: <span class="pl-s">'localhost'</span>,
+        <span class="pl-s">'PORT'</span>: <span class="pl-s">'5432'</span>,
+    }
+}</pre></div>
+<h3>密码校验 / 国际化 / 静态文件 / 主键</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>配置</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">AUTH_PASSWORD_VALIDATORS</code></td>
+<td>密码校验（与用户相似度、最小长度、常见密码、纯数字）</td>
+</tr>
+<tr>
+<td><code class="notranslate">LANGUAGE_CODE = 'zh-hans'</code></td>
+<td>默认语言（中文站点）</td>
+</tr>
+<tr>
+<td><code class="notranslate">TIME_ZONE = 'Asia/Shanghai'</code></td>
+<td>时区</td>
+</tr>
+<tr>
+<td><code class="notranslate">STATIC_URL = 'static/'</code></td>
+<td>静态文件访问前缀（生产再加 <code class="notranslate">STATIC_ROOT</code>）</td>
+</tr>
+<tr>
+<td><code class="notranslate">DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'</code></td>
+<td>主键类型（Django 3.2+ 默认）</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>自定义设置</h3>
+<p>settings.py 是普通 Python 文件，可追加配置，代码里用 <code class="notranslate">django.conf.settings</code> 读取：</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c"># settings.py 末尾</span>
+<span class="pl-c1">LOGIN_URL</span> <span class="pl-c1">=</span> <span class="pl-s">'accounts:login'</span>                    <span class="pl-c"># 未登录跳转地址</span>
+<span class="pl-c1">LOGIN_REDIRECT_URL</span> <span class="pl-c1">=</span> <span class="pl-s">'learning_logs:index'</span>      <span class="pl-c"># 登录成功后跳转</span>
+<span class="pl-c1">LOGOUT_REDIRECT_URL</span> <span class="pl-c1">=</span> <span class="pl-s">'learning_logs:index'</span>     <span class="pl-c"># 登出后跳转</span></pre></div>
+<h2>manage.py 常用命令速查</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">runserver</code></td>
+<td>启动开发服务器（默认 127.0.0.1:8000，可 <code class="notranslate">runserver 0.0.0.0:8000</code> 或换端口）</td>
+</tr>
+<tr>
+<td><code class="notranslate">startapp &lt;name&gt;</code></td>
+<td>新建应用</td>
+</tr>
+<tr>
+<td><code class="notranslate">makemigrations</code> / <code class="notranslate">migrate</code></td>
+<td>生成迁移文件 / 应用到数据库</td>
+</tr>
+<tr>
+<td><code class="notranslate">showmigrations</code></td>
+<td>查看迁移状态</td>
+</tr>
+<tr>
+<td><code class="notranslate">sqlmigrate &lt;app&gt; &lt;n&gt;</code></td>
+<td>预览某条迁移的 SQL</td>
+</tr>
+<tr>
+<td><code class="notranslate">createsuperuser</code></td>
+<td>创建管理员</td>
+</tr>
+<tr>
+<td><code class="notranslate">shell</code></td>
+<td>进入已配置 Django 的交互式 Python</td>
+</tr>
+<tr>
+<td><code class="notranslate">check</code></td>
+<td>检查配置问题</td>
+</tr>
+<tr>
+<td><code class="notranslate">collectstatic</code></td>
+<td>收集静态文件（部署用）</td>
+</tr>
+<tr>
+<td><code class="notranslate">test</code></td>
+<td>运行测试</td>
+</tr>
+<tr>
+<td><code class="notranslate">dumpdata</code> / <code class="notranslate">loaddata</code></td>
+<td>导出 / 导入数据</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h2>项目级 URL 路由</h2>
+<p>项目 <code class="notranslate">project/urls.py</code> 是 URLconf 入口，通常把各应用的路由用 <code class="notranslate">include()</code> 挂进来：</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">contrib</span> <span class="pl-k">import</span> <span class="pl-s1">admin</span>
+<span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">urls</span> <span class="pl-k">import</span> <span class="pl-s1">path</span>, <span class="pl-s1">include</span>
+
+<span class="pl-s1">urlpatterns</span> <span class="pl-c1">=</span> [
+    <span class="pl-en">path</span>(<span class="pl-s">'admin/'</span>, <span class="pl-s1">admin</span>.<span class="pl-c1">site</span>.<span class="pl-c1">urls</span>),
+    <span class="pl-en">path</span>(<span class="pl-s">'accounts/'</span>, <span class="pl-en">include</span>(<span class="pl-s">'accounts.urls'</span>)),
+    <span class="pl-en">path</span>(<span class="pl-s">''</span>, <span class="pl-en">include</span>(<span class="pl-s">'myapp.urls'</span>)),
+]</pre></div></div>
+    <details class="in-series-list" open aria-label="Series">
+      <summary>Django 总览与项目搭建</summary>
+      <ol>
+        <li><a href="https://interset-wq.github.io/blog/post/88_6234068448.html">数据库模型 Models</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/88_6234068681.html">视图与 URL 路由</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/88_6234068956.html">CBV 入门与通用视图</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/88_6234069183.html">CBV 的魔法与进阶</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/88_6234069407.html">表单 Form 与 ModelForm</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/88_6234069635.html">用户认证与权限</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/88_6234069864.html">管理后台 Admin</a></li>
+      </ol>
+    </details>
+  </article>
+<section class="in-comments-section">
+  <template id="in-giscus-template">
+    <script src="https://giscus.app/client.js"
+      data-repo="interset-wq/blog"
+      data-repo-id="R_kgDOTWqpPQ"
+      data-category="Announcements"
+      data-category-id="DIC_kwDOTWqpPc4DBFW-"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="light"
+      data-lang="zh-CN"
+      crossorigin="anonymous"
+      async></script>
+  </template>
+  <div class="in-comments-container" id="comments"></div>
+</section>  <div id="in-fab" class="in-fab"
+       data-toc-title="目录"
+       data-top-title="回到顶部"
+       data-bottom-title="下一页"></div>
+</main>
+  <footer class="in-site-footer" id="footer"><div class="in-footer-icons" id="footer-icons" data-copied="已复制">
+  <a class="in-nav-btn in-social" href="https://space.bilibili.com/3546586772670802" target="_blank" rel="noopener" title="Bilibili" aria-label="Bilibili"><svg fill="#00A1D6" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Bilibili</title><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373Z"/></svg></a>
+  <a class="in-nav-btn in-social" href="mailto:intersetwq@gmail.com" target="_blank" rel="noopener" title="Email" aria-label="Email"><svg fill="#EA4335" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gmail</title><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg></a>
+  <button class="in-nav-btn in-social" type="button" title="QQ" aria-label="QQ" data-copy="2775055258"><svg fill="#1EBAFC" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>QQ</title><path d="M21.395 15.035a40 40 0 0 0-.803-2.264l-1.079-2.695c.001-.032.014-.562.014-.836C19.526 4.632 17.351 0 12 0S4.474 4.632 4.474 9.241c0 .274.013.804.014.836l-1.08 2.695a39 39 0 0 0-.802 2.264c-1.021 3.283-.69 4.643-.438 4.673.54.065 2.103-2.472 2.103-2.472 0 1.469.756 3.387 2.394 4.771-.612.188-1.363.479-1.845.835-.434.32-.379.646-.301.778.343.578 5.883.369 7.482.189 1.6.18 7.14.389 7.483-.189.078-.132.132-.458-.301-.778-.483-.356-1.233-.646-1.846-.836 1.637-1.384 2.393-3.302 2.393-4.771 0 0 1.563 2.537 2.103 2.472.251-.03.581-1.39-.438-4.673"/></svg></button>
+  <button class="in-nav-btn in-social" type="button" title="WeChat" aria-label="WeChat" data-qrcode="https://interset-wq.github.io/blog/wechat-qr.jpg"><svg fill="#07C160" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>WeChat</title><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/></svg></button>
+  <a class="in-nav-btn in-social" href="https://interset-wq.github.io/blog/rss.xml" target="_blank" rel="noopener" title="RSS" aria-label="RSS"><svg fill="#FFA500" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>RSS</title><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/></svg></a>
+  <a class="in-nav-btn in-social" href="https://github.com/interset-wq/blog" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><svg fill="#181717" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+</div>
+<div class="in-footer-line" id="footer-copyright">
+  Copyright &copy; <span id="copyright-year"></span>
+  <a href="https://interset-wq.github.io/blog">InterNote</a>
+</div>
+<div class="in-footer-powered" id="footer-powered">
+  <span id="run-days"></span>
+  <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
+</div>
+<div class="in-footer-built">构建部署于 2026-10-17 20:48:32</div>
+<script>
+  (function () {
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    var days = Math.floor(
+      (Date.now() - new Date('2026-09-30').getTime()) / 86400000
+    );
+    document.getElementById('run-days').textContent =
+      '网站运行 ' + days + ' 天 • ';
+
+    // [[social]] copy + qrcode actions. Everything is data-driven from the
+    // server-rendered buttons; with no such buttons this is a no-op.
+    var icons = document.getElementById('footer-icons');
+    if (!icons.querySelector('[data-copy], [data-qrcode]')) {
+      return;
+    }
+
+    var toast = document.createElement('div');
+    toast.className = 'in-social-toast';
+    toast.hidden = true;
+    document.body.appendChild(toast);
+    var toastTimer = null;
+    function showToast(text) {
+      toast.textContent = text;
+      toast.hidden = false;
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () { toast.hidden = true; }, 1600);
+    }
+
+    var overlay = document.createElement('div');
+    overlay.className = 'in-social-qr';
+    overlay.hidden = true;
+    var img = document.createElement('img');
+    img.alt = '';
+    overlay.appendChild(img);
+    document.body.appendChild(overlay);
+    function closeOverlay() { overlay.hidden = true; }
+    overlay.addEventListener('click', closeOverlay);
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') { closeOverlay(); }
+    });
+
+    icons.addEventListener('click', function (event) {
+      var button = event.target.closest('[data-copy], [data-qrcode]');
+      if (!button) { return; }
+      if (button.dataset.copy) {
+        navigator.clipboard.writeText(button.dataset.copy).then(function () {
+          showToast(icons.dataset.copied || 'Copied!');
+        });
+      } else if (button.dataset.qrcode) {
+        img.src = button.dataset.qrcode;
+        overlay.hidden = false;
+      }
+    });
+  })();
+</script></footer>
+  <script src="https://interset-wq.github.io/blog/plugins/theme.js"></script>
+  <script id="internote-search" src="https://interset-wq.github.io/blog/plugins/search.js"
+    data-index-url="https://interset-wq.github.io/blog/search-index.json"
+    data-placeholder="搜索"
+    data-no-results="未找到结果"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/giscus.js"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/toc.js"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/fab.js"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/lightbox.js"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/code-copy.js"></script>
+  <script>
+    (function () {
+      'use strict';
+      var bar = document.getElementById('in-progress');
+      var body = document.querySelector('.in-post-body');
+      function update() {
+        var start = body.offsetTop - 80;
+        var end = body.offsetTop + body.offsetHeight - window.innerHeight + 40;
+        var t = (window.scrollY - start) / Math.max(end - start, 1);
+        bar.style.transform = 'scaleX(' + Math.min(Math.max(t, 0), 1) + ')';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
+  
+</body>
+</html>

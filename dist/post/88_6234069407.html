@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-color-mode="light" data-light-theme="light" data-dark-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script>window.icons = {"arrow-down": "M13.03 8.22a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L5.47 9.28a.75.75 0 1 1 1.06-1.06l1.97 1.97V2.75a.75.75 0 0 1 1.5 0v7.44l1.97-1.97a.75.75 0 0 1 1.06 0Z", "arrow-up": "M3.47 7.78a.75.75 0 0 1 0-1.06l3.75-3.75a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 1 1-1.06 1.06L8.75 5.811v7.439a.75.75 0 0 1-1.5 0V5.81L4.53 7.78a.75.75 0 0 1-1.06 0Z", "bars": "M1.75 2.5a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H1.75Zm0 3.75a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H1.75Zm0 3.75a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H1.75Zm0 3.75a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H1.75Z", "book": "M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z", "calendar": "M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z", "check": "M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z", "copy": "M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z", "github": "M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z", "home": "M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z", "moon": "M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z", "pencil": "M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354l-1.086-1.086Z", "post": "M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25ZM3.5 6.25a.75.75 0 0 1 .75-.75h7a.75.75 0 0 1 0 1.5h-7a.75.75 0 0 1-.75-.75Zm.75 2.25h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1 0-1.5Z", "rss": "M2.002 2.725a.75.75 0 0 1 .797-.699C8.79 2.42 13.58 7.21 13.974 13.201a.75.75 0 0 1-1.497.098 10.502 10.502 0 0 0-9.776-9.776.747.747 0 0 1-.7-.798ZM2.84 7.05h-.002a7.002 7.002 0 0 1 6.113 6.111.75.75 0 0 1-1.49.178 5.503 5.503 0 0 0-4.8-4.8.75.75 0 0 1 .179-1.489ZM2 13a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z", "search": "M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z", "sun": "M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z", "sync": "M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z", "tag": "M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.752 1.752 0 0 1 1 7.775Zm1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"};</script>
+<link rel="icon" type="image/png" href="https://interset-wq.github.io/blog/assets/favicon.png">
+  <link rel="stylesheet" href="https://interset-wq.github.io/blog/assets/primer.css">
+  
+  <link rel="stylesheet" href="https://interset-wq.github.io/blog/assets/main.css">
+  <script>
+    // Resolve the stored theme before first paint, otherwise a dark-mode
+    // visitor sees a white flash. theme.js takes over once loaded.
+    (function () {
+      var theme = localStorage.getItem('internote_theme') || 'light';
+      if (theme === 'auto') {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-color-mode', theme);
+    })();
+  </script>
+  <meta name="description" content="My notes on everything.">
+<meta property="og:title" content="表单 Form 与 ModelForm">
+<meta property="og:description" content="My notes on everything.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://interset-wq.github.io/blog/post/88_6234069407.html">
+<meta property="og:image" content="https://interset-wq.github.io/blog/assets/avatar.png">
+<title>表单 Form 与 ModelForm</title>
+  <link href="https://interset-wq.github.io/blog/assets/starry-night.css" rel="stylesheet">
+  
+<style>
+  <style>
+    .in-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 100%;
+      height: 2px;
+      background: var(--in-color-accent);
+      transform-origin: 0 0;
+      transform: scaleX(0);
+      pointer-events: none;
+    }
+  </style>
+</style></head>
+<body>
+  <header class="in-site-header" id="header">  <h1 class="in-page-title">表单 Form 与 ModelForm</h1>
+<nav class="in-site-nav" aria-label="Post navigation">    <a class="in-nav-btn" href="https://interset-wq.github.io/blog" title="首页" aria-label="首页"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z" fill-rule="evenodd"></path></svg></a>
+
+  <button class="in-nav-btn" id="in-theme-toggle" type="button" title="切换主题" aria-label="切换主题">
+  <svg class="octicon" width="16" height="16"><path id="themeSwitch" d="M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z" fill-rule="evenodd"></path></svg>
+</button>
+</nav></header>
+  <main class="in-site-main" id="content">  <article>
+    <div class="in-post-meta-box">
+      <div class="in-post-meta">
+        <span class="in-meta-date">
+          <svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z" fill-rule="evenodd"></path></svg>
+          <span style="color:#1f883d">2026-10-17</span>
+        </span>
+        <span class="in-meta-labels">
+          <svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.752 1.752 0 0 1 1 7.775Zm1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z" fill-rule="evenodd"></path></svg>
+          <a href="https://interset-wq.github.io/blog/tag.html#Python">
+            <span class="in-meta-dot" style="background-color:#3572a5"></span>Python
+          </a>
+        </span>
+<a class="in-meta-repo" href="https://github.com/interset-wq/learning_log" target="_blank" rel="noopener" title="源码" aria-label="源码"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z" fill-rule="evenodd"></path></svg></a>        <a class="in-post-edit" href="https://github.com/interset-wq/blog/issues/88" target="_blank" rel="noopener" title="在 GitHub 上编辑" aria-label="在 GitHub 上编辑"><svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354l-1.086-1.086Z" fill-rule="evenodd"></path></svg></a>
+      </div>
+      <div class="in-meta-refs">
+        <span class="in-meta-refs-title">参考资料</span>
+        <ul>
+          <li><a href="https://docs.djangoproject.com/en/stable/topics/forms/" target="_blank" rel="noopener">表单指南</a></li>
+          <li><a href="https://docs.djangoproject.com/en/stable/topics/forms/modelforms/" target="_blank" rel="noopener">ModelForm</a></li>
+        </ul>
+      </div>
+      <details class="in-meta-series" aria-label="Series">
+        <summary>
+          <svg class="octicon " width="16" height="16" aria-hidden="true"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z" fill-rule="evenodd"></path></svg>
+          <a href="https://interset-wq.github.io/blog/post/88.html">Django 总览与项目搭建</a>
+          <span class="in-meta-series-pos">5 / 7</span>
+        </summary>
+        <ol>
+          <li><a href="https://interset-wq.github.io/blog/post/88_6234068448.html">数据库模型 Models</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/88_6234068681.html">视图与 URL 路由</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/88_6234068956.html">CBV 入门与通用视图</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/88_6234069183.html">CBV 的魔法与进阶</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/88_6234069407.html">表单 Form 与 ModelForm</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/88_6234069635.html">用户认证与权限</a></li>
+          <li><a href="https://interset-wq.github.io/blog/post/88_6234069864.html">管理后台 Admin</a></li>
+        </ol>
+      </details>
+    </div>
+    <nav class="in-toc" id="in-toc" data-toc-title="目录" data-toc-top="回到顶部" aria-label="目录"></nav>
+    <div class="in-progress" id="in-progress"></div>
+    <div class="in-post-body markdown-body"><p>HTML <code class="notranslate">&lt;form&gt;</code> 只负责把数据 POST 给服务器；Django 的 Form 框架多做三件事：</p>
+<ol>
+<li><strong>校验（validate）</strong>：字段类型、长度、必填、格式、跨字段规则、自定义规则。</li>
+<li><strong>清洗（clean）</strong>：把字符串转成正确的 Python 类型（<code class="notranslate">"2026-10-16"</code> → <code class="notranslate">datetime.date</code>，<code class="notranslate">"42"</code> → <code class="notranslate">int</code>）。</li>
+<li><strong>渲染与回显</strong>：自动生成 HTML 控件，校验失败时保留用户输入并在对应字段旁显示错误。</li>
+</ol>
+<h2>Form vs ModelForm</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>维度</th>
+<th><code class="notranslate">forms.Form</code></th>
+<th><code class="notranslate">forms.ModelForm</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字段来源</td>
+<td>手动逐字段声明</td>
+<td>从 Model 自动推导</td>
+</tr>
+<tr>
+<td>用途</td>
+<td>与模型无关（登录、搜索、联系我们、续借）</td>
+<td>直接对应某模型的增/改</td>
+</tr>
+<tr>
+<td>保存</td>
+<td>手动读 <code class="notranslate">cleaned_data</code> 处理</td>
+<td><code class="notranslate">form.save()</code> 直接落库</td>
+</tr>
+<tr>
+<td>校验</td>
+<td>自己写</td>
+<td>自动继承模型字段的 <code class="notranslate">max_length</code>、<code class="notranslate">unique</code>、<code class="notranslate">choices</code> 等约束</td>
+</tr>
+<tr>
+<td>典型场景</td>
+<td>登录、搜索、联系我们（非模型表单）</td>
+<td>Learning Log 的 <code class="notranslate">TopicForm</code> / <code class="notranslate">EntryForm</code></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>选择原则</strong>：要落库的数据用 <code class="notranslate">ModelForm</code>（省力、校验自动）；与库无关或逻辑特殊的用 <code class="notranslate">Form</code>。</p>
+<hr>
+<h2>Form 字段家族</h2>
+<h3>常用字段类型</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>字段</th>
+<th>Python 类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">CharField</code></td>
+<td><code class="notranslate">str</code></td>
+<td>文本，常配 <code class="notranslate">max_length</code> / <code class="notranslate">min_length</code>；可带 <code class="notranslate">strip=True</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">EmailField</code></td>
+<td><code class="notranslate">str</code></td>
+<td>自动校验邮箱格式</td>
+</tr>
+<tr>
+<td><code class="notranslate">URLField</code></td>
+<td><code class="notranslate">str</code></td>
+<td>自动校验 URL</td>
+</tr>
+<tr>
+<td><code class="notranslate">IntegerField</code></td>
+<td><code class="notranslate">int</code></td>
+<td>整数，可配 <code class="notranslate">min_value</code> / <code class="notranslate">max_value</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">FloatField</code></td>
+<td><code class="notranslate">float</code></td>
+<td>浮点数</td>
+</tr>
+<tr>
+<td><code class="notranslate">DecimalField</code></td>
+<td><code class="notranslate">decimal.Decimal</code></td>
+<td>定点小数，配 <code class="notranslate">max_digits</code> / <code class="notranslate">decimal_places</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">BooleanField</code></td>
+<td><code class="notranslate">bool</code></td>
+<td>复选框；注意默认 <code class="notranslate">required=True</code>，未勾选即报错</td>
+</tr>
+<tr>
+<td><code class="notranslate">NullBooleanField</code></td>
+<td><code class="notranslate">Optional[bool]</code></td>
+<td>三态：未选 / True / False</td>
+</tr>
+<tr>
+<td><code class="notranslate">DateField</code></td>
+<td><code class="notranslate">datetime.date</code></td>
+<td>日期</td>
+</tr>
+<tr>
+<td><code class="notranslate">DateTimeField</code></td>
+<td><code class="notranslate">datetime.datetime</code></td>
+<td>日期时间</td>
+</tr>
+<tr>
+<td><code class="notranslate">TimeField</code></td>
+<td><code class="notranslate">datetime.time</code></td>
+<td>时间</td>
+</tr>
+<tr>
+<td><code class="notranslate">ChoiceField</code></td>
+<td><code class="notranslate">str</code></td>
+<td>下拉单选，配 <code class="notranslate">choices=[(v, label), ...]</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">TypedChoiceField</code></td>
+<td>任意</td>
+<td>把选中值转成指定类型（如 <code class="notranslate">coerce=int</code>）</td>
+</tr>
+<tr>
+<td><code class="notranslate">MultipleChoiceField</code></td>
+<td><code class="notranslate">list</code></td>
+<td>多选</td>
+</tr>
+<tr>
+<td><code class="notranslate">FileField</code></td>
+<td><code class="notranslate">UploadedFile</code></td>
+<td>文件上传（视图里要 <code class="notranslate">request.FILES</code>）</td>
+</tr>
+<tr>
+<td><code class="notranslate">ImageField</code></td>
+<td><code class="notranslate">UploadedFile</code></td>
+<td>图片上传（依赖 Pillow）</td>
+</tr>
+<tr>
+<td><code class="notranslate">ModelChoiceField</code></td>
+<td>模型实例</td>
+<td>从 QuerySet 选一个对象（外键下拉）</td>
+</tr>
+<tr>
+<td><code class="notranslate">ModelMultipleChoiceField</code></td>
+<td><code class="notranslate">QuerySet</code></td>
+<td>多选对象（多对多）</td>
+</tr>
+<tr>
+<td><code class="notranslate">SlugField</code></td>
+<td><code class="notranslate">str</code></td>
+<td>slug 字符串</td>
+</tr>
+<tr>
+<td><code class="notranslate">RegexField</code></td>
+<td><code class="notranslate">str</code></td>
+<td>正则校验</td>
+</tr>
+<tr>
+<td><code class="notranslate">UUIDField</code></td>
+<td><code class="notranslate">uuid.UUID</code></td>
+<td>UUID</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>字段通用参数</h3>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">class</span> <span class="pl-v">ExampleForm</span>(<span class="pl-s1">forms</span>.<span class="pl-c1">Form</span>):
+    <span class="pl-s1">name</span> <span class="pl-c1">=</span> <span class="pl-s1">forms</span>.<span class="pl-c1">CharField</span>(
+        <span class="pl-s1">max_length</span><span class="pl-c1">=</span><span class="pl-c1">100</span>,
+        <span class="pl-s1">label</span><span class="pl-c1">=</span><span class="pl-s">'你的名字'</span>,                          <span class="pl-c"># 显示在 &lt;label&gt; 里</span>
+        <span class="pl-s1">label_suffix</span><span class="pl-c1">=</span><span class="pl-s">'：'</span>,                         <span class="pl-c"># 标签后缀（默认 ':'）</span>
+        <span class="pl-s1">help_text</span><span class="pl-c1">=</span><span class="pl-s">'请输入全名，不超过 100 字'</span>,       <span class="pl-c"># 字段下方帮助文本</span>
+        <span class="pl-s1">required</span><span class="pl-c1">=</span><span class="pl-c1">True</span>,                             <span class="pl-c"># 必填（默认 True）</span>
+        <span class="pl-s1">initial</span><span class="pl-c1">=</span><span class="pl-s">'张三'</span>,                            <span class="pl-c"># 初始值（GET 时显示）</span>
+        <span class="pl-s1">disabled</span><span class="pl-c1">=</span><span class="pl-c1">False</span>,                            <span class="pl-c"># 禁用</span>
+        <span class="pl-s1">error_messages</span><span class="pl-c1">=</span>{<span class="pl-s">'required'</span>: <span class="pl-s">'名字不能为空'</span>}, <span class="pl-c"># 覆盖默认错误信息</span>
+        <span class="pl-s1">validators</span><span class="pl-c1">=</span>[                               <span class="pl-c"># 额外验证器</span>
+            <span class="pl-en">RegexValidator</span>(<span class="pl-s">r'^[\u4e00-\u9fa5]+$'</span>, <span class="pl-s">'只能输入中文'</span>),
+        ],
+        <span class="pl-s1">widget</span><span class="pl-c1">=</span><span class="pl-s1">forms</span>.<span class="pl-c1">TextInput</span>(<span class="pl-s1">attrs</span><span class="pl-c1">=</span>{
+            <span class="pl-s">'class'</span>: <span class="pl-s">'form-control'</span>,
+            <span class="pl-s">'placeholder'</span>: <span class="pl-s">'请输入名字'</span>,
+        }),
+    )</pre></div>
+<h3>常用 widget</h3>
+<p>widget 决定字段渲染成哪种 HTML 控件。字段类型有默认 widget，可手动覆盖：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>widget</th>
+<th>渲染成</th>
+<th>典型场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">forms.TextInput</code></td>
+<td><code class="notranslate">&lt;input type="text"&gt;</code></td>
+<td>CharField 默认</td>
+</tr>
+<tr>
+<td><code class="notranslate">forms.Textarea</code></td>
+<td><code class="notranslate">&lt;textarea&gt;</code></td>
+<td>长文本（Entry.text）</td>
+</tr>
+<tr>
+<td><code class="notranslate">forms.PasswordInput</code></td>
+<td><code class="notranslate">&lt;input type="password"&gt;</code></td>
+<td>密码</td>
+</tr>
+<tr>
+<td><code class="notranslate">forms.EmailInput</code></td>
+<td><code class="notranslate">&lt;input type="email"&gt;</code></td>
+<td>EmailField</td>
+</tr>
+<tr>
+<td><code class="notranslate">forms.URLInput</code></td>
+<td><code class="notranslate">&lt;input type="url"&gt;</code></td>
+<td>URLField</td>
+</tr>
+<tr>
+<td><code class="notranslate">forms.NumberInput</code></td>
+<td><code class="notranslate">&lt;input type="number"&gt;</code></td>
+<td>IntegerField</td>
+</tr>
+<tr>
+<td><code class="notranslate">forms.DateInput</code></td>
+<td><code class="notranslate">&lt;input type="text"&gt;</code>（可加 <code class="notranslate">attrs={'type':'date'}</code>）</td>
+<td>日期选择器</td>
+</tr>
+<tr>
+<td><code class="notranslate">forms.DateTimeInput</code></td>
+<td>同上</td>
+<td>日期时间</td>
+</tr>
+<tr>
+<td><code class="notranslate">forms.Select</code></td>
+<td><code class="notranslate">&lt;select&gt;</code></td>
+<td>ChoiceField 默认</td>
+</tr>
+<tr>
+<td><code class="notranslate">forms.SelectMultiple</code></td>
+<td><code class="notranslate">&lt;select multiple&gt;</code></td>
+<td>MultipleChoiceField</td>
+</tr>
+<tr>
+<td><code class="notranslate">forms.CheckboxInput</code></td>
+<td><code class="notranslate">&lt;input type="checkbox"&gt;</code></td>
+<td>BooleanField</td>
+</tr>
+<tr>
+<td><code class="notranslate">forms.RadioSelect</code></td>
+<td><code class="notranslate">&lt;input type="radio"&gt;</code> 组</td>
+<td>单选美化</td>
+</tr>
+<tr>
+<td><code class="notranslate">forms.CheckboxSelectMultiple</code></td>
+<td>复选框组</td>
+<td>多对多选</td>
+</tr>
+<tr>
+<td><code class="notranslate">forms.HiddenInput</code></td>
+<td><code class="notranslate">&lt;input type="hidden"&gt;</code></td>
+<td>隐藏字段</td>
+</tr>
+<tr>
+<td><code class="notranslate">forms.FileInput</code></td>
+<td><code class="notranslate">&lt;input type="file"&gt;</code></td>
+<td>文件上传</td>
+</tr>
+<tr>
+<td><code class="notranslate">forms.SelectDateWidget</code></td>
+<td>年/月/日三个下拉</td>
+<td>旧式日期选择</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>校验流程</h2>
+<h3>一次 <code class="notranslate">is_valid()</code> 内部发生了什么</h3>
+<pre class="notranslate"><code class="notranslate">form.is_valid()
+  │
+  ├─ full_clean()
+  │    ├─ 1. _clean_fields()
+  │    │     对每个字段：to_python → validate → run_validators
+  │    │     然后调用表单的 clean_&lt;fieldname&gt;()
+  │    │     任一失败 → 把错误存到 self._errors[field]
+  │    │
+  │    ├─ 2. _clean_form()
+  │    │     调用表单的 clean()（跨字段整体校验）
+  │    │
+  │    └─ 3. _post_clean()
+  │          ModelForm 钩子：调用模型自身的 clean()
+  │
+  └─ 返回 self.is_bound and not self.errors
+</code></pre>
+<p>校验通过后，清洗后的数据统一放在 <strong><code class="notranslate">form.cleaned_data</code></strong>（dict，key 为字段名）；错误在 <strong><code class="notranslate">form.errors</code></strong>（一个 ErrorDict）。</p>
+<h3>字段级校验：<code class="notranslate">clean_&lt;fieldname&gt;</code></h3>
+<p>方法名必须是 <code class="notranslate">clean_</code> + 字段名。在此之前，字段类型、<code class="notranslate">required</code>、<code class="notranslate">max_length</code>、validators 已经跑过；这里做业务规则。</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">django</span> <span class="pl-k">import</span> <span class="pl-s1">forms</span>
+<span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">core</span>.<span class="pl-s1">exceptions</span> <span class="pl-k">import</span> <span class="pl-v">ValidationError</span>
+<span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">utils</span>.<span class="pl-s1">translation</span> <span class="pl-k">import</span> <span class="pl-s1">gettext_lazy</span> <span class="pl-k">as</span> <span class="pl-s1">_</span>
+<span class="pl-k">from</span> .<span class="pl-s1">models</span> <span class="pl-k">import</span> <span class="pl-v">Entry</span>
+
+<span class="pl-c1">PROGRESS_CHOICES</span> <span class="pl-c1">=</span> [(<span class="pl-s">'todo'</span>, <span class="pl-s">'待办'</span>), (<span class="pl-s">'doing'</span>, <span class="pl-s">'进行中'</span>), (<span class="pl-s">'done'</span>, <span class="pl-s">'已完成'</span>)]
+
+
+<span class="pl-k">class</span> <span class="pl-v">EntryForm</span>(<span class="pl-s1">forms</span>.<span class="pl-c1">ModelForm</span>):
+    <span class="pl-s">"""Form to add or edit an entry under a topic."""</span>
+    <span class="pl-s1">progress</span> <span class="pl-c1">=</span> <span class="pl-s1">forms</span>.<span class="pl-c1">ChoiceField</span>(<span class="pl-s1">choices</span><span class="pl-c1">=</span><span class="pl-c1">PROGRESS_CHOICES</span>)
+
+    <span class="pl-k">class</span> <span class="pl-v">Meta</span>:
+        <span class="pl-s1">model</span> <span class="pl-c1">=</span> <span class="pl-v">Entry</span>
+        <span class="pl-s1">fields</span> <span class="pl-c1">=</span> [<span class="pl-s">'text'</span>, <span class="pl-s">'progress'</span>]
+
+    <span class="pl-k">def</span> <span class="pl-en">clean_progress</span>(<span class="pl-s1">self</span>):
+        <span class="pl-s1">value</span> <span class="pl-c1">=</span> <span class="pl-s1">self</span>.<span class="pl-c1">cleaned_data</span>[<span class="pl-s">'progress'</span>]
+
+        <span class="pl-c"># Check value is one of the allowed choices.</span>
+        <span class="pl-k">if</span> <span class="pl-s1">value</span> <span class="pl-c1"><span class="pl-c1">not</span> <span class="pl-c1">in</span></span> [<span class="pl-s1">c</span>[<span class="pl-c1">0</span>] <span class="pl-k">for</span> <span class="pl-s1">c</span> <span class="pl-c1">in</span> <span class="pl-c1">PROGRESS_CHOICES</span>]:
+            <span class="pl-k">raise</span> <span class="pl-en">ValidationError</span>(<span class="pl-en">_</span>(<span class="pl-s">'Invalid progress value'</span>))
+
+        <span class="pl-c"># Remember to always return the cleaned data.</span>
+        <span class="pl-k">return</span> <span class="pl-s1">value</span></pre></div>
+<p>要点：</p>
+<ul>
+<li>从 <code class="notranslate">self.cleaned_data['字段名']</code> 取值（字段级校验已经通过，值是 Python 类型）。</li>
+<li>不通过就 <code class="notranslate">raise ValidationError(_('...'))</code>。</li>
+<li><strong>必须 <code class="notranslate">return data</code></strong>，否则该字段的 <code class="notranslate">cleaned_data</code> 会被设为 <code class="notranslate">None</code>。</li>
+</ul>
+<h3>表单级校验：<code class="notranslate">clean()</code></h3>
+<p>处理跨字段规则（"结束日期不能早于开始日期"、"密码与确认密码必须一致"）：</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">class</span> <span class="pl-v">RangeForm</span>(<span class="pl-s1">forms</span>.<span class="pl-c1">Form</span>):
+    <span class="pl-s1">start</span> <span class="pl-c1">=</span> <span class="pl-s1">forms</span>.<span class="pl-c1">DateField</span>()
+    <span class="pl-s1">end</span> <span class="pl-c1">=</span> <span class="pl-s1">forms</span>.<span class="pl-c1">DateField</span>()
+
+    <span class="pl-k">def</span> <span class="pl-en">clean</span>(<span class="pl-s1">self</span>):
+        <span class="pl-s1">cleaned</span> <span class="pl-c1">=</span> <span class="pl-en">super</span>().<span class="pl-c1">clean</span>()           <span class="pl-c"># 先让父类/字段校验跑完</span>
+        <span class="pl-s1">start</span> <span class="pl-c1">=</span> <span class="pl-s1">cleaned</span>.<span class="pl-c1">get</span>(<span class="pl-s">'start'</span>)
+        <span class="pl-s1">end</span> <span class="pl-c1">=</span> <span class="pl-s1">cleaned</span>.<span class="pl-c1">get</span>(<span class="pl-s">'end'</span>)
+        <span class="pl-k">if</span> <span class="pl-s1">start</span> <span class="pl-c1">and</span> <span class="pl-s1">end</span> <span class="pl-c1">and</span> <span class="pl-s1">end</span> <span class="pl-c1">&lt;</span> <span class="pl-s1">start</span>:
+            <span class="pl-s1">self</span>.<span class="pl-c1">add_error</span>(<span class="pl-s">'end'</span>, <span class="pl-s">'结束日期必须晚于开始日期'</span>)
+        <span class="pl-k">return</span> <span class="pl-s1">cleaned</span></pre></div>
+<ul>
+<li><code class="notranslate">self.add_error(field, message)</code>：<code class="notranslate">field=None</code> 时错误进入 <code class="notranslate">non_field_errors()</code>；指定字段名则挂到该字段下。</li>
+<li>一定要 <code class="notranslate">return cleaned</code>，否则 <code class="notranslate">cleaned_data</code> 丢失。</li>
+</ul>
+<h3>ValidationError 与 errors 结构</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>API</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">ValidationError(message, code=None, params=None)</code></td>
+<td>抛出校验错误；可带 <code class="notranslate">code</code> 便于模板分支</td>
+</tr>
+<tr>
+<td><code class="notranslate">form.errors</code></td>
+<td>ErrorDict，按字段名分组</td>
+</tr>
+<tr>
+<td><code class="notranslate">form.errors.as_data()</code></td>
+<td>返回 <code class="notranslate">{field: [ValidationError, ...]}</code>，便于程序化判断</td>
+</tr>
+<tr>
+<td><code class="notranslate">form.errors.get_json_data()</code></td>
+<td>返回结构化 JSON</td>
+</tr>
+<tr>
+<td><code class="notranslate">form.non_field_errors()</code></td>
+<td>来自 <code class="notranslate">clean()</code> / <code class="notranslate">add_error(None, ...)</code> 的整表错误</td>
+</tr>
+<tr>
+<td><code class="notranslate">form.field.errors</code></td>
+<td>某字段的错误列表（模板里用 <code class="notranslate">{{ field.errors }}</code>）</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>自定义验证器</h3>
+<p>验证器是可复用的函数（或可调用对象），声明式挂在多个字段上：</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">core</span>.<span class="pl-s1">exceptions</span> <span class="pl-k">import</span> <span class="pl-v">ValidationError</span>
+<span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">utils</span>.<span class="pl-s1">translation</span> <span class="pl-k">import</span> <span class="pl-s1">gettext_lazy</span> <span class="pl-k">as</span> <span class="pl-s1">_</span>
+
+<span class="pl-k">def</span> <span class="pl-en">validate_even</span>(<span class="pl-s1">value</span>):
+    <span class="pl-k">if</span> <span class="pl-s1">value</span> <span class="pl-c1">%</span> <span class="pl-c1">2</span> <span class="pl-c1">!=</span> <span class="pl-c1">0</span>:
+        <span class="pl-k">raise</span> <span class="pl-en">ValidationError</span>(<span class="pl-en">_</span>(<span class="pl-s">'%(value)s 不是偶数'</span>), <span class="pl-s1">params</span><span class="pl-c1">=</span>{<span class="pl-s">'value'</span>: <span class="pl-s1">value</span>})
+
+<span class="pl-k">class</span> <span class="pl-v">MyForm</span>(<span class="pl-s1">forms</span>.<span class="pl-c1">Form</span>):
+    <span class="pl-s1">lucky_number</span> <span class="pl-c1">=</span> <span class="pl-s1">forms</span>.<span class="pl-c1">IntegerField</span>(<span class="pl-s1">validators</span><span class="pl-c1">=</span>[<span class="pl-s1">validate_even</span>])</pre></div>
+<p>内置常用验证器（<code class="notranslate">django.core.validators</code>）：<code class="notranslate">RegexValidator</code>、<code class="notranslate">EmailValidator</code>、<code class="notranslate">URLValidator</code>、<code class="notranslate">MinLengthValidator</code>、<code class="notranslate">MaxLengthValidator</code>、<code class="notranslate">MinValueValidator</code>、<code class="notranslate">MaxValueValidator</code>、<code class="notranslate">DecimalValidator</code>、<code class="notranslate">FileExtensionValidator</code>、<code class="notranslate">validate_image_file_extension</code>。</p>
+<hr>
+<h2>ModelForm：从模型自动生成</h2>
+<h3>真实示例</h3>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">django</span> <span class="pl-k">import</span> <span class="pl-s1">forms</span>
+
+<span class="pl-k">from</span> .<span class="pl-s1">models</span> <span class="pl-k">import</span> <span class="pl-v">Topic</span>, <span class="pl-v">Entry</span>
+
+
+<span class="pl-k">class</span> <span class="pl-v">TopicForm</span>(<span class="pl-s1">forms</span>.<span class="pl-c1">ModelForm</span>):
+    <span class="pl-k">class</span> <span class="pl-v">Meta</span>:
+        <span class="pl-s1">model</span> <span class="pl-c1">=</span> <span class="pl-v">Topic</span>
+        <span class="pl-s1">fields</span> <span class="pl-c1">=</span> [<span class="pl-s">'text'</span>]
+        <span class="pl-s1">labels</span> <span class="pl-c1">=</span> {<span class="pl-s">'text'</span>: <span class="pl-s">''</span>}
+
+<span class="pl-k">class</span> <span class="pl-v">EntryForm</span>(<span class="pl-s1">forms</span>.<span class="pl-c1">ModelForm</span>):
+    <span class="pl-k">class</span> <span class="pl-v">Meta</span>:
+        <span class="pl-s1">model</span> <span class="pl-c1">=</span> <span class="pl-v">Entry</span>
+        <span class="pl-s1">fields</span> <span class="pl-c1">=</span> [<span class="pl-s">'text'</span>]
+        <span class="pl-s1">labels</span> <span class="pl-c1">=</span> {<span class="pl-s">'text'</span>: <span class="pl-s">''</span>}
+        <span class="pl-s1">widgets</span> <span class="pl-c1">=</span> {<span class="pl-s">'text'</span>: <span class="pl-s1">forms</span>.<span class="pl-c1">Textarea</span>(<span class="pl-s1">attrs</span><span class="pl-c1">=</span>{<span class="pl-s">'cols'</span>: <span class="pl-c1">80</span>})}</pre></div>
+<h3>Meta 全部常用选项</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>选项</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">model</code></td>
+<td>关联的模型（必填）</td>
+</tr>
+<tr>
+<td><code class="notranslate">fields</code></td>
+<td>白名单，列出表单包含的字段（<strong>推荐</strong>）</td>
+</tr>
+<tr>
+<td><code class="notranslate">exclude</code></td>
+<td>黑名单，排除哪些字段（与 <code class="notranslate">fields</code> 二选一）</td>
+</tr>
+<tr>
+<td><code class="notranslate">widgets</code></td>
+<td>自定义控件：<code class="notranslate">{'text': forms.Textarea(attrs={'cols': 80})}</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">labels</code></td>
+<td>自定义标签：<code class="notranslate">{'text': ''}</code>（空串 = 不显示标签）</td>
+</tr>
+<tr>
+<td><code class="notranslate">help_texts</code></td>
+<td>自定义帮助文本</td>
+</tr>
+<tr>
+<td><code class="notranslate">error_messages</code></td>
+<td>覆盖字段级错误信息：<code class="notranslate">{'title': {'required': '标题必填'}}</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">field_classes</code></td>
+<td>为某字段换一个 form field 类</td>
+</tr>
+<tr>
+<td><code class="notranslate">localized_fields</code></td>
+<td>启用本地化（日期/数字按本地格式）</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<blockquote>
+<p><strong>安全约定</strong>：始终用 <code class="notranslate">fields</code> 显式白名单。<code class="notranslate">exclude</code> 看似省事，但模型新增字段时会自动出现在表单里，可能把 <code class="notranslate">owner</code>、<code class="notranslate">is_admin</code> 这类敏感字段暴露给前端。外部字段一律用 <code class="notranslate">save(commit=False)</code> 手动赋值（见”文件上传”）。</p>
+</blockquote>
+<h3>ModelForm 的字段级扩展</h3>
+<p>Meta 之外，可以在表单类里直接写字段覆盖或新增：</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">class</span> <span class="pl-v">EntryForm</span>(<span class="pl-s1">forms</span>.<span class="pl-c1">ModelForm</span>):
+    <span class="pl-c"># 显式声明一个字段，覆盖模型默认 widget</span>
+    <span class="pl-s1">text</span> <span class="pl-c1">=</span> <span class="pl-s1">forms</span>.<span class="pl-c1">CharField</span>(<span class="pl-s1">widget</span><span class="pl-c1">=</span><span class="pl-s1">forms</span>.<span class="pl-c1">Textarea</span>(<span class="pl-s1">attrs</span><span class="pl-c1">=</span>{<span class="pl-s">'rows'</span>: <span class="pl-c1">5</span>}))
+
+    <span class="pl-k">class</span> <span class="pl-v">Meta</span>:
+        <span class="pl-s1">model</span> <span class="pl-c1">=</span> <span class="pl-v">Entry</span>
+        <span class="pl-s1">fields</span> <span class="pl-c1">=</span> [<span class="pl-s">'text'</span>, <span class="pl-s">'progress'</span>]</pre></div>
+<hr>
+<h2>模板里渲染表单</h2>
+<h3>整表快捷渲染</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>写法</th>
+<th>渲染结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">{{ form.as_p }}</code></td>
+<td>每个字段包一个 <code class="notranslate">&lt;p&gt;</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">{{ form.as_table }}</code></td>
+<td>每个字段包 <code class="notranslate">&lt;tr&gt;</code>（最老的默认）</td>
+</tr>
+<tr>
+<td><code class="notranslate">{{ form.as_ul }}</code></td>
+<td>每个字段包 <code class="notranslate">&lt;li&gt;</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">{{ form.as_div }}</code></td>
+<td>每个字段包 <code class="notranslate">&lt;div&gt;</code>（Django 4+ 推荐，语义更干净）</td>
+</tr>
+<tr>
+<td><code class="notranslate">{{ form }}</code></td>
+<td>等价 <code class="notranslate">as_table</code></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>最小可用模板：</p>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate"><span class="pl-kos">&lt;</span><span class="pl-ent">form</span> <span class="pl-c1">method</span>="<span class="pl-s">post</span>"<span class="pl-kos">&gt;</span>
+  {% csrf_token %}
+  {{ form.as_div }}
+  <span class="pl-kos">&lt;</span><span class="pl-ent">button</span> <span class="pl-c1">type</span>="<span class="pl-s">submit</span>"<span class="pl-kos">&gt;</span>提交<span class="pl-kos">&lt;/</span><span class="pl-ent">button</span><span class="pl-kos">&gt;</span>
+<span class="pl-kos">&lt;/</span><span class="pl-ent">form</span><span class="pl-kos">&gt;</span></pre></div>
+<h3>逐字段精细渲染</h3>
+<p>需要完全控制布局时：</p>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate"><span class="pl-kos">&lt;</span><span class="pl-ent">form</span> <span class="pl-c1">method</span>="<span class="pl-s">post</span>"<span class="pl-kos">&gt;</span>
+  {% csrf_token %}
+  {{ form.non_field_errors }}
+  {% for field in form %}
+    <span class="pl-kos">&lt;</span><span class="pl-ent">div</span> <span class="pl-c1">class</span>="<span class="pl-s">fieldWrapper</span>"<span class="pl-kos">&gt;</span>
+      {{ field.errors }}
+      {{ field.label_tag }}
+      {{ field }}
+      {% if field.help_text %}<span class="pl-kos">&lt;</span><span class="pl-ent">p</span> <span class="pl-c1">class</span>="<span class="pl-s">help</span>"<span class="pl-kos">&gt;</span>{{ field.help_text }}<span class="pl-kos">&lt;/</span><span class="pl-ent">p</span><span class="pl-kos">&gt;</span>{% endif %}
+    <span class="pl-kos">&lt;/</span><span class="pl-ent">div</span><span class="pl-kos">&gt;</span>
+  {% endfor %}
+  <span class="pl-kos">&lt;</span><span class="pl-ent">button</span> <span class="pl-c1">type</span>="<span class="pl-s">submit</span>"<span class="pl-kos">&gt;</span>提交<span class="pl-kos">&lt;/</span><span class="pl-ent">button</span><span class="pl-kos">&gt;</span>
+<span class="pl-kos">&lt;/</span><span class="pl-ent">form</span><span class="pl-kos">&gt;</span></pre></div>
+<p>字段对象在模板里的可用属性：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>表达式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">{{ field.label }}</code></td>
+<td>标签文本</td>
+</tr>
+<tr>
+<td><code class="notranslate">{{ field.label_tag }}</code></td>
+<td>完整 <code class="notranslate">&lt;label for="..."&gt;</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">{{ field.value }}</code></td>
+<td>当前值</td>
+</tr>
+<tr>
+<td><code class="notranslate">{{ field.errors }}</code></td>
+<td>该字段错误（<code class="notranslate">&lt;ul class="errorlist"&gt;</code>）</td>
+</tr>
+<tr>
+<td><code class="notranslate">{{ field.help_text }}</code></td>
+<td>帮助文本</td>
+</tr>
+<tr>
+<td><code class="notranslate">{{ field.html_name }}</code></td>
+<td>表单字段名（提交时的 name）</td>
+</tr>
+<tr>
+<td><code class="notranslate">{{ field.is_hidden }}</code></td>
+<td>是否隐藏字段</td>
+</tr>
+<tr>
+<td><code class="notranslate">{{ field.field.required }}</code></td>
+<td>是否必填</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>视图里的 FBV 黄金模式</h3>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-en">@<span class="pl-s1">login_required</span></span>
+<span class="pl-k">def</span> <span class="pl-en">new_topic</span>(<span class="pl-s1">request</span>):
+    <span class="pl-s">"""Add a new topic."""</span>
+    <span class="pl-k">if</span> <span class="pl-s1">request</span>.<span class="pl-c1">method</span> <span class="pl-c1">!=</span> <span class="pl-s">'POST'</span>:
+        <span class="pl-c"># No data submitted; create a blank form.</span>
+        <span class="pl-s1">form</span> <span class="pl-c1">=</span> <span class="pl-en">TopicForm</span>()
+    <span class="pl-k">else</span>:
+        <span class="pl-c"># POST data submitted; process data.</span>
+        <span class="pl-s1">form</span> <span class="pl-c1">=</span> <span class="pl-en">TopicForm</span>(<span class="pl-s1">data</span><span class="pl-c1">=</span><span class="pl-s1">request</span>.<span class="pl-c1">POST</span>)
+        <span class="pl-k">if</span> <span class="pl-s1">form</span>.<span class="pl-c1">is_valid</span>():
+            <span class="pl-s1">new_topic</span> <span class="pl-c1">=</span> <span class="pl-s1">form</span>.<span class="pl-c1">save</span>(<span class="pl-s1">commit</span><span class="pl-c1">=</span><span class="pl-c1">False</span>)
+            <span class="pl-s1">new_topic</span>.<span class="pl-c1">owner</span> <span class="pl-c1">=</span> <span class="pl-s1">request</span>.<span class="pl-c1">user</span>
+            <span class="pl-s1">new_topic</span>.<span class="pl-c1">save</span>()
+            <span class="pl-k">return</span> <span class="pl-en">redirect</span>(<span class="pl-s">'learning_logs:topics'</span>)
+
+    <span class="pl-c"># Display a blank or invalid form.</span>
+    <span class="pl-s1">context</span> <span class="pl-c1">=</span> {<span class="pl-s">'form'</span>: <span class="pl-s1">form</span>}
+    <span class="pl-k">return</span> <span class="pl-en">render</span>(<span class="pl-s1">request</span>, <span class="pl-s">'learning_logs/new_topic.html'</span>, <span class="pl-s1">context</span>)</pre></div>
+<p>这套"GET 给空表单 / POST 绑定 <code class="notranslate">request.POST</code> → <code class="notranslate">is_valid()</code> → 处理 → redirect"是 FBV 处理表单的标准骨架。</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c"># 非模型表单：手动从 cleaned_data 读值</span>
+<span class="pl-s1">form</span> <span class="pl-c1">=</span> <span class="pl-en">DateRangeForm</span>(<span class="pl-s1">request</span>.<span class="pl-c1">POST</span>)
+<span class="pl-k">if</span> <span class="pl-s1">form</span>.<span class="pl-c1">is_valid</span>():
+    <span class="pl-s1">start</span> <span class="pl-c1">=</span> <span class="pl-s1">form</span>.<span class="pl-c1">cleaned_data</span>[<span class="pl-s">'start_date'</span>]
+    <span class="pl-s1">end</span> <span class="pl-c1">=</span> <span class="pl-s1">form</span>.<span class="pl-c1">cleaned_data</span>[<span class="pl-s">'end_date'</span>]
+    <span class="pl-s1">entries</span> <span class="pl-c1">=</span> <span class="pl-v">Entry</span>.<span class="pl-c1">objects</span>.<span class="pl-c1">filter</span>(<span class="pl-s1">date_added__range</span><span class="pl-c1">=</span>(<span class="pl-s1">start</span>, <span class="pl-s1">end</span>))</pre></div>
+<p>非 ModelForm 没有 <code class="notranslate">save()</code>，所有写入都从 <code class="notranslate">form.cleaned_data['字段名']</code> 取。</p>
+<h3>save(commit=False)：保存前注入外部字段</h3>
+<p>ModelForm 的 <code class="notranslate">save()</code> 默认直接落库。但有些字段<strong>不应该出现在表单里</strong>（否则用户能伪造），却必须在落库前有值：</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-en">@<span class="pl-s1">login_required</span></span>
+<span class="pl-k">def</span> <span class="pl-en">new_entry</span>(<span class="pl-s1">request</span>, <span class="pl-s1">topic_id</span>):
+    <span class="pl-s">"""Add a new entry for a particular topic."""</span>
+    <span class="pl-s1">topic</span> <span class="pl-c1">=</span> <span class="pl-v">Topic</span>.<span class="pl-c1">objects</span>.<span class="pl-c1">get</span>(<span class="pl-s1">id</span><span class="pl-c1">=</span><span class="pl-s1">topic_id</span>)
+
+    <span class="pl-k">if</span> <span class="pl-s1">request</span>.<span class="pl-c1">method</span> <span class="pl-c1">!=</span> <span class="pl-s">'POST'</span>:
+        <span class="pl-s1">form</span> <span class="pl-c1">=</span> <span class="pl-en">EntryForm</span>()
+    <span class="pl-k">else</span>:
+        <span class="pl-s1">form</span> <span class="pl-c1">=</span> <span class="pl-en">EntryForm</span>(<span class="pl-s1">data</span><span class="pl-c1">=</span><span class="pl-s1">request</span>.<span class="pl-c1">POST</span>)
+        <span class="pl-k">if</span> <span class="pl-s1">form</span>.<span class="pl-c1">is_valid</span>():
+            <span class="pl-s1">new_entry</span> <span class="pl-c1">=</span> <span class="pl-s1">form</span>.<span class="pl-c1">save</span>(<span class="pl-s1">commit</span><span class="pl-c1">=</span><span class="pl-c1">False</span>)
+            <span class="pl-s1">new_entry</span>.<span class="pl-c1">topic</span> <span class="pl-c1">=</span> <span class="pl-s1">topic</span>
+            <span class="pl-s1">new_entry</span>.<span class="pl-c1">save</span>()
+            <span class="pl-k">return</span> <span class="pl-en">redirect</span>(<span class="pl-s">'learning_logs:topic'</span>, <span class="pl-s1">topic_id</span><span class="pl-c1">=</span><span class="pl-s1">topic_id</span>)
+
+    <span class="pl-s1">context</span> <span class="pl-c1">=</span> {<span class="pl-s">'topic'</span>: <span class="pl-s1">topic</span>, <span class="pl-s">'form'</span>: <span class="pl-s1">form</span>}
+    <span class="pl-k">return</span> <span class="pl-en">render</span>(<span class="pl-s1">request</span>, <span class="pl-s">'learning_logs/new_entry.html'</span>, <span class="pl-s1">context</span>)
+
+
+<span class="pl-en">@<span class="pl-s1">login_required</span></span>
+<span class="pl-k">def</span> <span class="pl-en">edit_entry</span>(<span class="pl-s1">request</span>, <span class="pl-s1">entry_id</span>):
+    <span class="pl-s">"""Edit an existing entry."""</span>
+    <span class="pl-s1">entry</span> <span class="pl-c1">=</span> <span class="pl-v">Entry</span>.<span class="pl-c1">objects</span>.<span class="pl-c1">get</span>(<span class="pl-s1">id</span><span class="pl-c1">=</span><span class="pl-s1">entry_id</span>)
+    <span class="pl-s1">topic</span> <span class="pl-c1">=</span> <span class="pl-s1">entry</span>.<span class="pl-c1">topic</span>
+    <span class="pl-k">if</span> <span class="pl-s1">topic</span>.<span class="pl-c1">owner</span> <span class="pl-c1">!=</span> <span class="pl-s1">request</span>.<span class="pl-c1">user</span>:
+        <span class="pl-k">raise</span> <span class="pl-v">Http404</span>
+
+    <span class="pl-k">if</span> <span class="pl-s1">request</span>.<span class="pl-c1">method</span> <span class="pl-c1">!=</span> <span class="pl-s">'POST'</span>:
+        <span class="pl-c"># Initial request; pre-fill form with the current entry.</span>
+        <span class="pl-s1">form</span> <span class="pl-c1">=</span> <span class="pl-en">EntryForm</span>(<span class="pl-s1">instance</span><span class="pl-c1">=</span><span class="pl-s1">entry</span>)
+    <span class="pl-k">else</span>:
+        <span class="pl-c"># POST data submitted; process data.</span>
+        <span class="pl-s1">form</span> <span class="pl-c1">=</span> <span class="pl-en">EntryForm</span>(<span class="pl-s1">instance</span><span class="pl-c1">=</span><span class="pl-s1">entry</span>, <span class="pl-s1">data</span><span class="pl-c1">=</span><span class="pl-s1">request</span>.<span class="pl-c1">POST</span>)
+        <span class="pl-k">if</span> <span class="pl-s1">form</span>.<span class="pl-c1">is_valid</span>():
+            <span class="pl-s1">form</span>.<span class="pl-c1">save</span>()
+            <span class="pl-k">return</span> <span class="pl-en">redirect</span>(<span class="pl-s">'learning_logs:topic'</span>, <span class="pl-s1">topic_id</span><span class="pl-c1">=</span><span class="pl-s1">topic</span>.<span class="pl-c1">id</span>)
+
+    <span class="pl-s1">context</span> <span class="pl-c1">=</span> {<span class="pl-s">'entry'</span>: <span class="pl-s1">entry</span>, <span class="pl-s">'topic'</span>: <span class="pl-s1">topic</span>, <span class="pl-s">'form'</span>: <span class="pl-s1">form</span>}
+    <span class="pl-k">return</span> <span class="pl-en">render</span>(<span class="pl-s1">request</span>, <span class="pl-s">'learning_logs/edit_entry.html'</span>, <span class="pl-s1">context</span>)</pre></div>
+<p>两个关键点：</p>
+<ul>
+<li><code class="notranslate">save(commit=False)</code>：返回一个<strong>还没写库</strong>的模型实例，可以继续给它赋字段（<code class="notranslate">new_entry.topic = topic</code>、<code class="notranslate">new_topic.owner = request.user</code>），然后手动 <code class="notranslate">.save()</code>。</li>
+<li><code class="notranslate">ModelForm(instance=obj)</code>：<strong>编辑已有对象</strong>；不传 <code class="notranslate">instance</code> 则是新建。POST 时要同时传 <code class="notranslate">instance=entry</code> 和 <code class="notranslate">data=request.POST</code>。</li>
+</ul>
+<h3>动态初始值</h3>
+<p>GET 时给表单预填值，有三种方式：</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c"># 方式一：视图里用 initial=（一次性）</span>
+<span class="pl-s1">form</span> <span class="pl-c1">=</span> <span class="pl-en">TopicForm</span>(<span class="pl-s1">initial</span><span class="pl-c1">=</span>{<span class="pl-s">'text'</span>: <span class="pl-s">'默认主题名'</span>})
+
+<span class="pl-c"># 方式二：CreateView 类属性</span>
+<span class="pl-k">class</span> <span class="pl-v">TopicCreateView</span>(<span class="pl-v">CreateView</span>):
+    <span class="pl-s1">model</span> <span class="pl-c1">=</span> <span class="pl-v">Topic</span>
+    <span class="pl-s1">fields</span> <span class="pl-c1">=</span> [<span class="pl-s">'text'</span>]
+    <span class="pl-s1">initial</span> <span class="pl-c1">=</span> {<span class="pl-s">'text'</span>: <span class="pl-s">'默认主题名'</span>}
+
+<span class="pl-c"># 方式三：在表单里覆盖 __init__，动态算</span>
+<span class="pl-k">class</span> <span class="pl-v">RenewBookForm</span>(<span class="pl-s1">forms</span>.<span class="pl-c1">Form</span>):
+    <span class="pl-s1">renewal_date</span> <span class="pl-c1">=</span> <span class="pl-s1">forms</span>.<span class="pl-c1">DateField</span>()
+
+    <span class="pl-k">def</span> <span class="pl-en">__init__</span>(<span class="pl-s1">self</span>, <span class="pl-c1">*</span><span class="pl-s1">args</span>, <span class="pl-c1">**</span><span class="pl-s1">kwargs</span>):
+        <span class="pl-en">super</span>().<span class="pl-c1">__init__</span>(<span class="pl-c1">*</span><span class="pl-s1">args</span>, <span class="pl-c1">**</span><span class="pl-s1">kwargs</span>)
+        <span class="pl-s1">self</span>.<span class="pl-c1">initial</span>[<span class="pl-s">'renewal_date'</span>] <span class="pl-c1">=</span> <span class="pl-s1">datetime</span>.<span class="pl-c1">date</span>.<span class="pl-c1">today</span>() <span class="pl-c1">+</span> <span class="pl-s1">datetime</span>.<span class="pl-c1">timedelta</span>(<span class="pl-s1">weeks</span><span class="pl-c1">=</span><span class="pl-c1">3</span>)</pre></div>
+<hr>
+<h2>CSRF 与文件上传</h2>
+<h3>CSRF</h3>
+<p>所有 POST 表单必须在模板里写 <code class="notranslate">{% csrf_token %}</code>，否则 Django 返 403：</p>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate"><span class="pl-kos">&lt;</span><span class="pl-ent">form</span> <span class="pl-c1">method</span>="<span class="pl-s">post</span>"<span class="pl-kos">&gt;</span>
+  {% csrf_token %}
+  ...
+<span class="pl-kos">&lt;/</span><span class="pl-ent">form</span><span class="pl-kos">&gt;</span></pre></div>
+<p>这是 <code class="notranslate">CsrfViewMiddleware</code> 提供的跨站请求伪造防护。</p>
+<h3>文件上传</h3>
+<p>带文件的表单：</p>
+<ul>
+<li>模板 <code class="notranslate">&lt;form&gt;</code> 必须加 <code class="notranslate">enctype="multipart/form-data"</code>；</li>
+<li>视图里构造表单要传 <code class="notranslate">request.FILES</code>：<code class="notranslate">form = MyForm(request.POST, request.FILES)</code>。</li>
+</ul>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate"><span class="pl-kos">&lt;</span><span class="pl-ent">form</span> <span class="pl-c1">method</span>="<span class="pl-s">post</span>" <span class="pl-c1">enctype</span>="<span class="pl-s">multipart/form-data</span>"<span class="pl-kos">&gt;</span>
+  {% csrf_token %}
+  {{ form.as_div }}
+<span class="pl-kos">&lt;/</span><span class="pl-ent">form</span><span class="pl-kos">&gt;</span></pre></div>
+<hr>
+<h2>Formsets：一页多表单</h2>
+<h3>formset_factory：裸表单集</h3>
+<p>一页处理 N 个同构表单（如一次录入 3 个作者）：</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">forms</span> <span class="pl-k">import</span> <span class="pl-s1">formset_factory</span>
+<span class="pl-k">from</span> .<span class="pl-s1">forms</span> <span class="pl-k">import</span> <span class="pl-v">AuthorForm</span>
+
+<span class="pl-v">AuthorFormSet</span> <span class="pl-c1">=</span> <span class="pl-en">formset_factory</span>(<span class="pl-v">AuthorForm</span>, <span class="pl-s1">extra</span><span class="pl-c1">=</span><span class="pl-c1">3</span>)   <span class="pl-c"># 3 个空表单</span>
+
+<span class="pl-k">def</span> <span class="pl-en">manage_authors</span>(<span class="pl-s1">request</span>):
+    <span class="pl-k">if</span> <span class="pl-s1">request</span>.<span class="pl-c1">method</span> <span class="pl-c1">==</span> <span class="pl-s">'POST'</span>:
+        <span class="pl-s1">formset</span> <span class="pl-c1">=</span> <span class="pl-en">AuthorFormSet</span>(<span class="pl-s1">request</span>.<span class="pl-c1">POST</span>)
+        <span class="pl-k">if</span> <span class="pl-s1">formset</span>.<span class="pl-c1">is_valid</span>():
+            <span class="pl-k">for</span> <span class="pl-s1">form</span> <span class="pl-c1">in</span> <span class="pl-s1">formset</span>:
+                <span class="pl-k">if</span> <span class="pl-s1">form</span>.<span class="pl-c1">cleaned_data</span>:        <span class="pl-c"># 跳过完全空白的表单</span>
+                    <span class="pl-s1">form</span>.<span class="pl-c1">save</span>()
+            <span class="pl-k">return</span> <span class="pl-en">redirect</span>(<span class="pl-s">'authors'</span>)
+    <span class="pl-k">else</span>:
+        <span class="pl-s1">formset</span> <span class="pl-c1">=</span> <span class="pl-en">AuthorFormSet</span>()
+    <span class="pl-k">return</span> <span class="pl-en">render</span>(<span class="pl-s1">request</span>, <span class="pl-s">'manage_authors.html'</span>, {<span class="pl-s">'formset'</span>: <span class="pl-s1">formset</span>})</pre></div>
+<h3>modelformset_factory：模型表单集</h3>
+<p>基于 ModelForm 的批量增删改：</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">forms</span> <span class="pl-k">import</span> <span class="pl-s1">modelformset_factory</span>
+<span class="pl-k">from</span> .<span class="pl-s1">models</span> <span class="pl-k">import</span> <span class="pl-v">Entry</span>
+
+<span class="pl-v">EntryFormSet</span> <span class="pl-c1">=</span> <span class="pl-en">modelformset_factory</span>(
+    <span class="pl-v">Entry</span>,
+    <span class="pl-s1">fields</span><span class="pl-c1">=</span>[<span class="pl-s">'text'</span>, <span class="pl-s">'progress'</span>],
+    <span class="pl-s1">extra</span><span class="pl-c1">=</span><span class="pl-c1">2</span>,
+    <span class="pl-s1">max_num</span><span class="pl-c1">=</span><span class="pl-c1">5</span>,
+)
+
+<span class="pl-k">def</span> <span class="pl-en">view</span>(<span class="pl-s1">request</span>):
+    <span class="pl-v">FormSet</span> <span class="pl-c1">=</span> <span class="pl-en">EntryFormSet</span>(<span class="pl-s1">request</span>.<span class="pl-c1">POST</span> <span class="pl-c1">or</span> <span class="pl-c1">None</span>, <span class="pl-s1">queryset</span><span class="pl-c1">=</span><span class="pl-v">Entry</span>.<span class="pl-c1">objects</span>.<span class="pl-c1">all</span>())
+    <span class="pl-k">if</span> <span class="pl-s1">request</span>.<span class="pl-c1">POST</span> <span class="pl-c1">and</span> <span class="pl-v">FormSet</span>.<span class="pl-c1">is_valid</span>():
+        <span class="pl-v">FormSet</span>.<span class="pl-c1">save</span>()
+        <span class="pl-k">return</span> <span class="pl-en">redirect</span>(<span class="pl-s">'learning_logs:topics'</span>)
+    <span class="pl-k">return</span> <span class="pl-en">render</span>(<span class="pl-s1">request</span>, <span class="pl-s">'learning_logs/entries.html'</span>, {<span class="pl-s">'formset'</span>: <span class="pl-v">FormSet</span>})</pre></div>
+<h3>inlineformset_factory：内联表单集</h3>
+<p>一对多关系的"主对象 + 多条子对象"一次编辑（如一个 Topic + N 条 Entry）：</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">django</span>.<span class="pl-s1">forms</span> <span class="pl-k">import</span> <span class="pl-s1">inlineformset_factory</span>
+<span class="pl-k">from</span> .<span class="pl-s1">models</span> <span class="pl-k">import</span> <span class="pl-v">Topic</span>, <span class="pl-v">Entry</span>
+
+<span class="pl-v">EntryFormSet</span> <span class="pl-c1">=</span> <span class="pl-en">inlineformset_factory</span>(
+    <span class="pl-v">Topic</span>,   <span class="pl-c"># 父模型</span>
+    <span class="pl-v">Entry</span>,   <span class="pl-c"># 子模型</span>
+    <span class="pl-s1">fields</span><span class="pl-c1">=</span>[<span class="pl-s">'text'</span>, <span class="pl-s">'progress'</span>],
+    <span class="pl-s1">extra</span><span class="pl-c1">=</span><span class="pl-c1">1</span>,
+    <span class="pl-s1">can_delete</span><span class="pl-c1">=</span><span class="pl-c1">True</span>,
+)
+
+<span class="pl-k">def</span> <span class="pl-en">edit_topic</span>(<span class="pl-s1">request</span>, <span class="pl-s1">pk</span>):
+    <span class="pl-s1">topic</span> <span class="pl-c1">=</span> <span class="pl-en">get_object_or_404</span>(<span class="pl-v">Topic</span>, <span class="pl-s1">pk</span><span class="pl-c1">=</span><span class="pl-s1">pk</span>)
+    <span class="pl-s1">formset</span> <span class="pl-c1">=</span> <span class="pl-en">EntryFormSet</span>(<span class="pl-s1">request</span>.<span class="pl-c1">POST</span> <span class="pl-c1">or</span> <span class="pl-c1">None</span>, <span class="pl-s1">instance</span><span class="pl-c1">=</span><span class="pl-s1">topic</span>)
+    <span class="pl-k">if</span> <span class="pl-s1">request</span>.<span class="pl-c1">POST</span> <span class="pl-c1">and</span> <span class="pl-s1">formset</span>.<span class="pl-c1">is_valid</span>():
+        <span class="pl-s1">formset</span>.<span class="pl-c1">save</span>()
+        <span class="pl-k">return</span> <span class="pl-en">redirect</span>(<span class="pl-s">'learning_logs:topic'</span>, <span class="pl-s1">pk</span><span class="pl-c1">=</span><span class="pl-s1">pk</span>)
+    <span class="pl-k">return</span> <span class="pl-en">render</span>(<span class="pl-s1">request</span>, <span class="pl-s">'learning_logs/edit_topic.html'</span>, {<span class="pl-s">'formset'</span>: <span class="pl-s1">formset</span>})</pre></div>
+<h3>关键参数与上下文</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">extra</code></td>
+<td>额外的空表单数量</td>
+</tr>
+<tr>
+<td><code class="notranslate">max_num</code></td>
+<td>最多展示多少个表单（不含已存在的）</td>
+</tr>
+<tr>
+<td><code class="notranslate">can_order</code></td>
+<td>是否允许排序（自动生成 <code class="notranslate">ORDER</code> 字段）</td>
+</tr>
+<tr>
+<td><code class="notranslate">can_delete</code></td>
+<td>是否允许删除（自动生成 <code class="notranslate">DELETE</code> 复选框）</td>
+</tr>
+<tr>
+<td><code class="notranslate">validate_max</code></td>
+<td>是否严格执行 <code class="notranslate">max_num</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">min_num</code> / <code class="notranslate">validate_min</code></td>
+<td>最少表单数</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>模板里必须渲染 <code class="notranslate">{{ formset.management_form }}</code>（隐藏的 management 表单，记录总条数、是否删除等元信息），否则 formset 校验会失败：</p>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate"><span class="pl-kos">&lt;</span><span class="pl-ent">form</span> <span class="pl-c1">method</span>="<span class="pl-s">post</span>"<span class="pl-kos">&gt;</span>
+  {% csrf_token %}
+  {{ formset.management_form }}
+  {% for form in formset %}
+    {{ form.as_div }}
+  {% endfor %}
+  <span class="pl-kos">&lt;</span><span class="pl-ent">button</span> <span class="pl-c1">type</span>="<span class="pl-s">submit</span>"<span class="pl-kos">&gt;</span>保存<span class="pl-kos">&lt;/</span><span class="pl-ent">button</span><span class="pl-kos">&gt;</span>
+<span class="pl-kos">&lt;/</span><span class="pl-ent">form</span><span class="pl-kos">&gt;</span></pre></div>
+<hr>
+<h2>CBV 里的表单处理</h2>
+<p>通用类视图 <code class="notranslate">CreateView</code> / <code class="notranslate">UpdateView</code> / <code class="notranslate">FormView</code> 已经把表单骨架封装好了。对应关系：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>FBV 手写</th>
+<th>CBV 自动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">form = MyForm()</code> GET</td>
+<td><code class="notranslate">FormView.get()</code> / <code class="notranslate">CreateView.get()</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">form = MyForm(request.POST)</code> POST</td>
+<td><code class="notranslate">FormView.post()</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">if form.is_valid(): ...</code></td>
+<td><code class="notranslate">form_valid(form)</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">else: ...</code></td>
+<td><code class="notranslate">form_invalid(form)</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">return redirect(...)</code></td>
+<td><code class="notranslate">get_success_url()</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">form.save(commit=False); form.instance.x = ...; form.save()</code></td>
+<td>覆盖 <code class="notranslate">form_valid</code>，先 <code class="notranslate">form.instance.x = ...</code> 再 <code class="notranslate">super().form_valid(form)</code></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table></div>
+    <details class="in-series-list" open aria-label="Series">
+      <summary>Django 总览与项目搭建</summary>
+      <ol>
+        <li><a href="https://interset-wq.github.io/blog/post/88_6234068448.html">数据库模型 Models</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/88_6234068681.html">视图与 URL 路由</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/88_6234068956.html">CBV 入门与通用视图</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/88_6234069183.html">CBV 的魔法与进阶</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/88_6234069407.html">表单 Form 与 ModelForm</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/88_6234069635.html">用户认证与权限</a></li>
+        <li><a href="https://interset-wq.github.io/blog/post/88_6234069864.html">管理后台 Admin</a></li>
+      </ol>
+    </details>
+    <nav class="in-series-pager" aria-label="Series pages">
+      <a class="in-series-prev" href="https://interset-wq.github.io/blog/post/88_6234069183.html">CBV 的魔法与进阶</a>
+      <a class="in-series-next" href="https://interset-wq.github.io/blog/post/88_6234069635.html">用户认证与权限</a>
+    </nav>
+  </article>
+<section class="in-comments-section">
+  <template id="in-giscus-template">
+    <script src="https://giscus.app/client.js"
+      data-repo="interset-wq/blog"
+      data-repo-id="R_kgDOTWqpPQ"
+      data-category="Announcements"
+      data-category-id="DIC_kwDOTWqpPc4DBFW-"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="light"
+      data-lang="zh-CN"
+      crossorigin="anonymous"
+      async></script>
+  </template>
+  <div class="in-comments-container" id="comments"></div>
+</section>  <div id="in-fab" class="in-fab"
+       data-toc-title="目录"
+       data-top-title="回到顶部"
+       data-bottom-title="下一页"></div>
+</main>
+  <footer class="in-site-footer" id="footer"><div class="in-footer-icons" id="footer-icons" data-copied="已复制">
+  <a class="in-nav-btn in-social" href="https://space.bilibili.com/3546586772670802" target="_blank" rel="noopener" title="Bilibili" aria-label="Bilibili"><svg fill="#00A1D6" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Bilibili</title><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373Z"/></svg></a>
+  <a class="in-nav-btn in-social" href="mailto:intersetwq@gmail.com" target="_blank" rel="noopener" title="Email" aria-label="Email"><svg fill="#EA4335" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gmail</title><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg></a>
+  <button class="in-nav-btn in-social" type="button" title="QQ" aria-label="QQ" data-copy="2775055258"><svg fill="#1EBAFC" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>QQ</title><path d="M21.395 15.035a40 40 0 0 0-.803-2.264l-1.079-2.695c.001-.032.014-.562.014-.836C19.526 4.632 17.351 0 12 0S4.474 4.632 4.474 9.241c0 .274.013.804.014.836l-1.08 2.695a39 39 0 0 0-.802 2.264c-1.021 3.283-.69 4.643-.438 4.673.54.065 2.103-2.472 2.103-2.472 0 1.469.756 3.387 2.394 4.771-.612.188-1.363.479-1.845.835-.434.32-.379.646-.301.778.343.578 5.883.369 7.482.189 1.6.18 7.14.389 7.483-.189.078-.132.132-.458-.301-.778-.483-.356-1.233-.646-1.846-.836 1.637-1.384 2.393-3.302 2.393-4.771 0 0 1.563 2.537 2.103 2.472.251-.03.581-1.39-.438-4.673"/></svg></button>
+  <button class="in-nav-btn in-social" type="button" title="WeChat" aria-label="WeChat" data-qrcode="https://interset-wq.github.io/blog/wechat-qr.jpg"><svg fill="#07C160" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>WeChat</title><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/></svg></button>
+  <a class="in-nav-btn in-social" href="https://interset-wq.github.io/blog/rss.xml" target="_blank" rel="noopener" title="RSS" aria-label="RSS"><svg fill="#FFA500" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>RSS</title><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/></svg></a>
+  <a class="in-nav-btn in-social" href="https://github.com/interset-wq/blog" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><svg fill="#181717" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+</div>
+<div class="in-footer-line" id="footer-copyright">
+  Copyright &copy; <span id="copyright-year"></span>
+  <a href="https://interset-wq.github.io/blog">InterNote</a>
+</div>
+<div class="in-footer-powered" id="footer-powered">
+  <span id="run-days"></span>
+  <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
+</div>
+<div class="in-footer-built">构建部署于 2026-10-17 20:48:32</div>
+<script>
+  (function () {
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    var days = Math.floor(
+      (Date.now() - new Date('2026-09-30').getTime()) / 86400000
+    );
+    document.getElementById('run-days').textContent =
+      '网站运行 ' + days + ' 天 • ';
+
+    // [[social]] copy + qrcode actions. Everything is data-driven from the
+    // server-rendered buttons; with no such buttons this is a no-op.
+    var icons = document.getElementById('footer-icons');
+    if (!icons.querySelector('[data-copy], [data-qrcode]')) {
+      return;
+    }
+
+    var toast = document.createElement('div');
+    toast.className = 'in-social-toast';
+    toast.hidden = true;
+    document.body.appendChild(toast);
+    var toastTimer = null;
+    function showToast(text) {
+      toast.textContent = text;
+      toast.hidden = false;
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () { toast.hidden = true; }, 1600);
+    }
+
+    var overlay = document.createElement('div');
+    overlay.className = 'in-social-qr';
+    overlay.hidden = true;
+    var img = document.createElement('img');
+    img.alt = '';
+    overlay.appendChild(img);
+    document.body.appendChild(overlay);
+    function closeOverlay() { overlay.hidden = true; }
+    overlay.addEventListener('click', closeOverlay);
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') { closeOverlay(); }
+    });
+
+    icons.addEventListener('click', function (event) {
+      var button = event.target.closest('[data-copy], [data-qrcode]');
+      if (!button) { return; }
+      if (button.dataset.copy) {
+        navigator.clipboard.writeText(button.dataset.copy).then(function () {
+          showToast(icons.dataset.copied || 'Copied!');
+        });
+      } else if (button.dataset.qrcode) {
+        img.src = button.dataset.qrcode;
+        overlay.hidden = false;
+      }
+    });
+  })();
+</script></footer>
+  <script src="https://interset-wq.github.io/blog/plugins/theme.js"></script>
+  <script id="internote-search" src="https://interset-wq.github.io/blog/plugins/search.js"
+    data-index-url="https://interset-wq.github.io/blog/search-index.json"
+    data-placeholder="搜索"
+    data-no-results="未找到结果"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/giscus.js"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/toc.js"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/fab.js"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/lightbox.js"></script>
+  <script src="https://interset-wq.github.io/blog/plugins/code-copy.js"></script>
+  <script>
+    (function () {
+      'use strict';
+      var bar = document.getElementById('in-progress');
+      var body = document.querySelector('.in-post-body');
+      function update() {
+        var start = body.offsetTop - 80;
+        var end = body.offsetTop + body.offsetHeight - window.innerHeight + 40;
+        var t = (window.scrollY - start) / Math.max(end - start, 1);
+        bar.style.transform = 'scaleX(' + Math.min(Math.max(t, 0), 1) + ')';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
+  
+</body>
+</html>
