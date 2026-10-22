@@ -5,6 +5,7 @@
 about = "issue"
 title = "InterNote"
 sub_title = "My notes on everything."
+home_url = "https://d111kc.top"   # 部署到阿里云 ECS，资源链接指向自有域名
 
 [layout]
 posts_per_page = 10
