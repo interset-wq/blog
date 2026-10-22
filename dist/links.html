@@ -249,106 +249,6 @@
     </a>
   </div>
 
-  <section class="in-links-apply">
-    <h2 class="in-links-apply-title">申请友链</h2>
-    <div class="in-links-form">
-      <label class="in-links-field">
-        <span>站点名称 *</span>
-        <input type="text" id="in-links-name" maxlength="40" placeholder="站点名称">
-      </label>
-      <label class="in-links-field">
-        <span>站点地址 *</span>
-        <input type="text" id="in-links-url" placeholder="https://…" spellcheck="false">
-      </label>
-      <label class="in-links-field">
-        <span>头像地址</span>
-        <input type="text" id="in-links-avatar" placeholder="https://… (favicon/logo)" spellcheck="false">
-      </label>
-      <label class="in-links-field">
-        <span>一句话介绍</span>
-        <input type="text" id="in-links-desc" maxlength="120" placeholder="一句话介绍">
-      </label>
-    </div>
-    <div class="in-links-toml">
-      <pre><code id="in-links-toml"></code></pre>
-      <button type="button" class="in-links-copy" id="in-links-copy" disabled>复制配置</button>
-    </div>
-    <p class="in-links-apply-hint">填写后复制生成的配置，粘贴到下方评论即可提交申请</p>
-  </section>
-<section class="in-comments-section">
-  <template id="in-giscus-template">
-    <script src="https://giscus.app/client.js"
-      data-repo="interset-wq/blog"
-      data-repo-id="R_kgDOTWqpPQ"
-      data-category="Announcements"
-      data-category-id="DIC_kwDOTWqpPc4DBFW-"
-      data-mapping="pathname"
-      data-strict="0"
-      data-reactions-enabled="1"
-      data-emit-metadata="0"
-      data-input-position="top"
-      data-theme="light"
-      data-lang="zh-CN"
-      crossorigin="anonymous"
-      async></script>
-  </template>
-  <div class="in-comments-container" id="comments"></div>
-</section>  <script src="https://interset-wq.github.io/blog/plugins/giscus.js"></script>
-  <script>
-  (function () {
-    'use strict';
-    var name = document.getElementById('in-links-name');
-    var url = document.getElementById('in-links-url');
-    var avatar = document.getElementById('in-links-avatar');
-    var desc = document.getElementById('in-links-desc');
-    var out = document.getElementById('in-links-toml');
-    var copy = document.getElementById('in-links-copy');
-    var COPY = "\u590d\u5236\u914d\u7f6e";
-    var COPIED = "\u5df2\u590d\u5236";
-    var timer;
-
-    function esc(value) {
-      return value.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
-    }
-
-    // links.toml requires a scheme; applicants type bare domains, so a
-    // missing scheme is normalised instead of rejected
-    function normUrl(value) {
-      return /^https?:\/\//i.test(value) ? value : "https://" + value;
-    }
-
-    function render() {
-      var nameV = name.value.trim();
-      var urlV = url.value.trim();
-      var avatarV = avatar.value.trim();
-      var descV = desc.value.trim();
-      var urlOut = urlV ? normUrl(urlV) : "";
-      var lines = ['[[links]]'];
-      if (nameV) lines.push('name = "' + esc(nameV) + '"');
-      if (urlOut) lines.push('url = "' + esc(urlOut) + '"');
-      if (avatarV) lines.push('avatar = "' + esc(avatarV) + '"');
-      if (descV) lines.push('description = "' + esc(descV) + '"');
-      out.textContent = lines.join('\n');
-      copy.disabled = !(nameV && urlV && !/\s/.test(urlV));
-    }
-
-    [name, url, avatar, desc].forEach(function (field) {
-      field.addEventListener('input', render);
-    });
-
-    copy.addEventListener('click', function () {
-      navigator.clipboard.writeText(out.textContent).then(function () {
-        copy.textContent = COPIED;
-        clearTimeout(timer);
-        timer = setTimeout(function () {
-          copy.textContent = COPY;
-        }, 2000);
-      });
-    });
-
-    render();
-  })();
-  </script>
 </main>
   <footer class="in-site-footer" id="footer"><div class="in-footer-icons" id="footer-icons" data-copied="已复制">
   <a class="in-nav-btn in-social" href="https://space.bilibili.com/3546586772670802" target="_blank" rel="noopener" title="Bilibili" aria-label="Bilibili"><svg fill="#00A1D6" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Bilibili</title><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373Z"/></svg></a>
@@ -363,10 +263,11 @@
   <a href="https://interset-wq.github.io/blog">InterNote</a>
 </div>
 <div class="in-footer-powered" id="footer-powered">
+  <span id="icp"><a href="https://beian.miit.gov.cn/" target="_blank">赣ICP备2026027358号</a></span>
   <span id="run-days"></span>
   <span>Powered by <a href="https://github.com/interset-wq/InterNote">InterNote</a></span>
 </div>
-<div class="in-footer-built">构建部署于 2026-10-17 20:50:11</div>
+<div class="in-footer-built">构建部署于 2026-10-22 11:04:45</div>
 <script>
   (function () {
     document.getElementById('copyright-year').textContent = new Date().getFullYear();
