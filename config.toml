@@ -28,7 +28,7 @@ title = "Bilibili"
 action = "link"
 url = "https://space.bilibili.com/3546586772670802"
 
-[[social]]
+#[[social]]
 #id = "gmail"
 #title = "Email"
 #action = "link"
