@@ -1221,6 +1221,21 @@ a:hover { text-decoration: underline; }
 
 .in-footer-line { margin-bottom: 8px; }
 
+/* 备案行：独占一行，公安徽标与文字垂直居中对齐 */
+.in-footer-beian {
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+.in-footer-beian-badge {
+  width: 14px;
+  height: 14px;
+  vertical-align: -2px;
+  margin-right: 4px;
+}
+
+.in-footer-beian a + a { margin-left: 12px; }
+
 .in-footer-powered {
   line-height: 1.8;
 }
